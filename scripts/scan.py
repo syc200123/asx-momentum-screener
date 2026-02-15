@@ -104,7 +104,7 @@ def period_returns(close: pd.Series, freq: str) -> list[dict]:
         results.append({
             "pe": resampled.index[i].strftime("%Y-%m-%d"),
             "r": round(float(r), 5),
-            "p": r > 0,
+            "p": bool(r > 0),
         })
     results.reverse()
     return results
@@ -387,8 +387,22 @@ def main():
     output = build_output(results, meta)
 
     os.makedirs(OUTPUT_DIR, exist_ok=True)
+
+    # Custom encoder to handle numpy types
+    class NumpySafeEncoder(json.JSONEncoder):
+        def default(self, obj):
+            if isinstance(obj, (np.integer,)):
+                return int(obj)
+            if isinstance(obj, (np.floating,)):
+                return float(obj)
+            if isinstance(obj, (np.bool_,)):
+                return bool(obj)
+            if isinstance(obj, np.ndarray):
+                return obj.tolist()
+            return super().default(obj)
+
     with open(output_path, "w") as f:
-        json.dump(output, f, separators=(',', ':'))
+        json.dump(output, f, separators=(',', ':'), cls=NumpySafeEncoder)
 
     size_mb = os.path.getsize(output_path) / 1024 / 1024
     log.info(f"Written {output_path} ({size_mb:.1f} MB)")
@@ -398,7 +412,7 @@ def main():
     os.makedirs(snapshot_dir, exist_ok=True)
     snap_name = f"snapshot_{datetime.now().strftime('%Y%m%d')}.json"
     with open(os.path.join(snapshot_dir, snap_name), "w") as f:
-        json.dump(output, f, separators=(',', ':'))
+        json.dump(output, f, separators=(',', ':'), cls=NumpySafeEncoder)
     log.info(f"Snapshot: {snap_name}")
 
     # Summary
