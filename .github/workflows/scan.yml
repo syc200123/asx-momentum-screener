@@ -33,7 +33,7 @@ jobs:
           BATCH_SIZE: "50"
           BATCH_PAUSE: "2.0"
           MAX_RETRIES: "2"
-          RETRY_PAUSE: "15.0"
+          RETRY_PAUSE: "30.0"
           OUTPUT_DIR: "docs/data"
         run: python scripts/scan.py
 

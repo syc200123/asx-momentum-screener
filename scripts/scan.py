@@ -156,17 +156,20 @@ def windowed_stats(rets: list[dict], windows: list[int]) -> dict:
 # Stock scanner
 # ---------------------------------------------------------------------------
 
-def scan_stock(ticker: str) -> dict | None:
+FILTERED = "FILTERED"  # Legitimately excluded (low price, no data)
+FAILED = "FAILED"      # Error (rate limited, network issue) — should retry
+
+def scan_stock(ticker: str) -> dict | str:
     try:
         stock = yf.Ticker(f"{ticker}.AX")
         hist = stock.history(period=HISTORY_PERIOD, auto_adjust=True)
 
         if hist.empty or len(hist) < 5:
-            return None
+            return FILTERED
 
         price = hist['Close'].iloc[-1]
         if price < MIN_PRICE:
-            return None
+            return FILTERED
 
         now = hist.index[-1]
         close = hist['Close']
@@ -326,7 +329,7 @@ def scan_stock(ticker: str) -> dict | None:
 
     except Exception as e:
         log.debug(f"{ticker}: {e}")
-        return None
+        return FAILED
 
 
 # ---------------------------------------------------------------------------
@@ -339,27 +342,28 @@ def run_scan(tickers: list[str]) -> list[dict]:
     batch_size = int(os.environ.get("BATCH_SIZE", "50"))
     batch_pause = float(os.environ.get("BATCH_PAUSE", "2.0"))
     max_retries = int(os.environ.get("MAX_RETRIES", "2"))
-    retry_pause = float(os.environ.get("RETRY_PAUSE", "10.0"))
+    retry_pause = float(os.environ.get("RETRY_PAUSE", "30.0"))
     log.info(f"Scanning {total} tickers ({WORKERS} workers, batches of {batch_size}, {batch_pause}s pause, up to {max_retries} retries)")
 
-    results = {}  # keyed by ticker to avoid duplicates
+    results = {}       # ticker -> data dict (successes)
+    filtered = set()   # tickers legitimately excluded (low price, no data)
     t0 = time.time()
 
     remaining_tickers = list(tickers)
 
     for attempt in range(1 + max_retries):
         if attempt > 0:
-            # Only retry tickers that failed
-            remaining_tickers = [t for t in remaining_tickers if t not in results]
+            # Only retry tickers that FAILED (not filtered or already succeeded)
+            remaining_tickers = [t for t in remaining_tickers if t not in results and t not in filtered]
             if not remaining_tickers:
+                log.info(f"No tickers to retry — all resolved.")
                 break
             random.shuffle(remaining_tickers)
-            log.info(f"Retry {attempt}/{max_retries}: {len(remaining_tickers)} tickers to retry (pausing {retry_pause}s first)...")
+            log.info(f"Retry {attempt}/{max_retries}: {len(remaining_tickers)} failed tickers to retry (pausing {retry_pause}s)...")
             time.sleep(retry_pause)
 
         pass_label = f"Pass {attempt + 1}" if attempt > 0 else "Main pass"
         done = 0
-        errors = 0
         pass_total = len(remaining_tickers)
 
         for batch_start in range(0, pass_total, batch_size):
@@ -372,23 +376,26 @@ def run_scan(tickers: list[str]) -> list[dict]:
                     ticker = futures[fut]
                     try:
                         r = fut.result()
-                        if r:
+                        if isinstance(r, dict):
                             results[ticker] = r
+                        elif r == FILTERED:
+                            filtered.add(ticker)
+                        # else FAILED — will be retried
                     except Exception:
-                        errors += 1
+                        pass  # Will be retried
 
             if done % 200 == 0 or batch_start + batch_size >= pass_total:
                 elapsed = time.time() - t0
-                log.info(f"{pass_label}: {done}/{pass_total} ({len(results)} total ok, {errors} err)")
+                log.info(f"{pass_label}: {done}/{pass_total} ({len(results)} ok, {len(filtered)} filtered, {pass_total - done} pending)")
 
             if batch_start + batch_size < pass_total:
                 time.sleep(batch_pause)
 
     elapsed = time.time() - t0
-    result_list = list(results.values())
-    missed = total - len(result_list)
-    log.info(f"Complete in {elapsed:.0f}s — {len(result_list)} stocks passed, {missed} missed (filtered or unavailable)")
+    failed_count = total - len(results) - len(filtered)
+    log.info(f"Complete in {elapsed:.0f}s — {len(results)} passed, {len(filtered)} filtered, {failed_count} failed")
 
+    result_list = list(results.values())
     result_list.sort(key=lambda x: (x["ts"], x["pp"], x.get("seg", {}).get("3mo", 0) or 0), reverse=True)
     return result_list
 
