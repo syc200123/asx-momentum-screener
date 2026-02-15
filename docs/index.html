@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ASX Momentum Screener</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #09090b; --bg2: #18181b; --bg3: #27272a; --border: #3f3f46;
+      --text: #fafafa; --text2: #a1a1aa; --text3: #71717a;
+      --green: #34d399; --green2: #059669; --red: #f87171; --red2: #dc2626;
+      --amber: #fbbf24; --amber2: #f59e0b; --sky: #38bdf8; --orange: #fb923c;
+      --violet: #a78bfa;
+    }
+    body { background: var(--bg); color: var(--text); font-family: 'JetBrains Mono', monospace; font-size: 11px; }
+    .dm { font-family: 'DM Sans', sans-serif; }
+    input, select, textarea, button { font-family: inherit; font-size: inherit; }
+    input, select, textarea { background: var(--bg2); border: 1px solid var(--border); color: var(--text); border-radius: 4px; padding: 3px 8px; }
+    input:focus, select:focus { outline: none; border-color: var(--amber2); }
+    button { cursor: pointer; border: 1px solid var(--border); border-radius: 4px; padding: 2px 8px; background: var(--bg3); color: var(--text2); transition: all 0.15s; }
+    button:hover { color: var(--text); border-color: #52525b; }
+    button.active { background: rgba(251,191,36,0.15); color: var(--amber); border-color: rgba(251,191,36,0.3); }
+    table { width: 100%; border-collapse: collapse; }
+    th { position: sticky; top: 0; z-index: 10; background: #111113; }
+    th, td { padding: 5px 8px; white-space: nowrap; }
+    th { font-size: 9px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text3); cursor: pointer; user-select: none; }
+    th:hover { color: var(--text2); }
+    tr { border-bottom: 1px solid rgba(63,63,70,0.3); transition: background 0.1s; }
+    tbody tr:hover { background: rgba(63,63,70,0.25); }
+    tbody tr.expanded { background: rgba(63,63,70,0.15); }
+    .uptrend-row { background: rgba(52,211,153,0.02); }
+    .pos { color: var(--green); } .neg { color: var(--red); } .neu { color: var(--text3); }
+    .pos-bg { background: rgba(52,211,153,0.06); } .neg-bg { background: rgba(248,113,113,0.06); }
+    .pos-strong { color: var(--green); } .neg-strong { color: var(--red); }
+    .badge { display: inline-block; padding: 0 5px; border-radius: 3px; font-size: 8px; font-weight: 600; border: 1px solid; line-height: 16px; }
+    .score { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 4px; font-weight: 700; font-size: 10px; border: 1px solid; }
+    .s-high { color: #fde68a; background: rgba(251,191,36,0.2); border-color: rgba(251,191,36,0.4); }
+    .s-mid { color: var(--green); background: rgba(52,211,153,0.1); border-color: rgba(52,211,153,0.2); }
+    .s-low { color: var(--text3); background: rgba(63,63,70,0.3); border-color: rgba(63,63,70,0.3); }
+    .detail-panel { padding: 12px 16px; background: rgba(24,24,27,0.8); }
+    .stat-box { padding: 8px; border-radius: 4px; background: rgba(39,39,42,0.5); border: 1px solid rgba(63,63,70,0.3); }
+    .heatbar { display: flex; gap: 1px; flex-wrap: wrap; }
+    .heatbar-cell { height: 22px; border-radius: 2px; position: relative; cursor: default; transition: transform 0.1s; }
+    .heatbar-cell:hover { transform: scaleY(1.3); z-index: 5; }
+    .tooltip { display: none; position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); margin-bottom: 4px; background: var(--bg3); border: 1px solid var(--border); border-radius: 4px; padding: 3px 6px; font-size: 9px; white-space: nowrap; z-index: 20; pointer-events: none; }
+    .heatbar-cell:hover .tooltip { display: block; }
+    .page-btn { padding: 2px 6px; font-size: 10px; }
+    .page-btn:disabled { opacity: 0.3; cursor: default; }
+    .filter-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 8px 10px; border: 1px solid rgba(63,63,70,0.4); border-radius: 8px; background: rgba(24,24,27,0.4); margin-bottom: 8px; }
+    .stat-card { padding: 8px; border-radius: 4px; border: 1px solid rgba(63,63,70,0.4); background: rgba(24,24,27,0.4); }
+    .stat-card .label { font-size: 9px; color: var(--text3); text-transform: uppercase; }
+    .stat-card .value { font-size: 16px; font-weight: 600; font-family: 'DM Sans', sans-serif; }
+    .loading { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 60vh; gap: 16px; }
+    .spinner { width: 32px; height: 32px; border: 3px solid var(--border); border-top-color: var(--amber); border-radius: 50%; animation: spin 0.8s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .granularity-toggle { display: flex; overflow: hidden; border-radius: 4px; border: 1px solid var(--border); }
+    .granularity-toggle button { border: none; border-radius: 0; padding: 2px 8px; font-size: 9px; text-transform: uppercase; }
+    .granularity-toggle button.active { background: rgba(251,191,36,0.2); color: var(--amber); }
+    @media (max-width: 768px) {
+      .stat-grid { grid-template-columns: repeat(3, 1fr) !important; }
+      .filter-row { gap: 4px; }
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { useState, useEffect, useMemo, useCallback, useRef } = React;
+
+    // ── Config ────────────────────────────────────────────────────────
+    const CORE = ["1wk","1mo","3mo","6mo","1yr"];
+    const EXT = ["2yr","3yr","5yr"];
+    const ALL = [...CORE, ...EXT];
+    const PL = {"1wk":"1W","1mo":"1M","3mo":"3M","6mo":"6M","1yr":"1Y","2yr":"2Y","3yr":"3Y","5yr":"5Y"};
+    const TD = {"1wk":5,"1mo":21,"3mo":63,"6mo":126,"1yr":252,"2yr":504,"3yr":756,"5yr":1260};
+
+    const WW = [{k:"13",l:"13w (Qtr)"},{k:"26",l:"26w (½Y)"},{k:"52",l:"52w (1Y)"},{k:"104",l:"104w (2Y)"},{k:"260",l:"260w (5Y)"}];
+    const MW = [{k:"3",l:"3m (Qtr)"},{k:"6",l:"6m (½Y)"},{k:"12",l:"12m (1Y)"},{k:"24",l:"24m (2Y)"},{k:"36",l:"36m (3Y)"},{k:"60",l:"60m (5Y)"}];
+    const QW = [{k:"4",l:"4q (1Y)"},{k:"8",l:"8q (2Y)"},{k:"12",l:"12q (3Y)"},{k:"20",l:"20q (5Y)"}];
+
+    const FM = {
+      CU:{l:"↑ Uptrend",c:"background:rgba(52,211,153,0.15);color:#6ee7b7;border-color:rgba(52,211,153,0.3)"},
+      EU:{l:"↑↑ Extended",c:"background:rgba(52,211,153,0.2);color:#a7f3d0;border-color:rgba(52,211,153,0.4)"},
+      AC:{l:"⚡ Accel",c:"background:rgba(251,191,36,0.15);color:#fcd34d;border-color:rgba(251,191,36,0.3)"},
+      HS:{l:"🔥 Hot",c:"background:rgba(251,146,60,0.15);color:#fdba74;border-color:rgba(251,146,60,0.3)"},
+      CS:{l:"❄ Cold",c:"background:rgba(56,189,248,0.15);color:#7dd3fc;border-color:rgba(56,189,248,0.3)"},
+      CW:{l:"✓ Consistent",c:"background:rgba(56,189,248,0.12);color:#7dd3fc;border-color:rgba(56,189,248,0.2)"},
+      NU:{l:"★ New",c:"background:rgba(167,139,250,0.15);color:#c4b5fd;border-color:rgba(167,139,250,0.3)"},
+      LU:{l:"↓ Lost",c:"background:rgba(248,113,113,0.15);color:#fca5a5;border-color:rgba(248,113,113,0.3)"},
+    };
+
+    const pct = (v,d=1) => v==null||isNaN(v) ? "—" : (v*100).toFixed(d)+"%";
+    const rc = v => v==null||isNaN(v)?"neu":v>0?"pos":"neg";
+    const rcb = v => v==null||isNaN(v)?"":v>0?"pos-bg":"neg-bg";
+    const sc = s => s>=6?"s-high":s>=3?"s-mid":"s-low";
+    const stc = s => s>=4?"pos-strong":s>0?"pos":s<=-4?"neg-strong":s<0?"neg":"neu";
+    const rac = r => r>=0.65?"pos":r>=0.45?"neu":"neg";
+    const cap = v => !v?"—":v>=1e9?`$${(v/1e9).toFixed(1)}B`:v>=1e6?`$${(v/1e6).toFixed(0)}M`:`$${v}`;
+
+    // ── App ───────────────────────────────────────────────────────────
+    function App() {
+      const [data, setData] = useState(null);
+      const [loading, setLoading] = useState(true);
+      const [error, setError] = useState(null);
+      const [lastUpdated, setLastUpdated] = useState(null);
+
+      // Filters
+      const [search, setSearch] = useState("");
+      const [minScore, setMinScore] = useState(0);
+      const [minPrice, setMinPrice] = useState(0.1);
+      const [sector, setSector] = useState("All");
+      const [uptrendOnly, setUptrendOnly] = useState(false);
+
+      // View
+      const [showExt, setShowExt] = useState(false);
+      const [showDA, setShowDA] = useState(false);
+      const [showGran, setShowGran] = useState(false);
+      const [gran, setGran] = useState("weekly");
+      const [win, setWin] = useState("52");
+
+      // Sort
+      const [sf, setSf] = useState("ts");
+      const [sd, setSd] = useState("desc");
+
+      // Pagination
+      const [page, setPage] = useState(0);
+      const PS = 50;
+
+      // Expanded
+      const [expanded, setExpanded] = useState(null);
+
+      // ── Auto-load data on mount ─────────────────────────────────────
+      useEffect(() => {
+        setLoading(true);
+        fetch("data/asx_momentum_data.json")
+          .then(r => { if (!r.ok) throw new Error(`${r.status}`); return r.json(); })
+          .then(d => { setData(d); setLastUpdated(d.ts); setLoading(false); })
+          .catch(e => { setError(e.message); setLoading(false); });
+      }, []);
+
+      // ── Derived ─────────────────────────────────────────────────────
+      const wOpts = gran==="weekly"?WW:gran==="monthly"?MW:QW;
+      const sKey = gran==="weekly"?"ws":gran==="monthly"?"mos":"qs";
+      const rKey = gran==="weekly"?"wr":gran==="monthly"?"mr":"qr";
+      const activeWin = useMemo(() => wOpts.some(w=>w.k===win)?win:(wOpts[2]||wOpts[0])?.k||"52", [win,wOpts]);
+
+      const sectors = useMemo(() => {
+        if (!data?.stocks) return ["All"];
+        const s = new Set(data.stocks.map(d=>d.s||"Unknown"));
+        return ["All",...[...s].sort()];
+      }, [data]);
+
+      const filtered = useMemo(() => {
+        if (!data?.stocks) return [];
+        let stocks = data.stocks.filter(s => {
+          if (s.ts < minScore) return false;
+          if (s.pr < minPrice) return false;
+          if (sector !== "All" && s.s !== sector) return false;
+          if (uptrendOnly && !(s.f||[]).includes("CU")) return false;
+          if (search) {
+            const q = search.toLowerCase();
+            return s.t.toLowerCase().includes(q) || (s.n||"").toLowerCase().includes(q) || (s.s||"").toLowerCase().includes(q);
+          }
+          return true;
+        });
+
+        stocks.sort((a,b) => {
+          let va, vb;
+          if (sf==="t") return sd==="asc"?a.t.localeCompare(b.t):b.t.localeCompare(a.t);
+          if (ALL.includes(sf)) { va=a.p?.[sf]??-999; vb=b.p?.[sf]??-999; }
+          else if (sf.startsWith("da_")) { const p=sf.slice(3); va=a.da?.[p]??-999; vb=b.da?.[p]??-999; }
+          else if (sf==="streak") { va=a[sKey]?.[activeWin]?.cs??0; vb=b[sKey]?.[activeWin]?.cs??0; }
+          else if (sf==="ratio") { va=a[sKey]?.[activeWin]?.pr??0; vb=b[sKey]?.[activeWin]?.pr??0; }
+          else if (sf==="best") { va=a[sKey]?.[activeWin]?.lps??0; vb=b[sKey]?.[activeWin]?.lps??0; }
+          else { va=a[sf]??0; vb=b[sf]??0; }
+          return sd==="asc"?(va>vb?1:-1):(va<vb?1:-1);
+        });
+        return stocks;
+      }, [data, search, minScore, minPrice, sector, uptrendOnly, sf, sd, sKey, activeWin]);
+
+      const paged = useMemo(() => filtered.slice(page*PS,(page+1)*PS), [filtered,page]);
+      const tp = Math.ceil(filtered.length/PS);
+
+      const sort = f => { if (sf===f) setSd(d=>d==="asc"?"desc":"asc"); else { setSf(f); setSd("desc"); } setPage(0); };
+      const SI = ({f}) => sf!==f ? <span style={{opacity:0.2,marginLeft:2}}>↕</span> : <span style={{color:"var(--amber)",marginLeft:2}}>{sd==="asc"?"↑":"↓"}</span>;
+
+      const stats = useMemo(() => {
+        if (!data?.stocks) return null;
+        const a = data.stocks;
+        return {
+          total:a.length, showing:filtered.length,
+          uptrend:a.filter(s=>s.f?.includes("CU")).length,
+          extended:a.filter(s=>s.f?.includes("EU")).length,
+          accel:a.filter(s=>s.f?.includes("AC")).length,
+          hot:a.filter(s=>s.f?.includes("HS")).length,
+          consistent:a.filter(s=>s.f?.includes("CW")).length,
+        };
+      }, [data, filtered]);
+
+      // ── Loading state ───────────────────────────────────────────────
+      if (loading) return (
+        <div className="loading">
+          <div className="spinner"></div>
+          <p style={{color:"var(--text3)",fontSize:12}}>Loading scan data...</p>
+        </div>
+      );
+
+      if (error) return (
+        <div className="loading">
+          <p style={{color:"var(--red)",fontSize:14,fontFamily:"DM Sans"}}>Failed to load data</p>
+          <p style={{color:"var(--text3)",fontSize:11}}>{error}</p>
+          <p style={{color:"var(--text3)",fontSize:10,maxWidth:400,textAlign:"center",lineHeight:1.6}}>
+            The scan data hasn't been generated yet. Either trigger the GitHub Action manually, 
+            or wait for the next scheduled run (weekdays 6:00 AM AEST).
+          </p>
+        </div>
+      );
+
+      // ── Detail panel ────────────────────────────────────────────────
+      const Detail = ({stock}) => {
+        const rets = stock[rKey] || [];
+        const wRets = rets.slice(0, parseInt(activeWin)||52);
+        const st = stock[sKey]?.[activeWin] || {};
+
+        return (
+          <tr><td colSpan={100} className="detail-panel">
+            <div style={{display:"grid",gridTemplateColumns:"280px 1fr",gap:16}}>
+              <div>
+                <p style={{fontSize:9,color:"var(--text3)",textTransform:"uppercase",letterSpacing:"0.05em",marginBottom:8,fontWeight:600}}>
+                  {gran} — {wOpts.find(w=>w.k===activeWin)?.l}
+                </p>
+                <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:6}}>
+                  {[
+                    {l:"Current Streak",v:st.cs>0?"+"+st.cs:st.cs||0,c:stc(st.cs||0)},
+                    {l:"Win Rate",v:pct(st.pr,0),c:rac(st.pr||0)},
+                    {l:"Best Streak",v:"+"+(st.lps||0),c:"pos"},
+                    {l:"Worst Streak",v:"-"+(st.lns||0),c:"neg"},
+                    {l:"Avg Win",v:pct(st.apr,2),c:"pos"},
+                    {l:"Avg Loss",v:pct(st.anr,2),c:"neg"},
+                  ].map((s,i) => (
+                    <div key={i} className="stat-box">
+                      <div style={{fontSize:9,color:"var(--text3)"}}>{s.l}</div>
+                      <div className={s.c} style={{fontSize:s.l.includes("Streak")||s.l.includes("Rate")?18:13,fontWeight:600,fontFamily:"DM Sans"}}>{s.v}</div>
+                    </div>
+                  ))}
+                </div>
+                <p style={{fontSize:9,color:"var(--text3)",marginTop:6}}>{st.tp||0} positive of {st.tt||0} periods</p>
+              </div>
+
+              <div>
+                <p style={{fontSize:9,color:"var(--text3)",textTransform:"uppercase",letterSpacing:"0.05em",marginBottom:8,fontWeight:600}}>
+                  Returns (newest → oldest)
+                </p>
+                {wRets.length > 0 ? (
+                  <div className="heatbar">
+                    {wRets.map((r,i) => (
+                      <div key={i} className="heatbar-cell" style={{
+                        width: `${Math.max(100/Math.min(wRets.length,60),1.5)}%`,
+                        background: r.p ? "var(--green2)" : "var(--red2)",
+                        opacity: Math.min(0.3 + Math.abs(r.r)*8, 1),
+                      }}>
+                        <div className="tooltip">
+                          <span style={{color:"var(--text3)"}}>{r.pe}</span>
+                          <span className={r.p?"pos":"neg"} style={{marginLeft:4,fontWeight:600}}>{pct(r.r,2)}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <p style={{color:"var(--text3)",fontStyle:"italic",fontSize:10}}>
+                    Granular data available for stocks scoring 3+ or in uptrend
+                  </p>
+                )}
+              </div>
+            </div>
+          </td></tr>
+        );
+      };
+
+      // ── Render ──────────────────────────────────────────────────────
+      return (<>
+        {/* Header */}
+        <header style={{borderBottom:"1px solid var(--border)",background:"rgba(9,9,11,0.95)",position:"sticky",top:0,zIndex:50,backdropFilter:"blur(8px)"}}>
+          <div style={{maxWidth:1920,margin:"0 auto",padding:"10px 16px",display:"flex",alignItems:"center",justifyContent:"space-between"}}>
+            <div style={{display:"flex",alignItems:"center",gap:10}}>
+              <div style={{width:30,height:30,borderRadius:6,background:"linear-gradient(135deg,#fbbf24,#f97316)",display:"flex",alignItems:"center",justifyContent:"center"}}>
+                <span className="dm" style={{color:"#18181b",fontWeight:700,fontSize:14}}>M</span>
+              </div>
+              <div>
+                <h1 className="dm" style={{fontSize:14,fontWeight:600,letterSpacing:"-0.02em"}}>ASX Momentum Screener</h1>
+                <p style={{fontSize:9,color:"var(--text3)",textTransform:"uppercase",letterSpacing:"0.05em"}}>5-year multi-timeframe analysis</p>
+              </div>
+            </div>
+            <div style={{display:"flex",alignItems:"center",gap:12,fontSize:10,color:"var(--text3)"}}>
+              {lastUpdated && <span>Updated: {new Date(lastUpdated).toLocaleString("en-AU",{dateStyle:"medium",timeStyle:"short"})}</span>}
+              <button onClick={()=>{setLoading(true);fetch("data/asx_momentum_data.json").then(r=>r.json()).then(d=>{setData(d);setLastUpdated(d.ts);setLoading(false);}).catch(()=>setLoading(false));}}>↻ Refresh</button>
+            </div>
+          </div>
+        </header>
+
+        <div style={{maxWidth:1920,margin:"0 auto",padding:"12px 16px"}}>
+
+          {/* Stats */}
+          {stats && (
+            <div className="stat-grid" style={{display:"grid",gridTemplateColumns:"repeat(7,1fr)",gap:6,marginBottom:10}}>
+              {[
+                {l:"Total",v:stats.total},{l:"Showing",v:stats.showing},
+                {l:"Uptrend",v:stats.uptrend,c:"var(--green)"},{l:"Extended",v:stats.extended,c:"#a7f3d0"},
+                {l:"Accel",v:stats.accel,c:"var(--amber)"},{l:"Hot Streak",v:stats.hot,c:"var(--orange)"},
+                {l:"Consistent",v:stats.consistent,c:"var(--sky)"},
+              ].map((s,i) => (
+                <div key={i} className="stat-card">
+                  <div className="label">{s.l}</div>
+                  <div className="value" style={{color:s.c||"var(--text)"}}>{s.v}</div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* Filters row 1 */}
+          <div className="filter-row">
+            <input type="text" value={search} onChange={e=>{setSearch(e.target.value);setPage(0);}} placeholder="Search ticker, name, sector..." style={{flex:1,minWidth:160}} />
+            <label style={{fontSize:9,color:"var(--text3)"}}>Score≥</label>
+            <select value={minScore} onChange={e=>{setMinScore(+e.target.value);setPage(0);}} style={{width:48}}>
+              {[0,1,2,3,4,5,6,7,8].map(n=><option key={n} value={n}>{n}</option>)}
+            </select>
+            <label style={{fontSize:9,color:"var(--text3)"}}>Min$</label>
+            <input type="number" value={minPrice} onChange={e=>{setMinPrice(+e.target.value);setPage(0);}} style={{width:56}} step="0.1" min="0" />
+            <select value={sector} onChange={e=>{setSector(e.target.value);setPage(0);}} style={{maxWidth:140}}>
+              {sectors.map(s=><option key={s} value={s}>{s}</option>)}
+            </select>
+            <button className={uptrendOnly?"active":""} onClick={()=>{setUptrendOnly(v=>!v);setPage(0);}}>↑ Uptrend</button>
+          </div>
+
+          {/* Filters row 2 */}
+          <div className="filter-row">
+            <button className={showExt?"active":""} onClick={()=>setShowExt(v=>!v)}>2Y / 3Y / 5Y</button>
+            <button className={showDA?"active":""} onClick={()=>setShowDA(v=>!v)}>Daily Avg %</button>
+            <button className={showGran?"active":""} onClick={()=>setShowGran(v=>!v)}>Streak Analysis</button>
+            {showGran && (<>
+              <div style={{width:1,height:16,background:"var(--border)",margin:"0 4px"}} />
+              <div className="granularity-toggle">
+                {["weekly","monthly","quarterly"].map(g=>(
+                  <button key={g} className={gran===g?"active":""} onClick={()=>setGran(g)}>{g[0].toUpperCase()}</button>
+                ))}
+              </div>
+              <select value={activeWin} onChange={e=>setWin(e.target.value)} style={{fontSize:9}}>
+                {wOpts.map(w=><option key={w.k} value={w.k}>{w.l}</option>)}
+              </select>
+            </>)}
+            <div style={{flex:1}} />
+            <button onClick={()=>{setSearch("");setMinScore(0);setMinPrice(0.1);setSector("All");setUptrendOnly(false);setPage(0);}}>Reset</button>
+          </div>
+
+          {/* Table */}
+          {filtered.length > 0 ? (
+            <div style={{borderRadius:8,border:"1px solid rgba(63,63,70,0.4)",overflow:"hidden"}}>
+              <div style={{overflowX:"auto"}}>
+                <table>
+                  <thead><tr>
+                    <th style={{textAlign:"center",width:36}} onClick={()=>sort("ts")}>Scr<SI f="ts"/></th>
+                    <th style={{textAlign:"left"}} onClick={()=>sort("t")}>Ticker<SI f="t"/></th>
+                    <th style={{textAlign:"right"}} onClick={()=>sort("pr")}>Price<SI f="pr"/></th>
+                    {CORE.map(p=><th key={p} style={{textAlign:"right"}} onClick={()=>sort(showDA?`da_${p}`:p)}>{PL[p]}<SI f={showDA?`da_${p}`:p}/></th>)}
+                    {showExt && EXT.map(p=><th key={p} style={{textAlign:"right"}} onClick={()=>sort(showDA?`da_${p}`:p)}>{PL[p]}<SI f={showDA?`da_${p}`:p}/></th>)}
+                    {showGran && (<>
+                      <th style={{textAlign:"right"}} onClick={()=>sort("streak")}>Streak<SI f="streak"/></th>
+                      <th style={{textAlign:"right"}} onClick={()=>sort("ratio")}>Win%<SI f="ratio"/></th>
+                      <th style={{textAlign:"right"}} onClick={()=>sort("best")}>Best<SI f="best"/></th>
+                    </>)}
+                    <th style={{textAlign:"right"}} onClick={()=>sort("pfh")}>vs52H<SI f="pfh"/></th>
+                    <th style={{textAlign:"left"}}>Flags</th>
+                    <th style={{textAlign:"right"}} onClick={()=>sort("mc")}>Cap<SI f="mc"/></th>
+                  </tr></thead>
+                  <tbody>
+                    {paged.map(s => {
+                      const isUp = s.f?.includes("CU");
+                      const isExp = expanded === s.t;
+                      const gs = s[sKey]?.[activeWin] || {};
+
+                      return (<React.Fragment key={s.t}>
+                        <tr className={`${isUp?"uptrend-row":""} ${isExp?"expanded":""}`}
+                            style={{cursor:"pointer"}} onClick={()=>setExpanded(isExp?null:s.t)}>
+                          <td style={{textAlign:"center"}}><span className={`score ${sc(s.ts)}`}>{s.ts}</span></td>
+                          <td>
+                            <span style={{fontWeight:600}}>{s.t}</span>
+                            <span style={{fontSize:9,color:"var(--text3)",marginLeft:6}}>{s.n!==s.t?s.n?.slice(0,20):""}</span>
+                          </td>
+                          <td style={{textAlign:"right",fontWeight:500}}>${s.pr?.toFixed(s.pr>=1?2:3)}</td>
+                          {CORE.map(p=>{
+                            const v = showDA ? s.da?.[p] : s.p?.[p];
+                            return <td key={p} className={`${rc(v)} ${rcb(v)}`} style={{textAlign:"right",fontWeight:500}}>{showDA?pct(v,2):pct(v)}</td>;
+                          })}
+                          {showExt && EXT.map(p=>{
+                            const v = showDA ? s.da?.[p] : s.p?.[p];
+                            return <td key={p} className={`${rc(v)} ${rcb(v)}`} style={{textAlign:"right",fontWeight:500}}>{showDA?pct(v,2):pct(v)}</td>;
+                          })}
+                          {showGran && (<>
+                            <td className={stc(gs.cs||0)} style={{textAlign:"right",fontWeight:700}}>{gs.cs>0?"+":""}{gs.cs||"—"}</td>
+                            <td className={rac(gs.pr||0)} style={{textAlign:"right",fontWeight:500}}>{pct(gs.pr,0)}</td>
+                            <td className="pos" style={{textAlign:"right",fontWeight:500}}>{gs.lps||"—"}</td>
+                          </>)}
+                          <td className={rc(s.pfh)} style={{textAlign:"right"}}>{pct(s.pfh)}</td>
+                          <td>
+                            {(s.f||[]).slice(0,4).map((f,i)=>{
+                              const m=FM[f]||{l:f,c:"background:var(--bg3);color:var(--text3)"};
+                              return <span key={i} className="badge" style={{cssText:m.c+";margin-right:3px"}}>{m.l}</span>;
+                            })}
+                          </td>
+                          <td style={{textAlign:"right",color:"var(--text3)",fontSize:10}}>{cap(s.mc)}</td>
+                        </tr>
+                        {isExp && <Detail stock={s}/>}
+                      </React.Fragment>);
+                    })}
+                  </tbody>
+                </table>
+              </div>
+
+              {tp > 1 && (
+                <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"6px 12px",background:"rgba(17,17,19,0.8)",borderTop:"1px solid rgba(63,63,70,0.2)",fontSize:10,color:"var(--text3)"}}>
+                  <span>{filtered.length} stocks · p{page+1}/{tp}</span>
+                  <div style={{display:"flex",gap:3}}>
+                    {[["««",0],["«",Math.max(0,page-1)],["»",Math.min(tp-1,page+1)],["»»",tp-1]].map(([l,p],i)=>(
+                      <button key={i} className="page-btn" disabled={page===p} onClick={()=>setPage(p)}>{l}</button>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          ) : (
+            <div style={{padding:60,textAlign:"center",border:"1px solid rgba(63,63,70,0.3)",borderRadius:8}}>
+              <p style={{color:"var(--text3)"}}>No stocks match filters</p>
+            </div>
+          )}
+
+          <footer style={{marginTop:20,textAlign:"center",fontSize:9,color:"var(--text3)",paddingBottom:16}}>
+            General information only. Not personal financial advice. Data via Yahoo Finance.
+          </footer>
+        </div>
+      </>);
+    }
+
+    ReactDOM.render(<App />, document.getElementById("root"));
+  </script>
+</body>
+</html>

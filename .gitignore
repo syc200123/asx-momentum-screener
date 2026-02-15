@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+asx_tickers_cache.json
+.DS_Store

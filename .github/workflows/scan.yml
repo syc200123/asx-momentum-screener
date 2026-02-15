@@ -1,0 +1,48 @@
+name: ASX Momentum Scan
+
+on:
+  schedule:
+    # 8:00 PM UTC = 6:00 AM AEST (next day) on weekdays
+    - cron: '0 20 * * 0-4'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install yfinance requests pandas numpy
+
+      - name: Run ASX momentum scan
+        env:
+          MIN_PRICE: "0.10"
+          WORKERS: "20"
+          OUTPUT_DIR: "docs/data"
+        run: python scripts/scan.py
+
+      - name: Commit and push results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/data/
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            TIMESTAMP=$(date -u +"%d %b %Y %H:%M UTC")
+            STOCK_COUNT=$(python3 -c "import json; d=json.load(open('docs/data/asx_momentum_data.json')); print(d['summary']['passed'])")
+            git commit -m "Scan: ${STOCK_COUNT} stocks — ${TIMESTAMP}"
+            git push
+          fi
