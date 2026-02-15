@@ -101,6 +101,8 @@ def period_returns(close: pd.Series, freq: str) -> list[dict]:
         p = resampled.iloc[i - 1]
         c = resampled.iloc[i]
         r = (c - p) / p if p != 0 else 0
+        if pd.isna(r) or np.isinf(r):
+            continue
         results.append({
             "pe": resampled.index[i].strftime("%Y-%m-%d"),
             "r": round(float(r), 5),
@@ -179,9 +181,17 @@ def scan_stock(ticker: str) -> dict | None:
                 continue
             past = close[mask].iloc[-1]
             ret = (price - past) / past
+            if pd.isna(ret) or np.isinf(ret):
+                periods[label] = None
+                daily_avg[label] = None
+                continue
             periods[label] = round(float(ret), 5)
             # Geometric daily average (CAGR-style)
-            daily_avg[label] = round(float((1 + ret) ** (1 / td) - 1), 6) if td > 0 and ret > -1 else 0
+            if td > 0 and ret > -1:
+                da = (1 + ret) ** (1 / td) - 1
+                daily_avg[label] = round(float(da), 6) if not (pd.isna(da) or np.isinf(da)) else 0
+            else:
+                daily_avg[label] = 0
 
         # Scores
         all_p = ["1wk", "1mo", "3mo", "6mo", "1yr", "2yr", "3yr", "5yr"]
@@ -388,18 +398,33 @@ def main():
 
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-    # Custom encoder to handle numpy types
+    # Custom encoder to handle numpy types and NaN
     class NumpySafeEncoder(json.JSONEncoder):
         def default(self, obj):
             if isinstance(obj, (np.integer,)):
                 return int(obj)
             if isinstance(obj, (np.floating,)):
+                if np.isnan(obj):
+                    return None
                 return float(obj)
             if isinstance(obj, (np.bool_,)):
                 return bool(obj)
             if isinstance(obj, np.ndarray):
                 return obj.tolist()
             return super().default(obj)
+
+    # Also scrub any Python float NaN values before serialising
+    import math
+    def scrub_nans(obj):
+        if isinstance(obj, float) and (math.isnan(obj) or math.isinf(obj)):
+            return None
+        if isinstance(obj, dict):
+            return {k: scrub_nans(v) for k, v in obj.items()}
+        if isinstance(obj, list):
+            return [scrub_nans(v) for v in obj]
+        return obj
+
+    output = scrub_nans(output)
 
     with open(output_path, "w") as f:
         json.dump(output, f, separators=(',', ':'), cls=NumpySafeEncoder)
@@ -412,7 +437,7 @@ def main():
     os.makedirs(snapshot_dir, exist_ok=True)
     snap_name = f"snapshot_{datetime.now().strftime('%Y%m%d')}.json"
     with open(os.path.join(snapshot_dir, snap_name), "w") as f:
-        json.dump(output, f, separators=(',', ':'), cls=NumpySafeEncoder)
+        json.dump(scrub_nans(output), f, separators=(',', ':'), cls=NumpySafeEncoder)
     log.info(f"Snapshot: {snap_name}")
 
     # Summary
