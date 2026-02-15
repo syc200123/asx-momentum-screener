@@ -120,6 +120,7 @@
       // View
       const [showExt, setShowExt] = useState(false);
       const [showDA, setShowDA] = useState(false);
+      const [showSeg, setShowSeg] = useState(true);  // Segments by default (scoring basis)
       const [showGran, setShowGran] = useState(false);
       const [gran, setGran] = useState("weekly");
       const [win, setWin] = useState("52");
@@ -173,8 +174,8 @@
         stocks.sort((a,b) => {
           let va, vb;
           if (sf==="t") return sd==="asc"?a.t.localeCompare(b.t):b.t.localeCompare(a.t);
-          if (ALL.includes(sf)) { va=a.p?.[sf]??-999; vb=b.p?.[sf]??-999; }
-          else if (sf.startsWith("da_")) { const p=sf.slice(3); va=a.da?.[p]??-999; vb=b.da?.[p]??-999; }
+          if (ALL.includes(sf)) { const src=showSeg?a.seg:a.p; const src2=showSeg?b.seg:b.p; va=src?.[sf]??-999; vb=src2?.[sf]??-999; }
+          else if (sf.startsWith("da_")) { const p=sf.slice(3); const src=showSeg?a.sda:a.da; const src2=showSeg?b.sda:b.da; va=src?.[p]??-999; vb=src2?.[p]??-999; }
           else if (sf==="streak") { va=a[sKey]?.[activeWin]?.cs??0; vb=b[sKey]?.[activeWin]?.cs??0; }
           else if (sf==="ratio") { va=a[sKey]?.[activeWin]?.pr??0; vb=b[sKey]?.[activeWin]?.pr??0; }
           else if (sf==="best") { va=a[sKey]?.[activeWin]?.lps??0; vb=b[sKey]?.[activeWin]?.lps??0; }
@@ -342,6 +343,7 @@
           <div className="filter-row">
             <button className={showExt?"active":""} onClick={()=>setShowExt(v=>!v)}>2Y / 3Y / 5Y</button>
             <button className={showDA?"active":""} onClick={()=>setShowDA(v=>!v)}>Daily Avg %</button>
+            <button className={showSeg?"active":""} onClick={()=>setShowSeg(v=>!v)}>Segments</button>
             <button className={showGran?"active":""} onClick={()=>setShowGran(v=>!v)}>Streak Analysis</button>
             {showGran && (<>
               <div style={{width:1,height:16,background:"var(--border)",margin:"0 4px"}} />
@@ -367,8 +369,8 @@
                     <th style={{textAlign:"center",width:36}} onClick={()=>sort("ts")}>Scr<SI f="ts"/></th>
                     <th style={{textAlign:"left"}} onClick={()=>sort("t")}>Ticker<SI f="t"/></th>
                     <th style={{textAlign:"right"}} onClick={()=>sort("pr")}>Price<SI f="pr"/></th>
-                    {CORE.map(p=><th key={p} style={{textAlign:"right"}} onClick={()=>sort(showDA?`da_${p}`:p)}>{PL[p]}<SI f={showDA?`da_${p}`:p}/></th>)}
-                    {showExt && EXT.map(p=><th key={p} style={{textAlign:"right"}} onClick={()=>sort(showDA?`da_${p}`:p)}>{PL[p]}<SI f={showDA?`da_${p}`:p}/></th>)}
+                    {CORE.map(p=><th key={p} style={{textAlign:"right"}} onClick={()=>sort(showDA?`da_${p}`:p)}>{PL[p]}{showSeg?<span style={{fontSize:7,color:"var(--text3)",display:"block"}}>seg</span>:""}<SI f={showDA?`da_${p}`:p}/></th>)}
+                    {showExt && EXT.map(p=><th key={p} style={{textAlign:"right"}} onClick={()=>sort(showDA?`da_${p}`:p)}>{PL[p]}{showSeg?<span style={{fontSize:7,color:"var(--text3)",display:"block"}}>seg</span>:""}<SI f={showDA?`da_${p}`:p}/></th>)}
                     {showGran && (<>
                       <th style={{textAlign:"right"}} onClick={()=>sort("streak")}>Streak<SI f="streak"/></th>
                       <th style={{textAlign:"right"}} onClick={()=>sort("ratio")}>Win%<SI f="ratio"/></th>
@@ -394,11 +396,11 @@
                           </td>
                           <td style={{textAlign:"right",fontWeight:500}}>${s.pr?.toFixed(s.pr>=1?2:3)}</td>
                           {CORE.map(p=>{
-                            const v = showDA ? s.da?.[p] : s.p?.[p];
+                            const v = showDA ? (showSeg?s.sda:s.da)?.[p] : (showSeg?s.seg:s.p)?.[p];
                             return <td key={p} className={`${rc(v)} ${rcb(v)}`} style={{textAlign:"right",fontWeight:500}}>{showDA?pct(v,2):pct(v)}</td>;
                           })}
                           {showExt && EXT.map(p=>{
-                            const v = showDA ? s.da?.[p] : s.p?.[p];
+                            const v = showDA ? (showSeg?s.sda:s.da)?.[p] : (showSeg?s.seg:s.p)?.[p];
                             return <td key={p} className={`${rc(v)} ${rcb(v)}`} style={{textAlign:"right",fontWeight:500}}>{showDA?pct(v,2):pct(v)}</td>;
                           })}
                           {showGran && (<>

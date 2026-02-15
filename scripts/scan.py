@@ -170,44 +170,90 @@ def scan_stock(ticker: str) -> dict | None:
         now = hist.index[-1]
         close = hist['Close']
 
-        # Standard periods
-        periods = {}
-        daily_avg = {}
+        # Standard periods — collect boundary prices first
+        boundary_prices = {"now": float(price)}
         for label, cal, td in STANDARD_PERIODS:
             mask = hist.index <= (now - pd.Timedelta(days=cal))
             if not mask.any():
+                boundary_prices[label] = None
+                continue
+            bp = close[mask].iloc[-1]
+            if pd.isna(bp) or np.isinf(bp) or bp <= 0:
+                boundary_prices[label] = None
+            else:
+                boundary_prices[label] = float(bp)
+
+        # Cumulative returns (price at period start → today)
+        periods = {}
+        daily_avg = {}
+        for label, cal, td in STANDARD_PERIODS:
+            bp = boundary_prices.get(label)
+            if bp is None:
                 periods[label] = None
                 daily_avg[label] = None
                 continue
-            past = close[mask].iloc[-1]
-            ret = (price - past) / past
+            ret = (price - bp) / bp
             if pd.isna(ret) or np.isinf(ret):
                 periods[label] = None
                 daily_avg[label] = None
                 continue
             periods[label] = round(float(ret), 5)
-            # Geometric daily average (CAGR-style)
             if td > 0 and ret > -1:
                 da = (1 + ret) ** (1 / td) - 1
                 daily_avg[label] = round(float(da), 6) if not (pd.isna(da) or np.isinf(da)) else 0
             else:
                 daily_avg[label] = 0
 
-        # Scores
-        all_p = ["1wk", "1mo", "3mo", "6mo", "1yr", "2yr", "3yr", "5yr"]
-        core_p = ["1wk", "1mo", "3mo", "6mo", "1yr"]
-        mscore = sum(1 for p in core_p if daily_avg.get(p) is not None and daily_avg[p] >= 0.002)
-        tscore = sum(1 for p in all_p if daily_avg.get(p) is not None and daily_avg[p] >= 0.002)
-        pos_count = sum(1 for p in all_p if periods.get(p) is not None and periods[p] > 0)
+        # Segment returns (return WITHIN each time band, not cumulative)
+        # e.g. seg "1wk" = today vs 1wk ago, seg "1mo" = 1wk ago vs 1mo ago
+        SEGMENTS = [
+            ("1wk",  "now",  "1wk",  5),     # today → 1wk ago
+            ("1mo",  "1wk",  "1mo",  16),     # 1wk ago → 1mo ago
+            ("3mo",  "1mo",  "3mo",  42),     # 1mo ago → 3mo ago
+            ("6mo",  "3mo",  "6mo",  63),     # 3mo ago → 6mo ago
+            ("1yr",  "6mo",  "1yr",  126),    # 6mo ago → 1yr ago
+            ("2yr",  "1yr",  "2yr",  252),    # 1yr ago → 2yr ago
+            ("3yr",  "2yr",  "3yr",  252),    # 2yr ago → 3yr ago
+            ("5yr",  "3yr",  "5yr",  504),    # 3yr ago → 5yr ago
+        ]
 
-        # Flags
+        segments = {}
+        seg_daily = {}
+        for seg_label, end_key, start_key, seg_td in SEGMENTS:
+            end_price = boundary_prices.get(end_key)
+            start_price = boundary_prices.get(start_key)
+            if end_price is None or start_price is None or start_price <= 0:
+                segments[seg_label] = None
+                seg_daily[seg_label] = None
+                continue
+            seg_ret = (end_price - start_price) / start_price
+            if pd.isna(seg_ret) or np.isinf(seg_ret):
+                segments[seg_label] = None
+                seg_daily[seg_label] = None
+                continue
+            segments[seg_label] = round(float(seg_ret), 5)
+            if seg_td > 0 and seg_ret > -1:
+                sda = (1 + seg_ret) ** (1 / seg_td) - 1
+                seg_daily[seg_label] = round(float(sda), 6) if not (pd.isna(sda) or np.isinf(sda)) else 0
+            else:
+                seg_daily[seg_label] = 0
+
+        # Scores — based on SEGMENTS (each time band independently positive)
+        all_seg = ["1wk", "1mo", "3mo", "6mo", "1yr", "2yr", "3yr", "5yr"]
+        core_seg = ["1wk", "1mo", "3mo", "6mo", "1yr"]
+        mscore = sum(1 for s in core_seg if segments.get(s) is not None and segments[s] > 0)
+        tscore = sum(1 for s in all_seg if segments.get(s) is not None and segments[s] > 0)
+        pos_count = tscore  # Same thing for segments
+
+        # Flags — based on segments being independently positive
         flags = []
-        if all(periods.get(p) and periods[p] > 0 for p in ["1wk", "3mo", "6mo", "1yr"]):
+        if all(segments.get(s) is not None and segments[s] > 0 for s in ["1wk", "1mo", "3mo", "6mo", "1yr"]):
             flags.append("CU")
-        if "CU" in flags and all(periods.get(p) and periods[p] > 0 for p in ["2yr", "3yr"]):
+        if "CU" in flags and all(segments.get(s) is not None and segments[s] > 0 for s in ["2yr", "3yr"]):
             flags.append("EU")
 
-        accel = [daily_avg.get(p) for p in ["1yr", "6mo", "3mo", "1mo", "1wk"]]
+        # Accelerating: each more recent segment has higher daily avg
+        accel = [seg_daily.get(s) for s in ["1yr", "6mo", "3mo", "1mo", "1wk"]]
         ac = [d for d in accel if d is not None]
         if len(ac) >= 3 and all(ac[i] < ac[i+1] for i in range(len(ac)-1)):
             flags.append("AC")
@@ -256,7 +302,8 @@ def scan_stock(ticker: str) -> dict | None:
         result = {
             "t": ticker, "n": name, "pr": round(float(price), 4),
             "s": sector, "mc": mcap,
-            "p": periods, "da": daily_avg,
+            "p": periods, "da": daily_avg,         # Cumulative returns (for reference)
+            "seg": segments, "sda": seg_daily,      # Segment returns (for scoring)
             "ms": mscore, "ts": tscore, "pp": pos_count,
             "f": flags,
             "h52": round(h52, 4), "l52": round(l52, 4),
@@ -448,14 +495,17 @@ def main():
     print(f"  Scanned: {s['scanned']}  Passed: {s['passed']}")
     print(f"  Flags: {s['flags']}")
     if results:
-        print(f"\n  Top 15:")
+        print(f"\n  Top 15 (segment returns — each band independently):")
         for r in results[:15]:
-            p = r["p"]
+            seg = r.get("seg", {})
             ws = r.get("ws", {}).get("52", {})
             print(
                 f"  {r['t']:<7} ${r['pr']:>7.2f}  scr={r['ts']}  "
-                f"1w={p.get('1wk',0) or 0:+.1%}  3m={p.get('3mo',0) or 0:+.1%}  "
-                f"1y={p.get('1yr',0) or 0:+.1%}  3y={p.get('3yr',0) or 0:+.1%}  "
+                f"1w={seg.get('1wk',0) or 0:+.1%}  "
+                f"1w→1m={seg.get('1mo',0) or 0:+.1%}  "
+                f"1m→3m={seg.get('3mo',0) or 0:+.1%}  "
+                f"3m→6m={seg.get('6mo',0) or 0:+.1%}  "
+                f"6m→1y={seg.get('1yr',0) or 0:+.1%}  "
                 f"wk_str={ws.get('cs',0):+d}  flags={','.join(r['f'])}"
             )
     print()
