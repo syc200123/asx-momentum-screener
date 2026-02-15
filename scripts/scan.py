@@ -153,247 +153,275 @@ def windowed_stats(rets: list[dict], windows: list[int]) -> dict:
 
 
 # ---------------------------------------------------------------------------
-# Stock scanner
+# Stock analysis (operates on pre-downloaded data)
 # ---------------------------------------------------------------------------
 
-FILTERED = "FILTERED"  # Legitimately excluded (low price, no data)
-FAILED = "FAILED"      # Error (rate limited, network issue) — should retry
+def analyse_stock(ticker: str, close: pd.Series, volume: pd.Series | None) -> dict | None:
+    """Analyse a single stock from pre-downloaded price data."""
+    if close.empty or len(close) < 5:
+        return None
 
-def scan_stock(ticker: str) -> dict | str:
-    try:
-        stock = yf.Ticker(f"{ticker}.AX")
-        hist = stock.history(period=HISTORY_PERIOD, auto_adjust=True)
+    close = close.dropna()
+    if len(close) < 5:
+        return None
 
-        if hist.empty or len(hist) < 5:
-            return FILTERED
+    price = close.iloc[-1]
+    if price < MIN_PRICE:
+        return None
 
-        price = hist['Close'].iloc[-1]
-        if price < MIN_PRICE:
-            return FILTERED
+    now = close.index[-1]
 
-        now = hist.index[-1]
-        close = hist['Close']
+    # Standard periods — collect boundary prices
+    boundary_prices = {"now": float(price)}
+    for label, cal, td in STANDARD_PERIODS:
+        mask = close.index <= (now - pd.Timedelta(days=cal))
+        if not mask.any():
+            boundary_prices[label] = None
+            continue
+        bp = close[mask].iloc[-1]
+        if pd.isna(bp) or np.isinf(bp) or bp <= 0:
+            boundary_prices[label] = None
+        else:
+            boundary_prices[label] = float(bp)
 
-        # Standard periods — collect boundary prices first
-        boundary_prices = {"now": float(price)}
-        for label, cal, td in STANDARD_PERIODS:
-            mask = hist.index <= (now - pd.Timedelta(days=cal))
-            if not mask.any():
-                boundary_prices[label] = None
-                continue
-            bp = close[mask].iloc[-1]
-            if pd.isna(bp) or np.isinf(bp) or bp <= 0:
-                boundary_prices[label] = None
-            else:
-                boundary_prices[label] = float(bp)
+    # Cumulative returns
+    periods = {}
+    daily_avg = {}
+    for label, cal, td in STANDARD_PERIODS:
+        bp = boundary_prices.get(label)
+        if bp is None:
+            periods[label] = None
+            daily_avg[label] = None
+            continue
+        ret = (price - bp) / bp
+        if pd.isna(ret) or np.isinf(ret):
+            periods[label] = None
+            daily_avg[label] = None
+            continue
+        periods[label] = round(float(ret), 5)
+        if td > 0 and ret > -1:
+            da = (1 + ret) ** (1 / td) - 1
+            daily_avg[label] = round(float(da), 6) if not (pd.isna(da) or np.isinf(da)) else 0
+        else:
+            daily_avg[label] = 0
 
-        # Cumulative returns (price at period start → today)
-        periods = {}
-        daily_avg = {}
-        for label, cal, td in STANDARD_PERIODS:
-            bp = boundary_prices.get(label)
-            if bp is None:
-                periods[label] = None
-                daily_avg[label] = None
-                continue
-            ret = (price - bp) / bp
-            if pd.isna(ret) or np.isinf(ret):
-                periods[label] = None
-                daily_avg[label] = None
-                continue
-            periods[label] = round(float(ret), 5)
-            if td > 0 and ret > -1:
-                da = (1 + ret) ** (1 / td) - 1
-                daily_avg[label] = round(float(da), 6) if not (pd.isna(da) or np.isinf(da)) else 0
-            else:
-                daily_avg[label] = 0
+    # Segment returns
+    SEGMENTS = [
+        ("1wk",  "now",  "1wk",  5),
+        ("1mo",  "1wk",  "1mo",  16),
+        ("3mo",  "1mo",  "3mo",  42),
+        ("6mo",  "3mo",  "6mo",  63),
+        ("1yr",  "6mo",  "1yr",  126),
+        ("2yr",  "1yr",  "2yr",  252),
+        ("3yr",  "2yr",  "3yr",  252),
+        ("5yr",  "3yr",  "5yr",  504),
+    ]
 
-        # Segment returns (return WITHIN each time band, not cumulative)
-        # e.g. seg "1wk" = today vs 1wk ago, seg "1mo" = 1wk ago vs 1mo ago
-        SEGMENTS = [
-            ("1wk",  "now",  "1wk",  5),     # today → 1wk ago
-            ("1mo",  "1wk",  "1mo",  16),     # 1wk ago → 1mo ago
-            ("3mo",  "1mo",  "3mo",  42),     # 1mo ago → 3mo ago
-            ("6mo",  "3mo",  "6mo",  63),     # 3mo ago → 6mo ago
-            ("1yr",  "6mo",  "1yr",  126),    # 6mo ago → 1yr ago
-            ("2yr",  "1yr",  "2yr",  252),    # 1yr ago → 2yr ago
-            ("3yr",  "2yr",  "3yr",  252),    # 2yr ago → 3yr ago
-            ("5yr",  "3yr",  "5yr",  504),    # 3yr ago → 5yr ago
-        ]
+    segments = {}
+    seg_daily = {}
+    for seg_label, end_key, start_key, seg_td in SEGMENTS:
+        end_price = boundary_prices.get(end_key)
+        start_price = boundary_prices.get(start_key)
+        if end_price is None or start_price is None or start_price <= 0:
+            segments[seg_label] = None
+            seg_daily[seg_label] = None
+            continue
+        seg_ret = (end_price - start_price) / start_price
+        if pd.isna(seg_ret) or np.isinf(seg_ret):
+            segments[seg_label] = None
+            seg_daily[seg_label] = None
+            continue
+        segments[seg_label] = round(float(seg_ret), 5)
+        if seg_td > 0 and seg_ret > -1:
+            sda = (1 + seg_ret) ** (1 / seg_td) - 1
+            seg_daily[seg_label] = round(float(sda), 6) if not (pd.isna(sda) or np.isinf(sda)) else 0
+        else:
+            seg_daily[seg_label] = 0
 
-        segments = {}
-        seg_daily = {}
-        for seg_label, end_key, start_key, seg_td in SEGMENTS:
-            end_price = boundary_prices.get(end_key)
-            start_price = boundary_prices.get(start_key)
-            if end_price is None or start_price is None or start_price <= 0:
-                segments[seg_label] = None
-                seg_daily[seg_label] = None
-                continue
-            seg_ret = (end_price - start_price) / start_price
-            if pd.isna(seg_ret) or np.isinf(seg_ret):
-                segments[seg_label] = None
-                seg_daily[seg_label] = None
-                continue
-            segments[seg_label] = round(float(seg_ret), 5)
-            if seg_td > 0 and seg_ret > -1:
-                sda = (1 + seg_ret) ** (1 / seg_td) - 1
-                seg_daily[seg_label] = round(float(sda), 6) if not (pd.isna(sda) or np.isinf(sda)) else 0
-            else:
-                seg_daily[seg_label] = 0
+    # Scores
+    all_seg = ["1wk", "1mo", "3mo", "6mo", "1yr", "2yr", "3yr", "5yr"]
+    core_seg = ["1wk", "1mo", "3mo", "6mo", "1yr"]
+    mscore = sum(1 for s in core_seg if segments.get(s) is not None and segments[s] > 0)
+    tscore = sum(1 for s in all_seg if segments.get(s) is not None and segments[s] > 0)
 
-        # Scores — based on SEGMENTS (each time band independently positive)
-        all_seg = ["1wk", "1mo", "3mo", "6mo", "1yr", "2yr", "3yr", "5yr"]
-        core_seg = ["1wk", "1mo", "3mo", "6mo", "1yr"]
-        mscore = sum(1 for s in core_seg if segments.get(s) is not None and segments[s] > 0)
-        tscore = sum(1 for s in all_seg if segments.get(s) is not None and segments[s] > 0)
-        pos_count = tscore  # Same thing for segments
+    # Flags
+    flags = []
+    if all(segments.get(s) is not None and segments[s] > 0 for s in core_seg):
+        flags.append("CU")
+    if "CU" in flags and all(segments.get(s) is not None and segments[s] > 0 for s in ["2yr", "3yr"]):
+        flags.append("EU")
 
-        # Flags — based on segments being independently positive
-        flags = []
-        if all(segments.get(s) is not None and segments[s] > 0 for s in ["1wk", "1mo", "3mo", "6mo", "1yr"]):
-            flags.append("CU")
-        if "CU" in flags and all(segments.get(s) is not None and segments[s] > 0 for s in ["2yr", "3yr"]):
-            flags.append("EU")
+    accel = [seg_daily.get(s) for s in ["1yr", "6mo", "3mo", "1mo", "1wk"]]
+    ac = [d for d in accel if d is not None]
+    if len(ac) >= 3 and all(ac[i] < ac[i+1] for i in range(len(ac)-1)):
+        flags.append("AC")
 
-        # Accelerating: each more recent segment has higher daily avg
-        accel = [seg_daily.get(s) for s in ["1yr", "6mo", "3mo", "1mo", "1wk"]]
-        ac = [d for d in accel if d is not None]
-        if len(ac) >= 3 and all(ac[i] < ac[i+1] for i in range(len(ac)-1)):
-            flags.append("AC")
+    # Price levels
+    y1 = close.tail(252) if len(close) >= 252 else close
+    h52 = float(y1.max())
+    l52 = float(y1.min())
+    h5y = float(close.max())
 
-        # Price levels
-        y1 = close.tail(252) if len(close) >= 252 else close
-        h52 = float(y1.max())
-        l52 = float(y1.min())
-        h5y = float(close.max())
+    # Volume
+    v20 = 0
+    if volume is not None and len(volume) >= 20:
+        v20 = int(volume.tail(20).mean())
 
-        # Volume
-        v20 = int(hist['Volume'].tail(20).mean()) if 'Volume' in hist.columns and len(hist) >= 20 else 0
+    # Granular breakdowns
+    wr = period_returns(close, 'W')
+    mr = period_returns(close, 'ME')
+    qr = period_returns(close, 'QE')
 
-        # Granular breakdowns
-        wr = period_returns(close, 'W')
-        mr = period_returns(close, 'ME')
-        qr = period_returns(close, 'QE')
+    if wr:
+        ws52 = streaks(wr[:52])
+        if ws52["cs"] >= 8:
+            flags.append("HS")
+        if ws52["cs"] <= -6:
+            flags.append("CS")
+        if ws52["pr"] >= 0.70:
+            flags.append("CW")
 
-        # Weekly streak flags
-        if wr:
-            ws52 = streaks(wr[:52])
-            if ws52["cs"] >= 8:
-                flags.append("HS")
-            if ws52["cs"] <= -6:
-                flags.append("CS")
-            if ws52["pr"] >= 0.70:
-                flags.append("CW")
+    wstats = windowed_stats(wr, [13, 26, 52, 104, 260])
+    mstats = windowed_stats(mr, [3, 6, 12, 24, 36, 60])
+    qstats = windowed_stats(qr, [4, 8, 12, 20])
 
-        # Windowed stats (always included)
-        wstats = windowed_stats(wr, [13, 26, 52, 104, 260])
-        mstats = windowed_stats(mr, [3, 6, 12, 24, 36, 60])
-        qstats = windowed_stats(qr, [4, 8, 12, 20])
+    result = {
+        "t": ticker, "n": ticker, "pr": round(float(price), 4),
+        "s": "Unknown", "mc": 0,
+        "p": periods, "da": daily_avg,
+        "seg": segments, "sda": seg_daily,
+        "ms": mscore, "ts": tscore, "pp": tscore,
+        "f": flags,
+        "h52": round(h52, 4), "l52": round(l52, 4),
+        "h5y": round(h5y, 4),
+        "pfh": round((price - h52) / h52, 4) if h52 > 0 else 0,
+        "pf5h": round((price - h5y) / h5y, 4) if h5y > 0 else 0,
+        "v20": v20,
+        "ws": wstats, "mos": mstats, "qs": qstats,
+    }
 
-        # Info
-        name = ticker
-        sector = "Unknown"
-        mcap = 0
+    include_granular = tscore >= GRANULAR_THRESHOLD or "CU" in flags
+    if include_granular:
+        result["wr"] = wr
+        result["mr"] = mr
+        result["qr"] = qr
+
+    return result
+
+
+def fetch_info_batch(tickers: list[str], results: dict):
+    """Fetch name/sector/market_cap for qualifying stocks (individual calls, but only ~500 not 1654)."""
+    log.info(f"Fetching info for {len(tickers)} qualifying stocks...")
+    done = 0
+    for t in tickers:
         try:
-            info = stock.info
-            name = info.get("shortName", ticker)
-            sector = info.get("sector", "Unknown")
-            mcap = info.get("marketCap", 0)
+            info = yf.Ticker(f"{t}.AX").info
+            if t in results:
+                results[t]["n"] = info.get("shortName", t)
+                results[t]["s"] = info.get("sector", "Unknown")
+                results[t]["mc"] = info.get("marketCap", 0)
         except Exception:
             pass
-
-        result = {
-            "t": ticker, "n": name, "pr": round(float(price), 4),
-            "s": sector, "mc": mcap,
-            "p": periods, "da": daily_avg,         # Cumulative returns (for reference)
-            "seg": segments, "sda": seg_daily,      # Segment returns (for scoring)
-            "ms": mscore, "ts": tscore, "pp": pos_count,
-            "f": flags,
-            "h52": round(h52, 4), "l52": round(l52, 4),
-            "h5y": round(h5y, 4),
-            "pfh": round((price - h52) / h52, 4) if h52 > 0 else 0,
-            "pf5h": round((price - h5y) / h5y, 4) if h5y > 0 else 0,
-            "v20": v20,
-            "ws": wstats, "mos": mstats, "qs": qstats,
-        }
-
-        # Include granular returns only for qualifying stocks
-        include_granular = tscore >= GRANULAR_THRESHOLD or "CU" in flags
-        if include_granular:
-            result["wr"] = wr
-            result["mr"] = mr
-            result["qr"] = qr
-
-        return result
-
-    except Exception as e:
-        log.debug(f"{ticker}: {e}")
-        return FAILED
+        done += 1
+        if done % 100 == 0:
+            log.info(f"Info: {done}/{len(tickers)}")
+            time.sleep(1)  # Light throttle
 
 
 # ---------------------------------------------------------------------------
-# Batch scan
+# Batch download + scan
 # ---------------------------------------------------------------------------
 
 def run_scan(tickers: list[str]) -> list[dict]:
     total = len(tickers)
-    random.shuffle(tickers)
-    batch_size = int(os.environ.get("BATCH_SIZE", "50"))
-    batch_pause = float(os.environ.get("BATCH_PAUSE", "2.0"))
-    max_retries = int(os.environ.get("MAX_RETRIES", "2"))
-    retry_pause = float(os.environ.get("RETRY_PAUSE", "30.0"))
-    log.info(f"Scanning {total} tickers ({WORKERS} workers, batches of {batch_size}, {batch_pause}s pause, up to {max_retries} retries)")
+    download_batch = int(os.environ.get("DOWNLOAD_BATCH", "200"))
+    log.info(f"Batch downloading {total} tickers in groups of {download_batch} ({HISTORY_PERIOD} history)...")
 
-    results = {}       # ticker -> data dict (successes)
-    filtered = set()   # tickers legitimately excluded (low price, no data)
     t0 = time.time()
 
-    remaining_tickers = list(tickers)
+    # Convert to Yahoo Finance format
+    yf_tickers = [f"{t}.AX" for t in tickers]
 
-    for attempt in range(1 + max_retries):
-        if attempt > 0:
-            # Only retry tickers that FAILED (not filtered or already succeeded)
-            remaining_tickers = [t for t in remaining_tickers if t not in results and t not in filtered]
-            if not remaining_tickers:
-                log.info(f"No tickers to retry — all resolved.")
-                break
-            random.shuffle(remaining_tickers)
-            log.info(f"Retry {attempt}/{max_retries}: {len(remaining_tickers)} failed tickers to retry (pausing {retry_pause}s)...")
-            time.sleep(retry_pause)
+    # Download all price data in large batches using yf.download()
+    all_close = pd.DataFrame()
+    all_volume = pd.DataFrame()
 
-        pass_label = f"Pass {attempt + 1}" if attempt > 0 else "Main pass"
-        done = 0
-        pass_total = len(remaining_tickers)
+    for batch_start in range(0, len(yf_tickers), download_batch):
+        batch = yf_tickers[batch_start:batch_start + download_batch]
+        batch_num = batch_start // download_batch + 1
+        total_batches = (len(yf_tickers) + download_batch - 1) // download_batch
+        log.info(f"Downloading batch {batch_num}/{total_batches} ({len(batch)} tickers)...")
 
-        for batch_start in range(0, pass_total, batch_size):
-            batch = remaining_tickers[batch_start:batch_start + batch_size]
+        try:
+            data = yf.download(
+                batch,
+                period=HISTORY_PERIOD,
+                auto_adjust=True,
+                threads=True,
+                progress=False,
+            )
 
-            with ThreadPoolExecutor(max_workers=WORKERS) as ex:
-                futures = {ex.submit(scan_stock, t): t for t in batch}
-                for fut in as_completed(futures):
-                    done += 1
-                    ticker = futures[fut]
-                    try:
-                        r = fut.result()
-                        if isinstance(r, dict):
-                            results[ticker] = r
-                        elif r == FILTERED:
-                            filtered.add(ticker)
-                        # else FAILED — will be retried
-                    except Exception:
-                        pass  # Will be retried
+            if data.empty:
+                log.warning(f"Batch {batch_num} returned empty")
+                continue
 
-            if done % 200 == 0 or batch_start + batch_size >= pass_total:
-                elapsed = time.time() - t0
-                log.info(f"{pass_label}: {done}/{pass_total} ({len(results)} ok, {len(filtered)} filtered, {pass_total - done} pending)")
+            # yf.download returns MultiIndex columns (field, ticker) for multiple tickers
+            if isinstance(data.columns, pd.MultiIndex):
+                if 'Close' in data.columns.get_level_values(0):
+                    close_df = data['Close']
+                    all_close = pd.concat([all_close, close_df], axis=1)
+                if 'Volume' in data.columns.get_level_values(0):
+                    vol_df = data['Volume']
+                    all_volume = pd.concat([all_volume, vol_df], axis=1)
+            else:
+                # Single ticker returns flat columns
+                if len(batch) == 1 and 'Close' in data.columns:
+                    all_close[batch[0]] = data['Close']
+                    if 'Volume' in data.columns:
+                        all_volume[batch[0]] = data['Volume']
 
-            if batch_start + batch_size < pass_total:
-                time.sleep(batch_pause)
+        except Exception as e:
+            log.warning(f"Batch {batch_num} failed: {e}")
+
+        # Brief pause between download batches
+        if batch_start + download_batch < len(yf_tickers):
+            time.sleep(1)
+
+    download_time = time.time() - t0
+    downloaded_count = len(all_close.columns)
+    log.info(f"Downloaded {downloaded_count}/{total} tickers in {download_time:.0f}s")
+
+    # Analyse each stock from the downloaded data
+    log.info("Analysing stocks...")
+    results = {}
+    filtered = 0
+
+    for col in all_close.columns:
+        # col is like "PME.AX"
+        ticker = col.replace(".AX", "") if isinstance(col, str) else str(col).replace(".AX", "")
+        close_series = all_close[col].dropna()
+        vol_series = all_volume[col].dropna() if col in all_volume.columns else None
+
+        try:
+            result = analyse_stock(ticker, close_series, vol_series)
+            if result:
+                results[ticker] = result
+            else:
+                filtered += 1
+        except Exception as e:
+            log.debug(f"Analysis failed for {ticker}: {e}")
+            filtered += 1
+
+    log.info(f"Analysis complete: {len(results)} passed, {filtered} filtered, {total - downloaded_count} not downloaded")
+
+    # Fetch info (name, sector, market cap) only for stocks that passed
+    # This uses individual API calls but only for ~500 stocks, not 1654
+    fetch_info = os.environ.get("FETCH_INFO", "true").lower() == "true"
+    if fetch_info and results:
+        fetch_info_batch(list(results.keys()), results)
 
     elapsed = time.time() - t0
-    failed_count = total - len(results) - len(filtered)
-    log.info(f"Complete in {elapsed:.0f}s — {len(results)} passed, {len(filtered)} filtered, {failed_count} failed")
+    log.info(f"Total scan time: {elapsed:.0f}s")
 
     result_list = list(results.values())
     result_list.sort(key=lambda x: (x["ts"], x["pp"], x.get("seg", {}).get("3mo", 0) or 0), reverse=True)
