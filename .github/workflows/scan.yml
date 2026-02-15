@@ -12,7 +12,7 @@ permissions:
 jobs:
   scan:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 60
 
     steps:
       - name: Checkout repository
@@ -29,7 +29,11 @@ jobs:
       - name: Run ASX momentum scan
         env:
           MIN_PRICE: "0.10"
-          WORKERS: "10"
+          WORKERS: "5"
+          BATCH_SIZE: "50"
+          BATCH_PAUSE: "2.0"
+          MAX_RETRIES: "2"
+          RETRY_PAUSE: "15.0"
           OUTPUT_DIR: "docs/data"
         run: python scripts/scan.py
 

@@ -16,6 +16,7 @@ import os
 import sys
 import time
 import logging
+import random
 from datetime import datetime
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
@@ -334,32 +335,62 @@ def scan_stock(ticker: str) -> dict | None:
 
 def run_scan(tickers: list[str]) -> list[dict]:
     total = len(tickers)
-    log.info(f"Scanning {total} tickers ({WORKERS} workers, ${MIN_PRICE:.2f} min, {HISTORY_PERIOD} history)")
+    random.shuffle(tickers)
+    batch_size = int(os.environ.get("BATCH_SIZE", "50"))
+    batch_pause = float(os.environ.get("BATCH_PAUSE", "2.0"))
+    max_retries = int(os.environ.get("MAX_RETRIES", "2"))
+    retry_pause = float(os.environ.get("RETRY_PAUSE", "10.0"))
+    log.info(f"Scanning {total} tickers ({WORKERS} workers, batches of {batch_size}, {batch_pause}s pause, up to {max_retries} retries)")
 
-    results = []
-    done = 0
+    results = {}  # keyed by ticker to avoid duplicates
     t0 = time.time()
 
-    with ThreadPoolExecutor(max_workers=WORKERS) as ex:
-        futures = {ex.submit(scan_stock, t): t for t in tickers}
-        for fut in as_completed(futures):
-            done += 1
-            try:
-                r = fut.result()
-                if r:
-                    results.append(r)
-            except Exception:
-                pass
-            if done % 200 == 0 or done == total:
+    remaining_tickers = list(tickers)
+
+    for attempt in range(1 + max_retries):
+        if attempt > 0:
+            # Only retry tickers that failed
+            remaining_tickers = [t for t in remaining_tickers if t not in results]
+            if not remaining_tickers:
+                break
+            random.shuffle(remaining_tickers)
+            log.info(f"Retry {attempt}/{max_retries}: {len(remaining_tickers)} tickers to retry (pausing {retry_pause}s first)...")
+            time.sleep(retry_pause)
+
+        pass_label = f"Pass {attempt + 1}" if attempt > 0 else "Main pass"
+        done = 0
+        errors = 0
+        pass_total = len(remaining_tickers)
+
+        for batch_start in range(0, pass_total, batch_size):
+            batch = remaining_tickers[batch_start:batch_start + batch_size]
+
+            with ThreadPoolExecutor(max_workers=WORKERS) as ex:
+                futures = {ex.submit(scan_stock, t): t for t in batch}
+                for fut in as_completed(futures):
+                    done += 1
+                    ticker = futures[fut]
+                    try:
+                        r = fut.result()
+                        if r:
+                            results[ticker] = r
+                    except Exception:
+                        errors += 1
+
+            if done % 200 == 0 or batch_start + batch_size >= pass_total:
                 elapsed = time.time() - t0
-                rate = done / elapsed if elapsed > 0 else 0
-                log.info(f"{done}/{total} ({len(results)} ok) [{rate:.0f}/s, ~{(total-done)/rate:.0f}s left]")
+                log.info(f"{pass_label}: {done}/{pass_total} ({len(results)} total ok, {errors} err)")
+
+            if batch_start + batch_size < pass_total:
+                time.sleep(batch_pause)
 
     elapsed = time.time() - t0
-    log.info(f"Done in {elapsed:.0f}s — {len(results)} stocks passed")
+    result_list = list(results.values())
+    missed = total - len(result_list)
+    log.info(f"Complete in {elapsed:.0f}s — {len(result_list)} stocks passed, {missed} missed (filtered or unavailable)")
 
-    results.sort(key=lambda x: (x["ts"], x["pp"], x["p"].get("3mo", 0) or 0), reverse=True)
-    return results
+    result_list.sort(key=lambda x: (x["ts"], x["pp"], x.get("seg", {}).get("3mo", 0) or 0), reverse=True)
+    return result_list
 
 
 # ---------------------------------------------------------------------------
