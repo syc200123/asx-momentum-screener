@@ -1,0 +1,758 @@
+{
+  "generated": "2026-02-17T22:17:09.126221",
+  "scan_timestamp": "2026-02-17T20:43:13.883724",
+  "summary": {
+    "scanned": 1652,
+    "passed": 1018,
+    "flags": {
+      "CU": 25,
+      "EU": 8,
+      "AC": 10,
+      "LU": 26,
+      "NU": 7,
+      "HS": 1,
+      "CS": 42,
+      "CW": 1
+    },
+    "score_dist": {
+      "0": 26,
+      "1": 68,
+      "2": 131,
+      "3": 204,
+      "4": 260,
+      "5": 187,
+      "6": 101,
+      "7": 36,
+      "8": 5
+    }
+  },
+  "filters": {
+    "min_price": 0.5,
+    "min_mcap": 100000000.0,
+    "min_volume": 50000
+  },
+  "momentum_candidates": [
+    {
+      "ticker": "PDI",
+      "name": "PREDICTIVE FPO [PDI]",
+      "price": 0.89,
+      "score": 8,
+      "flags": [
+        "CU",
+        "EU"
+      ],
+      "segments": {
+        "1wk": 0.05325,
+        "1mo": 0.06962,
+        "3mo": 0.35043,
+        "6mo": 0.3,
+        "1yr": 0.34328,
+        "2yr": 0.63415,
+        "3yr": 0.24242,
+        "5yr": 1.84483
+      },
+      "from_52w_high": -0.0273,
+      "from_5y_high": -0.0273,
+      "mcap": 2345535488,
+      "volume_20d": 16586603,
+      "sector": "Basic Materials",
+      "weekly_streak": 2
+    },
+    {
+      "ticker": "SXE",
+      "name": "STH X ELEC FPO [SXE]",
+      "price": 2.86,
+      "score": 8,
+      "flags": [
+        "CU",
+        "EU",
+        "AC"
+      ],
+      "segments": {
+        "1wk": 0.04,
+        "1mo": 0.07422,
+        "3mo": 0.14286,
+        "6mo": 0.15006,
+        "1yr": 0.32091,
+        "2yr": 0.80938,
+        "3yr": 0.34072,
+        "5yr": 0.37378
+      },
+      "from_52w_high": -0.0172,
+      "from_5y_high": -0.0172,
+      "mcap": 760684992,
+      "volume_20d": 1000760,
+      "sector": "Industrials",
+      "weekly_streak": 4
+    },
+    {
+      "ticker": "NAB",
+      "name": "NAT. BANK FPO [NAB]",
+      "price": 45.34,
+      "score": 8,
+      "flags": [
+        "CU",
+        "EU",
+        "AC"
+      ],
+      "segments": {
+        "1wk": 0.03092,
+        "1mo": 0.0307,
+        "3mo": 0.05099,
+        "6mo": 0.02155,
+        "1yr": 0.02433,
+        "2yr": 0.28298,
+        "3yr": 0.17674,
+        "5yr": 0.28453
+      },
+      "from_52w_high": -0.0258,
+      "from_5y_high": -0.0258,
+      "mcap": 138539466752,
+      "volume_20d": 3929418,
+      "sector": "Financial Services",
+      "weekly_streak": -1
+    },
+    {
+      "ticker": "EZL",
+      "name": "EUROZ FPO [EZL]",
+      "price": 1.26,
+      "score": 6,
+      "flags": [
+        "CU",
+        "NU"
+      ],
+      "segments": {
+        "1wk": 0.02439,
+        "1mo": 0.00352,
+        "3mo": 0.25,
+        "6mo": 0.0849,
+        "1yr": 0.16891,
+        "2yr": 0.20844,
+        "3yr": -0.23292,
+        "5yr": -0.12318
+      },
+      "from_52w_high": -0.041,
+      "from_5y_high": -0.041,
+      "mcap": 193896688,
+      "volume_20d": 162123,
+      "sector": "Financial Services",
+      "weekly_streak": 2
+    },
+    {
+      "ticker": "FGG",
+      "name": "FUTURE GLB FPO [FGG]",
+      "price": 1.58,
+      "score": 7,
+      "flags": [
+        "CU",
+        "EU",
+        "NU"
+      ],
+      "segments": {
+        "1wk": 0.00637,
+        "1mo": 0.00641,
+        "3mo": 0.01629,
+        "6mo": 0.00904,
+        "1yr": 0.07061,
+        "2yr": 0.27905,
+        "3yr": 0.098,
+        "5yr": -0.12445
+      },
+      "from_52w_high": -0.015,
+      "from_5y_high": -0.015,
+      "mcap": 633548544,
+      "volume_20d": 594391,
+      "sector": "Financial Services",
+      "weekly_streak": 2
+    },
+    {
+      "ticker": "EIQ",
+      "name": "ECHOIQLTD FPO [EIQ]",
+      "price": 0.59,
+      "score": 6,
+      "flags": [
+        "AC"
+      ],
+      "segments": {
+        "1wk": 0.24211,
+        "1mo": 0.35714,
+        "3mo": 0.55556,
+        "6mo": 0.09756,
+        "1yr": -0.30508,
+        "2yr": 1.18519,
+        "3yr": -0.1,
+        "5yr": 2.0
+      },
+      "from_52w_high": 0.0,
+      "from_5y_high": 0.0,
+      "mcap": 385734720,
+      "volume_20d": 3573812,
+      "sector": "Healthcare",
+      "weekly_streak": 2
+    },
+    {
+      "ticker": "LRT",
+      "name": "LOWELL RES ORD UNITS [LRT]",
+      "price": 2.78,
+      "score": 7,
+      "flags": [
+        "CU"
+      ],
+      "segments": {
+        "1wk": 0.0412,
+        "1mo": 0.04297,
+        "3mo": 0.32642,
+        "6mo": 0.2254,
+        "1yr": 0.41667,
+        "2yr": -0.01968,
+        "3yr": 0.20875,
+        "5yr": 0.06887
+      },
+      "from_52w_high": -0.0733,
+      "from_5y_high": -0.0733,
+      "mcap": 115528840,
+      "volume_20d": 75867,
+      "sector": "Financial Services",
+      "weekly_streak": 2
+    },
+    {
+      "ticker": "WLE",
+      "name": "WAMLEADERS FPO [WLE]",
+      "price": 1.4,
+      "score": 7,
+      "flags": [
+        "CU",
+        "NU"
+      ],
+      "segments": {
+        "1wk": 0.01818,
+        "1mo": 0.00365,
+        "3mo": 0.05385,
+        "6mo": 0.02723,
+        "1yr": 0.04338,
+        "2yr": 0.01216,
+        "3yr": -0.06522,
+        "5yr": 0.23957
+      },
+      "from_52w_high": 0.0,
+      "from_5y_high": 0.0,
+      "mcap": 1927571712,
+      "volume_20d": 1018547,
+      "sector": "Financial Services",
+      "weekly_streak": 2
+    },
+    {
+      "ticker": "FRS",
+      "name": "FORREST FPO [FRS]",
+      "price": 0.56,
+      "score": 5,
+      "flags": [
+        "CU"
+      ],
+      "segments": {
+        "1wk": 0.07692,
+        "1mo": 0.07216,
+        "3mo": 1.30952,
+        "6mo": 0.27273,
+        "1yr": 7.25,
+        "2yr": -0.16667,
+        "3yr": -0.81538,
+        "5yr": null
+      },
+      "from_52w_high": -0.0667,
+      "from_5y_high": -0.0667,
+      "mcap": 539850752,
+      "volume_20d": 4811176,
+      "sector": "Basic Materials",
+      "weekly_streak": -1
+    },
+    {
+      "ticker": "VYS",
+      "name": "VYSARNLTD FPO [VYS]",
+      "price": 0.795,
+      "score": 7,
+      "flags": [
+        "CU",
+        "EU"
+      ],
+      "segments": {
+        "1wk": 0.09655,
+        "1mo": 0.01399,
+        "3mo": 0.19167,
+        "6mo": 0.04348,
+        "1yr": 0.26374,
+        "2yr": 0.625,
+        "3yr": 2.11111,
+        "5yr": -0.21739
+      },
+      "from_52w_high": -0.0305,
+      "from_5y_high": -0.0305,
+      "mcap": 419318656,
+      "volume_20d": 1031925,
+      "sector": "Industrials",
+      "weekly_streak": 2
+    },
+    {
+      "ticker": "WBC",
+      "name": "WESTPAC FPO [WBC]",
+      "price": 40.74,
+      "score": 8,
+      "flags": [
+        "CU",
+        "EU"
+      ],
+      "segments": {
+        "1wk": 0.03717,
+        "1mo": 0.0023,
+        "3mo": 0.03486,
+        "6mo": 0.03483,
+        "1yr": 0.14786,
+        "2yr": 0.4343,
+        "3yr": 0.15287,
+        "5yr": 0.03457
+      },
+      "from_52w_high": -0.0063,
+      "from_5y_high": -0.0063,
+      "mcap": 139265097728,
+      "volume_20d": 3862770,
+      "sector": "Financial Services",
+      "weekly_streak": 4
+    },
+    {
+      "ticker": "AZJ",
+      "name": "AURIZON FPO [AZJ]",
+      "price": 3.94,
+      "score": 6,
+      "flags": [
+        "CU",
+        "NU"
+      ],
+      "segments": {
+        "1wk": 0.0884,
+        "1mo": 0.00277,
+        "3mo": 0.05248,
+        "6mo": 0.07699,
+        "1yr": 0.0551,
+        "2yr": -0.15039,
+        "3yr": 0.19362,
+        "5yr": -0.01434
+      },
+      "from_52w_high": 0.0,
+      "from_5y_high": 0.0,
+      "mcap": 6754003456,
+      "volume_20d": 5772501,
+      "sector": "Industrials",
+      "weekly_streak": 2
+    },
+    {
+      "ticker": "MLG",
+      "name": "MLGOZLTD FPO [MLG]",
+      "price": 1.05,
+      "score": 7,
+      "flags": [
+        "CU",
+        "EU"
+      ],
+      "segments": {
+        "1wk": 0.05,
+        "1mo": 0.0582,
+        "3mo": 0.07386,
+        "6mo": 0.05389,
+        "1yr": 0.21014,
+        "2yr": 0.12195,
+        "3yr": 0.51852,
+        "5yr": null
+      },
+      "from_52w_high": -0.0141,
+      "from_5y_high": -0.2081,
+      "mcap": 162681936,
+      "volume_20d": 410751,
+      "sector": "Basic Materials",
+      "weekly_streak": 2
+    },
+    {
+      "ticker": "WAF",
+      "name": "WESTAFRICA FPO [WAF]",
+      "price": 3.61,
+      "score": 7,
+      "flags": [
+        "CU"
+      ],
+      "segments": {
+        "1wk": 0.02849,
+        "1mo": 0.02632,
+        "3mo": 0.125,
+        "6mo": 0.13433,
+        "1yr": 0.54023,
+        "2yr": 0.97727,
+        "3yr": -0.02762,
+        "5yr": 0.10366
+      },
+      "from_52w_high": -0.0767,
+      "from_5y_high": -0.0767,
+      "mcap": 4123806976,
+      "volume_20d": 9547706,
+      "sector": "Basic Materials",
+      "weekly_streak": 2
+    },
+    {
+      "ticker": "SBM",
+      "name": "ST.BARBARA FPO [SBM]",
+      "price": 0.735,
+      "score": 6,
+      "flags": [
+        "CU"
+      ],
+      "segments": {
+        "1wk": 0.02797,
+        "1mo": 0.28829,
+        "3mo": 0.14433,
+        "6mo": 0.4058,
+        "1yr": 0.32692,
+        "2yr": 0.67742,
+        "3yr": -0.43476,
+        "5yr": -0.67469
+      },
+      "from_52w_high": -0.0696,
+      "from_5y_high": -0.1908,
+      "mcap": 889199936,
+      "volume_20d": 11232869,
+      "sector": "Basic Materials",
+      "weekly_streak": 2
+    },
+    {
+      "ticker": "FGX",
+      "name": "FUTURE AUS FPO [FGX]",
+      "price": 1.38,
+      "score": 7,
+      "flags": [
+        "CU"
+      ],
+      "segments": {
+        "1wk": 0.01471,
+        "1mo": 0.00741,
+        "3mo": 0.04247,
+        "6mo": 0.01912,
+        "1yr": 0.05289,
+        "2yr": 0.20918,
+        "3yr": -0.00758,
+        "5yr": 0.03007
+      },
+      "from_52w_high": -0.0143,
+      "from_5y_high": -0.0143,
+      "mcap": 567093504,
+      "volume_20d": 311690,
+      "sector": "Financial Services",
+      "weekly_streak": 2
+    },
+    {
+      "ticker": "CDM",
+      "name": "CADENCE FPO [CDM]",
+      "price": 0.81,
+      "score": 6,
+      "flags": [
+        "CU"
+      ],
+      "segments": {
+        "1wk": 0.0125,
+        "1mo": 0.02564,
+        "3mo": 0.13043,
+        "6mo": 0.06541,
+        "1yr": 0.03467,
+        "2yr": -0.03701,
+        "3yr": -0.10869,
+        "5yr": 0.18781
+      },
+      "from_52w_high": -0.0122,
+      "from_5y_high": -0.0745,
+      "mcap": 241203248,
+      "volume_20d": 378242,
+      "sector": "Financial Services",
+      "weekly_streak": 2
+    },
+    {
+      "ticker": "AHX",
+      "name": "APIAM FPO [AHX]",
+      "price": 0.875,
+      "score": 7,
+      "flags": [
+        "CU"
+      ],
+      "segments": {
+        "1wk": 0.12903,
+        "1mo": 0.01156,
+        "3mo": 0.00581,
+        "6mo": 0.09545,
+        "1yr": 0.94544,
+        "2yr": 0.44955,
+        "3yr": -0.50806,
+        "5yr": 0.03131
+      },
+      "from_52w_high": 0.0,
+      "from_5y_high": 0.0,
+      "mcap": 164412400,
+      "volume_20d": 190340,
+      "sector": "Consumer Cyclical",
+      "weekly_streak": -1
+    },
+    {
+      "ticker": "AMC",
+      "name": "AMCOR PLC CDI 1:1 [AMC]",
+      "price": 70.49,
+      "score": 6,
+      "flags": [
+        "AC"
+      ],
+      "segments": {
+        "1wk": 0.03056,
+        "1mo": 0.03276,
+        "3mo": 0.03453,
+        "6mo": 0.0109,
+        "1yr": -0.16133,
+        "2yr": 0.21613,
+        "3yr": -0.12545,
+        "5yr": 0.22405
+      },
+      "from_52w_high": -0.0981,
+      "from_5y_high": -0.1058,
+      "mcap": 32569600000,
+      "volume_20d": 679175,
+      "sector": "Consumer Cyclical",
+      "weekly_streak": 3
+    }
+  ],
+  "reversal_candidates": [
+    {
+      "ticker": "AVH",
+      "name": "AVITA MED CDI 5:1 [AVH]",
+      "price": 1.185,
+      "score": 3,
+      "flags": [
+        "AC"
+      ],
+      "segments": {
+        "1wk": 0.05804,
+        "1mo": 0.03704,
+        "3mo": -0.04425,
+        "6mo": -0.30247,
+        "1yr": -0.51351,
+        "2yr": -0.36812,
+        "3yr": 0.89568,
+        "5yr": -0.56563
+      },
+      "from_52w_high": -0.6308,
+      "from_5y_high": -0.8174,
+      "mcap": 186956896,
+      "volume_20d": 399865,
+      "sector": "Healthcare",
+      "weekly_streak": 1
+    },
+    {
+      "ticker": "OFX",
+      "name": "OZFOREX FPO [OFX]",
+      "price": 0.605,
+      "score": 2,
+      "flags": [],
+      "segments": {
+        "1wk": -0.04724,
+        "1mo": 0.29592,
+        "3mo": -0.17647,
+        "6mo": -0.26087,
+        "1yr": -0.44674,
+        "2yr": -0.0396,
+        "3yr": -0.21705,
+        "5yr": 0.548
+      },
+      "from_52w_high": -0.5584,
+      "from_5y_high": -0.7862,
+      "mcap": 140184368,
+      "volume_20d": 1149568,
+      "sector": "Financial Services",
+      "weekly_streak": 5
+    },
+    {
+      "ticker": "BOC",
+      "name": "BOUGVLLE.C FPO 1K [BOC]",
+      "price": 0.77,
+      "score": 4,
+      "flags": [],
+      "segments": {
+        "1wk": 0.11594,
+        "1mo": -0.30303,
+        "3mo": -0.05714,
+        "6mo": 0.73554,
+        "1yr": 0.70423,
+        "2yr": -0.34259,
+        "3yr": 0.63636,
+        "5yr": -0.23256
+      },
+      "from_52w_high": -0.6667,
+      "from_5y_high": -0.6667,
+      "mcap": 308818112,
+      "volume_20d": 200436,
+      "sector": "Basic Materials",
+      "weekly_streak": 1
+    },
+    {
+      "ticker": "BOE",
+      "name": "BOSS EN FPO [BOE]",
+      "price": 1.595,
+      "score": 3,
+      "flags": [],
+      "segments": {
+        "1wk": -0.08069,
+        "1mo": 0.0981,
+        "3mo": -0.03951,
+        "6mo": -0.02663,
+        "1yr": -0.46855,
+        "2yr": -0.38372,
+        "3yr": 1.04762,
+        "5yr": 1.52
+      },
+      "from_52w_high": -0.6585,
+      "from_5y_high": -0.739,
+      "mcap": 662122560,
+      "volume_20d": 8981003,
+      "sector": "Energy",
+      "weekly_streak": -1
+    },
+    {
+      "ticker": "APX",
+      "name": "APPEN FPO [APX]",
+      "price": 1.55,
+      "score": 3,
+      "flags": [],
+      "segments": {
+        "1wk": -0.14365,
+        "1mo": 0.58772,
+        "3mo": 0.71429,
+        "6mo": -0.25698,
+        "1yr": -0.68815,
+        "2yr": 7.83077,
+        "3yr": -0.86534,
+        "5yr": -0.8732
+      },
+      "from_52w_high": -0.4816,
+      "from_5y_high": -0.9229,
+      "mcap": 411696480,
+      "volume_20d": 11844949,
+      "sector": "Technology",
+      "weekly_streak": 1
+    },
+    {
+      "ticker": "KPG",
+      "name": "KELLYPRTNR FPO [KPG]",
+      "price": 7.1,
+      "score": 4,
+      "flags": [],
+      "segments": {
+        "1wk": 0.14701,
+        "1mo": -0.23106,
+        "3mo": -0.06177,
+        "6mo": -0.16047,
+        "1yr": -0.24853,
+        "2yr": 1.3962,
+        "3yr": 0.40311,
+        "5yr": 0.99422
+      },
+      "from_52w_high": -0.4713,
+      "from_5y_high": -0.4779,
+      "mcap": 321452224,
+      "volume_20d": 226905,
+      "sector": "Industrials",
+      "weekly_streak": 2
+    },
+    {
+      "ticker": "MPW",
+      "name": "METALPWLTD FPO [MPW]",
+      "price": 2.8,
+      "score": 3,
+      "flags": [],
+      "segments": {
+        "1wk": 0.09375,
+        "1mo": -0.07581,
+        "3mo": 0.35784,
+        "6mo": -0.32,
+        "1yr": -0.3634,
+        "2yr": 12.0,
+        "3yr": 0.0,
+        "5yr": -0.68817
+      },
+      "from_52w_high": -0.4227,
+      "from_5y_high": -0.4227,
+      "mcap": 406260640,
+      "volume_20d": 119354,
+      "sector": "Basic Materials",
+      "weekly_streak": 2
+    },
+    {
+      "ticker": "PMV",
+      "name": "PREM INV. FPO [PMV]",
+      "price": 13.65,
+      "score": 3,
+      "flags": [],
+      "segments": {
+        "1wk": -0.0201,
+        "1mo": 0.05132,
+        "3mo": -0.20273,
+        "6mo": -0.21935,
+        "1yr": -0.08441,
+        "2yr": -0.12948,
+        "3yr": 0.11427,
+        "5yr": 0.36634
+      },
+      "from_52w_high": -0.408,
+      "from_5y_high": -0.608,
+      "mcap": 2182361856,
+      "volume_20d": 472227,
+      "sector": "Consumer Cyclical",
+      "weekly_streak": 1
+    },
+    {
+      "ticker": "LIC",
+      "name": "LIFESTYLE FPO [LIC]",
+      "price": 5.62,
+      "score": 5,
+      "flags": [],
+      "segments": {
+        "1wk": -0.04584,
+        "1mo": 0.06126,
+        "3mo": 0.07767,
+        "6mo": 0.03,
+        "1yr": -0.49187,
+        "2yr": -0.45213,
+        "3yr": 0.06813,
+        "5yr": 0.32263
+      },
+      "from_52w_high": -0.4363,
+      "from_5y_high": -0.7574,
+      "mcap": 684179072,
+      "volume_20d": 170757,
+      "sector": "Real Estate",
+      "weekly_streak": -1
+    },
+    {
+      "ticker": "MTM",
+      "name": "METALLIUM FPO [MTM]",
+      "price": 0.78,
+      "score": 5,
+      "flags": [],
+      "segments": {
+        "1wk": -0.18325,
+        "1mo": 0.03804,
+        "3mo": 0.34307,
+        "6mo": -0.04196,
+        "1yr": 2.76316,
+        "2yr": 1.5,
+        "3yr": 0.0411,
+        "5yr": null
+      },
+      "from_52w_high": -0.4113,
+      "from_5y_high": -0.4113,
+      "mcap": 574737216,
+      "volume_20d": 6995709,
+      "sector": "Basic Materials",
+      "weekly_streak": -4
+    }
+  ]
+}
