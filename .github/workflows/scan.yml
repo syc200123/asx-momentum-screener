@@ -76,7 +76,7 @@ jobs:
           if [ -n "$SLACK_WEBHOOK" ]; then
             python scripts/momentum_digest.py
           else
-            echo "No SLACK_WEBHOOK_MOMENTUM secret set — skipping Slack post"
+            echo "No SLACK_WEBHOOK_URL secret set — skipping Slack post"
           fi
 
       # ── Step 4: Trigger Claude in Slack ────────────────────────
@@ -86,7 +86,7 @@ jobs:
       #   - Reversal candidates → Reversal Signal Detector skill
       - name: Send candidates to Claude via Slack
         env:
-          SLACK_WEBHOOK_CLAUDE: ${{ secrets.SLACK_WORKFLOW_WEBHOOK }}
+          SLACK_WEBHOOK_CLAUDE: ${{ secrets.SLACK_WEBHOOK_URL }}
         run: |
           if [ -z "$SLACK_WEBHOOK_CLAUDE" ]; then
             echo "No SLACK_WEBHOOK_CLAUDE secret set — skipping Claude trigger"
