@@ -1,0 +1,151 @@
+name: ASX Momentum Scan
+
+on:
+  schedule:
+    # 8:00 PM UTC = 6:00 AM AEST (next day) on weekdays
+    - cron: '0 20 * * 0-4'
+  workflow_dispatch:
+    inputs:
+      skip_scan:
+        description: 'Skip scan, use existing data (for testing digest changes)'
+        required: false
+        default: 'false'
+        type: boolean
+      min_price:
+        description: 'Minimum stock price filter for digest'
+        required: false
+        default: '0.50'
+      min_mcap:
+        description: 'Minimum market cap in millions for digest'
+        required: false
+        default: '100'
+
+permissions:
+  contents: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install yfinance requests pandas numpy
+
+      # ── Step 1: Full ASX Scan ──────────────────────────────────
+      - name: Run ASX momentum scan
+        if: ${{ github.event.inputs.skip_scan != 'true' }}
+        env:
+          MIN_PRICE: "0.10"
+          DOWNLOAD_BATCH: "200"
+          FETCH_INFO: "true"
+          OUTPUT_DIR: "docs/data"
+        run: python scripts/scan.py
+
+      # ── Step 2: Generate Digest ────────────────────────────────
+      - name: Generate momentum digest
+        env:
+          SCAN_OUTPUT: "docs/data/asx_momentum_data.json"
+          MIN_PRICE: ${{ github.event.inputs.min_price || '0.50' }}
+          MIN_MCAP: ${{ github.event.inputs.min_mcap || '100' }}
+          MIN_VOLUME: "50000"
+          MAX_MOMENTUM: "30"
+          MAX_REVERSAL: "20"
+          OUTPUT_FILE: "docs/data/momentum_digest.md"
+          FORMAT: "markdown"
+        run: python scripts/momentum_digest.py
+
+      # ── Step 3: Post digest to Slack ───────────────────────────
+      - name: Post digest to Slack
+        env:
+          SCAN_OUTPUT: "docs/data/asx_momentum_data.json"
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
+          MIN_PRICE: ${{ github.event.inputs.min_price || '0.50' }}
+          MIN_MCAP: ${{ github.event.inputs.min_mcap || '100' }}
+          MIN_VOLUME: "50000"
+          FORMAT: "slack"
+        run: |
+          if [ -n "$SLACK_WEBHOOK" ]; then
+            python scripts/momentum_digest.py
+          else
+            echo "No SLACK_WEBHOOK_MOMENTUM secret set — skipping Slack post"
+          fi
+
+      # ── Step 4: Trigger Claude in Slack ────────────────────────
+      # Posts a structured prompt to the Claude Slack channel.
+      # Claude picks this up and runs the relevant skills:
+      #   - Momentum candidates → quick fundamental check via web search
+      #   - Reversal candidates → Reversal Signal Detector skill
+      - name: Send candidates to Claude via Slack
+        env:
+          SLACK_WEBHOOK_CLAUDE: ${{ secrets.SLACK_WORKFLOW_WEBHOOK }}
+        run: |
+          if [ -z "$SLACK_WEBHOOK_CLAUDE" ]; then
+            echo "No SLACK_WEBHOOK_CLAUDE secret set — skipping Claude trigger"
+            exit 0
+          fi
+
+          python3 - <<'SEND_TO_CLAUDE'
+          import json
+          import os
+          import requests
+          from pathlib import Path
+
+          digest_path = "docs/data/momentum_digest.md"
+          digest_text = Path(digest_path).read_text() if Path(digest_path).exists() else ""
+
+          if not digest_text:
+              print("No digest found — skipping Claude trigger")
+              exit(0)
+
+          prompt = """*ASX Momentum Screener — Candidates for Review*
+
+          The weekly momentum scan has completed. Please review the candidates below.
+
+          *For Momentum candidates (Track 1):*
+          Run a quick fundamental check on the top 5 — revenue growth, profitability, balance sheet, any red flags. Flag any that warrant deeper research.
+
+          *For Reversal candidates (Track 2):*
+          Run the Reversal Signal Detector on the top 3-5 candidates. These are stocks 40%+ below their 52-week high showing early positive signals. Confirm whether genuine reversal or dead-cat bounce.
+
+          *Sector context:*
+          Cross-reference candidates against the latest sector rotation signals. Prioritise stocks in sectors with current tailwinds.
+
+          """
+
+          full_msg = prompt + "\n" + digest_text
+
+          if len(full_msg) > 38000:
+              full_msg = full_msg[:38000] + "\n\n_[Truncated — see full digest in repo]_"
+
+          webhook = os.environ["SLACK_WEBHOOK_CLAUDE"]
+          resp = requests.post(webhook, json={"text": full_msg}, timeout=30)
+          if resp.status_code == 200:
+              print("Posted candidates to Claude Slack channel")
+          else:
+              print(f"Slack post failed: {resp.status_code} {resp.text}")
+              exit(1)
+          SEND_TO_CLAUDE
+
+      # ── Step 5: Commit updated data ────────────────────────────
+      - name: Commit and push results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/data/
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            TIMESTAMP=$(date -u +"%d %b %Y %H:%M UTC")
+            STOCK_COUNT=$(python3 -c "import json; d=json.load(open('docs/data/asx_momentum_data.json')); print(d['summary']['passed'])" 2>/dev/null || echo "?")
+            git commit -m "Scan: ${STOCK_COUNT} stocks — ${TIMESTAMP}"
+            git push
+          fi
