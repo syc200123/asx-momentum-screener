@@ -50,8 +50,8 @@ jobs:
           OUTPUT_DIR: "docs/data"
         run: python scripts/scan.py
 
-      # ── Step 2: Generate Digest ────────────────────────────────
-      - name: Generate momentum digest
+      # ── Step 2: Generate full markdown digest (committed to repo) ──
+      - name: Generate markdown digest
         env:
           SCAN_OUTPUT: "docs/data/asx_momentum_data.json"
           MIN_PRICE: ${{ github.event.inputs.min_price || '0.50' }}
@@ -63,8 +63,8 @@ jobs:
           FORMAT: "markdown"
         run: python scripts/momentum_digest.py
 
-      # ── Step 3: Post digest to Slack ───────────────────────────
-      - name: Post digest to Slack
+      # ── Step 3: Post concise summary to Slack ──────────────────
+      - name: Post summary to Slack
         env:
           SCAN_OUTPUT: "docs/data/asx_momentum_data.json"
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
@@ -72,68 +72,32 @@ jobs:
           MIN_MCAP: ${{ github.event.inputs.min_mcap || '100' }}
           MIN_VOLUME: "50000"
           FORMAT: "slack"
+          PAGES_URL: ${{ vars.PAGES_URL || '' }}
         run: |
           if [ -n "$SLACK_WEBHOOK" ]; then
             python scripts/momentum_digest.py
           else
-            echo "No SLACK_WEBHOOK_URL secret set — skipping Slack post"
+            echo "No SLACK_WEBHOOK_MOMENTUM secret set — skipping"
           fi
 
-      # ── Step 4: Trigger Claude in Slack ────────────────────────
-      # Posts a structured prompt to the Claude Slack channel.
-      # Claude picks this up and runs the relevant skills:
-      #   - Momentum candidates → quick fundamental check via web search
+      # ── Step 4: Send structured prompt to Claude via Slack ─────
+      # Claude picks this up and runs skills:
+      #   - Momentum candidates → fundamental check via web search
       #   - Reversal candidates → Reversal Signal Detector skill
-      - name: Send candidates to Claude via Slack
+      - name: Trigger Claude analysis via Slack
         env:
+          SCAN_OUTPUT: "docs/data/asx_momentum_data.json"
           SLACK_WEBHOOK_CLAUDE: ${{ secrets.SLACK_WEBHOOK_URL }}
+          MIN_PRICE: ${{ github.event.inputs.min_price || '0.50' }}
+          MIN_MCAP: ${{ github.event.inputs.min_mcap || '100' }}
+          MIN_VOLUME: "50000"
+          FORMAT: "claude"
         run: |
-          if [ -z "$SLACK_WEBHOOK_CLAUDE" ]; then
-            echo "No SLACK_WEBHOOK_CLAUDE secret set — skipping Claude trigger"
-            exit 0
+          if [ -n "$SLACK_WEBHOOK" ]; then
+            python scripts/momentum_digest.py
+          else
+            echo "No SLACK_WEBHOOK_CLAUDE secret set — skipping"
           fi
-
-          python3 - <<'SEND_TO_CLAUDE'
-          import json
-          import os
-          import requests
-          from pathlib import Path
-
-          digest_path = "docs/data/momentum_digest.md"
-          digest_text = Path(digest_path).read_text() if Path(digest_path).exists() else ""
-
-          if not digest_text:
-              print("No digest found — skipping Claude trigger")
-              exit(0)
-
-          prompt = """*ASX Momentum Screener — Candidates for Review*
-
-          The weekly momentum scan has completed. Please review the candidates below.
-
-          *For Momentum candidates (Track 1):*
-          Run a quick fundamental check on the top 5 — revenue growth, profitability, balance sheet, any red flags. Flag any that warrant deeper research.
-
-          *For Reversal candidates (Track 2):*
-          Run the Reversal Signal Detector on the top 3-5 candidates. These are stocks 40%+ below their 52-week high showing early positive signals. Confirm whether genuine reversal or dead-cat bounce.
-
-          *Sector context:*
-          Cross-reference candidates against the latest sector rotation signals. Prioritise stocks in sectors with current tailwinds.
-
-          """
-
-          full_msg = prompt + "\n" + digest_text
-
-          if len(full_msg) > 38000:
-              full_msg = full_msg[:38000] + "\n\n_[Truncated — see full digest in repo]_"
-
-          webhook = os.environ["SLACK_WEBHOOK_CLAUDE"]
-          resp = requests.post(webhook, json={"text": full_msg}, timeout=30)
-          if resp.status_code == 200:
-              print("Posted candidates to Claude Slack channel")
-          else:
-              print(f"Slack post failed: {resp.status_code} {resp.text}")
-              exit(1)
-          SEND_TO_CLAUDE
 
       # ── Step 5: Commit updated data ────────────────────────────
       - name: Commit and push results

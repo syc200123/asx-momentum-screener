@@ -4,27 +4,27 @@ ASX Momentum Digest — Post-Scan Filter & Slack Reporter
 ========================================================
 Reads the full asx_momentum_data.json from the screener, filters to
 actionable candidates across two tracks (Momentum + Reversal), and
-outputs a compact digest suitable for Slack posting and Claude analysis.
+outputs results in multiple formats:
+
+  markdown  — Full tables for GitHub commit (docs/data/momentum_digest.md)
+  slack     — Concise summary message for Slack (top 5 per track)
+  claude    — Structured prompt for Claude Slack channel (ticker lists + data)
 
 Designed to run as a second step in the GitHub Actions pipeline:
   1. scan.py → asx_momentum_data.json (full ~5MB dataset)
-  2. momentum_digest.py → filtered candidates posted to Slack
-
-Two candidate tracks:
-  MOMENTUM — Stocks in continuous uptrend or accelerating momentum
-  REVERSAL — Crashed stocks showing early recovery signals
+  2. momentum_digest.py → filtered candidates in chosen format
 
 Environment variables:
   SCAN_OUTPUT     Path to screener JSON (default: docs/data/asx_momentum_data.json)
-  SLACK_WEBHOOK   Slack webhook URL for posting digest
-  SLACK_CHANNEL   Override channel (optional)
+  SLACK_WEBHOOK   Slack webhook URL for posting
   MIN_PRICE       Minimum price filter (default: 0.50)
   MIN_MCAP        Minimum market cap in millions (default: 100)
   MIN_VOLUME      Minimum 20-day avg volume (default: 50000)
   MAX_MOMENTUM    Max momentum candidates to report (default: 30)
   MAX_REVERSAL    Max reversal candidates to report (default: 20)
-  OUTPUT_FILE     Save digest to file (optional, for local testing)
-  FORMAT          Output format: 'slack' or 'markdown' (default: slack)
+  OUTPUT_FILE     Save digest to file (optional)
+  FORMAT          Output format: 'slack', 'markdown', or 'claude' (default: slack)
+  PAGES_URL       GitHub Pages URL for linking (default: empty)
 """
 
 import json
@@ -53,22 +53,19 @@ log = logging.getLogger("digest")
 SCAN_OUTPUT = os.environ.get("SCAN_OUTPUT", "docs/data/asx_momentum_data.json")
 SLACK_WEBHOOK = os.environ.get("SLACK_WEBHOOK", "")
 MIN_PRICE = float(os.environ.get("MIN_PRICE", "0.50"))
-MIN_MCAP = float(os.environ.get("MIN_MCAP", "100")) * 1_000_000  # Convert to raw
+MIN_MCAP = float(os.environ.get("MIN_MCAP", "100")) * 1_000_000
 MIN_VOLUME = int(os.environ.get("MIN_VOLUME", "50000"))
 MAX_MOMENTUM = int(os.environ.get("MAX_MOMENTUM", "30"))
 MAX_REVERSAL = int(os.environ.get("MAX_REVERSAL", "20"))
 OUTPUT_FILE = os.environ.get("OUTPUT_FILE", "")
 FORMAT = os.environ.get("FORMAT", "slack")
+PAGES_URL = os.environ.get("PAGES_URL", "")
 
 # Flag key reference (from scan.py):
-# CU = Continuous Uptrend (all core segments positive)
-# EU = Extended Uptrend (CU + 2yr and 3yr positive)
-# AC = Accelerating (each shorter period faster than longer)
-# HS = Hot Streak (8+ consecutive positive weeks)
-# CS = Cold Streak (6+ consecutive negative weeks)
-# CW = Consistent Winner (70%+ positive weeks in last 52)
-# NU = New Uptrend (gained CU since last snapshot)
-# LU = Lost Uptrend (lost CU since last snapshot)
+# CU = Continuous Uptrend    EU = Extended Uptrend
+# AC = Accelerating          HS = Hot Streak (8+ positive weeks)
+# CS = Cold Streak (6+ neg)  CW = Consistent Winner (70%+ positive weeks)
+# NU = New Uptrend           LU = Lost Uptrend
 
 
 # ---------------------------------------------------------------------------
@@ -76,24 +73,17 @@ FORMAT = os.environ.get("FORMAT", "slack")
 # ---------------------------------------------------------------------------
 
 def load_scan(path: str) -> dict:
-    """Load the screener JSON output."""
     p = Path(path)
     if not p.exists():
         log.error(f"Scan output not found: {path}")
         sys.exit(1)
-
     with open(p) as f:
         data = json.load(f)
-
-    log.info(
-        f"Loaded {len(data.get('stocks', []))} stocks "
-        f"from scan at {data.get('ts', 'unknown')}"
-    )
+    log.info(f"Loaded {len(data.get('stocks', []))} stocks from scan at {data.get('ts', 'unknown')}")
     return data
 
 
 def passes_quality_filter(stock: dict) -> bool:
-    """Apply minimum quality thresholds."""
     if stock.get("pr", 0) < MIN_PRICE:
         return False
     if stock.get("mc", 0) and stock["mc"] < MIN_MCAP:
@@ -110,13 +100,7 @@ def passes_quality_filter(stock: dict) -> bool:
 def filter_momentum(stocks: list[dict]) -> list[dict]:
     """
     Identify stocks with strong upward momentum.
-
-    Criteria (any of):
-    - CU flag (continuous uptrend across all core segments)
-    - Total score >= 5 with AC (accelerating) flag
-    - NU flag (newly entered uptrend since last scan)
-
-    Ranked by: total score, then acceleration, then 3-month segment return.
+    Criteria: CU flag, or score >= 5 with AC flag, or NU flag.
     """
     candidates = []
 
@@ -128,7 +112,6 @@ def filter_momentum(stocks: list[dict]) -> list[dict]:
         ts = s.get("ts", 0)
         seg = s.get("seg", {})
 
-        # Must meet at least one momentum criterion
         is_cu = "CU" in flags
         is_strong_accel = ts >= 5 and "AC" in flags
         is_new_uptrend = "NU" in flags
@@ -136,28 +119,25 @@ def filter_momentum(stocks: list[dict]) -> list[dict]:
         if not (is_cu or is_strong_accel or is_new_uptrend):
             continue
 
-        # Compute a composite rank score for sorting
-        rank = ts * 10  # Base: total score (0-80)
+        rank = ts * 10
         if is_cu:
             rank += 20
         if "EU" in flags:
-            rank += 10  # Extended uptrend bonus
+            rank += 10
         if "AC" in flags:
-            rank += 15  # Accelerating bonus
+            rank += 15
         if "HS" in flags:
-            rank += 10  # Hot streak bonus
+            rank += 10
         if "CW" in flags:
-            rank += 5   # Consistent winner bonus
+            rank += 5
         if is_new_uptrend:
-            rank += 25  # New uptrend gets attention
+            rank += 25
 
-        # Add 3-month segment return as tiebreaker
         seg_3m = seg.get("3mo")
         if seg_3m is not None:
-            rank += min(seg_3m * 100, 50)  # Cap contribution at 50
+            rank += min(seg_3m * 100, 50)
 
         s["_rank"] = rank
-        s["_track"] = "MOMENTUM"
         candidates.append(s)
 
     candidates.sort(key=lambda x: x["_rank"], reverse=True)
@@ -171,20 +151,7 @@ def filter_momentum(stocks: list[dict]) -> list[dict]:
 def filter_reversal(stocks: list[dict]) -> list[dict]:
     """
     Identify crashed stocks showing early recovery signals.
-
-    Criteria (all required):
-    - Price >= 40% below 52-week high (pfh <= -0.40)
-    - At least one positive recent segment (1wk or 1mo)
-    - Not in cold streak (CS flag absent)
-    - Minimum market cap and volume filters apply
-
-    Additional signals captured:
-    - Positive 1-week segment (immediate momentum)
-    - Positive 1-month segment (sustained bounce)
-    - Score improving (dts > 0 from previous scan)
-
-    These are candidates for the Reversal Signal Detector skill to
-    analyse in detail — NOT buy signals.
+    Criteria: 40%+ below 52-week high, positive recent segment, not in cold streak.
     """
     candidates = []
 
@@ -194,17 +161,13 @@ def filter_reversal(stocks: list[dict]) -> list[dict]:
 
         flags = set(s.get("f", []))
         seg = s.get("seg", {})
-        pfh = s.get("pfh", 0)  # Percent from 52-week high (negative = below)
+        pfh = s.get("pfh", 0)
 
-        # Must be significantly below 52-week high
         if pfh is None or pfh > -0.40:
             continue
-
-        # Must NOT be in cold streak (still actively declining)
         if "CS" in flags:
             continue
 
-        # Must show at least one positive recent segment
         seg_1wk = seg.get("1wk")
         seg_1mo = seg.get("1mo")
         has_recent_positive = (
@@ -214,39 +177,31 @@ def filter_reversal(stocks: list[dict]) -> list[dict]:
         if not has_recent_positive:
             continue
 
-        # Compute reversal strength score for ranking
         rank = 0
-
-        # How far below high (deeper crash = more upside if reversing)
         crash_depth = abs(pfh)
-        rank += min(crash_depth * 100, 60)  # Cap at 60 pts
+        rank += min(crash_depth * 100, 60)
 
-        # Recent momentum signals
         if seg_1wk is not None and seg_1wk > 0:
-            rank += 15 + min(seg_1wk * 200, 20)  # Positive week
+            rank += 15 + min(seg_1wk * 200, 20)
         if seg_1mo is not None and seg_1mo > 0:
-            rank += 20 + min(seg_1mo * 100, 20)  # Positive month (stronger signal)
+            rank += 20 + min(seg_1mo * 100, 20)
 
-        # Score improvement from previous scan
         dts = s.get("dts", 0)
         if dts and dts > 0:
-            rank += dts * 5  # Each score point gained
+            rank += dts * 5
 
-        # Weekly streak data — positive current streak is good
         ws52 = s.get("ws", {}).get("52", {})
         cs = ws52.get("cs", 0)
         if cs > 0:
-            rank += min(cs * 3, 15)  # Positive streak, cap at 15
+            rank += min(cs * 3, 15)
 
-        # Larger market cap = more institutional interest in recovery
         mc = s.get("mc", 0)
-        if mc and mc > 1_000_000_000:  # > $1B
+        if mc and mc > 1_000_000_000:
             rank += 10
-        elif mc and mc > 500_000_000:  # > $500M
+        elif mc and mc > 500_000_000:
             rank += 5
 
         s["_rank"] = rank
-        s["_track"] = "REVERSAL"
         candidates.append(s)
 
     candidates.sort(key=lambda x: x["_rank"], reverse=True)
@@ -254,18 +209,16 @@ def filter_reversal(stocks: list[dict]) -> list[dict]:
 
 
 # ---------------------------------------------------------------------------
-# Formatting
+# Formatting helpers
 # ---------------------------------------------------------------------------
 
 def fmt_pct(val, places=1) -> str:
-    """Format a decimal as percentage string."""
     if val is None:
-        return "  —  "
+        return "—"
     return f"{val:+.{places}%}"
 
 
 def fmt_mcap(val) -> str:
-    """Format market cap as human-readable string."""
     if not val:
         return "—"
     if val >= 1_000_000_000:
@@ -276,7 +229,6 @@ def fmt_mcap(val) -> str:
 
 
 def fmt_vol(val) -> str:
-    """Format volume as human-readable string."""
     if not val:
         return "—"
     if val >= 1_000_000:
@@ -286,299 +238,328 @@ def fmt_vol(val) -> str:
     return str(val)
 
 
-def flag_display(flags: list) -> str:
-    """Convert flag codes to readable labels."""
+def flag_emojis(flags: list) -> str:
+    """Convert flags to compact emoji indicators for Slack."""
+    parts = []
+    if "CU" in flags:
+        parts.append(":chart_with_upwards_trend:")
+    if "EU" in flags:
+        parts.append(":rocket:")
+    if "AC" in flags:
+        parts.append(":zap:")
+    if "HS" in flags:
+        parts.append(":fire:")
+    if "CW" in flags:
+        parts.append(":white_check_mark:")
+    if "NU" in flags:
+        parts.append(":new:")
+    return "".join(parts) if parts else ""
+
+
+def flag_labels(flags: list) -> str:
+    """Convert flags to readable text labels."""
     labels = {
-        "CU": "Uptrend",
-        "EU": "Ext.Uptrend",
-        "AC": "Accelerating",
-        "HS": "HotStreak",
-        "CS": "ColdStreak",
-        "CW": "ConsistentWin",
-        "NU": "NewUptrend",
-        "LU": "LostUptrend",
+        "CU": "Uptrend", "EU": "Ext.Uptrend", "AC": "Accelerating",
+        "HS": "HotStreak", "CS": "ColdStreak", "CW": "ConsistentWin",
+        "NU": "NewUptrend", "LU": "LostUptrend",
     }
     return ", ".join(labels.get(f, f) for f in flags if f in labels)
 
 
-def format_momentum_table(candidates: list[dict], fmt: str = "slack") -> str:
-    """Format momentum candidates as a table."""
-    if not candidates:
-        return "_No momentum candidates found matching filters._"
+# ---------------------------------------------------------------------------
+# Format: Slack (concise summary message)
+# ---------------------------------------------------------------------------
 
-    lines = []
+def format_slack(data: dict, momentum: list[dict], reversal: list[dict]) -> str:
+    """
+    Build a concise Slack message. Uses Slack mrkdwn format.
+    Shows stats + top 5 per track as one-liners + link to full data.
+    """
+    summary = data.get("summary", {})
+    flags = summary.get("flags", {})
+    scan_ts = data.get("ts", "unknown")[:10]
 
-    if fmt == "markdown":
-        lines.append(
-            "| Ticker | Name | Price | Score | Flags | "
-            "1W Seg | 1M Seg | 3M Seg | 6M Seg | 1Y Seg | "
-            "From 52wH | MCap | Vol(20d) | Sector |"
-        )
-        lines.append("|" + "|".join(["---"] * 14) + "|")
-    else:
-        # Slack: use code block for alignment
-        lines.append(
-            f"{'Tick':<7} {'Price':>8} {'Scr':>3} {'Flags':<20} "
-            f"{'1W':>7} {'1M':>7} {'3M':>7} {'6M':>7} {'1Y':>7} "
-            f"{'Fr52H':>7} {'MCap':>7} {'Sector':<20}"
-        )
-        lines.append("─" * 130)
+    parts = []
 
-    for s in candidates:
+    # ── Header ──
+    parts.append(f":bar_chart: *ASX Momentum Digest — {scan_ts}*")
+    parts.append("")
+    parts.append(
+        f":mag: Scanned *{summary.get('scanned', '?')}* stocks  "
+        f":arrow_up: *{flags.get('CU', 0)}* uptrends  "
+        f":zap: *{flags.get('AC', 0)}* accelerating  "
+        f":new: *{flags.get('NU', 0)}* new  "
+        f":small_red_triangle_down: *{flags.get('LU', 0)}* lost"
+    )
+
+    # ── Track 1: Momentum (top 5) ──
+    parts.append("")
+    parts.append(f"*:chart_with_upwards_trend: Momentum — Top {min(5, len(momentum))} of {len(momentum)} candidates*")
+
+    for i, s in enumerate(momentum[:5]):
         seg = s.get("seg", {})
-        flags = s.get("f", [])
+        fl = flag_emojis(s.get("f", []))
+        seg_parts = []
+        for period in ["1wk", "1mo", "3mo", "6mo", "1yr"]:
+            v = seg.get(period)
+            if v is not None:
+                seg_parts.append(fmt_pct(v))
+        seg_str = " → ".join(seg_parts) if seg_parts else "—"
 
-        if fmt == "markdown":
-            lines.append(
-                f"| **{s['t']}** | {s.get('n', s['t'])[:25]} | "
-                f"${s['pr']:.2f} | {s['ts']} | {flag_display(flags)} | "
-                f"{fmt_pct(seg.get('1wk'))} | {fmt_pct(seg.get('1mo'))} | "
-                f"{fmt_pct(seg.get('3mo'))} | {fmt_pct(seg.get('6mo'))} | "
-                f"{fmt_pct(seg.get('1yr'))} | "
-                f"{fmt_pct(s.get('pfh'))} | {fmt_mcap(s.get('mc'))} | "
-                f"{fmt_vol(s.get('v20'))} | {s.get('s', '—')} |"
-            )
-        else:
-            flag_str = ",".join(f for f in flags if f in {"CU","EU","AC","HS","CW","NU"})
-            lines.append(
-                f"{s['t']:<7} {s['pr']:>8.2f} {s['ts']:>3} {flag_str:<20} "
-                f"{fmt_pct(seg.get('1wk')):>7} {fmt_pct(seg.get('1mo')):>7} "
-                f"{fmt_pct(seg.get('3mo')):>7} {fmt_pct(seg.get('6mo')):>7} "
-                f"{fmt_pct(seg.get('1yr')):>7} "
-                f"{fmt_pct(s.get('pfh')):>7} {fmt_mcap(s.get('mc')):>7} "
-                f"{s.get('s', '—')[:20]:<20}"
-            )
-
-    return "\n".join(lines)
-
-
-def format_reversal_table(candidates: list[dict], fmt: str = "slack") -> str:
-    """Format reversal candidates as a table."""
-    if not candidates:
-        return "_No reversal candidates found matching filters._"
-
-    lines = []
-
-    if fmt == "markdown":
-        lines.append(
-            "| Ticker | Name | Price | From 52wH | From 5yH | "
-            "1W Seg | 1M Seg | Score | Wk Streak | "
-            "MCap | Vol(20d) | Sector |"
+        parts.append(
+            f"  *{i+1}. {s['t']}* — ${s['pr']:.2f}  "
+            f"Score {s['ts']}/8  {fl}  "
+            f"_{s.get('s', '?')}_  {fmt_mcap(s.get('mc'))}"
         )
-        lines.append("|" + "|".join(["---"] * 12) + "|")
-    else:
-        lines.append(
-            f"{'Tick':<7} {'Price':>8} {'Fr52H':>7} {'Fr5yH':>7} "
-            f"{'1W':>7} {'1M':>7} {'Scr':>3} {'WkStr':>5} "
-            f"{'MCap':>7} {'Sector':<20}"
-        )
-        lines.append("─" * 100)
+        parts.append(f"      Segments: {seg_str}")
 
-    for s in candidates:
+    if len(momentum) > 5:
+        remaining = [s["t"] for s in momentum[5:15]]
+        parts.append(f"  _+{len(momentum) - 5} more: {', '.join(remaining)}{'...' if len(momentum) > 15 else ''}_")
+
+    # ── Track 2: Reversal (top 5) ──
+    parts.append("")
+    parts.append(f"*:leftwards_arrow_with_hook: Reversal — Top {min(5, len(reversal))} of {len(reversal)} candidates*")
+    parts.append("_40%+ below 52wk high with positive recent segments. Run Reversal Signal Detector before entry._")
+
+    for i, s in enumerate(reversal[:5]):
         seg = s.get("seg", {})
         ws52 = s.get("ws", {}).get("52", {})
+        wk_streak = ws52.get("cs", 0)
+        streak_str = f"+{wk_streak}wk streak" if wk_streak > 0 else ""
 
-        if fmt == "markdown":
-            lines.append(
-                f"| **{s['t']}** | {s.get('n', s['t'])[:25]} | "
-                f"${s['pr']:.2f} | {fmt_pct(s.get('pfh'))} | "
-                f"{fmt_pct(s.get('pf5h'))} | "
-                f"{fmt_pct(seg.get('1wk'))} | {fmt_pct(seg.get('1mo'))} | "
-                f"{s['ts']} | {ws52.get('cs', 0):+d} | "
-                f"{fmt_mcap(s.get('mc'))} | {fmt_vol(s.get('v20'))} | "
-                f"{s.get('s', '—')} |"
-            )
-        else:
-            lines.append(
-                f"{s['t']:<7} {s['pr']:>8.2f} {fmt_pct(s.get('pfh')):>7} "
-                f"{fmt_pct(s.get('pf5h')):>7} "
-                f"{fmt_pct(seg.get('1wk')):>7} {fmt_pct(seg.get('1mo')):>7} "
-                f"{s['ts']:>3} {ws52.get('cs', 0):>+5d} "
-                f"{fmt_mcap(s.get('mc')):>7} {s.get('s', '—')[:20]:<20}"
-            )
+        parts.append(
+            f"  *{i+1}. {s['t']}* — ${s['pr']:.2f}  "
+            f"*{fmt_pct(s.get('pfh'))}* from 52wH  "
+            f"_{s.get('s', '?')}_  {fmt_mcap(s.get('mc'))}"
+        )
+        recovery_parts = []
+        if seg.get("1wk") is not None:
+            recovery_parts.append(f"1wk {fmt_pct(seg['1wk'])}")
+        if seg.get("1mo") is not None:
+            recovery_parts.append(f"1mo {fmt_pct(seg['1mo'])}")
+        if streak_str:
+            recovery_parts.append(streak_str)
+        if recovery_parts:
+            parts.append(f"      Recovery: {', '.join(recovery_parts)}")
 
-    return "\n".join(lines)
+    if len(reversal) > 5:
+        remaining = [s["t"] for s in reversal[5:15]]
+        parts.append(f"  _+{len(reversal) - 5} more: {', '.join(remaining)}{'...' if len(reversal) > 15 else ''}_")
 
+    # ── Footer ──
+    parts.append("")
+    if PAGES_URL:
+        parts.append(f":link: <{PAGES_URL}|Full interactive screener>")
+    parts.append(
+        f"_Filters: ≥${MIN_PRICE:.2f}, ≥${MIN_MCAP/1_000_000:.0f}M mcap, "
+        f"≥{MIN_VOLUME:,} vol. Not financial advice._"
+    )
 
-def sector_summary(candidates: list[dict]) -> str:
-    """Summarise candidates by sector."""
-    sectors = {}
-    for s in candidates:
-        sec = s.get("s", "Unknown")
-        if sec not in sectors:
-            sectors[sec] = {"count": 0, "tickers": []}
-        sectors[sec]["count"] += 1
-        sectors[sec]["tickers"].append(s["t"])
-
-    if not sectors:
-        return ""
-
-    lines = ["*Sector breakdown:*"]
-    for sec, data in sorted(sectors.items(), key=lambda x: x[1]["count"], reverse=True):
-        tickers = ", ".join(data["tickers"][:8])
-        suffix = f" +{data['count'] - 8} more" if data["count"] > 8 else ""
-        lines.append(f"  {sec}: {data['count']} ({tickers}{suffix})")
-
-    return "\n".join(lines)
+    return "\n".join(parts)
 
 
 # ---------------------------------------------------------------------------
-# Build digest
+# Format: Claude trigger (structured prompt for Slack)
 # ---------------------------------------------------------------------------
 
-def build_digest(
-    data: dict,
-    momentum: list[dict],
-    reversal: list[dict],
-    fmt: str = "slack",
-) -> str:
-    """Build the complete digest message."""
+def format_claude(data: dict, momentum: list[dict], reversal: list[dict]) -> str:
+    """
+    Build a structured prompt for Claude in Slack.
+    Includes enough data for Claude to run skills, but kept concise.
+    """
+    scan_ts = data.get("ts", "unknown")[:10]
+
+    parts = []
+    parts.append(f"*ASX Momentum Screener — Candidates for Review ({scan_ts})*")
+    parts.append("")
+
+    # ── Momentum: full list as compact data ──
+    parts.append(f"*Track 1: Momentum Candidates ({len(momentum)})*")
+    parts.append("Run a quick fundamental check on the top 5. Flag any with red flags or strong buy signals.")
+    parts.append("")
+
+    for s in momentum[:10]:
+        seg = s.get("seg", {})
+        fl = flag_labels(s.get("f", []))
+        parts.append(
+            f"• *{s['t']}* ${s['pr']:.2f} | Score {s['ts']}/8 | {fl} | "
+            f"{s.get('s', '?')} | {fmt_mcap(s.get('mc'))} | "
+            f"3M {fmt_pct(seg.get('3mo'))} | 1Y {fmt_pct(seg.get('1yr'))} | "
+            f"From 52wH {fmt_pct(s.get('pfh'))}"
+        )
+
+    if len(momentum) > 10:
+        extras = ", ".join(s["t"] for s in momentum[10:])
+        parts.append(f"_Also: {extras}_")
+
+    # ── Reversal: full list as compact data ──
+    parts.append("")
+    parts.append(f"*Track 2: Reversal Candidates ({len(reversal)})*")
+    parts.append("Run the Reversal Signal Detector on the top 3-5. Confirm genuine reversal vs dead-cat bounce.")
+    parts.append("")
+
+    for s in reversal[:10]:
+        seg = s.get("seg", {})
+        ws52 = s.get("ws", {}).get("52", {})
+        parts.append(
+            f"• *{s['t']}* ${s['pr']:.2f} | *{fmt_pct(s.get('pfh'))}* from 52wH | "
+            f"{s.get('s', '?')} | {fmt_mcap(s.get('mc'))} | "
+            f"1wk {fmt_pct(seg.get('1wk'))} | 1mo {fmt_pct(seg.get('1mo'))} | "
+            f"Wk streak {ws52.get('cs', 0):+d}"
+        )
+
+    if len(reversal) > 10:
+        extras = ", ".join(s["t"] for s in reversal[10:])
+        parts.append(f"_Also: {extras}_")
+
+    # ── Instructions for Claude ──
+    parts.append("")
+    parts.append("*Sector context:* Cross-reference against latest sector rotation signals. Prioritise stocks in sectors with current tailwinds.")
+
+    return "\n".join(parts)
+
+
+# ---------------------------------------------------------------------------
+# Format: Markdown (full tables for GitHub commit)
+# ---------------------------------------------------------------------------
+
+def format_markdown(data: dict, momentum: list[dict], reversal: list[dict]) -> str:
+    """Build full markdown digest with tables for GitHub commit."""
     summary = data.get("summary", {})
     flags = summary.get("flags", {})
     scan_ts = data.get("ts", "unknown")
 
     parts = []
 
-    # Header
-    if fmt == "markdown":
-        parts.append(f"# ASX Momentum Digest — {scan_ts[:10]}")
-        parts.append("")
-        parts.append(
-            f"**Scanned:** {summary.get('scanned', '?')} stocks | "
-            f"**Passed filters:** {summary.get('passed', '?')} | "
-            f"**Uptrends (CU):** {flags.get('CU', 0)} | "
-            f"**Accelerating:** {flags.get('AC', 0)} | "
-            f"**New Uptrends:** {flags.get('NU', 0)} | "
-            f"**Lost Uptrends:** {flags.get('LU', 0)}"
-        )
-    else:
-        parts.append(f"*ASX Momentum Digest — {scan_ts[:10]}*")
-        parts.append(
-            f"Scanned: {summary.get('scanned', '?')} | "
-            f"Passed: {summary.get('passed', '?')} | "
-            f"Uptrends: {flags.get('CU', 0)} | "
-            f"Accel: {flags.get('AC', 0)} | "
-            f"New: {flags.get('NU', 0)} | "
-            f"Lost: {flags.get('LU', 0)}"
-        )
+    parts.append(f"# ASX Momentum Digest — {scan_ts[:10]}")
+    parts.append("")
+    parts.append(
+        f"**Scanned:** {summary.get('scanned', '?')} stocks | "
+        f"**Passed filters:** {summary.get('passed', '?')} | "
+        f"**Uptrends (CU):** {flags.get('CU', 0)} | "
+        f"**Accelerating:** {flags.get('AC', 0)} | "
+        f"**New Uptrends:** {flags.get('NU', 0)} | "
+        f"**Lost Uptrends:** {flags.get('LU', 0)}"
+    )
 
     # Track 1: Momentum
     parts.append("")
-    if fmt == "markdown":
-        parts.append(f"## Track 1: Momentum Candidates ({len(momentum)})")
-        parts.append("")
+    parts.append(f"## Track 1: Momentum Candidates ({len(momentum)})")
+    parts.append("")
+    parts.append(
+        "Stocks in continuous uptrend (CU), accelerating (AC), "
+        "or newly entering uptrend (NU). Ranked by composite momentum score."
+    )
+    parts.append("")
+
+    parts.append(
+        "| # | Ticker | Name | Price | Score | Flags | "
+        "1W | 1M | 3M | 6M | 1Y | "
+        "From 52wH | MCap | Vol(20d) | Sector |"
+    )
+    parts.append("|" + "|".join(["---"] * 15) + "|")
+
+    for i, s in enumerate(momentum):
+        seg = s.get("seg", {})
+        fl = flag_labels(s.get("f", []))
         parts.append(
-            "Stocks in continuous uptrend (CU), accelerating (AC), "
-            "or newly entering uptrend (NU). "
-            "Ranked by composite momentum score."
+            f"| {i+1} | **{s['t']}** | {s.get('n', s['t'])[:25]} | "
+            f"${s['pr']:.2f} | {s['ts']} | {fl} | "
+            f"{fmt_pct(seg.get('1wk'))} | {fmt_pct(seg.get('1mo'))} | "
+            f"{fmt_pct(seg.get('3mo'))} | {fmt_pct(seg.get('6mo'))} | "
+            f"{fmt_pct(seg.get('1yr'))} | "
+            f"{fmt_pct(s.get('pfh'))} | {fmt_mcap(s.get('mc'))} | "
+            f"{fmt_vol(s.get('v20'))} | {s.get('s', '—')} |"
         )
-    else:
-        parts.append(f"*— TRACK 1: MOMENTUM CANDIDATES ({len(momentum)}) —*")
 
+    # Sector breakdown
     parts.append("")
-    if fmt == "slack":
-        parts.append("```")
-    parts.append(format_momentum_table(momentum, fmt))
-    if fmt == "slack":
-        parts.append("```")
-
-    parts.append("")
-    parts.append(sector_summary(momentum))
+    parts.append(_sector_summary_md(momentum))
 
     # Track 2: Reversal
     parts.append("")
-    if fmt == "markdown":
-        parts.append(f"## Track 2: Reversal Candidates ({len(reversal)})")
-        parts.append("")
+    parts.append(f"## Track 2: Reversal Candidates ({len(reversal)})")
+    parts.append("")
+    parts.append(
+        "Stocks 40%+ below 52-week high but showing positive recent segments. "
+        "Not buy signals — candidates for Reversal Signal Detector analysis."
+    )
+    parts.append("")
+
+    parts.append(
+        "| # | Ticker | Name | Price | From 52wH | From 5yH | "
+        "1W | 1M | Score | Wk Streak | MCap | Vol(20d) | Sector |"
+    )
+    parts.append("|" + "|".join(["---"] * 13) + "|")
+
+    for i, s in enumerate(reversal):
+        seg = s.get("seg", {})
+        ws52 = s.get("ws", {}).get("52", {})
         parts.append(
-            "Stocks 40%+ below 52-week high but showing positive recent "
-            "segments (1-week or 1-month). Not buy signals — candidates for "
-            "Reversal Signal Detector analysis. Ranked by crash depth × "
-            "recovery strength."
-        )
-    else:
-        parts.append(f"*— TRACK 2: REVERSAL CANDIDATES ({len(reversal)}) —*")
-        parts.append(
-            "40%+ below 52wk high, showing positive recent segments. "
-            "Run Reversal Signal Detector before any entry."
+            f"| {i+1} | **{s['t']}** | {s.get('n', s['t'])[:25]} | "
+            f"${s['pr']:.2f} | {fmt_pct(s.get('pfh'))} | "
+            f"{fmt_pct(s.get('pf5h'))} | "
+            f"{fmt_pct(seg.get('1wk'))} | {fmt_pct(seg.get('1mo'))} | "
+            f"{s['ts']} | {ws52.get('cs', 0):+d} | "
+            f"{fmt_mcap(s.get('mc'))} | {fmt_vol(s.get('v20'))} | "
+            f"{s.get('s', '—')} |"
         )
 
     parts.append("")
-    if fmt == "slack":
-        parts.append("```")
-    parts.append(format_reversal_table(reversal, fmt))
-    if fmt == "slack":
-        parts.append("```")
-
-    parts.append("")
-    parts.append(sector_summary(reversal))
+    parts.append(_sector_summary_md(reversal))
 
     # Footer
     parts.append("")
-    if fmt == "markdown":
-        parts.append("---")
-        parts.append(
-            "*Filters: "
-            f"min price ${MIN_PRICE:.2f}, "
-            f"min mcap ${MIN_MCAP/1_000_000:.0f}M, "
-            f"min vol {MIN_VOLUME:,}. "
-            "General information only. Not personal financial advice.*"
-        )
-    else:
-        parts.append(
-            f"_Filters: ≥${MIN_PRICE:.2f}, ≥${MIN_MCAP/1_000_000:.0f}M mcap, "
-            f"≥{MIN_VOLUME:,} vol. Not financial advice._"
-        )
+    parts.append("---")
+    parts.append(
+        f"*Filters: min price ${MIN_PRICE:.2f}, min mcap ${MIN_MCAP/1_000_000:.0f}M, "
+        f"min vol {MIN_VOLUME:,}. General information only. Not personal financial advice.*"
+    )
 
     return "\n".join(parts)
+
+
+def _sector_summary_md(candidates: list[dict]) -> str:
+    sectors = {}
+    for s in candidates:
+        sec = s.get("s", "Unknown")
+        if sec not in sectors:
+            sectors[sec] = []
+        sectors[sec].append(s["t"])
+
+    if not sectors:
+        return ""
+
+    lines = ["**Sector breakdown:**"]
+    for sec, tickers in sorted(sectors.items(), key=lambda x: len(x[1]), reverse=True):
+        t_str = ", ".join(tickers[:10])
+        suffix = f" +{len(tickers) - 10} more" if len(tickers) > 10 else ""
+        lines.append(f"- {sec}: {len(tickers)} ({t_str}{suffix})")
+
+    return "\n".join(lines)
 
 
 # ---------------------------------------------------------------------------
 # Slack posting
 # ---------------------------------------------------------------------------
 
-def post_to_slack(message: str, webhook: str):
-    """Post digest to Slack via webhook."""
+def post_to_slack(message: str, webhook: str) -> bool:
     if not requests:
-        log.error("requests library not available — cannot post to Slack")
+        log.error("requests library not available")
         return False
 
-    # Slack has a 40K character limit per message
-    # Split into chunks if needed
-    MAX_CHARS = 39_000
-    chunks = []
-
-    if len(message) <= MAX_CHARS:
-        chunks = [message]
-    else:
-        # Split at section boundaries
-        sections = message.split("\n*— TRACK")
-        current = sections[0]
-        for section in sections[1:]:
-            section = "*— TRACK" + section
-            if len(current) + len(section) > MAX_CHARS:
-                chunks.append(current)
-                current = section
-            else:
-                current += "\n" + section
-        if current:
-            chunks.append(current)
-
-    for i, chunk in enumerate(chunks):
-        payload = {"text": chunk}
-        try:
-            resp = requests.post(webhook, json=payload, timeout=30)
-            if resp.status_code != 200:
-                log.error(f"Slack post failed ({resp.status_code}): {resp.text}")
-                return False
-            if i < len(chunks) - 1:
-                import time
-                time.sleep(1)  # Rate limit between chunks
-        except Exception as e:
-            log.error(f"Slack post error: {e}")
+    payload = {"text": message}
+    try:
+        resp = requests.post(webhook, json=payload, timeout=30)
+        if resp.status_code != 200:
+            log.error(f"Slack post failed ({resp.status_code}): {resp.text}")
             return False
+    except Exception as e:
+        log.error(f"Slack post error: {e}")
+        return False
 
-    log.info(f"Posted digest to Slack ({len(chunks)} message(s))")
+    log.info("Posted to Slack")
     return True
 
 
@@ -589,7 +570,6 @@ def post_to_slack(message: str, webhook: str):
 def main():
     log.info("Building momentum digest...")
 
-    # Load scan data
     data = load_scan(SCAN_OUTPUT)
     stocks = data.get("stocks", [])
 
@@ -597,84 +577,36 @@ def main():
         log.error("No stocks in scan output")
         sys.exit(1)
 
-    # Filter both tracks
     momentum = filter_momentum(stocks)
     reversal = filter_reversal(stocks)
 
     log.info(f"Momentum candidates: {len(momentum)}")
     log.info(f"Reversal candidates: {len(reversal)}")
 
-    # Build digest
-    digest = build_digest(data, momentum, reversal, fmt=FORMAT)
+    # Build output in requested format
+    if FORMAT == "markdown":
+        output = format_markdown(data, momentum, reversal)
+    elif FORMAT == "claude":
+        output = format_claude(data, momentum, reversal)
+    else:
+        output = format_slack(data, momentum, reversal)
 
-    # Output
+    # Save to file if requested
     if OUTPUT_FILE:
-        Path(OUTPUT_FILE).write_text(digest)
+        Path(OUTPUT_FILE).write_text(output)
         log.info(f"Saved digest to {OUTPUT_FILE}")
 
+    # Post to Slack if webhook set
     if SLACK_WEBHOOK:
-        post_to_slack(digest, SLACK_WEBHOOK)
+        post_to_slack(output, SLACK_WEBHOOK)
     elif not OUTPUT_FILE:
-        # No webhook and no file — print to stdout
-        print(digest)
+        print(output)
 
-    # Also save a structured JSON for Claude API consumption
-    structured = {
-        "generated": datetime.now().isoformat(),
-        "scan_timestamp": data.get("ts"),
-        "summary": data.get("summary"),
-        "filters": {
-            "min_price": MIN_PRICE,
-            "min_mcap": MIN_MCAP,
-            "min_volume": MIN_VOLUME,
-        },
-        "momentum_candidates": [
-            {
-                "ticker": s["t"],
-                "name": s.get("n", s["t"]),
-                "price": s["pr"],
-                "score": s["ts"],
-                "flags": s.get("f", []),
-                "segments": s.get("seg", {}),
-                "from_52w_high": s.get("pfh"),
-                "from_5y_high": s.get("pf5h"),
-                "mcap": s.get("mc"),
-                "volume_20d": s.get("v20"),
-                "sector": s.get("s", "Unknown"),
-                "weekly_streak": s.get("ws", {}).get("52", {}).get("cs", 0),
-            }
-            for s in momentum
-        ],
-        "reversal_candidates": [
-            {
-                "ticker": s["t"],
-                "name": s.get("n", s["t"]),
-                "price": s["pr"],
-                "score": s["ts"],
-                "flags": s.get("f", []),
-                "segments": s.get("seg", {}),
-                "from_52w_high": s.get("pfh"),
-                "from_5y_high": s.get("pf5h"),
-                "mcap": s.get("mc"),
-                "volume_20d": s.get("v20"),
-                "sector": s.get("s", "Unknown"),
-                "weekly_streak": s.get("ws", {}).get("52", {}).get("cs", 0),
-            }
-            for s in reversal
-        ],
-    }
-
-    structured_path = OUTPUT_FILE.replace(".md", "_structured.json") if OUTPUT_FILE else "momentum_digest.json"
-    if OUTPUT_FILE or not SLACK_WEBHOOK:
-        Path(structured_path).write_text(
-            json.dumps(structured, indent=2, default=str)
-        )
-        log.info(f"Saved structured data to {structured_path}")
-
-    # Print summary
+    # Print summary to stdout regardless
     print(f"\n{'=' * 60}")
     print(f"  MOMENTUM DIGEST — {datetime.now().strftime('%d %b %Y %H:%M')}")
     print(f"{'=' * 60}")
+    print(f"  Format: {FORMAT}")
     print(f"  Momentum candidates: {len(momentum)}")
     print(f"  Reversal candidates: {len(reversal)}")
     if momentum:
