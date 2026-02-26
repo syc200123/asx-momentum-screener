@@ -1,88 +1,84 @@
-# ASX Momentum Digest — 2026-02-25
+# ASX Momentum Digest — 2026-02-26
 
-**Scanned:** 1653 stocks | **Passed filters:** 1022 | **Uptrends (CU):** 42 | **Accelerating:** 11 | **New Uptrends:** 15 | **Lost Uptrends:** 10
+**Scanned:** 1653 stocks | **Passed filters:** 1022 | **Uptrends (CU):** 38 | **Accelerating:** 7 | **New Uptrends:** 15 | **Lost Uptrends:** 19
 
-## Track 1: Momentum Candidates (30)
+## Track 1: Momentum Candidates (27)
 
 Stocks in continuous uptrend (CU), accelerating (AC), or newly entering uptrend (NU). Ranked by composite momentum score.
 
 | # | Ticker | Name | Price | Score | Flags | 1W | 1M | 3M | 6M | 1Y | From 52wH | MCap | Vol(20d) | Sector |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | **MLX** | METALS X FPO [MLX] | $1.41 | 7 | Uptrend, NewUptrend | +11.5% | +0.8% | +47.9% | +36.3% | +9.7% | -0.4% | $1.2B | 3.5M | Basic Materials |
-| 2 | **LRT** | LOWELL RES ORD UNITS [LRT | $2.89 | 8 | Uptrend, Ext.Uptrend | +6.2% | +1.5% | +43.7% | +18.8% | +39.4% | -3.7% | $120M | 67K | Financial Services |
-| 3 | **PDI** | PREDICTIVE FPO [PDI] | $0.95 | 8 | Uptrend, Ext.Uptrend | +4.4% | +7.7% | +40.8% | +26.3% | +39.7% | +0.0% | $2.5B | 15.0M | Basic Materials |
-| 4 | **RSG** | RESOLUTE FPO [RSG] | $1.47 | 7 | Uptrend, Ext.Uptrend, NewUptrend | +2.4% | +5.5% | +22.0% | +67.7% | +82.2% | +0.0% | $3.1B | 10.2M | Basic Materials |
-| 5 | **RRL** | REGIS FPO [RRL] | $9.42 | 7 | Uptrend, Ext.Uptrend, NewUptrend | +12.1% | +0.6% | +17.9% | +48.3% | +50.6% | +0.0% | $7.1B | 3.0M | Basic Materials |
-| 6 | **MAH** | MACMAHON FPO [MAH] | $0.76 | 7 | Uptrend, Ext.Uptrend, NewUptrend | +0.7% | +9.4% | +16.9% | +40.3% | +48.8% | -4.4% | $1.6B | 8.0M | Basic Materials |
-| 7 | **BIS** | BISALLOY FPO [BIS] | $5.85 | 8 | Uptrend, Ext.Uptrend, NewUptrend | +2.3% | +0.5% | +4.7% | +31.7% | +42.6% | -2.8% | $281M | 68K | Basic Materials |
-| 8 | **EZL** | EUROZ FPO [EZL] | $1.39 | 6 | Uptrend, NewUptrend | +7.4% | +1.2% | +27.5% | +10.1% | +20.0% | +0.0% | $213M | 141K | Financial Services |
-| 9 | **HRN** | HORIZONGLD FPO [HRN] | $1.30 | 6 | Uptrend, NewUptrend | +5.3% | +38.8% | +26.2% | +41.0% | +25.0% | +0.0% | $221M | 127K | Basic Materials |
-| 10 | **BNZ** | BENZMINING CDI 1:1 [BNZ] | $3.13 | 6 | Uptrend | +6.5% | +27.8% | +63.7% | +21.1% | +186.4% | -3.4% | $920M | 1.0M | Basic Materials |
-| 11 | **BGA** | BEGA FPO [BGA] | $6.22 | 7 | Uptrend, Ext.Uptrend, NewUptrend | +3.6% | +0.2% | +0.5% | +6.7% | +7.3% | -3.8% | $1.9B | 687K | Consumer Defensive |
-| 12 | **SGM** | SIMS METAL FPO [SGM] | $22.66 | 7 | Uptrend, Accelerating | +4.5% | +7.6% | +19.3% | +18.3% | +1.7% | +0.0% | $4.4B | 1.0M | Basic Materials |
-| 13 | **BML** | BOABMETALS FPO [BML] | $0.66 | 6 | Uptrend | +6.5% | +9.8% | +41.8% | +132.4% | +17.2% | -6.4% | $378M | 8.4M | Basic Materials |
-| 14 | **FRS** | FORREST FPO [FRS] | $0.63 | 5 | Uptrend | +12.5% | +19.1% | +70.9% | +48.6% | +1056.2% | +0.0% | $612M | 4.6M | Basic Materials |
-| 15 | **NSR** | NSREIT STAPLED [NSR] | $2.77 | 7 | Uptrend, NewUptrend | +0.4% | +0.4% | +4.1% | +11.1% | +10.6% | -0.4% | $3.9B | 7.0M | Real Estate |
-| 16 | **AGI** | AINSWORTH FPO [AGI] | $1.15 | 7 | Uptrend, NewUptrend | +9.5% | +2.9% | +2.0% | +0.5% | +23.6% | +0.0% | $387M | 124K | Consumer Cyclical |
-| 17 | **NWH** | NRWHOLDLTD FPO [NWH] | $6.45 | 8 | Uptrend, Ext.Uptrend | +14.6% | +4.3% | +5.5% | +33.7% | +22.0% | +0.0% | $3.0B | 1.8M | Industrials |
-| 18 | **FGX** | FUTURE AUS FPO [FGX] | $1.41 | 8 | Uptrend, Ext.Uptrend | +1.1% | +4.1% | +3.5% | +0.8% | +6.5% | -1.4% | $579M | 304K | Financial Services |
-| 19 | **NST** | NTH STAR FPO [NST] | $30.39 | 8 | Uptrend, Ext.Uptrend | +8.5% | +1.5% | +3.1% | +43.5% | +7.7% | +0.0% | $43.5B | 6.4M | Basic Materials |
-| 20 | **ANZ** | ANZ GROUP FPO [ANZ] | $39.68 | 8 | Uptrend, Ext.Uptrend | +1.1% | +8.3% | +3.1% | +7.5% | +17.1% | -3.0% | $118.4B | 5.4M | Financial Services |
-| 21 | **WBC** | WESTPAC FPO [WBC] | $42.95 | 8 | Uptrend, Ext.Uptrend | +5.3% | +5.3% | +2.3% | +0.3% | +26.2% | +0.0% | $146.8B | 4.7M | Financial Services |
-| 22 | **RFF** | RURALFUNDS STAPLED [RFF] | $2.10 | 6 | Uptrend, NewUptrend | +1.9% | +1.5% | +5.6% | +2.3% | +10.5% | -0.9% | $818M | 637K | Real Estate |
-| 23 | **CDM** | CADENCE FPO [CDM] | $0.85 | 7 | Uptrend | +4.9% | +0.6% | +16.7% | +6.5% | +1.2% | +0.0% | $253M | 327K | Financial Services |
-| 24 | **WGN** | WAGNERS FPO [WGN] | $4.08 | 7 | Uptrend, Ext.Uptrend | +5.2% | +5.7% | +3.4% | +46.7% | +44.5% | +0.0% | $815M | 362K | Basic Materials |
-| 25 | **YAL** | YANCOAL FPO [YAL] | $6.16 | 7 | Accelerating, HotStreak | +2.7% | +5.6% | +4.8% | +0.0% | -1.6% | -7.0% | $8.1B | 2.9M | Energy |
-| 26 | **MYS** | MYSTATE FPO [MYS] | $4.60 | 6 | Uptrend, Accelerating | +1.5% | +2.4% | +2.9% | +4.3% | +8.0% | -3.9% | $781M | 232K | Financial Services |
-| 27 | **EDU** | EDU H LTD FPO [EDU] | $0.80 | 6 | Uptrend | +6.7% | +7.1% | +11.1% | +24.7% | +255.2% | -17.5% | $101M | 478K | Consumer Defensive |
-| 28 | **BWP** | BWPPROPGP STAPLED [BWP] | $3.84 | 7 | Uptrend | +0.5% | +2.1% | +1.0% | +6.2% | +6.0% | -4.1% | $2.8B | 824K | Real Estate |
-| 29 | **WOW** | WOOLWORTHS FPO [WOW] | $35.63 | 6 | Accelerating | +11.6% | +5.1% | +7.0% | +1.2% | -8.5% | +0.0% | $43.5B | 2.9M | Consumer Defensive |
-| 30 | **MSV** | MITCH SERV FPO [MSV] | $0.50 | 5 | Accelerating | +24.1% | +24.3% | +12.9% | +19.2% | -16.1% | -7.7% | $114M | 1.4M | Basic Materials |
+| 1 | **LRT** | LOWELL RES ORD UNITS [LRT | $2.97 | 8 | Uptrend, Ext.Uptrend | +6.8% | +2.2% | +45.8% | +16.2% | +43.7% | -1.0% | $123M | 63K | Financial Services |
+| 2 | **SLS** | SOLSTICE FPO [SLS] | $1.01 | 6 | Uptrend, NewUptrend | +0.5% | +118.5% | +55.9% | +9.3% | +38.5% | -14.4% | $118M | 1.6M | Basic Materials |
+| 3 | **BMN** | BANNERMAN FPO [BMN] | $4.53 | 7 | Uptrend, NewUptrend | +8.6% | +3.2% | +37.9% | +6.9% | +14.2% | -4.2% | $941M | 1.4M | Energy |
+| 4 | **PDI** | PREDICTIVE FPO [PDI] | $0.95 | 8 | Uptrend, Ext.Uptrend | +2.2% | +10.7% | +40.0% | +33.3% | +32.4% | +0.0% | $2.5B | 14.8M | Basic Materials |
+| 5 | **EVN** | EVOLUTION FPO [EVN] | $16.40 | 7 | Uptrend, Ext.Uptrend, NewUptrend | +9.8% | +1.2% | +23.9% | +42.1% | +38.5% | +0.0% | $33.3B | 7.2M | Basic Materials |
+| 6 | **DBI** | DALRYMPLE STAPLED [DBI] | $5.14 | 8 | Uptrend, Ext.Uptrend, NewUptrend | +2.0% | +5.6% | +9.3% | +0.9% | +22.5% | -4.0% | $2.6B | 2.0M | Industrials |
+| 7 | **SBM** | ST.BARBARA FPO [SBM] | $0.83 | 6 | Uptrend, NewUptrend | +9.9% | +2.0% | +32.1% | +55.6% | +60.0% | -1.8% | $1.0B | 8.7M | Basic Materials |
+| 8 | **GCI** | GRYPHON ORD UNITS [GCI] | $2.07 | 8 | Uptrend, Ext.Uptrend, NewUptrend | +0.1% | +0.6% | +2.1% | +2.3% | +4.6% | -0.4% | $1.2B | 742K | Financial Services |
+| 9 | **BNZ** | BENZMINING CDI 1:1 [BNZ] | $3.11 | 6 | Uptrend | +5.4% | +31.1% | +54.1% | +28.1% | +178.0% | -4.0% | $914M | 1.1M | Basic Materials |
+| 10 | **BML** | BOABMETALS FPO [BML] | $0.65 | 6 | Uptrend | +4.0% | +2.5% | +49.4% | +145.5% | +22.2% | -7.9% | $372M | 8.4M | Basic Materials |
+| 11 | **RIO** | RIO TINTO FPO [RIO] | $168.63 | 7 | Uptrend, NewUptrend | +0.0% | +11.5% | +14.2% | +14.7% | +5.6% | -0.7% | $274.0B | 1.6M | Basic Materials |
+| 12 | **RSG** | RESOLUTE FPO [RSG] | $1.49 | 7 | Uptrend, Ext.Uptrend | +4.6% | +0.7% | +26.9% | +70.2% | +81.9% | +0.0% | $3.2B | 10.0M | Basic Materials |
+| 13 | **ALQ** | ALS FPO [ALQ] | $25.48 | 7 | Uptrend, NewUptrend | +3.5% | +0.9% | +9.8% | +21.3% | +14.0% | +0.0% | $12.9B | 1.6M | Industrials |
+| 14 | **FRS** | FORREST FPO [FRS] | $0.64 | 5 | Uptrend | +3.2% | +31.9% | +62.1% | +56.8% | +988.2% | +0.0% | $622M | 4.7M | Basic Materials |
+| 15 | **APA** | APA GROUP STAPLED [APA] | $9.06 | 7 | Uptrend, NewUptrend | +0.6% | +0.2% | +0.5% | +4.7% | +21.1% | -1.8% | $11.9B | 2.9M | Utilities |
+| 16 | **RRL** | REGIS FPO [RRL] | $9.26 | 7 | Uptrend, Ext.Uptrend | +9.7% | +0.8% | +14.8% | +55.0% | +48.0% | -1.7% | $7.0B | 3.0M | Basic Materials |
+| 17 | **NST** | NTH STAR FPO [NST] | $29.62 | 8 | Uptrend, Ext.Uptrend | +4.4% | +2.4% | +2.7% | +45.0% | +10.5% | -2.5% | $42.4B | 6.2M | Basic Materials |
+| 18 | **SGM** | SIMS METAL FPO [SGM] | $22.20 | 7 | Uptrend | +2.0% | +5.6% | +21.6% | +19.7% | +1.4% | -2.0% | $4.3B | 1.0M | Basic Materials |
+| 19 | **AZJ** | AURIZON FPO [AZJ] | $4.11 | 6 | Uptrend, NewUptrend | +1.2% | +13.1% | +1.4% | +11.5% | +2.6% | +0.0% | $7.0B | 9.4M | Industrials |
+| 20 | **WGN** | WAGNERS FPO [WGN] | $4.40 | 7 | Uptrend, Ext.Uptrend | +15.2% | +2.7% | +5.4% | +42.9% | +54.3% | +0.0% | $879M | 417K | Basic Materials |
+| 21 | **HRN** | HORIZONGLD FPO [HRN] | $1.34 | 6 | Uptrend | +13.1% | +37.8% | +21.1% | +47.9% | +12.9% | +0.0% | $227M | 138K | Basic Materials |
+| 22 | **BGA** | BEGA FPO [BGA] | $6.26 | 7 | Uptrend, Ext.Uptrend | +1.9% | +3.3% | +0.3% | +4.2% | +9.9% | -3.2% | $1.9B | 679K | Consumer Defensive |
+| 23 | **NSR** | NSREIT STAPLED [NSR] | $2.78 | 7 | Uptrend | +0.4% | +0.7% | +4.9% | +10.3% | +13.1% | +0.0% | $3.9B | 7.0M | Real Estate |
+| 24 | **RFF** | RURALFUNDS STAPLED [RFF] | $2.14 | 7 | Uptrend | +3.4% | +2.5% | +4.6% | +1.8% | +12.9% | +0.0% | $834M | 637K | Real Estate |
+| 25 | **BWP** | BWPPROPGP STAPLED [BWP] | $3.86 | 7 | Uptrend | +0.8% | +2.1% | +1.1% | +6.7% | +5.7% | -3.6% | $2.8B | 827K | Real Estate |
+| 26 | **WOW** | WOOLWORTHS FPO [WOW] | $36.35 | 5 | Accelerating | +13.7% | +4.3% | +7.9% | +1.8% | -6.2% | +0.0% | $44.4B | 3.1M | Consumer Defensive |
+| 27 | **AIA** | AUCK AIRPT FPO NZX [AIA] | $7.63 | 5 | Accelerating | +4.1% | +2.4% | +2.1% | +3.1% | -4.2% | +0.0% | $12.9B | 560K | Industrials |
 
 **Sector breakdown:**
-- Basic Materials: 14 (MLX, PDI, RSG, RRL, MAH, BIS, HRN, BNZ, SGM, BML +4 more)
-- Financial Services: 7 (LRT, EZL, FGX, ANZ, WBC, CDM, MYS)
-- Consumer Defensive: 3 (BGA, EDU, WOW)
+- Basic Materials: 14 (SLS, PDI, EVN, SBM, BNZ, BML, RIO, RSG, FRS, RRL +4 more)
+- Industrials: 4 (DBI, ALQ, AZJ, AIA)
 - Real Estate: 3 (NSR, RFF, BWP)
-- Consumer Cyclical: 1 (AGI)
-- Industrials: 1 (NWH)
-- Energy: 1 (YAL)
+- Financial Services: 2 (LRT, GCI)
+- Consumer Defensive: 2 (BGA, WOW)
+- Energy: 1 (BMN)
+- Utilities: 1 (APA)
 
-## Track 2: Reversal Candidates (20)
+## Track 2: Reversal Candidates (19)
 
 Stocks 40%+ below 52-week high but showing positive recent segments. Not buy signals — candidates for Reversal Signal Detector analysis.
 
 | # | Ticker | Name | Price | From 52wH | From 5yH | 1W | 1M | Score | Wk Streak | MCap | Vol(20d) | Sector |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | **BOC** | BOUGVLLE.C FPO 1K [BOC] | $0.86 | -62.5% | -62.5% | +13.1% | -27.8% | 5 | +2 | $347M | 170K | Basic Materials |
-| 2 | **BOE** | BOSS EN FPO [BOE] | $1.73 | -63.1% | -71.8% | +4.5% | -11.8% | 4 | +3 | $716M | 7.2M | Energy |
-| 3 | **OFX** | OZFOREX FPO [OFX] | $0.58 | -55.5% | -79.3% | -4.9% | +24.2% | 2 | -1 | $136M | 1.0M | Financial Services |
-| 4 | **AVH** | AVITA MED CDI 5:1 [AVH] | $1.43 | -54.2% | -77.9% | +20.2% | -8.5% | 3 | +2 | $226M | 374K | Healthcare |
-| 5 | **NXL** | NUIX LTD FPO [NXL] | $1.82 | -51.6% | -79.7% | +23.0% | -24.9% | 4 | +1 | $609M | 2.6M | Technology |
-| 6 | **DRO** | DRONE FPO [DRO] | $3.39 | -48.6% | -48.6% | +3.4% | -26.6% | 6 | +3 | $3.1B | 13.7M | Industrials |
-| 7 | **TLX** | TELIXPHARM FPO [TLX] | $9.20 | -69.7% | -70.5% | +3.6% | -18.9% | 4 | -1 | $3.1B | 3.1M | Healthcare |
-| 8 | **MPW** | METALPWLTD FPO [MPW] | $2.75 | -43.3% | -43.3% | +8.7% | -12.8% | 3 | +3 | $399M | 98K | Basic Materials |
-| 9 | **VUL** | VULCAN E FPO [VUL] | $4.02 | -46.5% | -74.7% | +6.1% | -15.0% | 3 | +2 | $1.9B | 2.4M | Basic Materials |
-| 10 | **NVA** | NOVA MIN FPO [NVA] | $0.86 | -47.1% | -54.5% | +6.8% | -37.0% | 5 | +1 | $394M | 1.3M | Basic Materials |
-| 11 | **ERD** | EROAD FPO NZX [ERD] | $0.78 | -69.7% | -85.5% | +1.3% | -32.6% | 4 | +1 | $156M | 590K | Technology |
-| 12 | **RAC** | RACURA FPO [RAC] | $2.38 | -49.4% | -49.4% | +7.2% | -16.5% | 4 | +2 | $432M | 157K | Healthcare |
-| 13 | **GTK** | GENTRACK FPO NZX [GTK] | $6.60 | -44.9% | -49.3% | +2.8% | -10.6% | 5 | +2 | $742M | 218K | Technology |
-| 14 | **KPG** | KELLYPRTNR FPO [KPG] | $6.03 | -54.1% | -55.7% | -16.2% | +0.3% | 4 | -1 | $273M | 210K | Industrials |
-| 15 | **AEF** | A ETHICAL FPO [AEF] | $4.52 | -44.5% | -67.2% | +1.3% | -11.9% | 3 | +2 | $515M | 155K | Financial Services |
-| 16 | **LIC** | LIFESTYLE FPO [LIC] | $5.05 | -41.7% | -78.2% | -12.0% | +1.6% | 3 | -2 | $615M | 253K | Real Estate |
-| 17 | **HAS** | HASTTECH FPO [HAS] | $0.53 | -41.0% | -91.7% | +2.9% | -19.0% | 3 | +1 | $116M | 263K | Basic Materials |
-| 18 | **ATR** | ASTRON FPO [ATR] | $0.65 | -40.3% | -40.3% | +3.2% | -20.9% | 3 | +1 | $272M | 99K | Basic Materials |
-| 19 | **XYZ** | BLOCK INC CDI 1:1 [XYZ] | $72.39 | -43.0% | -52.0% | +0.4% | -24.1% | 2 | -1 | $45.1B | 165K | Technology |
-| 20 | **OCC** | ORTHOCELL FPO [OCC] | $0.95 | -40.3% | -45.4% | +2.1% | -3.6% | 3 | +1 | $259M | 368K | Healthcare |
+| 1 | **TLX** | TELIXPHARM FPO [TLX] | $10.20 | -65.2% | -67.2% | +11.7% | -23.0% | 5 | -1 | $3.4B | 3.2M | Healthcare |
+| 2 | **BOC** | BOUGVLLE.C FPO 1K [BOC] | $0.87 | -62.3% | -62.3% | +15.2% | -34.3% | 5 | +2 | $349M | 149K | Basic Materials |
+| 3 | **DRO** | DRONE FPO [DRO] | $3.69 | -44.1% | -44.1% | +16.8% | -24.4% | 6 | +3 | $3.4B | 13.4M | Industrials |
+| 4 | **XRO** | XERO FPO [XRO] | $82.30 | -57.6% | -57.6% | +2.2% | -19.3% | 3 | +2 | $14.3B | 1.3M | Technology |
+| 5 | **AVH** | AVITA MED CDI 5:1 [AVH] | $1.34 | -56.9% | -79.2% | +11.2% | -9.7% | 3 | +2 | $212M | 378K | Healthcare |
+| 6 | **WTC** | WISETECH FPO [WTC] | $49.00 | -59.3% | -64.6% | +0.1% | -22.4% | 5 | +2 | $16.5B | 2.3M | Technology |
+| 7 | **OFX** | OZFOREX FPO [OFX] | $0.61 | -53.6% | -78.5% | -0.8% | +23.0% | 2 | -1 | $141M | 1.1M | Financial Services |
+| 8 | **RAC** | RACURA FPO [RAC] | $2.43 | -48.3% | -48.3% | +10.5% | -9.8% | 3 | +2 | $441M | 136K | Healthcare |
+| 9 | **NYR** | NYRADA CDI FORUS [NYR] | $0.64 | -54.0% | -54.0% | +5.8% | -35.1% | 5 | +1 | $156M | 700K | Healthcare |
+| 10 | **NXL** | NUIX LTD FPO [NXL] | $2.03 | -44.8% | -73.8% | +42.0% | -29.9% | 4 | +1 | $680M | 2.7M | Technology |
+| 11 | **VUL** | VULCAN E FPO [VUL] | $3.99 | -46.9% | -74.9% | +4.7% | -14.4% | 3 | +2 | $1.9B | 2.5M | Basic Materials |
+| 12 | **MPW** | METALPWLTD FPO [MPW] | $2.91 | -40.0% | -40.0% | +15.5% | -18.7% | 3 | +3 | $422M | 99K | Basic Materials |
+| 13 | **GTK** | GENTRACK FPO NZX [GTK] | $6.90 | -42.4% | -47.0% | +7.1% | -5.3% | 4 | +2 | $776M | 212K | Technology |
+| 14 | **NVA** | NOVA MIN FPO [NVA] | $0.83 | -48.9% | -56.0% | +7.7% | -34.0% | 4 | +1 | $380M | 1.2M | Basic Materials |
+| 15 | **BOE** | BOSS EN FPO [BOE] | $1.70 | -63.6% | -72.2% | +1.2% | -6.7% | 4 | -1 | $706M | 6.5M | Energy |
+| 16 | **SEK** | SEEK FPO [SEK] | $16.64 | -43.0% | -50.0% | +1.2% | -27.9% | 3 | +2 | $5.9B | 2.4M | Communication Services |
+| 17 | **ERD** | EROAD FPO NZX [ERD] | $0.78 | -69.5% | -85.4% | +1.3% | -30.3% | 4 | +1 | $157M | 625K | Technology |
+| 18 | **TNE** | TECH ONE FPO [TNE] | $24.93 | -40.9% | -40.9% | +1.0% | -8.9% | 5 | +2 | $8.2B | 1.6M | Technology |
+| 19 | **HAS** | HASTTECH FPO [HAS] | $0.51 | -42.7% | -91.9% | +3.0% | -18.9% | 3 | +1 | $113M | 225K | Basic Materials |
 
 **Sector breakdown:**
-- Basic Materials: 6 (BOC, MPW, VUL, NVA, HAS, ATR)
-- Healthcare: 4 (AVH, TLX, RAC, OCC)
-- Technology: 4 (NXL, ERD, GTK, XYZ)
-- Financial Services: 2 (OFX, AEF)
-- Industrials: 2 (DRO, KPG)
+- Technology: 6 (XRO, WTC, NXL, GTK, ERD, TNE)
+- Basic Materials: 5 (BOC, VUL, MPW, NVA, HAS)
+- Healthcare: 4 (TLX, AVH, RAC, NYR)
+- Industrials: 1 (DRO)
+- Financial Services: 1 (OFX)
 - Energy: 1 (BOE)
-- Real Estate: 1 (LIC)
+- Communication Services: 1 (SEK)
 
 ---
 *Filters: min price $0.50, min mcap $100M, min vol 50,000. General information only. Not personal financial advice.*
