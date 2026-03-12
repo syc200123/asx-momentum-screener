@@ -1,36 +1,29 @@
-# ASX Momentum Digest — 2026-03-11
+# ASX Momentum Digest — 2026-03-12
 
-**Scanned:** 1652 stocks | **Passed filters:** 1015 | **Uptrends (CU):** 32 | **Accelerating:** 3 | **New Uptrends:** 21 | **Lost Uptrends:** 4
+**Scanned:** 1651 stocks | **Passed filters:** 1010 | **Uptrends (CU):** 21 | **Accelerating:** 2 | **New Uptrends:** 6 | **Lost Uptrends:** 17
 
-## Track 1: Momentum Candidates (15)
+## Track 1: Momentum Candidates (10)
 
 Stocks in continuous uptrend (CU), accelerating (AC), or newly entering uptrend (NU). Ranked by composite momentum score.
 
 | # | Ticker | Name | Price | Score | Flags | 1W | 1M | 3M | 6M | 1Y | From 52wH | MCap | Vol(20d) | Sector |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | **MLX** | METALS X FPO [MLX] | $1.42 | 8 | Uptrend, Ext.Uptrend, NewUptrend | +3.6% | +10.0% | +29.7% | +58.7% | +17.5% | -7.5% | $1.3B | 3.3M | Basic Materials |
-| 2 | **WGN** | WGN | $4.50 | 7 | Uptrend, Ext.Uptrend, NewUptrend | +4.2% | +12.2% | +11.9% | +32.3% | +67.7% | -3.0% | — | 2.1M | Unknown |
-| 3 | **ANZ** | ANZ GROUP FPO [ANZ] | $37.98 | 7 | Uptrend, Ext.Uptrend, NewUptrend | +0.1% | +0.8% | +6.8% | +7.9% | +18.4% | -7.1% | $113.3B | 5.9M | Financial Services |
-| 4 | **ELS** | ELSIGHT FPO [ELS] | $5.69 | 6 | Uptrend | +13.8% | +31.9% | +73.9% | +32.5% | +370.0% | -0.7% | $1.3B | 1.1M | Technology |
-| 5 | **DUR** | DURATEC FPO [DUR] | $2.38 | 8 | Uptrend, Ext.Uptrend | +8.2% | +0.5% | +18.4% | +7.7% | +15.8% | +0.0% | $614M | 451K | Industrials |
-| 6 | **WAR** | WAR | $1.16 | 7 | Uptrend, Ext.Uptrend, NewUptrend | +0.9% | +1.3% | +0.9% | +1.3% | +4.6% | -2.5% | — | 164K | Unknown |
-| 7 | **USL** | USL | $0.92 | 6 | Uptrend, NewUptrend | +4.0% | +7.3% | +19.6% | +51.6% | +152.8% | -19.3% | — | 3.7M | Unknown |
-| 8 | **SXE** | STH X ELEC FPO [SXE] | $3.15 | 8 | Uptrend, Ext.Uptrend | +13.3% | +3.0% | +14.4% | +26.2% | +26.4% | -8.7% | $838M | 1.6M | Industrials |
-| 9 | **CDM** | CADENCE FPO [CDM] | $0.85 | 6 | Uptrend, NewUptrend | +3.0% | +3.8% | +15.2% | +2.7% | +14.0% | -1.7% | $253M | 277K | Financial Services |
-| 10 | **NXG** | NEXGEN CDI 1:1 [NXG] | $18.29 | 6 | Uptrend, NewUptrend | +5.7% | +9.3% | +11.5% | +20.2% | +64.0% | -6.3% | $12.1B | 727K | Energy |
-| 11 | **FDR** | FINDER FPO [FDR] | $0.66 | 5 | Uptrend, NewUptrend | +10.0% | +36.4% | +17.3% | +123.9% | +238.4% | +0.0% | $329M | 897K | Energy |
-| 12 | **LIN** | LINDIAN FPO [LIN] | $0.85 | 6 | Uptrend, NewUptrend | +30.5% | +72.4% | +2.7% | +72.1% | +121.6% | +0.0% | $1.4B | 10.5M | Basic Materials |
-| 13 | **HRN** | HORIZONGLD FPO [HRN] | $1.54 | 6 | Uptrend | +14.2% | +38.0% | +24.8% | +42.7% | +34.1% | +0.0% | $264M | 114K | Basic Materials |
-| 14 | **TTM** | TTM | $1.01 | 6 | Uptrend | +10.3% | +1.7% | +19.1% | +76.7% | +8.9% | -12.5% | — | 1.3M | Unknown |
-| 15 | **MIN** | MINERALRES FPO [MIN] | $60.33 | 6 | Uptrend | +8.3% | +6.8% | +1.0% | +44.5% | +66.7% | -5.7% | $11.9B | 1.3M | Basic Materials |
+| 1 | **DUR** | DURATEC FPO [DUR] | $2.35 | 8 | Uptrend, Ext.Uptrend | +2.6% | +2.7% | +20.9% | +5.3% | +17.0% | -1.3% | $606M | 468K | Industrials |
+| 2 | **ELS** | ELSIGHT FPO [ELS] | $5.71 | 6 | Uptrend | +12.0% | +33.5% | +66.8% | +39.6% | +368.6% | -0.4% | $1.3B | 1.1M | Technology |
+| 3 | **SXE** | STH X ELEC FPO [SXE] | $3.04 | 8 | Uptrend, Ext.Uptrend | +4.8% | +5.5% | +18.0% | +22.7% | +27.9% | -11.9% | $809M | 1.6M | Industrials |
+| 4 | **TOK** | TOLUMIN FPO [TOK] | $1.36 | 6 | Uptrend, NewUptrend | +3.4% | +1.5% | +10.2% | +6.8% | +30.0% | -16.3% | $354M | 106K | Basic Materials |
+| 5 | **BOC** | BOUGVLLE.C FPO 1K [BOC] | $0.79 | 6 | Uptrend, NewUptrend | +5.3% | +8.7% | +7.8% | +9.4% | +80.0% | -65.8% | $317M | 84K | Basic Materials |
+| 6 | **HRN** | HORIZONGLD FPO [HRN] | $1.46 | 6 | Uptrend | +8.0% | +33.4% | +28.7% | +41.4% | +35.4% | -5.8% | $248M | 119K | Basic Materials |
+| 7 | **TTM** | TITANMIN FPO [TTM] | $1.00 | 6 | Uptrend | +1.5% | +7.0% | +21.7% | +87.7% | +6.6% | -13.4% | $289M | 1.2M | Basic Materials |
+| 8 | **FDR** | FINDER FPO [FDR] | $0.64 | 5 | Uptrend | +4.1% | +24.5% | +30.7% | +134.4% | +223.2% | -3.8% | $316M | 844K | Energy |
+| 9 | **LIN** | LINDIAN FPO [LIN] | $0.81 | 6 | Uptrend | +7.9% | +91.1% | +9.7% | +71.4% | +118.8% | -4.7% | $1.4B | 10.1M | Basic Materials |
+| 10 | **MIN** | MINERALRES FPO [MIN] | $58.25 | 6 | Uptrend | +3.9% | +7.5% | +0.9% | +43.9% | +70.1% | -9.0% | $11.5B | 1.3M | Basic Materials |
 
 **Sector breakdown:**
-- Basic Materials: 4 (MLX, LIN, HRN, MIN)
-- Unknown: 4 (WGN, WAR, USL, TTM)
-- Financial Services: 2 (ANZ, CDM)
+- Basic Materials: 6 (TOK, BOC, HRN, TTM, LIN, MIN)
 - Industrials: 2 (DUR, SXE)
-- Energy: 2 (NXG, FDR)
 - Technology: 1 (ELS)
+- Energy: 1 (FDR)
 
 ## Track 2: Reversal Candidates (20)
 
@@ -38,36 +31,35 @@ Stocks 40%+ below 52-week high but showing positive recent segments. Not buy sig
 
 | # | Ticker | Name | Price | From 52wH | From 5yH | 1W | 1M | Score | Wk Streak | MCap | Vol(20d) | Sector |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | **AVH** | AVITA MED CDI 5:1 [AVH] | $1.37 | -56.1% | -77.7% | +3.0% | +19.3% | 4 | -2 | $216M | 410K | Healthcare |
-| 2 | **PME** | PROMEDICUS FPO [PME] | $136.79 | -58.5% | -58.5% | +17.7% | -27.7% | 5 | +4 | $14.3B | 736K | Healthcare |
-| 3 | **NXL** | NUIX LTD FPO [NXL] | $1.80 | -47.5% | -76.7% | +0.8% | +17.4% | 4 | -2 | $603M | 2.9M | Technology |
-| 4 | **VEE** | VEE | $0.61 | -67.1% | -68.9% | +2.5% | +3.4% | 4 | -1 | — | 419K | Unknown |
-| 5 | **TLX** | TLX | $10.76 | -63.3% | -65.5% | +13.6% | -4.0% | 4 | +2 | — | 3.4M | Unknown |
-| 6 | **MYX** | M PHARMA FPO [MYX] | $2.65 | -63.6% | -70.5% | +10.9% | -15.2% | 3 | +2 | $215M | 411K | Healthcare |
-| 7 | **BOE** | BOSS EN FPO [BOE] | $1.61 | -65.5% | -73.7% | -7.5% | +11.2% | 3 | -3 | $668M | 7.0M | Energy |
-| 8 | **EBR** | EBR SYSTEM CDI FORUS [EBR | $0.73 | -63.4% | -63.4% | +8.9% | -13.5% | 3 | +1 | $331M | 385K | Healthcare |
-| 9 | **SDR** | SITEMINDER FPO [SDR] | $3.44 | -55.4% | -55.4% | +13.9% | -30.4% | 3 | -3 | $970M | 3.4M | Technology |
-| 10 | **CAT** | CATAPULT FPO [CAT] | $3.72 | -50.3% | -50.3% | +12.7% | -5.2% | 4 | -1 | $1.1B | 1.4M | Technology |
-| 11 | **WTC** | WTC | $49.24 | -59.1% | -64.5% | +10.9% | -9.9% | 4 | -1 | — | 2.2M | Unknown |
-| 12 | **ZIP** | ZIP | $1.71 | -64.5% | -82.4% | +5.6% | -34.4% | 4 | -2 | — | 43.6M | Unknown |
-| 13 | **PNR** | PANTORO FPO [PNR] | $3.87 | -40.9% | -45.8% | -29.9% | +15.0% | 4 | -2 | $1.5B | 2.5M | Basic Materials |
-| 14 | **IEL** | IEL FPO [IEL] | $4.29 | -58.3% | -88.4% | +3.4% | -26.0% | 3 | -1 | $1.2B | 2.1M | Consumer Defensive |
-| 15 | **PNV** | POLYNOVO FPO [PNV] | $0.95 | -43.1% | -70.1% | +8.0% | -6.9% | 3 | +1 | $656M | 2.9M | Healthcare |
-| 16 | **OFX** | OZFOREX FPO [OFX] | $0.59 | -55.1% | -79.1% | +3.5% | +0.0% | 3 | +1 | $137M | 1.0M | Financial Services |
-| 17 | **BOC** | BOUGVLLE.C FPO 1K [BOC] | $0.76 | -67.3% | -67.3% | +4.9% | -4.6% | 5 | -2 | $303M | 82K | Basic Materials |
-| 18 | **TPW** | TPW | $7.40 | -73.9% | -73.9% | +1.9% | -36.0% | 4 | -3 | — | 2.0M | Unknown |
-| 19 | **LOV** | LOVISA FPO [LOV] | $22.36 | -46.5% | -46.5% | +4.6% | -31.8% | 5 | +1 | $2.5B | 712K | Consumer Cyclical |
-| 20 | **RDY** | READYTECH FPO [RDY] | $1.27 | -54.5% | -69.6% | +2.8% | -41.8% | 4 | +1 | $158M | 127K | Technology |
+| 1 | **TLX** | TELIXPHARM FPO [TLX] | $11.23 | -61.7% | -63.9% | +11.3% | +0.3% | 5 | +2 | $3.8B | 3.4M | Healthcare |
+| 2 | **BOC** | BOUGVLLE.C FPO 1K [BOC] | $0.79 | -65.8% | -65.8% | +5.3% | +8.7% | 6 | -2 | $317M | 84K | Basic Materials |
+| 3 | **PME** | PROMEDICUS FPO [PME] | $133.55 | -59.4% | -59.4% | +9.9% | -27.3% | 5 | +4 | $14.0B | 705K | Healthcare |
+| 4 | **DRO** | DRONE FPO [DRO] | $3.92 | -40.6% | -40.6% | +5.9% | +9.5% | 7 | -1 | $3.6B | 13.7M | Industrials |
+| 5 | **AVH** | AVITA MED CDI 5:1 [AVH] | $1.30 | -58.3% | -78.8% | -5.8% | +23.2% | 3 | -2 | $205M | 405K | Healthcare |
+| 6 | **NXL** | NUIX LTD FPO [NXL] | $1.73 | -49.1% | -77.7% | -5.2% | +19.0% | 3 | -2 | $577M | 2.8M | Technology |
+| 7 | **CMA** | CARMA LTD FPO [CMA] | $1.01 | -59.6% | -59.6% | +5.2% | -41.8% | 1 | +1 | $138M | 120K | Consumer Cyclical |
+| 8 | **BOE** | BOSS EN FPO [BOE] | $1.58 | -66.2% | -74.1% | -9.2% | +0.3% | 4 | -3 | $656M | 7.1M | Energy |
+| 9 | **EBR** | EBR SYSTEM CDI FORUS [EBR | $0.73 | -63.4% | -63.4% | +5.8% | -18.2% | 3 | +1 | $331M | 414K | Healthcare |
+| 10 | **CAT** | CATAPULT FPO [CAT] | $3.43 | -54.1% | -54.1% | -5.8% | +4.0% | 4 | -1 | $1.1B | 1.4M | Technology |
+| 11 | **PNR** | PANTORO FPO [PNR] | $3.68 | -43.8% | -48.5% | -32.2% | +14.1% | 4 | -2 | $1.5B | 2.7M | Basic Materials |
+| 12 | **WTC** | WISETECH FPO [WTC] | $47.86 | -60.2% | -65.4% | +0.8% | -6.0% | 4 | -1 | $16.1B | 2.2M | Technology |
+| 13 | **OFX** | OZFOREX FPO [OFX] | $0.62 | -52.8% | -78.1% | +6.9% | -8.7% | 3 | +1 | $144M | 1.0M | Financial Services |
+| 14 | **SDR** | SITEMINDER FPO [SDR] | $3.16 | -59.1% | -59.1% | +0.6% | -27.5% | 3 | -3 | $891M | 3.4M | Technology |
+| 15 | **GTK** | GENTRACK FPO NZX [GTK] | $6.50 | -45.7% | -50.0% | -3.7% | +8.9% | 4 | -2 | $731M | 102K | Technology |
+| 16 | **NWL** | NETWEALTH FPO [NWL] | $21.84 | -41.2% | -41.2% | -12.0% | +3.0% | 4 | -3 | $5.4B | 893K | Technology |
+| 17 | **RAC** | RACURA FPO [RAC] | $2.28 | -51.5% | -51.5% | -7.3% | +0.4% | 3 | -2 | $414M | 124K | Healthcare |
+| 18 | **AEF** | A ETHICAL FPO [AEF] | $4.80 | -40.1% | -64.5% | -0.8% | +6.5% | 4 | -2 | $546M | 150K | Financial Services |
+| 19 | **PNV** | POLYNOVO FPO [PNV] | $0.94 | -43.7% | -70.4% | +1.6% | -8.0% | 3 | -2 | $649M | 2.9M | Healthcare |
+| 20 | **EPI** | EPIMINDER FPO [EPI] | $0.74 | -43.5% | -43.5% | -9.2% | +3.2% | 1 | -3 | $130M | 73K | Healthcare |
 
 **Sector breakdown:**
-- Healthcare: 5 (AVH, PME, MYX, EBR, PNV)
-- Unknown: 5 (VEE, TLX, WTC, ZIP, TPW)
-- Technology: 4 (NXL, SDR, CAT, RDY)
-- Basic Materials: 2 (PNR, BOC)
+- Healthcare: 7 (TLX, PME, AVH, EBR, RAC, PNV, EPI)
+- Technology: 6 (NXL, CAT, WTC, SDR, GTK, NWL)
+- Basic Materials: 2 (BOC, PNR)
+- Financial Services: 2 (OFX, AEF)
+- Industrials: 1 (DRO)
+- Consumer Cyclical: 1 (CMA)
 - Energy: 1 (BOE)
-- Consumer Defensive: 1 (IEL)
-- Financial Services: 1 (OFX)
-- Consumer Cyclical: 1 (LOV)
 
 ---
 *Filters: min price $0.50, min mcap $100M, min vol 50,000. General information only. Not personal financial advice.*
