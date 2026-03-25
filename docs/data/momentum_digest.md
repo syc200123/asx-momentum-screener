@@ -1,6 +1,6 @@
-# ASX Momentum Digest — 2026-03-24
+# ASX Momentum Digest — 2026-03-25
 
-**Scanned:** 1625 stocks | **Passed filters:** 967 | **Uptrends (CU):** 9 | **Accelerating:** 1 | **New Uptrends:** 1 | **Lost Uptrends:** 1
+**Scanned:** 1649 stocks | **Passed filters:** 995 | **Uptrends (CU):** 9 | **Accelerating:** 3 | **New Uptrends:** 3 | **Lost Uptrends:** 4
 
 ## Track 1: Momentum Candidates (6)
 
@@ -8,19 +8,19 @@ Stocks in continuous uptrend (CU), accelerating (AC), or newly entering uptrend 
 
 | # | Ticker | Name | Price | Score | Flags | 1W | 1M | 3M | 6M | 1Y | From 52wH | MCap | Vol(20d) | Sector |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | **WDS** | WOODSIDE FPO [WDS] | $34.73 | 6 | Uptrend, Accelerating, HotStreak | +10.5% | +17.7% | +17.9% | +1.7% | +2.3% | -0.2% | $66.0B | 11.0M | Energy |
-| 2 | **NSR** | NSREIT STAPLED [NSR] | $2.78 | 7 | Uptrend, NewUptrend | +0.4% | +0.4% | +1.1% | +18.2% | +9.9% | +0.0% | $3.9B | 6.7M | Real Estate |
-| 3 | **NHC** | NEW HOPE FPO [NHC] | $5.84 | 7 | Uptrend, ConsistentWin | +17.7% | +4.2% | +18.7% | +1.8% | +4.0% | +0.0% | $4.9B | 5.9M | Energy |
-| 4 | **APA** | APA GROUP STAPLED [APA] | $9.54 | 7 | Uptrend | +2.3% | +2.1% | +0.7% | +5.4% | +16.5% | -0.3% | $12.6B | 3.2M | Utilities |
-| 5 | **IFL** | INSIGNIA FPO [IFL] | $4.75 | 6 | Uptrend | +1.7% | +0.6% | +2.2% | +1.1% | +1.4% | +0.0% | $3.2B | 3.0M | Financial Services |
-| 6 | **RDX** | REDOX LTD FPO [RDX] | $3.16 | 5 | Uptrend | +0.3% | +8.2% | +0.7% | +4.6% | +6.4% | -3.7% | $1.7B | 740K | Basic Materials |
+| 1 | **LIN** | LINDIAN FPO [LIN] | $0.83 | 6 | Uptrend, NewUptrend | +5.7% | +80.5% | +19.2% | +37.7% | +176.0% | -8.8% | $1.4B | 13.9M | Basic Materials |
+| 2 | **ELS** | ELSIGHT FPO [ELS] | $6.05 | 6 | Uptrend, NewUptrend | +4.0% | +55.2% | +16.8% | +95.1% | +383.8% | +0.0% | $1.3B | 2.4M | Technology |
+| 3 | **WDS** | WOODSIDE FPO [WDS] | $33.62 | 6 | Uptrend, Accelerating | +6.9% | +19.3% | +17.0% | +1.3% | +1.8% | -3.4% | $63.9B | 11.3M | Energy |
+| 4 | **NHC** | NEW HOPE FPO [NHC] | $5.55 | 6 | Uptrend | +5.7% | +11.2% | +16.8% | +3.1% | +7.3% | -5.0% | $4.7B | 6.1M | Energy |
+| 5 | **APA** | APA GROUP STAPLED [APA] | $9.64 | 7 | Uptrend | +1.8% | +3.8% | +0.6% | +4.9% | +17.5% | +0.0% | $12.8B | 3.2M | Utilities |
+| 6 | **IFL** | INSIGNIA FPO [IFL] | $4.75 | 6 | Uptrend | +1.7% | +0.2% | +2.6% | +1.3% | +1.4% | +0.0% | $3.2B | 3.0M | Financial Services |
 
 **Sector breakdown:**
 - Energy: 2 (WDS, NHC)
-- Real Estate: 1 (NSR)
+- Basic Materials: 1 (LIN)
+- Technology: 1 (ELS)
 - Utilities: 1 (APA)
 - Financial Services: 1 (IFL)
-- Basic Materials: 1 (RDX)
 
 ## Track 2: Reversal Candidates (20)
 
@@ -28,35 +28,35 @@ Stocks 40%+ below 52-week high but showing positive recent segments. Not buy sig
 
 | # | Ticker | Name | Price | From 52wH | From 5yH | 1W | 1M | Score | Wk Streak | MCap | Vol(20d) | Sector |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | **TLX** | TELIXPHARM FPO [TLX] | $12.50 | -57.4% | -59.9% | +6.8% | +12.2% | 5 | -1 | $4.2B | 3.2M | Healthcare |
-| 2 | **DRO** | DRONE FPO [DRO] | $3.57 | -45.9% | -45.9% | -11.2% | +24.8% | 5 | -2 | $3.3B | 18.4M | Industrials |
-| 3 | **NXL** | NUIX LTD FPO [NXL] | $1.26 | -61.8% | -83.7% | -18.4% | +13.6% | 3 | -4 | $422M | 3.2M | Technology |
-| 4 | **PME** | PROMEDICUS FPO [PME] | $119.53 | -63.7% | -63.7% | -6.7% | +1.5% | 5 | -2 | $12.5B | 568K | Healthcare |
-| 5 | **XRO** | XERO FPO [XRO] | $74.95 | -61.4% | -61.4% | -3.4% | +0.1% | 4 | -3 | $13.0B | 888K | Technology |
-| 6 | **GYG** | GUZ GOMEZ FPO [GYG] | $16.45 | -50.8% | -63.4% | -12.6% | +7.8% | 1 | -3 | $1.7B | 363K | Consumer Cyclical |
-| 7 | **MPW** | METALPWLTD FPO [MPW] | $1.96 | -59.7% | -59.7% | +2.9% | -24.9% | 4 | +1 | $293M | 290K | Basic Materials |
-| 8 | **CAT** | CATAPULT FPO [CAT] | $3.34 | -55.4% | -55.4% | +1.5% | -6.3% | 4 | -1 | $1.0B | 1.7M | Technology |
-| 9 | **TPW** | TEMPLE WEB FPO [TPW] | $6.46 | -77.2% | -77.2% | +0.2% | -23.8% | 4 | +1 | $777M | 1.1M | Consumer Cyclical |
-| 10 | **AVH** | AVITA MED CDI 5:1 [AVH] | $1.11 | -64.4% | -81.9% | -12.6% | +6.3% | 3 | -4 | $175M | 312K | Healthcare |
-| 11 | **LOV** | LOVISA FPO [LOV] | $21.12 | -49.5% | -49.5% | +1.5% | -18.7% | 4 | +1 | $2.3B | 812K | Consumer Cyclical |
-| 12 | **RAC** | RACURA FPO [RAC] | $2.57 | -45.3% | -45.3% | +19.0% | -2.7% | 2 | -1 | $467M | 191K | Healthcare |
-| 13 | **GTK** | GENTRACK FPO NZX [GTK] | $5.67 | -52.6% | -56.4% | -10.6% | +2.3% | 4 | -4 | $638M | 153K | Technology |
-| 14 | **GDG** | GEN DEV FPO [GDG] | $3.90 | -48.6% | -48.6% | +0.8% | -16.8% | 5 | +1 | $1.6B | 2.5M | Financial Services |
-| 15 | **NWL** | NETWEALTH FPO [NWL] | $21.24 | -42.9% | -42.9% | +0.1% | -17.3% | 4 | +1 | $5.2B | 1.3M | Technology |
-| 16 | **PNV** | POLYNOVO FPO [PNV] | $0.88 | -47.3% | -72.3% | -6.4% | +2.2% | 3 | -4 | $608M | 2.3M | Healthcare |
-| 17 | **WEB** | WEB TRAVEL FPO [WEB] | $2.73 | -48.1% | -70.5% | +3.0% | -24.7% | 4 | -1 | $986M | 3.1M | Consumer Cyclical |
-| 18 | **REA** | REA GROUP FPO [REA] | $153.78 | -40.8% | -43.2% | -7.4% | +3.3% | 4 | -3 | $20.3B | 365K | Communication Services |
-| 19 | **PMV** | PREM INV. FPO [PMV] | $12.32 | -44.4% | -64.6% | +0.4% | -12.8% | 4 | +1 | $2.0B | 375K | Consumer Cyclical |
-| 20 | **AEF** | A ETHICAL FPO [AEF] | $4.31 | -46.2% | -68.2% | -4.4% | +3.5% | 4 | +1 | $491M | 171K | Financial Services |
+| 1 | **TLX** | TELIXPHARM FPO [TLX] | $12.73 | -56.6% | -59.1% | +2.7% | +28.9% | 5 | -1 | $4.3B | 3.3M | Healthcare |
+| 2 | **VUL** | VULCAN E FPO [VUL] | $3.29 | -56.2% | -79.3% | +7.5% | -19.0% | 3 | +1 | $1.6B | 3.5M | Basic Materials |
+| 3 | **RAC** | RACURA FPO [RAC] | $2.74 | -41.7% | -41.7% | +15.1% | +2.6% | 3 | -1 | $498M | 194K | Healthcare |
+| 4 | **ZIP** | ZIPCOLTD FPO [ZIP] | $1.65 | -65.8% | -83.1% | +5.4% | -8.8% | 4 | +1 | $2.1B | 29.2M | Financial Services |
+| 5 | **AQZ** | AAVIATION FPO [AQZ] | $0.68 | -75.5% | -85.2% | +13.4% | -18.5% | 1 | +1 | $109M | 525K | Industrials |
+| 6 | **PME** | PROMEDICUS FPO [PME] | $120.79 | -63.3% | -63.3% | -3.6% | +9.0% | 5 | +1 | $12.6B | 551K | Healthcare |
+| 7 | **AEL** | AMPLITUDE FPO [AEL] | $1.69 | -47.3% | -51.2% | -38.1% | +22.4% | 5 | -1 | $507M | 2.4M | Energy |
+| 8 | **XRO** | XERO FPO [XRO] | $74.77 | -61.5% | -61.5% | -5.8% | +5.5% | 4 | -3 | $13.0B | 886K | Technology |
+| 9 | **WTC** | WISETECH FPO [WTC] | $39.61 | -67.0% | -71.4% | -11.2% | +0.1% | 4 | -3 | $13.3B | 2.0M | Technology |
+| 10 | **CAT** | CATAPULT FPO [CAT] | $3.55 | -52.5% | -52.5% | +4.7% | -0.3% | 4 | +2 | $1.1B | 1.7M | Technology |
+| 11 | **LOV** | LOVISA FPO [LOV] | $22.47 | -46.3% | -46.3% | +8.2% | -17.7% | 4 | +1 | $2.5B | 826K | Consumer Cyclical |
+| 12 | **MPW** | METALPWLTD FPO [MPW] | $2.05 | -57.7% | -57.7% | +7.3% | -24.5% | 4 | +1 | $307M | 290K | Basic Materials |
+| 13 | **NYR** | NYRADA CDI FORUS [NYR] | $0.56 | -59.8% | -59.8% | +3.7% | -6.1% | 3 | +1 | $136M | 546K | Healthcare |
+| 14 | **SLX** | SILEX FPO [SLX] | $5.55 | -47.1% | -47.1% | +4.3% | -22.2% | 5 | +1 | $1.5B | 1.6M | Technology |
+| 15 | **PNI** | PINNACLE FPO [PNI] | $14.68 | -40.2% | -40.9% | +9.1% | -12.7% | 3 | +1 | $3.4B | 1.2M | Financial Services |
+| 16 | **PLT** | PLENTI GRP FPO [PLT] | $0.91 | -43.3% | -45.5% | +16.0% | -17.9% | 4 | +1 | $165M | 140K | Financial Services |
+| 17 | **EBO** | EBOS FPO NZ [EBO] | $18.78 | -48.6% | -52.6% | +2.1% | -9.5% | 3 | +1 | $3.9B | 259K | Healthcare |
+| 18 | **TPW** | TEMPLE WEB FPO [TPW] | $6.73 | -76.3% | -76.3% | +1.1% | -15.4% | 4 | +1 | $809M | 1.1M | Consumer Cyclical |
+| 19 | **BAP** | BAPCOR LTD FPO [BAP] | $0.64 | -88.0% | -91.7% | +0.8% | -48.9% | 1 | +1 | $384M | 13.0M | Consumer Cyclical |
+| 20 | **CSL** | CSL FPO [CSL] | $140.99 | -46.9% | -53.0% | +2.2% | -5.2% | 2 | +1 | $68.4B | 1.3M | Healthcare |
 
 **Sector breakdown:**
-- Healthcare: 5 (TLX, PME, AVH, RAC, PNV)
-- Technology: 5 (NXL, XRO, CAT, GTK, NWL)
-- Consumer Cyclical: 5 (GYG, TPW, LOV, WEB, PMV)
-- Financial Services: 2 (GDG, AEF)
-- Industrials: 1 (DRO)
-- Basic Materials: 1 (MPW)
-- Communication Services: 1 (REA)
+- Healthcare: 6 (TLX, RAC, PME, NYR, EBO, CSL)
+- Technology: 4 (XRO, WTC, CAT, SLX)
+- Financial Services: 3 (ZIP, PNI, PLT)
+- Consumer Cyclical: 3 (LOV, TPW, BAP)
+- Basic Materials: 2 (VUL, MPW)
+- Industrials: 1 (AQZ)
+- Energy: 1 (AEL)
 
 ---
 *Filters: min price $0.50, min mcap $100M, min vol 50,000. General information only. Not personal financial advice.*
