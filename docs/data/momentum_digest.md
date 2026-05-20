@@ -1,26 +1,24 @@
-# ASX Momentum Digest — 2026-05-19
+# ASX Momentum Digest — 2026-05-20
 
-**Scanned:** 1650 stocks | **Passed filters:** 996 | **Uptrends (CU):** 12 | **Accelerating:** 3 | **New Uptrends:** 6 | **Lost Uptrends:** 4
+**Scanned:** 1648 stocks | **Passed filters:** 991 | **Uptrends (CU):** 10 | **Accelerating:** 0 | **New Uptrends:** 4 | **Lost Uptrends:** 6
 
-## Track 1: Momentum Candidates (8)
+## Track 1: Momentum Candidates (6)
 
 Stocks in continuous uptrend (CU), accelerating (AC), or newly entering uptrend (NU). Ranked by composite momentum score.
 
 | # | Ticker | Name | Price | Score | Flags | 1W | 1M | 3M | 6M | 1Y | From 52wH | MCap | Vol(20d) | Sector |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | **MFF** | MFFCAPITAL FPO [MFF] | $4.92 | 8 | Uptrend, Ext.Uptrend, NewUptrend | +1.2% | +3.6% | +2.8% | +0.9% | +10.5% | -0.9% | $2.9B | 246K | Financial Services |
-| 2 | **TWR** | TOWER FPO NZX [TWR] | $1.76 | 7 | Uptrend, Ext.Uptrend, NewUptrend | +0.6% | +7.4% | +4.5% | +7.2% | +27.2% | -1.4% | $604M | 51K | Financial Services |
-| 3 | **GNP** | GENUSPLUS FPO [GNP] | $9.74 | 8 | Uptrend, Ext.Uptrend | +4.7% | +16.0% | +19.0% | +9.2% | +100.2% | +0.0% | $1.8B | 341K | Industrials |
-| 4 | **FGG** | FUTURE GLB FPO [FGG] | $1.65 | 7 | Uptrend, Ext.Uptrend, NewUptrend | +0.6% | +3.6% | +2.5% | +2.9% | +9.7% | -2.1% | $662M | 328K | Financial Services |
-| 5 | **DBI** | DALRYMPLE STAPLED [DBI] | $5.33 | 8 | Uptrend, Ext.Uptrend | +0.2% | +3.7% | +1.5% | +19.9% | +8.5% | -4.0% | $2.6B | 1.0M | Industrials |
-| 6 | **WIA** | WIA FPO [WIA] | $0.50 | 7 | Uptrend, Ext.Uptrend | +1.0% | +2.1% | +10.2% | +29.4% | +70.0% | -14.5% | $739M | 2.3M | Basic Materials |
-| 7 | **CBO** | COBRAM FPO [CBO] | $4.11 | 7 | Uptrend, Ext.Uptrend | +12.0% | +3.4% | +9.6% | +5.5% | +68.4% | +0.0% | $2.0B | 589K | Consumer Defensive |
-| 8 | **SIQ** | SMARTGROUP FPO [SIQ] | $11.45 | 7 | Uptrend | +2.4% | +27.5% | +10.1% | +0.7% | +9.4% | +0.0% | $1.6B | 615K | Industrials |
+| 1 | **GNP** | GENUSPLUS FPO [GNP] | $9.95 | 8 | Uptrend, Ext.Uptrend | +5.9% | +8.5% | +24.8% | +14.5% | +89.9% | +0.0% | $1.8B | 418K | Industrials |
+| 2 | **CDA** | CODAN FPO [CDA] | $39.00 | 7 | Uptrend, Ext.Uptrend, NewUptrend | +1.2% | +10.5% | +1.3% | +17.7% | +71.4% | -11.2% | $7.1B | 861K | Technology |
+| 3 | **NHC** | NEW HOPE FPO [NHC] | $5.44 | 7 | Uptrend, NewUptrend | +7.9% | +0.6% | +9.5% | +15.1% | +13.9% | -9.5% | $4.6B | 2.4M | Energy |
+| 4 | **SIQ** | SMARTGROUP FPO [SIQ] | $11.54 | 8 | Uptrend, Ext.Uptrend | +4.2% | +25.9% | +7.5% | +3.2% | +9.5% | +0.0% | $1.6B | 604K | Industrials |
+| 5 | **DBI** | DALRYMPLE STAPLED [DBI] | $5.49 | 8 | Uptrend, Ext.Uptrend | +3.8% | +2.1% | +3.5% | +20.1% | +7.5% | -1.1% | $2.7B | 1.1M | Industrials |
+| 6 | **CBO** | COBRAM FPO [CBO] | $4.03 | 7 | Uptrend, Ext.Uptrend | +6.6% | +7.1% | +9.3% | +5.9% | +67.3% | -1.9% | $1.9B | 595K | Consumer Defensive |
 
 **Sector breakdown:**
-- Financial Services: 3 (MFF, TWR, FGG)
-- Industrials: 3 (GNP, DBI, SIQ)
-- Basic Materials: 1 (WIA)
+- Industrials: 3 (GNP, SIQ, DBI)
+- Technology: 1 (CDA)
+- Energy: 1 (NHC)
 - Consumer Defensive: 1 (CBO)
 
 ## Track 2: Reversal Candidates (20)
@@ -29,37 +27,36 @@ Stocks 40%+ below 52-week high but showing positive recent segments. Not buy sig
 
 | # | Ticker | Name | Price | From 52wH | From 5yH | 1W | 1M | Score | Wk Streak | MCap | Vol(20d) | Sector |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | **TWE** | TREA WINE FPO [TWE] | $4.34 | -47.5% | -67.2% | +2.8% | +5.2% | 3 | +1 | $3.5B | 4.8M | Consumer Defensive |
-| 2 | **PME** | PROMEDICUS FPO [PME] | $130.26 | -60.4% | -60.4% | +3.4% | -15.3% | 5 | +1 | $13.6B | 252K | Healthcare |
-| 3 | **IPX** | IPERIONX FPO [IPX] | $4.87 | -46.5% | -46.5% | -15.2% | +26.2% | 5 | -2 | $1.7B | 1.4M | Basic Materials |
-| 4 | **CSL** | CSL FPO [CSL] | $98.69 | -62.8% | -67.1% | +0.1% | -28.1% | 2 | +1 | $47.3B | 2.1M | Healthcare |
-| 5 | **VUL** | VULCAN E FPO [VUL] | $3.43 | -54.4% | -78.4% | -9.7% | +8.0% | 3 | -3 | $1.6B | 1.9M | Basic Materials |
-| 6 | **HMC** | HMC CAPLTD FPO [HMC] | $2.86 | -43.6% | -76.2% | -2.4% | +18.6% | 3 | -2 | $1.2B | 1.5M | Real Estate |
-| 7 | **ERD** | EROAD FPO NZX [ERD] | $0.81 | -68.2% | -84.8% | +3.2% | -7.1% | 5 | +1 | $153M | 64K | Technology |
-| 8 | **SEK** | SEEK FPO [SEK] | $13.97 | -51.2% | -57.3% | +5.0% | -14.0% | 2 | +1 | $5.0B | 1.3M | Communication Services |
-| 9 | **ZIP** | ZIPCOLTD FPO [ZIP] | $2.25 | -53.2% | -74.4% | -8.5% | +5.6% | 4 | -2 | $2.8B | 15.0M | Financial Services |
-| 10 | **NXL** | NUIX LTD FPO [NXL] | $1.33 | -58.3% | -82.8% | -4.7% | +10.3% | 2 | -4 | $451M | 1.3M | Technology |
-| 11 | **AMA** | AMA GROUP FPO [AMA] | $0.52 | -52.7% | -88.7% | -8.8% | +12.9% | 2 | -2 | $250M | 472K | Consumer Cyclical |
-| 12 | **RDY** | READYTECH FPO [RDY] | $1.35 | -51.8% | -67.9% | -0.4% | +12.9% | 3 | -1 | $167M | 57K | Technology |
-| 13 | **FAL** | FALCON FPO [FAL] | $0.55 | -53.0% | -53.0% | +7.9% | -3.8% | 3 | -1 | $116M | 195K | Basic Materials |
-| 14 | **ATR** | ASTRON FPO [ATR] | $0.59 | -45.4% | -45.4% | +18.0% | -19.4% | 4 | +1 | $249M | 78K | Basic Materials |
-| 15 | **POL** | POLYMETALS FPO [POL] | $0.90 | -43.4% | -43.4% | -15.1% | +9.8% | 4 | -2 | $277M | 1.2M | Basic Materials |
-| 16 | **GYG** | GUZ GOMEZ FPO [GYG] | $17.48 | -43.6% | -61.1% | +3.2% | -16.7% | 2 | +1 | $1.8B | 249K | Consumer Cyclical |
-| 17 | **AEL** | AMPLITUDE FPO [AEL] | $1.72 | -46.6% | -50.5% | +5.2% | -6.6% | 3 | +2 | $514M | 850K | Energy |
-| 18 | **NVA** | NOVA MIN FPO [NVA] | $0.70 | -57.2% | -63.2% | -4.8% | +2.8% | 3 | +1 | $319M | 507K | Basic Materials |
-| 19 | **TYR** | TYRO PAY FPO [TYR] | $0.76 | -40.4% | -82.2% | +10.1% | -15.9% | 2 | +2 | $404M | 954K | Technology |
-| 20 | **BBN** | BABY B FPO [BBN] | $1.37 | -57.6% | -75.6% | +3.8% | -14.8% | 3 | -1 | $185M | 192K | Consumer Cyclical |
+| 1 | **RDY** | READYTECH FPO [RDY] | $1.36 | -51.2% | -67.5% | +2.6% | +9.5% | 4 | +2 | $169M | 51K | Technology |
+| 2 | **AEL** | AMPLITUDE FPO [AEL] | $1.71 | -46.9% | -50.8% | +3.6% | +1.5% | 4 | +2 | $511M | 793K | Energy |
+| 3 | **TWE** | TREA WINE FPO [TWE] | $4.37 | -46.9% | -66.9% | +4.5% | +2.0% | 3 | +1 | $3.5B | 4.0M | Consumer Defensive |
+| 4 | **CAT** | CATAPULT FPO [CAT] | $3.39 | -54.7% | -54.7% | +6.3% | -2.7% | 4 | +1 | $1.0B | 1.2M | Technology |
+| 5 | **IPX** | IPERIONX FPO [IPX] | $4.66 | -48.8% | -48.8% | -17.8% | +29.2% | 5 | -2 | $1.6B | 1.4M | Basic Materials |
+| 6 | **NYR** | NYRADA CDI FORUS [NYR] | $0.60 | -56.5% | -56.5% | +9.1% | -11.3% | 4 | +1 | $147M | 202K | Healthcare |
+| 7 | **PME** | PROMEDICUS FPO [PME] | $128.70 | -60.9% | -60.9% | +2.5% | -13.3% | 5 | +1 | $13.4B | 251K | Healthcare |
+| 8 | **VUL** | VULCAN E FPO [VUL] | $3.36 | -55.3% | -78.9% | -10.4% | +6.2% | 3 | -3 | $1.6B | 1.8M | Basic Materials |
+| 9 | **HMC** | HMC CAPLTD FPO [HMC] | $2.77 | -45.4% | -76.9% | -2.1% | +16.0% | 3 | -2 | $1.1B | 1.5M | Real Estate |
+| 10 | **FAL** | FALCON FPO [FAL] | $0.50 | -56.9% | -56.9% | -17.4% | +13.1% | 3 | -1 | $107M | 211K | Basic Materials |
+| 11 | **NXL** | NUIX LTD FPO [NXL] | $1.29 | -59.4% | -83.3% | -6.8% | +9.4% | 2 | -4 | $439M | 1.3M | Technology |
+| 12 | **ERD** | EROAD FPO NZX [ERD] | $0.80 | -68.8% | -85.0% | -4.8% | +5.0% | 4 | -2 | $150M | 63K | Technology |
+| 13 | **ATR** | ASTRON FPO [ATR] | $0.59 | -45.4% | -45.4% | +13.5% | -16.1% | 4 | +1 | $249M | 79K | Basic Materials |
+| 14 | **SEK** | SEEK FPO [SEK] | $13.54 | -52.7% | -58.6% | +0.5% | -12.8% | 2 | +1 | $4.8B | 1.3M | Communication Services |
+| 15 | **DAI** | DECIDR AI FPO [DAI] | $0.63 | -41.7% | -41.7% | -6.0% | +30.1% | 3 | -3 | $205M | 1.2M | Technology |
+| 16 | **AMA** | AMA GROUP FPO [AMA] | $0.50 | -54.5% | -89.1% | -13.8% | +6.4% | 2 | -2 | $241M | 468K | Consumer Cyclical |
+| 17 | **CHN** | CHALICE FPO [CHN] | $1.36 | -49.1% | -86.6% | -19.0% | +1.8% | 3 | -2 | $532M | 1.5M | Basic Materials |
+| 18 | **USL** | UNICOSILVE FPO [USL] | $0.64 | -44.3% | -44.3% | -23.5% | +13.7% | 5 | -1 | $402M | 4.0M | Basic Materials |
+| 19 | **HPG** | HIPAGES FPO [HPG] | $0.74 | -47.7% | -82.0% | -0.7% | +7.1% | 3 | +1 | $102M | 55K | Technology |
+| 20 | **NEU** | NEUREN FPO NZ [NEU] | $12.42 | -43.5% | -50.5% | -2.3% | +1.8% | 4 | -2 | $1.6B | 313K | Healthcare |
 
 **Sector breakdown:**
-- Basic Materials: 6 (IPX, VUL, FAL, ATR, POL, NVA)
-- Technology: 4 (ERD, NXL, RDY, TYR)
-- Consumer Cyclical: 3 (AMA, GYG, BBN)
-- Healthcare: 2 (PME, CSL)
+- Technology: 6 (RDY, CAT, NXL, ERD, DAI, HPG)
+- Basic Materials: 6 (IPX, VUL, FAL, ATR, CHN, USL)
+- Healthcare: 3 (NYR, PME, NEU)
+- Energy: 1 (AEL)
 - Consumer Defensive: 1 (TWE)
 - Real Estate: 1 (HMC)
 - Communication Services: 1 (SEK)
-- Financial Services: 1 (ZIP)
-- Energy: 1 (AEL)
+- Consumer Cyclical: 1 (AMA)
 
 ---
 *Filters: min price $0.50, min mcap $100M, min vol 50,000. General information only. Not personal financial advice.*
