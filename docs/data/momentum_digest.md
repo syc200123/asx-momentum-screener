@@ -1,25 +1,26 @@
-# ASX Momentum Digest — 2026-05-20
+# ASX Momentum Digest — 2026-05-21
 
-**Scanned:** 1648 stocks | **Passed filters:** 991 | **Uptrends (CU):** 10 | **Accelerating:** 0 | **New Uptrends:** 4 | **Lost Uptrends:** 6
+**Scanned:** 1649 stocks | **Passed filters:** 987 | **Uptrends (CU):** 11 | **Accelerating:** 1 | **New Uptrends:** 8 | **Lost Uptrends:** 7
 
-## Track 1: Momentum Candidates (6)
+## Track 1: Momentum Candidates (7)
 
 Stocks in continuous uptrend (CU), accelerating (AC), or newly entering uptrend (NU). Ranked by composite momentum score.
 
 | # | Ticker | Name | Price | Score | Flags | 1W | 1M | 3M | 6M | 1Y | From 52wH | MCap | Vol(20d) | Sector |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | **GNP** | GENUSPLUS FPO [GNP] | $9.95 | 8 | Uptrend, Ext.Uptrend | +5.9% | +8.5% | +24.8% | +14.5% | +89.9% | +0.0% | $1.8B | 418K | Industrials |
-| 2 | **CDA** | CODAN FPO [CDA] | $39.00 | 7 | Uptrend, Ext.Uptrend, NewUptrend | +1.2% | +10.5% | +1.3% | +17.7% | +71.4% | -11.2% | $7.1B | 861K | Technology |
-| 3 | **NHC** | NEW HOPE FPO [NHC] | $5.44 | 7 | Uptrend, NewUptrend | +7.9% | +0.6% | +9.5% | +15.1% | +13.9% | -9.5% | $4.6B | 2.4M | Energy |
-| 4 | **SIQ** | SMARTGROUP FPO [SIQ] | $11.54 | 8 | Uptrend, Ext.Uptrend | +4.2% | +25.9% | +7.5% | +3.2% | +9.5% | +0.0% | $1.6B | 604K | Industrials |
-| 5 | **DBI** | DALRYMPLE STAPLED [DBI] | $5.49 | 8 | Uptrend, Ext.Uptrend | +3.8% | +2.1% | +3.5% | +20.1% | +7.5% | -1.1% | $2.7B | 1.1M | Industrials |
-| 6 | **CBO** | COBRAM FPO [CBO] | $4.03 | 7 | Uptrend, Ext.Uptrend | +6.6% | +7.1% | +9.3% | +5.9% | +67.3% | -1.9% | $1.9B | 595K | Consumer Defensive |
+| 1 | **MFF** | MFFCAPITAL FPO [MFF] | $4.87 | 8 | Uptrend, Ext.Uptrend, NewUptrend | +0.4% | +4.8% | +0.2% | +1.3% | +10.2% | -1.9% | $2.9B | 244K | Financial Services |
+| 2 | **GNP** | GENUSPLUS FPO [GNP] | $9.53 | 8 | Uptrend, Ext.Uptrend | +3.4% | +3.9% | +23.5% | +15.4% | +94.3% | -4.2% | $1.7B | 441K | Industrials |
+| 3 | **KAR** | KAROON FPO [KAR] | $2.08 | 6 | Uptrend, NewUptrend | +2.0% | +1.5% | +21.4% | +5.3% | +1.1% | -7.1% | $1.5B | 4.5M | Energy |
+| 4 | **STO** | SANTOS FPO [STO] | $8.13 | 7 | Uptrend, NewUptrend | +6.0% | +3.1% | +8.6% | +5.6% | +5.5% | +0.0% | $26.4B | 11.1M | Energy |
+| 5 | **AZJ** | AURIZON FPO [AZJ] | $4.24 | 7 | Uptrend, NewUptrend | +2.9% | +0.7% | +3.9% | +18.4% | +17.5% | -0.7% | $7.1B | 6.1M | Industrials |
+| 6 | **CNU** | CHORUS FPO NZX [CNU] | $8.40 | 7 | Uptrend, NewUptrend | +2.1% | +3.7% | +0.4% | +0.5% | +10.0% | -0.6% | $3.6B | 1.9M | Communication Services |
+| 7 | **SIQ** | SMARTGROUP FPO [SIQ] | $11.59 | 7 | Uptrend | +5.4% | +23.7% | +7.1% | +2.4% | +13.1% | +0.0% | $1.6B | 621K | Industrials |
 
 **Sector breakdown:**
-- Industrials: 3 (GNP, SIQ, DBI)
-- Technology: 1 (CDA)
-- Energy: 1 (NHC)
-- Consumer Defensive: 1 (CBO)
+- Industrials: 3 (GNP, AZJ, SIQ)
+- Energy: 2 (KAR, STO)
+- Financial Services: 1 (MFF)
+- Communication Services: 1 (CNU)
 
 ## Track 2: Reversal Candidates (20)
 
@@ -27,36 +28,36 @@ Stocks 40%+ below 52-week high but showing positive recent segments. Not buy sig
 
 | # | Ticker | Name | Price | From 52wH | From 5yH | 1W | 1M | Score | Wk Streak | MCap | Vol(20d) | Sector |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | **RDY** | READYTECH FPO [RDY] | $1.36 | -51.2% | -67.5% | +2.6% | +9.5% | 4 | +2 | $169M | 51K | Technology |
-| 2 | **AEL** | AMPLITUDE FPO [AEL] | $1.71 | -46.9% | -50.8% | +3.6% | +1.5% | 4 | +2 | $511M | 793K | Energy |
-| 3 | **TWE** | TREA WINE FPO [TWE] | $4.37 | -46.9% | -66.9% | +4.5% | +2.0% | 3 | +1 | $3.5B | 4.0M | Consumer Defensive |
-| 4 | **CAT** | CATAPULT FPO [CAT] | $3.39 | -54.7% | -54.7% | +6.3% | -2.7% | 4 | +1 | $1.0B | 1.2M | Technology |
-| 5 | **IPX** | IPERIONX FPO [IPX] | $4.66 | -48.8% | -48.8% | -17.8% | +29.2% | 5 | -2 | $1.6B | 1.4M | Basic Materials |
-| 6 | **NYR** | NYRADA CDI FORUS [NYR] | $0.60 | -56.5% | -56.5% | +9.1% | -11.3% | 4 | +1 | $147M | 202K | Healthcare |
-| 7 | **PME** | PROMEDICUS FPO [PME] | $128.70 | -60.9% | -60.9% | +2.5% | -13.3% | 5 | +1 | $13.4B | 251K | Healthcare |
-| 8 | **VUL** | VULCAN E FPO [VUL] | $3.36 | -55.3% | -78.9% | -10.4% | +6.2% | 3 | -3 | $1.6B | 1.8M | Basic Materials |
-| 9 | **HMC** | HMC CAPLTD FPO [HMC] | $2.77 | -45.4% | -76.9% | -2.1% | +16.0% | 3 | -2 | $1.1B | 1.5M | Real Estate |
-| 10 | **FAL** | FALCON FPO [FAL] | $0.50 | -56.9% | -56.9% | -17.4% | +13.1% | 3 | -1 | $107M | 211K | Basic Materials |
-| 11 | **NXL** | NUIX LTD FPO [NXL] | $1.29 | -59.4% | -83.3% | -6.8% | +9.4% | 2 | -4 | $439M | 1.3M | Technology |
-| 12 | **ERD** | EROAD FPO NZX [ERD] | $0.80 | -68.8% | -85.0% | -4.8% | +5.0% | 4 | -2 | $150M | 63K | Technology |
-| 13 | **ATR** | ASTRON FPO [ATR] | $0.59 | -45.4% | -45.4% | +13.5% | -16.1% | 4 | +1 | $249M | 79K | Basic Materials |
-| 14 | **SEK** | SEEK FPO [SEK] | $13.54 | -52.7% | -58.6% | +0.5% | -12.8% | 2 | +1 | $4.8B | 1.3M | Communication Services |
-| 15 | **DAI** | DECIDR AI FPO [DAI] | $0.63 | -41.7% | -41.7% | -6.0% | +30.1% | 3 | -3 | $205M | 1.2M | Technology |
-| 16 | **AMA** | AMA GROUP FPO [AMA] | $0.50 | -54.5% | -89.1% | -13.8% | +6.4% | 2 | -2 | $241M | 468K | Consumer Cyclical |
-| 17 | **CHN** | CHALICE FPO [CHN] | $1.36 | -49.1% | -86.6% | -19.0% | +1.8% | 3 | -2 | $532M | 1.5M | Basic Materials |
-| 18 | **USL** | UNICOSILVE FPO [USL] | $0.64 | -44.3% | -44.3% | -23.5% | +13.7% | 5 | -1 | $402M | 4.0M | Basic Materials |
-| 19 | **HPG** | HIPAGES FPO [HPG] | $0.74 | -47.7% | -82.0% | -0.7% | +7.1% | 3 | +1 | $102M | 55K | Technology |
-| 20 | **NEU** | NEUREN FPO NZ [NEU] | $12.42 | -43.5% | -50.5% | -2.3% | +1.8% | 4 | -2 | $1.6B | 313K | Healthcare |
+| 1 | **TWE** | TREA WINE FPO [TWE] | $4.53 | -44.9% | -65.7% | +8.6% | +3.0% | 3 | +1 | $3.7B | 3.7M | Consumer Defensive |
+| 2 | **AEL** | AMPLITUDE FPO [AEL] | $1.69 | -47.3% | -51.2% | +1.5% | +5.7% | 4 | +2 | $507M | 762K | Energy |
+| 3 | **NEU** | NEUREN FPO NZ [NEU] | $13.04 | -40.7% | -48.1% | +1.5% | +3.2% | 5 | +1 | $1.6B | 315K | Healthcare |
+| 4 | **PME** | PROMEDICUS FPO [PME] | $128.46 | -61.0% | -61.0% | +5.6% | -14.5% | 5 | +1 | $13.4B | 250K | Healthcare |
+| 5 | **CSL** | CSL FPO [CSL] | $100.05 | -62.3% | -66.6% | +2.9% | -29.0% | 2 | +1 | $47.9B | 2.0M | Healthcare |
+| 6 | **XRO** | XERO FPO [XRO] | $76.54 | -60.6% | -60.6% | +3.9% | -11.2% | 4 | -2 | $13.3B | 962K | Technology |
+| 7 | **CAT** | CATAPULT FPO [CAT] | $3.76 | -49.7% | -49.7% | +21.3% | -3.4% | 3 | +1 | $1.2B | 1.3M | Technology |
+| 8 | **IPX** | IPERIONX FPO [IPX] | $4.90 | -46.2% | -46.2% | -14.5% | +33.9% | 5 | -2 | $1.7B | 1.4M | Basic Materials |
+| 9 | **COH** | COCHLEAR FPO [COH] | $96.89 | -69.1% | -71.2% | +1.5% | -43.2% | 3 | +1 | $6.3B | 684K | Healthcare |
+| 10 | **WTC** | WISETECH FPO [WTC] | $37.63 | -68.7% | -72.8% | +2.6% | -19.6% | 4 | -5 | $12.6B | 1.5M | Technology |
+| 11 | **TPW** | TEMPLE WEB FPO [TPW] | $5.01 | -82.3% | -82.3% | +3.1% | -27.6% | 3 | +1 | $603M | 1.5M | Consumer Cyclical |
+| 12 | **HMC** | HMC CAPLTD FPO [HMC] | $2.82 | -43.9% | -76.5% | -6.3% | +21.9% | 2 | -2 | $1.2B | 1.5M | Real Estate |
+| 13 | **GYG** | GUZ GOMEZ FPO [GYG] | $18.08 | -41.0% | -59.7% | +9.2% | -19.2% | 2 | +1 | $1.8B | 266K | Consumer Cyclical |
+| 14 | **SEK** | SEEK FPO [SEK] | $13.50 | -52.9% | -58.7% | +2.5% | -14.1% | 3 | +1 | $4.8B | 1.3M | Communication Services |
+| 15 | **MYX** | M PHARMA FPO [MYX] | $2.36 | -62.5% | -68.0% | +3.5% | -13.3% | 3 | +1 | $192M | 268K | Healthcare |
+| 16 | **ERD** | EROAD FPO NZX [ERD] | $0.82 | -68.0% | -84.7% | +3.1% | -1.2% | 5 | +1 | $154M | 53K | Technology |
+| 17 | **FAL** | FALCON FPO [FAL] | $0.51 | -56.5% | -56.5% | -16.5% | +12.0% | 3 | -1 | $108M | 201K | Basic Materials |
+| 18 | **NYR** | NYRADA CDI FORUS [NYR] | $0.57 | -58.7% | -58.7% | +5.6% | -10.7% | 4 | +1 | $140M | 212K | Healthcare |
+| 19 | **OCL** | OBJECTIVE FPO [OCL] | $10.49 | -53.4% | -53.4% | +0.5% | -14.4% | 2 | +1 | $1.0B | 63K | Technology |
+| 20 | **GTK** | GENTRACK FPO NZX [GTK] | $3.27 | -72.7% | -74.9% | +0.3% | -35.6% | 5 | -1 | $368M | 634K | Technology |
 
 **Sector breakdown:**
-- Technology: 6 (RDY, CAT, NXL, ERD, DAI, HPG)
-- Basic Materials: 6 (IPX, VUL, FAL, ATR, CHN, USL)
-- Healthcare: 3 (NYR, PME, NEU)
-- Energy: 1 (AEL)
+- Healthcare: 6 (NEU, PME, CSL, COH, MYX, NYR)
+- Technology: 6 (XRO, CAT, WTC, ERD, OCL, GTK)
+- Basic Materials: 2 (IPX, FAL)
+- Consumer Cyclical: 2 (TPW, GYG)
 - Consumer Defensive: 1 (TWE)
+- Energy: 1 (AEL)
 - Real Estate: 1 (HMC)
 - Communication Services: 1 (SEK)
-- Consumer Cyclical: 1 (AMA)
 
 ---
 *Filters: min price $0.50, min mcap $100M, min vol 50,000. General information only. Not personal financial advice.*
