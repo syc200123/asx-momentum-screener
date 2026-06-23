@@ -1,32 +1,35 @@
-# ASX Momentum Digest — 2026-06-22
+# ASX Momentum Digest — 2026-06-23
 
-**Scanned:** 1655 stocks | **Passed filters:** 972 | **Uptrends (CU):** 20 | **Accelerating:** 7 | **New Uptrends:** 5 | **Lost Uptrends:** 15
+**Scanned:** 1657 stocks | **Passed filters:** 971 | **Uptrends (CU):** 20 | **Accelerating:** 4 | **New Uptrends:** 7 | **Lost Uptrends:** 8
 
-## Track 1: Momentum Candidates (12)
+## Track 1: Momentum Candidates (13)
 
 Stocks in continuous uptrend (CU), accelerating (AC), or newly entering uptrend (NU). Ranked by composite momentum score.
 
 | # | Ticker | Name | Price | Score | Flags | 1W | 1M | 3M | 6M | 1Y | From 52wH | MCap | Vol(20d) | Sector |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | **SLS** | SOLSTICE FPO [SLS] | $1.69 | 7 | Uptrend, Ext.Uptrend | +10.8% | +13.0% | +72.0% | +112.2% | +42.3% | +0.0% | $291M | 645K | Basic Materials |
-| 2 | **SXE** | SXE | $4.83 | 8 | Uptrend, Ext.Uptrend | +20.1% | +5.8% | +34.0% | +13.5% | +48.3% | +0.0% | — | 1.6M | Unknown |
-| 3 | **BKI** | BKI INVEST FPO [BKI] | $1.78 | 8 | Uptrend, Ext.Uptrend, NewUptrend | +0.6% | +0.6% | +4.1% | +2.0% | +0.8% | -2.3% | $1.4B | 424K | Financial Services |
-| 4 | **VMM** | VMM | $3.82 | 6 | Uptrend | +6.7% | +7.5% | +97.0% | +37.4% | +179.5% | -4.0% | — | 1.3M | Unknown |
-| 5 | **CVL** | CIVMEC FPO [CVL] | $1.98 | 8 | Uptrend, Ext.Uptrend | +4.5% | +13.1% | +14.7% | +3.5% | +36.8% | -0.8% | $1.0B | 478K | Industrials |
-| 6 | **TEA** | TEA | $9.05 | 6 | Uptrend | +1.3% | +48.0% | +35.5% | +8.7% | +33.3% | +0.0% | — | 1.2M | Unknown |
-| 7 | **ALK** | ALKANE FPO [ALK] | $1.64 | 6 | Uptrend, NewUptrend | +8.6% | +3.4% | +10.2% | +5.2% | +73.8% | -12.5% | $2.2B | 5.7M | Basic Materials |
-| 8 | **SND** | SND | $1.07 | 6 | Uptrend, NewUptrend | +1.9% | +21.4% | +3.3% | +2.1% | +18.4% | -2.7% | — | 194K | Unknown |
-| 9 | **SDI** | SDI FPO [SDI] | $1.40 | 7 | Uptrend, Ext.Uptrend | +2.6% | +0.7% | +8.0% | +30.9% | +17.5% | +0.0% | $166M | 235K | Healthcare |
-| 10 | **SPL** | SPL | $0.69 | 5 | Uptrend | +1.5% | +10.5% | +34.8% | +24.3% | +320.5% | -8.0% | — | 1.2M | Unknown |
-| 11 | **QUB** | QUBE FPO [QUB] | $5.12 | 7 | Uptrend, Ext.Uptrend | +1.6% | +0.6% | +1.8% | +5.6% | +12.1% | +0.0% | $9.1B | 6.1M | Industrials |
-| 12 | **SUN** | SUN | $19.00 | 6 | Accelerating | +3.4% | +5.0% | +8.6% | -7.3% | -16.2% | -12.0% | — | 3.0M | Unknown |
+| 1 | **SLS** | SOLSTICE FPO [SLS] | $1.66 | 7 | Uptrend, Ext.Uptrend | +12.2% | +9.3% | +64.6% | +118.7% | +38.9% | -2.1% | $285M | 641K | Basic Materials |
+| 2 | **FTI** | FORTIFAI FPO [FTI] | $0.99 | 5 | Uptrend, NewUptrend | +4.2% | +51.6% | +75.0% | +1.4% | +407.1% | -4.3% | $340M | 694K | Communication Services |
+| 3 | **VFY** | VFY | $3.19 | 5 | Uptrend, NewUptrend | +6.0% | +13.6% | +60.6% | +22.2% | +3.1% | -16.1% | — | 102K | Unknown |
+| 4 | **VMM** | VMM | $3.77 | 6 | Uptrend | +5.6% | +7.2% | +81.0% | +46.6% | +188.5% | -5.3% | — | 1.3M | Unknown |
+| 5 | **BXN** | BIOXYNE FPO [BXN] | $1.00 | 6 | Uptrend | +975.3% | +36.8% | +44.7% | +11.9% | +44.8% | +0.0% | $229M | 4.2M | Consumer Defensive |
+| 6 | **TEA** | TEA | $9.03 | 6 | Uptrend | +1.5% | +47.5% | +32.5% | +10.6% | +31.5% | -0.2% | — | 1.2M | Unknown |
+| 7 | **SDI** | SDI FPO [SDI] | $1.40 | 7 | Uptrend, Ext.Uptrend | +2.6% | +0.7% | +8.9% | +34.8% | +10.6% | +0.0% | $166M | 222K | Healthcare |
+| 8 | **SPL** | STARPHARMA FPO [SPL] | $0.69 | 5 | Uptrend | +0.7% | +11.3% | +33.3% | +25.7% | +330.2% | -8.0% | $293M | 1.2M | Healthcare |
+| 9 | **QUB** | QUBE FPO [QUB] | $5.12 | 7 | Uptrend, Ext.Uptrend | +1.4% | +0.8% | +1.8% | +5.1% | +13.4% | +0.0% | $9.1B | 6.2M | Industrials |
+| 10 | **TLX** | TLX | $14.56 | 7 | Accelerating | +5.1% | +4.0% | +6.6% | +4.7% | -51.2% | -42.6% | — | 2.3M | Unknown |
+| 11 | **ALK** | ALKANE FPO [ALK] | $1.60 | 6 | Uptrend | +1.9% | +7.9% | +7.4% | +6.7% | +75.9% | -14.4% | $2.2B | 5.7M | Basic Materials |
+| 12 | **EGH** | EUR GROUP FPO [EGH] | $0.68 | 6 | Accelerating | +9.7% | +6.9% | +10.5% | +13.3% | -17.9% | +0.0% | $292M | 737K | Real Estate |
+| 13 | **SUN** | SUN | $18.99 | 6 | Accelerating | +3.5% | +4.8% | +6.2% | -6.5% | -14.9% | -12.0% | — | 3.0M | Unknown |
 
 **Sector breakdown:**
-- Unknown: 6 (SXE, VMM, TEA, SND, SPL, SUN)
+- Unknown: 5 (VFY, VMM, TEA, TLX, SUN)
 - Basic Materials: 2 (SLS, ALK)
-- Industrials: 2 (CVL, QUB)
-- Financial Services: 1 (BKI)
-- Healthcare: 1 (SDI)
+- Healthcare: 2 (SDI, SPL)
+- Communication Services: 1 (FTI)
+- Consumer Defensive: 1 (BXN)
+- Industrials: 1 (QUB)
+- Real Estate: 1 (EGH)
 
 ## Track 2: Reversal Candidates (20)
 
@@ -34,35 +37,35 @@ Stocks 40%+ below 52-week high but showing positive recent segments. Not buy sig
 
 | # | Ticker | Name | Price | From 52wH | From 5yH | 1W | 1M | Score | Wk Streak | MCap | Vol(20d) | Sector |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | **PME** | PROMEDICUS FPO [PME] | $174.64 | -47.0% | -47.0% | +6.1% | +28.6% | 6 | +2 | $18.2B | 381K | Healthcare |
-| 2 | **ASB** | AUSTAL LTD FPO [ASB] | $4.46 | -49.1% | -49.1% | +4.5% | +11.2% | 6 | +3 | $1.9B | 2.1M | Industrials |
-| 3 | **COH** | COCHLEAR FPO [COH] | $112.97 | -63.9% | -66.4% | +8.2% | +7.1% | 3 | -1 | $7.4B | 678K | Healthcare |
-| 4 | **CSL** | CSL FPO [CSL] | $112.88 | -57.5% | -62.4% | +7.0% | +5.8% | 3 | -1 | $54.1B | 2.4M | Healthcare |
-| 5 | **SDR** | SITEMINDER FPO [SDR] | $4.03 | -47.8% | -47.8% | +3.1% | +40.6% | 4 | -1 | $1.1B | 2.8M | Technology |
-| 6 | **WEB** | WEB | $2.94 | -41.5% | -68.2% | +10.1% | +15.1% | 5 | -1 | — | 5.2M | Unknown |
-| 7 | **BLX** | BEACON LTG FPO [BLX] | $1.76 | -50.9% | -51.5% | +10.0% | +0.3% | 4 | +3 | $404M | 182K | Consumer Cyclical |
-| 8 | **BBN** | BABY B FPO [BBN] | $1.68 | -48.1% | -69.6% | +1.2% | +22.6% | 5 | +1 | $227M | 213K | Consumer Cyclical |
-| 9 | **LOV** | LOVISA FPO [LOV] | $23.42 | -44.0% | -44.0% | +2.9% | +4.0% | 6 | +3 | $2.6B | 351K | Consumer Cyclical |
-| 10 | **TPW** | TPW | $5.66 | -80.0% | -80.0% | +5.4% | +6.5% | 4 | -1 | — | 1.5M | Unknown |
-| 11 | **ARB** | ARB CORP FPO [ARB] | $19.59 | -50.8% | -60.1% | +4.8% | +3.5% | 4 | -1 | $1.6B | 412K | Consumer Cyclical |
-| 12 | **LLC** | LEND LEASE STAPLED [LLC] | $2.98 | -47.5% | -73.1% | +3.5% | +2.1% | 3 | -1 | $2.1B | 4.7M | Real Estate |
-| 13 | **RDY** | READYTECH FPO [RDY] | $1.55 | -44.6% | -63.1% | +6.2% | +7.4% | 6 | -1 | $192M | 221K | Technology |
-| 14 | **LOT** | LOTUSRES FPO [LOT] | $0.66 | -79.6% | -88.2% | +13.8% | -14.1% | 3 | -1 | $180M | 3.7M | Basic Materials |
-| 15 | **HPG** | HIPAGES FPO [HPG] | $0.80 | -43.9% | -80.6% | +4.6% | +3.4% | 5 | +1 | $109M | 71K | Technology |
-| 16 | **ADH** | ADAIRS FPO [ADH] | $1.37 | -50.7% | -60.6% | +4.6% | +4.4% | 4 | -1 | $245M | 627K | Consumer Cyclical |
-| 17 | **TLX** | TLX | $14.21 | -44.0% | -54.4% | +3.0% | +3.5% | 7 | -1 | — | 2.3M | Unknown |
-| 18 | **TUA** | TUA | $2.37 | -71.5% | -71.5% | -9.5% | +13.4% | 5 | -2 | — | 5.1M | Unknown |
-| 19 | **PNR** | PANTORO FPO [PNR] | $2.79 | -57.4% | -60.9% | +1.8% | -12.5% | 5 | +2 | $1.1B | 3.2M | Basic Materials |
-| 20 | **HMC** | HMC CAPLTD FPO [HMC] | $3.00 | -40.3% | -75.0% | +0.7% | +7.6% | 4 | -1 | $1.2B | 1.5M | Real Estate |
+| 1 | **PME** | PROMEDICUS FPO [PME] | $172.93 | -47.5% | -47.5% | +5.4% | +28.3% | 6 | +2 | $18.1B | 391K | Healthcare |
+| 2 | **TPW** | TPW | $5.93 | -79.1% | -79.1% | +6.3% | +10.7% | 4 | +3 | — | 1.5M | Unknown |
+| 3 | **COH** | COCHLEAR FPO [COH] | $112.78 | -64.0% | -66.4% | +5.5% | +9.6% | 3 | -1 | $7.4B | 685K | Healthcare |
+| 4 | **CSL** | CSL FPO [CSL] | $112.04 | -57.8% | -62.7% | +5.4% | +6.5% | 4 | -1 | $53.7B | 2.4M | Healthcare |
+| 5 | **CMA** | CARMA LTD FPO [CMA] | $0.76 | -69.8% | -69.8% | +1.3% | +13.7% | 2 | +1 | $104M | 138K | Consumer Cyclical |
+| 6 | **BLX** | BEACON LTG FPO [BLX] | $1.80 | -49.8% | -50.4% | +12.5% | +0.3% | 4 | +3 | $413M | 199K | Consumer Cyclical |
+| 7 | **ASB** | AUSTAL LTD FPO [ASB] | $4.35 | -50.3% | -50.3% | +0.7% | +12.5% | 6 | -1 | $1.8B | 2.0M | Industrials |
+| 8 | **WEB** | WEB | $2.91 | -42.1% | -68.5% | +7.4% | +16.8% | 5 | -1 | — | 5.2M | Unknown |
+| 9 | **RDY** | READYTECH FPO [RDY] | $1.57 | -43.9% | -62.6% | +7.5% | +7.4% | 6 | +2 | $194M | 222K | Technology |
+| 10 | **ARB** | ARB CORP FPO [ARB] | $19.18 | -51.8% | -60.9% | +4.2% | +2.0% | 4 | -1 | $1.6B | 415K | Consumer Cyclical |
+| 11 | **BBN** | BABY B FPO [BBN] | $1.65 | -49.1% | -70.1% | +1.5% | +20.0% | 5 | -2 | $223M | 222K | Consumer Cyclical |
+| 12 | **TLX** | TLX | $14.56 | -42.6% | -53.2% | +5.1% | +4.0% | 7 | +4 | — | 2.3M | Unknown |
+| 13 | **SDR** | SITEMINDER FPO [SDR] | $3.79 | -50.9% | -50.9% | -1.8% | +38.8% | 3 | -1 | $1.1B | 2.9M | Technology |
+| 14 | **TUA** | TUA | $2.30 | -72.4% | -72.4% | -14.8% | +16.9% | 5 | -2 | — | 5.1M | Unknown |
+| 15 | **ADH** | ADAIRS FPO [ADH] | $1.35 | -51.5% | -58.7% | +1.5% | +6.0% | 4 | -1 | $241M | 629K | Consumer Cyclical |
+| 16 | **ASG** | AUTOSPORTS FPO [ASG] | $1.82 | -59.5% | -59.5% | +0.8% | -14.2% | 5 | +3 | $389M | 771K | Consumer Cyclical |
+| 17 | **VEE** | VEE | $0.56 | -69.8% | -71.4% | +13.0% | -8.3% | 3 | -2 | — | 128K | Unknown |
+| 18 | **LOT** | LOTUSRES FPO [LOT] | $0.66 | -79.6% | -88.2% | +13.8% | -14.1% | 2 | -1 | $180M | 3.5M | Basic Materials |
+| 19 | **LOV** | LOVISA FPO [LOV] | $22.83 | -45.4% | -45.4% | +0.2% | +4.1% | 5 | -1 | $2.5B | 348K | Consumer Cyclical |
+| 20 | **SEK** | SEEK FPO [SEK] | $12.55 | -56.2% | -61.6% | -8.5% | +7.9% | 3 | -2 | $4.5B | 1.6M | Communication Services |
 
 **Sector breakdown:**
-- Consumer Cyclical: 5 (BLX, BBN, LOV, ARB, ADH)
-- Unknown: 4 (WEB, TPW, TLX, TUA)
+- Consumer Cyclical: 7 (CMA, BLX, ARB, BBN, ADH, ASG, LOV)
+- Unknown: 5 (TPW, WEB, TLX, TUA, VEE)
 - Healthcare: 3 (PME, COH, CSL)
-- Technology: 3 (SDR, RDY, HPG)
-- Real Estate: 2 (LLC, HMC)
-- Basic Materials: 2 (LOT, PNR)
+- Technology: 2 (RDY, SDR)
 - Industrials: 1 (ASB)
+- Basic Materials: 1 (LOT)
+- Communication Services: 1 (SEK)
 
 ---
 *Filters: min price $0.50, min mcap $100M, min vol 50,000. General information only. Not personal financial advice.*
