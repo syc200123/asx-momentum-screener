@@ -11,14 +11,15 @@ for stocks scoring 3+ or flagged as uptrend. All other stocks get
 summary stats only. This keeps the output under ~5MB for fast page loads.
 """
 
+import io
 import json
+import math
 import os
 import sys
 import time
 import logging
 import random
 from datetime import datetime
-from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 try:
@@ -28,6 +29,7 @@ try:
     import requests
 except ImportError:
     print("pip install yfinance requests pandas numpy")
+    print("(pandas>=2.2 required for the 'ME'/'QE' resample aliases used below)")
     sys.exit(1)
 
 # ---------------------------------------------------------------------------
@@ -35,10 +37,17 @@ except ImportError:
 # ---------------------------------------------------------------------------
 
 MIN_PRICE = float(os.environ.get("MIN_PRICE", "0.10"))
-WORKERS = int(os.environ.get("WORKERS", "20"))
 OUTPUT_DIR = os.environ.get("OUTPUT_DIR", "docs/data")
 HISTORY_PERIOD = "5y"
 GRANULAR_THRESHOLD = 3  # Include full granular data for stocks scoring >= this
+
+# Vendor directory token — supply via env (or GitHub Actions secret), never
+# commit. If unset, the ASX CSV fallback is used directly.
+ASX_DIRECTORY_TOKEN = os.environ.get("ASX_DIRECTORY_TOKEN", "")
+
+# Download retry/backoff
+DOWNLOAD_RETRIES = int(os.environ.get("DOWNLOAD_RETRIES", "3"))
+DOWNLOAD_BACKOFF = float(os.environ.get("DOWNLOAD_BACKOFF", "2.0"))
 
 STANDARD_PERIODS = [
     ("1wk", 7, 5), ("1mo", 30, 21), ("3mo", 91, 63), ("6mo", 182, 126),
@@ -56,12 +65,18 @@ log = logging.getLogger("scan")
 def fetch_asx_tickers() -> list[str]:
     log.info("Fetching ASX ticker list...")
 
-    for url in [
-        "https://asx.api.markitdigital.com/asx-research/1.0/companies/directory/file?access_token=83ff96335c2d45a094df02a206a39ff4",
-        "https://www.asx.com.au/asx/research/ASXListedCompanies.csv",
-    ]:
+    urls = []
+    if ASX_DIRECTORY_TOKEN:
+        urls.append(
+            "https://asx.api.markitdigital.com/asx-research/1.0/companies/"
+            f"directory/file?access_token={ASX_DIRECTORY_TOKEN}"
+        )
+    else:
+        log.info("ASX_DIRECTORY_TOKEN not set — using ASX CSV fallback only")
+    urls.append("https://www.asx.com.au/asx/research/ASXListedCompanies.csv")
+
+    for url in urls:
         try:
-            import io
             resp = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=30)
             if resp.status_code != 200:
                 continue
@@ -309,30 +324,64 @@ def analyse_stock(ticker: str, close: pd.Series, volume: pd.Series | None) -> di
     return result
 
 
-def fetch_info_batch(tickers: list[str], results: dict):
-    """Fetch name/sector/market_cap for qualifying stocks (individual calls, but only ~500 not 1654)."""
+def fetch_info_batch(tickers: list[str], results: dict) -> int:
+    """Fetch name/sector/market_cap for qualifying stocks (individual calls,
+    but only ~500 not 1654). Returns the number of tickers whose info could
+    not be retrieved. Note: name/sector live in the slow .info payload, so
+    fast_info alone can't replace this call."""
     log.info(f"Fetching info for {len(tickers)} qualifying stocks...")
+    failures = 0
     done = 0
     for t in tickers:
         try:
             info = yf.Ticker(f"{t}.AX").info
+            if not info:
+                raise ValueError("empty info payload")
             if t in results:
                 results[t]["n"] = info.get("shortName", t)
                 results[t]["s"] = info.get("sector", "Unknown")
                 results[t]["mc"] = info.get("marketCap", 0)
-        except Exception:
-            pass
+        except Exception as e:
+            failures += 1
+            log.debug(f"info fetch failed for {t}: {e}")
         done += 1
         if done % 100 == 0:
-            log.info(f"Info: {done}/{len(tickers)}")
+            log.info(f"Info: {done}/{len(tickers)} ({failures} failures so far)")
             time.sleep(1)  # Light throttle
+    if failures:
+        log.warning(f"Info unavailable for {failures}/{len(tickers)} stocks "
+                    f"(name/sector/mcap left as defaults)")
+    return failures
 
 
 # ---------------------------------------------------------------------------
 # Batch download + scan
 # ---------------------------------------------------------------------------
 
-def run_scan(tickers: list[str]) -> list[dict]:
+def download_batch_with_retry(batch: list[str]):
+    """Download one batch with exponential backoff + jitter. Returns a
+    DataFrame on success, or None if every attempt failed or came back empty."""
+    for attempt in range(1, DOWNLOAD_RETRIES + 1):
+        try:
+            data = yf.download(
+                batch,
+                period=HISTORY_PERIOD,
+                auto_adjust=True,
+                threads=True,
+                progress=False,
+            )
+            if not data.empty:
+                return data
+            log.warning(f"  attempt {attempt}/{DOWNLOAD_RETRIES}: empty response")
+        except Exception as e:
+            log.warning(f"  attempt {attempt}/{DOWNLOAD_RETRIES} failed: {e}")
+        if attempt < DOWNLOAD_RETRIES:
+            delay = DOWNLOAD_BACKOFF * (2 ** (attempt - 1)) + random.uniform(0, 1)
+            time.sleep(delay)
+    return None
+
+
+def run_scan(tickers: list[str]) -> tuple[list[dict], dict]:
     total = len(tickers)
     download_batch = int(os.environ.get("DOWNLOAD_BATCH", "200"))
     log.info(f"Batch downloading {total} tickers in groups of {download_batch} ({HISTORY_PERIOD} history)...")
@@ -345,6 +394,7 @@ def run_scan(tickers: list[str]) -> list[dict]:
     # Download all price data in large batches using yf.download()
     all_close = pd.DataFrame()
     all_volume = pd.DataFrame()
+    failed_batches = 0
 
     for batch_start in range(0, len(yf_tickers), download_batch):
         batch = yf_tickers[batch_start:batch_start + download_batch]
@@ -352,27 +402,20 @@ def run_scan(tickers: list[str]) -> list[dict]:
         total_batches = (len(yf_tickers) + download_batch - 1) // download_batch
         log.info(f"Downloading batch {batch_num}/{total_batches} ({len(batch)} tickers)...")
 
-        try:
-            data = yf.download(
-                batch,
-                period=HISTORY_PERIOD,
-                auto_adjust=True,
-                threads=True,
-                progress=False,
+        data = download_batch_with_retry(batch)
+        if data is None:
+            log.warning(
+                f"Batch {batch_num} dropped after {DOWNLOAD_RETRIES} attempts "
+                f"({len(batch)} tickers lost)"
             )
-
-            if data.empty:
-                log.warning(f"Batch {batch_num} returned empty")
-                continue
-
+            failed_batches += 1
+        else:
             # yf.download returns MultiIndex columns (field, ticker) for multiple tickers
             if isinstance(data.columns, pd.MultiIndex):
                 if 'Close' in data.columns.get_level_values(0):
-                    close_df = data['Close']
-                    all_close = pd.concat([all_close, close_df], axis=1)
+                    all_close = pd.concat([all_close, data['Close']], axis=1)
                 if 'Volume' in data.columns.get_level_values(0):
-                    vol_df = data['Volume']
-                    all_volume = pd.concat([all_volume, vol_df], axis=1)
+                    all_volume = pd.concat([all_volume, data['Volume']], axis=1)
             else:
                 # Single ticker returns flat columns
                 if len(batch) == 1 and 'Close' in data.columns:
@@ -380,21 +423,23 @@ def run_scan(tickers: list[str]) -> list[dict]:
                     if 'Volume' in data.columns:
                         all_volume[batch[0]] = data['Volume']
 
-        except Exception as e:
-            log.warning(f"Batch {batch_num} failed: {e}")
-
         # Brief pause between download batches
         if batch_start + download_batch < len(yf_tickers):
             time.sleep(1)
 
     download_time = time.time() - t0
     downloaded_count = len(all_close.columns)
-    log.info(f"Downloaded {downloaded_count}/{total} tickers in {download_time:.0f}s")
+    not_downloaded = total - downloaded_count
+    log.info(
+        f"Downloaded {downloaded_count}/{total} tickers in {download_time:.0f}s "
+        f"({failed_batches} batch(es) dropped, {not_downloaded} tickers missing)"
+    )
 
     # Analyse each stock from the downloaded data
     log.info("Analysing stocks...")
     results = {}
     filtered = 0
+    errored = 0
 
     for col in all_close.columns:
         # col is like "PME.AX"
@@ -410,22 +455,36 @@ def run_scan(tickers: list[str]) -> list[dict]:
                 filtered += 1
         except Exception as e:
             log.debug(f"Analysis failed for {ticker}: {e}")
-            filtered += 1
+            errored += 1
 
-    log.info(f"Analysis complete: {len(results)} passed, {filtered} filtered, {total - downloaded_count} not downloaded")
+    if errored:
+        log.warning(f"{errored} ticker(s) raised during analysis (excluded from results)")
+    log.info(
+        f"Analysis complete: {len(results)} passed, {filtered} filtered, "
+        f"{errored} errored, {not_downloaded} not downloaded"
+    )
 
     # Fetch info (name, sector, market cap) only for stocks that passed
     # This uses individual API calls but only for ~500 stocks, not 1654
+    info_failures = 0
     fetch_info = os.environ.get("FETCH_INFO", "true").lower() == "true"
     if fetch_info and results:
-        fetch_info_batch(list(results.keys()), results)
+        info_failures = fetch_info_batch(list(results.keys()), results)
 
     elapsed = time.time() - t0
     log.info(f"Total scan time: {elapsed:.0f}s")
 
     result_list = list(results.values())
     result_list.sort(key=lambda x: (x["ts"], x["pp"], x.get("seg", {}).get("3mo", 0) or 0), reverse=True)
-    return result_list
+
+    stats = {
+        "downloaded": downloaded_count,
+        "not_downloaded": not_downloaded,
+        "failed_batches": failed_batches,
+        "analysis_errored": errored,
+        "info_failures": info_failures,
+    }
+    return result_list, stats
 
 
 # ---------------------------------------------------------------------------
@@ -501,11 +560,12 @@ def main():
 
     prev = load_previous(output_path)
 
-    results = run_scan(tickers)
+    results, scan_stats = run_scan(tickers)
     results = add_comparison(results, prev)
 
     meta["end"] = datetime.now().isoformat()
     meta["passed"] = len(results)
+    meta["coverage"] = scan_stats
 
     output = build_output(results, meta)
 
@@ -527,7 +587,6 @@ def main():
             return super().default(obj)
 
     # Also scrub any Python float NaN values before serialising
-    import math
     def scrub_nans(obj):
         if isinstance(obj, float) and (math.isnan(obj) or math.isinf(obj)):
             return None
@@ -550,7 +609,7 @@ def main():
     os.makedirs(snapshot_dir, exist_ok=True)
     snap_name = f"snapshot_{datetime.now().strftime('%Y%m%d')}.json"
     with open(os.path.join(snapshot_dir, snap_name), "w") as f:
-        json.dump(scrub_nans(output), f, separators=(',', ':'), cls=NumpySafeEncoder)
+        json.dump(output, f, separators=(',', ':'), cls=NumpySafeEncoder)
     log.info(f"Snapshot: {snap_name}")
 
     # Summary

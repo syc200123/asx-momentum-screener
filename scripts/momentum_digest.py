@@ -19,6 +19,7 @@ Environment variables:
   SLACK_WEBHOOK   Slack webhook URL for posting
   MIN_PRICE       Minimum price filter (default: 0.50)
   MIN_MCAP        Minimum market cap in millions (default: 100)
+  ALLOW_UNKNOWN_MCAP  Let stocks with missing/zero mcap pass the gate (default: true)
   MIN_VOLUME      Minimum 20-day avg volume (default: 50000)
   MAX_MOMENTUM    Max momentum candidates to report (default: 30)
   MAX_REVERSAL    Max reversal candidates to report (default: 20)
@@ -54,12 +55,16 @@ SCAN_OUTPUT = os.environ.get("SCAN_OUTPUT", "docs/data/asx_momentum_data.json")
 SLACK_WEBHOOK = os.environ.get("SLACK_WEBHOOK", "")
 MIN_PRICE = float(os.environ.get("MIN_PRICE", "0.50"))
 MIN_MCAP = float(os.environ.get("MIN_MCAP", "100")) * 1_000_000
+ALLOW_UNKNOWN_MCAP = os.environ.get("ALLOW_UNKNOWN_MCAP", "true").lower() == "true"
 MIN_VOLUME = int(os.environ.get("MIN_VOLUME", "50000"))
 MAX_MOMENTUM = int(os.environ.get("MAX_MOMENTUM", "30"))
 MAX_REVERSAL = int(os.environ.get("MAX_REVERSAL", "20"))
 OUTPUT_FILE = os.environ.get("OUTPUT_FILE", "")
 FORMAT = os.environ.get("FORMAT", "slack")
 PAGES_URL = os.environ.get("PAGES_URL", "")
+
+# Slack rejects messages beyond ~40k chars; leave headroom.
+SLACK_MAX_CHARS = 38000
 
 # Flag key reference (from scan.py):
 # CU = Continuous Uptrend    EU = Extended Uptrend
@@ -86,7 +91,14 @@ def load_scan(path: str) -> dict:
 def passes_quality_filter(stock: dict) -> bool:
     if stock.get("pr", 0) < MIN_PRICE:
         return False
-    if stock.get("mc", 0) and stock["mc"] < MIN_MCAP:
+    mc = stock.get("mc", 0) or 0
+    if mc <= 0:
+        # Unknown/missing market cap — usually a failed info lookup upstream.
+        # Default lets these through (the volume gate still applies); set
+        # ALLOW_UNKNOWN_MCAP=false to harden the mcap floor.
+        if not ALLOW_UNKNOWN_MCAP:
+            return False
+    elif mc < MIN_MCAP:
         return False
     if stock.get("v20", 0) < MIN_VOLUME:
         return False
@@ -137,11 +149,10 @@ def filter_momentum(stocks: list[dict]) -> list[dict]:
         if seg_3m is not None:
             rank += min(seg_3m * 100, 50)
 
-        s["_rank"] = rank
-        candidates.append(s)
+        candidates.append((rank, s))
 
-    candidates.sort(key=lambda x: x["_rank"], reverse=True)
-    return candidates[:MAX_MOMENTUM]
+    candidates.sort(key=lambda x: x[0], reverse=True)
+    return [s for _, s in candidates[:MAX_MOMENTUM]]
 
 
 # ---------------------------------------------------------------------------
@@ -201,11 +212,10 @@ def filter_reversal(stocks: list[dict]) -> list[dict]:
         elif mc and mc > 500_000_000:
             rank += 5
 
-        s["_rank"] = rank
-        candidates.append(s)
+        candidates.append((rank, s))
 
-    candidates.sort(key=lambda x: x["_rank"], reverse=True)
-    return candidates[:MAX_REVERSAL]
+    candidates.sort(key=lambda x: x[0], reverse=True)
+    return [s for _, s in candidates[:MAX_REVERSAL]]
 
 
 # ---------------------------------------------------------------------------
@@ -264,6 +274,21 @@ def flag_labels(flags: list) -> str:
         "NU": "NewUptrend", "LU": "LostUptrend",
     }
     return ", ".join(labels.get(f, f) for f in flags if f in labels)
+
+
+def _coverage_note(data: dict) -> str | None:
+    """Return a one-line caveat if the upstream scan reported coverage gaps,
+    else None. Reads meta.coverage written by scan.py; safe on older JSON."""
+    cov = data.get("meta", {}).get("coverage", {})
+    if not cov:
+        return None
+    if not (cov.get("not_downloaded", 0) or cov.get("failed_batches", 0) or cov.get("info_failures", 0)):
+        return None
+    return (
+        f"Coverage gaps: {cov.get('not_downloaded', 0)} tickers not downloaded, "
+        f"{cov.get('failed_batches', 0)} batch(es) dropped, "
+        f"{cov.get('info_failures', 0)} info lookups failed."
+    )
 
 
 # ---------------------------------------------------------------------------
@@ -351,6 +376,9 @@ def format_slack(data: dict, momentum: list[dict], reversal: list[dict]) -> str:
     parts.append("")
     if PAGES_URL:
         parts.append(f":link: <{PAGES_URL}|Full interactive screener>")
+    note = _coverage_note(data)
+    if note:
+        parts.append(f":warning: _{note}_")
     parts.append(
         f"_Filters: ≥${MIN_PRICE:.2f}, ≥${MIN_MCAP/1_000_000:.0f}M mcap, "
         f"≥{MIN_VOLUME:,} vol. Not financial advice._"
@@ -512,6 +540,10 @@ def format_markdown(data: dict, momentum: list[dict], reversal: list[dict]) -> s
     # Footer
     parts.append("")
     parts.append("---")
+    note = _coverage_note(data)
+    if note:
+        parts.append(f"> ⚠️ {note}")
+        parts.append("")
     parts.append(
         f"*Filters: min price ${MIN_PRICE:.2f}, min mcap ${MIN_MCAP/1_000_000:.0f}M, "
         f"min vol {MIN_VOLUME:,}. General information only. Not personal financial advice.*"
@@ -583,7 +615,7 @@ def main():
     log.info(f"Momentum candidates: {len(momentum)}")
     log.info(f"Reversal candidates: {len(reversal)}")
 
-    # Build output in requested format
+    # Build the file/stdout output in the requested format
     if FORMAT == "markdown":
         output = format_markdown(data, momentum, reversal)
     elif FORMAT == "claude":
@@ -596,9 +628,22 @@ def main():
         Path(OUTPUT_FILE).write_text(output)
         log.info(f"Saved digest to {OUTPUT_FILE}")
 
-    # Post to Slack if webhook set
+    # Post to Slack if webhook set. Markdown is the GitHub-commit format —
+    # its tables don't render in Slack and can blow past the size limit — so
+    # for that format we post a Slack-native summary while the file keeps the
+    # full tables. slack/claude formats are posted as-is.
     if SLACK_WEBHOOK:
-        post_to_slack(output, SLACK_WEBHOOK)
+        if FORMAT == "markdown":
+            log.info("FORMAT=markdown isn't Slack-renderable; posting a slack-format summary instead")
+            slack_message = format_slack(data, momentum, reversal)
+        else:
+            slack_message = output
+        if len(slack_message) > SLACK_MAX_CHARS:
+            log.warning(
+                f"Slack message is {len(slack_message)} chars (> {SLACK_MAX_CHARS}); "
+                f"Slack may reject it — consider lowering MAX_MOMENTUM/MAX_REVERSAL."
+            )
+        post_to_slack(slack_message, SLACK_WEBHOOK)
     elif not OUTPUT_FILE:
         print(output)
 
