@@ -1,29 +1,29 @@
-# ASX Momentum Digest — 2026-07-01
+# ASX Momentum Digest — 2026-07-02
 
-**Scanned:** 1711 stocks | **Passed filters:** 959 | **Uptrends (CU):** 18 | **Accelerating:** 7 | **New Uptrends:** 9 | **Lost Uptrends:** 11
+**Scanned:** 1710 stocks | **Passed filters:** 961 | **Uptrends (CU):** 16 | **Accelerating:** 4 | **New Uptrends:** 5 | **Lost Uptrends:** 7
 
-## Track 1: Momentum Candidates (10)
+## Track 1: Momentum Candidates (9)
 
 Stocks in continuous uptrend (CU), accelerating (AC), or newly entering uptrend (NU). Ranked by composite momentum score.
 
 | # | Ticker | Name | Price | Score | Flags | 1W | 1M | 3M | 6M | 1Y | From 52wH | MCap | Vol(20d) | Sector |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | **CDA** | CODAN FPO [CDA] | $44.35 | 7 | Uptrend, Ext.Uptrend, NewUptrend | +1.1% | +2.4% | +31.6% | +15.1% | +43.1% | +0.0% | $8.1B | 390K | Technology |
-| 2 | **EDU** | EDU H LTD FPO [EDU] | $1.15 | 7 | Uptrend, NewUptrend | +7.5% | +3.4% | +28.6% | +4.2% | +137.8% | -2.9% | $145M | 290K | Consumer Defensive |
-| 3 | **SLS** | SLS | $2.13 | 7 | Uptrend, Ext.Uptrend | +33.1% | +1.3% | +42.3% | +170.7% | +67.3% | -10.1% | — | 748K | Unknown |
-| 4 | **FGX** | FGX | $1.36 | 7 | Uptrend, Ext.Uptrend, NewUptrend | +0.7% | +2.3% | +2.7% | +1.1% | +10.3% | -2.5% | — | 260K | Unknown |
-| 5 | **IOV** | IOV | $0.57 | 5 | Uptrend | +0.9% | +37.8% | +100.0% | +36.7% | +50.0% | -11.6% | — | 130K | Unknown |
-| 6 | **DRR** | DETERRA RE FPO [DRR] | $4.71 | 6 | Uptrend, NewUptrend | +4.4% | +0.4% | +8.5% | +4.7% | +11.6% | +0.0% | $2.5B | 2.1M | Basic Materials |
-| 7 | **LIN** | LIN | $0.92 | 6 | Uptrend, NewUptrend | +0.5% | +15.2% | +3.3% | +84.3% | +323.5% | -9.0% | — | 7.1M | Unknown |
-| 8 | **LSF** | LSF | $4.70 | 7 | Uptrend | +2.2% | +6.2% | +7.3% | +2.8% | +43.2% | -0.4% | — | 444K | Unknown |
-| 9 | **SDI** | SDI | $1.40 | 6 | Uptrend | +0.2% | +3.3% | +8.0% | +36.6% | +14.0% | +0.0% | — | 201K | Unknown |
-| 10 | **REH** | REH | $16.78 | 5 | Accelerating | +7.2% | +14.0% | +2.2% | +0.8% | -5.3% | -2.6% | — | 747K | Unknown |
+| 1 | **EIQ** | ECHOIQLTD FPO [EIQ] | $1.75 | 8 | Uptrend, Ext.Uptrend, NewUptrend | +8.4% | +17.9% | +58.4% | +232.7% | +2.0% | +0.0% | $1.2B | 3.4M | Healthcare |
+| 2 | **VMM** | VMM | $3.68 | 6 | Uptrend, NewUptrend | +1.7% | +0.6% | +82.3% | +59.9% | +154.6% | -7.5% | — | 1.1M | Unknown |
+| 3 | **SLS** | SLS | $2.15 | 7 | Uptrend, Ext.Uptrend | +37.4% | +3.3% | +47.1% | +151.2% | +67.3% | -9.3% | — | 551K | Unknown |
+| 4 | **GCI** | GRYPHON ORD UNITS [GCI] | $2.08 | 8 | Uptrend, Ext.Uptrend, NewUptrend | +1.2% | +1.0% | +2.8% | +0.3% | +4.3% | +0.0% | $1.3B | 900K | Financial Services |
+| 5 | **CDA** | CODAN FPO [CDA] | $44.04 | 7 | Uptrend, Ext.Uptrend | +0.1% | +0.1% | +37.2% | +13.3% | +43.4% | -0.7% | $8.0B | 383K | Technology |
+| 6 | **BFG** | BELL FN GP FPO [BFG] | $1.45 | 6 | Uptrend, NewUptrend | +0.3% | +4.0% | +8.2% | +1.7% | +18.1% | +0.0% | $463M | 121K | Financial Services |
+| 7 | **LSF** | L1 LS FUND FPO [LSF] | $4.76 | 7 | Uptrend | +3.9% | +4.8% | +11.3% | +0.1% | +40.8% | +0.0% | $3.0B | 446K | Financial Services |
+| 8 | **DRR** | DETERRA RE FPO [DRR] | $4.65 | 7 | Uptrend | +3.3% | +1.6% | +9.9% | +1.9% | +8.9% | -1.3% | $2.5B | 2.0M | Basic Materials |
+| 9 | **LIN** | LINDIAN FPO [LIN] | $0.93 | 6 | Uptrend | +2.2% | +1.7% | +18.5% | +81.9% | +332.3% | -7.5% | $1.7B | 6.8M | Basic Materials |
 
 **Sector breakdown:**
-- Unknown: 7 (SLS, FGX, IOV, LIN, LSF, SDI, REH)
+- Financial Services: 3 (GCI, BFG, LSF)
+- Unknown: 2 (VMM, SLS)
+- Basic Materials: 2 (DRR, LIN)
+- Healthcare: 1 (EIQ)
 - Technology: 1 (CDA)
-- Consumer Defensive: 1 (EDU)
-- Basic Materials: 1 (DRR)
 
 ## Track 2: Reversal Candidates (20)
 
@@ -31,37 +31,37 @@ Stocks 40%+ below 52-week high but showing positive recent segments. Not buy sig
 
 | # | Ticker | Name | Price | From 52wH | From 5yH | 1W | 1M | Score | Wk Streak | MCap | Vol(20d) | Sector |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | **OSL** | OSL | $0.76 | -62.0% | -96.6% | +21.8% | +27.8% | 2 | +1 | — | 258K | Unknown |
-| 2 | **CMA** | CARMA LTD FPO [CMA] | $0.87 | -65.2% | -65.2% | +14.5% | +10.1% | 2 | +2 | $120M | 123K | Consumer Cyclical |
-| 3 | **PWR** | PWR | $0.97 | -51.5% | -64.4% | +3.7% | +24.7% | 3 | +4 | — | 1.1M | Unknown |
-| 4 | **CSL** | CSL FPO [CSL] | $118.37 | -55.4% | -60.6% | +2.9% | +22.1% | 3 | +1 | $56.7B | 2.3M | Healthcare |
-| 5 | **COH** | COCHLEAR FPO [COH] | $118.45 | -62.2% | -64.8% | +4.4% | +12.2% | 3 | +1 | $7.7B | 647K | Healthcare |
-| 6 | **RFG** | RFG | $0.79 | -64.1% | -82.0% | +1.9% | +29.2% | 3 | +1 | — | 103K | Unknown |
-| 7 | **BLX** | BEACON LTG FPO [BLX] | $1.73 | -51.7% | -52.4% | +0.9% | +6.5% | 5 | +4 | $397M | 196K | Consumer Cyclical |
-| 8 | **MYX** | MYX | $2.91 | -53.8% | -60.5% | +22.3% | +2.1% | 4 | +2 | — | 332K | Unknown |
-| 9 | **TPW** | TPW | $6.02 | -78.8% | -78.8% | +5.2% | +10.2% | 4 | -1 | — | 1.3M | Unknown |
-| 10 | **EBO** | EBOS FPO NZ [EBO] | $17.18 | -52.9% | -56.6% | +5.0% | +2.2% | 4 | +1 | $3.5B | 127K | Healthcare |
-| 11 | **ASB** | AUSTAL LTD FPO [ASB] | $4.24 | -51.6% | -51.6% | +0.5% | +6.6% | 6 | +1 | $1.8B | 1.9M | Industrials |
-| 12 | **LLC** | LLC | $3.11 | -45.2% | -72.0% | +6.9% | +13.2% | 3 | -1 | — | 4.3M | Unknown |
-| 13 | **SEK** | SEK | $13.23 | -53.8% | -59.5% | +3.8% | +3.6% | 3 | +1 | — | 1.7M | Unknown |
-| 14 | **CAT** | CATAPULT FPO [CAT] | $3.14 | -58.0% | -58.0% | +9.8% | -22.9% | 4 | +1 | $992M | 1.5M | Technology |
-| 15 | **EQT** | EQUITY TR FPO [EQT] | $17.23 | -45.9% | -48.0% | +7.7% | +0.1% | 5 | +1 | $462M | 156K | Financial Services |
-| 16 | **TUA** | TUA | $2.29 | -72.5% | -72.5% | -0.9% | +15.5% | 5 | +1 | — | 3.9M | Unknown |
-| 17 | **VEE** | VEE | $0.52 | -72.2% | -73.7% | -7.1% | +10.9% | 2 | +1 | — | 134K | Unknown |
-| 18 | **BCN** | BEACON MIN FPO [BCN] | $2.58 | -41.1% | -41.1% | +2.0% | +12.4% | 5 | -1 | $293M | 115K | Basic Materials |
-| 19 | **WEB** | WEB | $2.88 | -42.7% | -68.9% | +1.1% | +12.2% | 5 | -2 | — | 4.3M | Unknown |
-| 20 | **KPG** | KPG | $3.83 | -67.3% | -71.8% | +4.9% | -14.9% | 4 | +2 | — | 94K | Unknown |
+| 1 | **PWR** | PETERWA FPO [PWR] | $0.99 | -50.5% | -63.7% | +8.8% | +20.5% | 3 | +4 | $171M | 980K | Consumer Cyclical |
+| 2 | **COH** | COCHLEAR FPO [COH] | $120.35 | -61.6% | -64.2% | +3.3% | +20.5% | 3 | +1 | $7.9B | 643K | Healthcare |
+| 3 | **CMA** | CARMA LTD FPO [CMA] | $0.88 | -64.8% | -64.8% | +15.8% | +9.4% | 2 | +2 | $121M | 114K | Consumer Cyclical |
+| 4 | **CSL** | CSL FPO [CSL] | $117.75 | -55.6% | -60.8% | +0.1% | +27.1% | 3 | +1 | $56.4B | 2.3M | Healthcare |
+| 5 | **MYX** | M PHARMA FPO [MYX] | $2.78 | -55.9% | -62.3% | +16.3% | +6.2% | 3 | +2 | $226M | 322K | Healthcare |
+| 6 | **VEE** | VEE | $0.55 | -70.9% | -72.4% | +1.9% | +11.5% | 3 | +1 | — | 126K | Unknown |
+| 7 | **ADH** | ADAIRS FPO [ADH] | $1.52 | -45.2% | -53.4% | +13.0% | +3.1% | 5 | +1 | $272M | 642K | Consumer Cyclical |
+| 8 | **EBO** | EBOS FPO NZ [EBO] | $16.94 | -53.6% | -57.2% | +1.4% | +3.5% | 4 | +1 | $3.5B | 127K | Healthcare |
+| 9 | **IEL** | IEL FPO [IEL] | $2.32 | -65.0% | -93.7% | +8.4% | -4.9% | 2 | +1 | $646M | 5.2M | Consumer Defensive |
+| 10 | **RFG** | RFG | $0.76 | -65.5% | -82.7% | -2.6% | +18.2% | 2 | +1 | — | 98K | Unknown |
+| 11 | **SLD** | SLD | $0.50 | -67.4% | -67.4% | +20.5% | -8.8% | 1 | +2 | — | 625K | Unknown |
+| 12 | **IPX** | IPERIONX FPO [IPX] | $4.19 | -54.0% | -54.0% | +9.4% | -36.3% | 6 | +1 | $1.4B | 1.5M | Basic Materials |
+| 13 | **EQT** | EQUITY TR FPO [EQT] | $17.37 | -45.5% | -47.5% | +7.2% | +2.2% | 5 | +1 | $465M | 155K | Financial Services |
+| 14 | **SPD** | SPD | $1.06 | -60.9% | -60.9% | +6.0% | -32.9% | 5 | +1 | — | 111K | Unknown |
+| 15 | **TPW** | TPW | $5.58 | -80.3% | -80.3% | -7.6% | +19.4% | 3 | -1 | — | 1.3M | Unknown |
+| 16 | **BOE** | BOSS EN FPO [BOE] | $1.19 | -70.2% | -80.5% | +12.3% | -15.5% | 5 | +1 | $494M | 6.6M | Energy |
+| 17 | **MPW** | METALPWLTD FPO [MPW] | $1.98 | -59.2% | -59.2% | +12.5% | -13.7% | 4 | +1 | $297M | 132K | Basic Materials |
+| 18 | **GDG** | GEN DEV FPO [GDG] | $3.72 | -50.9% | -50.9% | +6.3% | -15.0% | 6 | +1 | $1.5B | 2.8M | Financial Services |
+| 19 | **TUA** | TUA | $2.26 | -72.8% | -72.8% | -0.4% | +13.5% | 5 | +1 | — | 3.8M | Unknown |
+| 20 | **AEF** | A ETHICAL FPO [AEF] | $4.29 | -46.4% | -68.3% | +1.9% | +2.2% | 4 | +1 | $488M | 108K | Financial Services |
 
 **Sector breakdown:**
-- Unknown: 11 (OSL, PWR, RFG, MYX, TPW, LLC, SEK, TUA, VEE, WEB +1 more)
-- Healthcare: 3 (CSL, COH, EBO)
-- Consumer Cyclical: 2 (CMA, BLX)
-- Industrials: 1 (ASB)
-- Technology: 1 (CAT)
-- Financial Services: 1 (EQT)
-- Basic Materials: 1 (BCN)
+- Unknown: 6 (VEE, RFG, SLD, SPD, TPW, TUA)
+- Healthcare: 4 (COH, CSL, MYX, EBO)
+- Consumer Cyclical: 3 (PWR, CMA, ADH)
+- Financial Services: 3 (EQT, GDG, AEF)
+- Basic Materials: 2 (IPX, MPW)
+- Consumer Defensive: 1 (IEL)
+- Energy: 1 (BOE)
 
 ---
-> ⚠️ Coverage gaps: 0 tickers not downloaded, 0 batch(es) dropped, 619 info lookups failed.
+> ⚠️ Coverage gaps: 0 tickers not downloaded, 0 batch(es) dropped, 239 info lookups failed.
 
 *Filters: min price $0.50, min mcap $100M, min vol 50,000. General information only. Not personal financial advice.*
