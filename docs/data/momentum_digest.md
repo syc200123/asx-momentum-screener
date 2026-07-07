@@ -1,23 +1,21 @@
-# ASX Momentum Digest — 2026-07-06
+# ASX Momentum Digest — 2026-07-07
 
-**Scanned:** 1712 stocks | **Passed filters:** 964 | **Uptrends (CU):** 13 | **Accelerating:** 6 | **New Uptrends:** 4 | **Lost Uptrends:** 8
+**Scanned:** 1711 stocks | **Passed filters:** 861 | **Uptrends (CU):** 6 | **Accelerating:** 3 | **New Uptrends:** 2 | **Lost Uptrends:** 8
 
-## Track 1: Momentum Candidates (6)
+## Track 1: Momentum Candidates (5)
 
 Stocks in continuous uptrend (CU), accelerating (AC), or newly entering uptrend (NU). Ranked by composite momentum score.
 
 | # | Ticker | Name | Price | Score | Flags | 1W | 1M | 3M | 6M | 1Y | From 52wH | MCap | Vol(20d) | Sector |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | **EIQ** | EIQ | $1.63 | 8 | Uptrend, Ext.Uptrend | +2.5% | +23.3% | +49.1% | +242.6% | +1.0% | -6.9% | — | 3.8M | Unknown |
-| 2 | **SRL** | SRL | $16.66 | 6 | Uptrend | +0.4% | +20.9% | +57.7% | +16.0% | +566.7% | -10.4% | — | 636K | Unknown |
-| 3 | **OCN** | OCN | $0.53 | 6 | Uptrend, NewUptrend | +3.9% | +1.0% | +16.1% | +70.6% | +304.8% | -12.4% | — | 390K | Unknown |
-| 4 | **LSF** | LSF | $4.77 | 7 | Uptrend | +3.0% | +0.7% | +17.1% | +0.6% | +37.7% | -1.2% | — | 469K | Unknown |
-| 5 | **QUB** | QUB | $5.11 | 7 | Uptrend, Ext.Uptrend | +0.2% | +2.0% | +1.0% | +4.0% | +13.7% | -0.2% | — | 9.4M | Unknown |
-| 6 | **BKI** | BKI INVEST FPO [BKI] | $1.81 | 6 | Accelerating | +1.7% | +2.9% | +2.4% | -0.0% | -0.9% | -0.7% | $1.5B | 519K | Financial Services |
+| 1 | **QRI** | QRI | $1.57 | 8 | Uptrend, Ext.Uptrend, NewUptrend | +2.7% | +1.0% | +0.0% | +0.5% | +0.3% | -1.2% | — | 1.0M | Unknown |
+| 2 | **GLS** | GLS | $2.08 | 7 | Uptrend, Ext.Uptrend, NewUptrend | +4.0% | +10.8% | +5.6% | +0.5% | +28.2% | -0.5% | — | 732K | Unknown |
+| 3 | **QUB** | QUB | $5.12 | 7 | Uptrend, Ext.Uptrend | +0.4% | +2.0% | +1.0% | +4.5% | +13.5% | +0.0% | — | 10.2M | Unknown |
+| 4 | **OCN** | OCN | $0.53 | 6 | Uptrend | +1.9% | +3.0% | +16.1% | +74.0% | +296.8% | -12.4% | — | 376K | Unknown |
+| 5 | **BOL** | BOL | $2.29 | 6 | Uptrend | +7.5% | +15.1% | +6.9% | +2.2% | +27.7% | -3.8% | — | 136K | Unknown |
 
 **Sector breakdown:**
-- Unknown: 5 (EIQ, SRL, OCN, LSF, QUB)
-- Financial Services: 1 (BKI)
+- Unknown: 5 (QRI, GLS, QUB, OCN, BOL)
 
 ## Track 2: Reversal Candidates (20)
 
@@ -25,36 +23,31 @@ Stocks 40%+ below 52-week high but showing positive recent segments. Not buy sig
 
 | # | Ticker | Name | Price | From 52wH | From 5yH | 1W | 1M | Score | Wk Streak | MCap | Vol(20d) | Sector |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | **RFG** | RFG | $0.82 | -62.7% | -81.4% | +12.3% | +16.8% | 3 | +2 | — | 97K | Unknown |
-| 2 | **COH** | COH | $127.86 | -59.2% | -62.0% | +5.6% | +20.5% | 3 | +2 | — | 638K | Unknown |
-| 3 | **VEE** | VEE | $0.56 | -70.0% | -71.7% | +13.1% | +10.0% | 3 | +2 | — | 124K | Unknown |
-| 4 | **CSL** | CSL | $124.23 | -53.2% | -58.6% | +7.7% | +17.9% | 3 | +2 | — | 2.2M | Unknown |
-| 5 | **LKO** | LKO | $0.58 | -66.9% | -71.0% | +31.8% | +11.4% | 3 | -1 | — | 87K | Unknown |
-| 6 | **OSL** | OSL | $1.09 | -45.1% | -95.1% | +61.5% | +55.2% | 2 | +2 | — | 338K | Unknown |
-| 7 | **MYX** | MYX | $2.79 | -55.7% | -62.1% | +4.5% | +16.1% | 3 | +3 | — | 317K | Unknown |
-| 8 | **CMA** | CMA | $0.86 | -65.6% | -65.6% | +7.5% | +13.5% | 2 | -1 | — | 115K | Unknown |
-| 9 | **PWR** | PWR | $0.99 | -50.5% | -63.7% | +4.8% | +13.2% | 3 | +5 | — | 904K | Unknown |
-| 10 | **BOE** | BOSS EN FPO [BOE] | $1.35 | -65.2% | -77.8% | +30.3% | -18.4% | 4 | +2 | $563M | 7.3M | Energy |
-| 11 | **EQT** | EQT | $17.31 | -45.7% | -47.7% | +6.1% | +3.9% | 5 | +2 | — | 155K | Unknown |
-| 12 | **EBO** | EBO | $17.64 | -51.7% | -55.5% | +4.6% | +0.9% | 4 | +2 | — | 128K | Unknown |
-| 13 | **ASB** | AUSTAL LTD FPO [ASB] | $4.04 | -53.9% | -53.9% | +1.0% | +0.5% | 5 | -1 | $1.7B | 1.9M | Industrials |
-| 14 | **SLD** | SLD | $0.53 | -65.5% | -65.5% | +29.3% | -12.8% | 1 | +3 | — | 596K | Unknown |
-| 15 | **ADH** | ADAIRS FPO [ADH] | $1.50 | -46.1% | -54.2% | +4.5% | +13.0% | 4 | -1 | $268M | 633K | Consumer Cyclical |
-| 16 | **NVA** | NVA | $0.59 | -63.6% | -68.7% | +10.2% | -29.4% | 4 | +1 | — | 255K | Unknown |
-| 17 | **TPW** | TPW | $5.60 | -80.2% | -80.2% | -11.9% | +36.5% | 3 | +1 | — | 1.1M | Unknown |
-| 18 | **ATR** | ASTRON FPO [ATR] | $0.60 | -44.4% | -44.4% | +6.2% | +2.7% | 4 | +1 | $258M | 101K | Basic Materials |
-| 19 | **AEF** | A ETHICAL FPO [AEF] | $4.40 | -45.0% | -67.5% | +4.5% | +2.4% | 4 | +2 | $501M | 112K | Financial Services |
-| 20 | **DRO** | DRO | $2.52 | -61.8% | -61.8% | +8.2% | -18.5% | 6 | +2 | — | 8.6M | Unknown |
+| 1 | **RFG** | RFG | $0.80 | -63.9% | -81.9% | +12.0% | +13.6% | 3 | +2 | — | 96K | Unknown |
+| 2 | **COH** | COH | $127.05 | -59.4% | -62.2% | +4.4% | +21.2% | 3 | +2 | — | 622K | Unknown |
+| 3 | **LKO** | LKO | $0.68 | -61.1% | -66.0% | +51.1% | +13.9% | 3 | -1 | — | 79K | Unknown |
+| 4 | **PWR** | PWR | $1.02 | -49.0% | -62.6% | +8.5% | +12.6% | 3 | +5 | — | 799K | Unknown |
+| 5 | **OSL** | OSL | $1.05 | -47.1% | -95.3% | +47.9% | +63.2% | 2 | +2 | — | 291K | Unknown |
+| 6 | **CSL** | CSL | $123.97 | -53.3% | -58.7% | +8.0% | +17.2% | 3 | +2 | — | 2.2M | Unknown |
+| 7 | **VEE** | VEE | $0.56 | -70.0% | -71.7% | +19.1% | +4.4% | 3 | +2 | — | 106K | Unknown |
+| 8 | **MYX** | MYX | $2.88 | -54.3% | -60.9% | +3.2% | +21.3% | 3 | +3 | — | 313K | Unknown |
+| 9 | **POL** | POL | $0.90 | -43.4% | -43.4% | +18.4% | +0.7% | 7 | +2 | — | 758K | Unknown |
+| 10 | **EQT** | EQT | $17.69 | -44.5% | -46.6% | +8.5% | +3.8% | 5 | +2 | — | 153K | Unknown |
+| 11 | **EBO** | EBO | $17.82 | -51.2% | -55.0% | +4.4% | +2.1% | 4 | +2 | — | 129K | Unknown |
+| 12 | **ATR** | ATR | $0.61 | -43.1% | -43.1% | +10.8% | +0.9% | 4 | +1 | — | 98K | Unknown |
+| 13 | **ADH** | ADH | $1.49 | -46.4% | -54.5% | +2.1% | +15.0% | 4 | -1 | — | 607K | Unknown |
+| 14 | **TPW** | TPW | $5.53 | -80.5% | -80.5% | -10.8% | +33.0% | 3 | -2 | — | 1.1M | Unknown |
+| 15 | **CMA** | CMA | $0.86 | -65.6% | -65.6% | -0.6% | +22.7% | 1 | -1 | — | 109K | Unknown |
+| 16 | **AEF** | AEF | $4.45 | -44.4% | -67.1% | +6.2% | +1.9% | 4 | +2 | — | 110K | Unknown |
+| 17 | **SPD** | SPD | $1.17 | -56.8% | -56.8% | +9.9% | -15.1% | 4 | +2 | — | 113K | Unknown |
+| 18 | **LOT** | LOT | $0.66 | -79.6% | -88.2% | +0.0% | +11.9% | 4 | -3 | — | 1.2M | Unknown |
+| 19 | **BOE** | BOE | $1.24 | -68.2% | -79.8% | +21.7% | -20.4% | 4 | -1 | — | 7.2M | Unknown |
+| 20 | **HPG** | HPG | $0.74 | -48.1% | -82.1% | +3.5% | +1.4% | 4 | +1 | — | 65K | Unknown |
 
 **Sector breakdown:**
-- Unknown: 15 (RFG, COH, VEE, CSL, LKO, OSL, MYX, CMA, PWR, EQT +5 more)
-- Energy: 1 (BOE)
-- Industrials: 1 (ASB)
-- Consumer Cyclical: 1 (ADH)
-- Basic Materials: 1 (ATR)
-- Financial Services: 1 (AEF)
+- Unknown: 20 (RFG, COH, LKO, PWR, OSL, CSL, VEE, MYX, POL, EQT +10 more)
 
 ---
-> ⚠️ Coverage gaps: 0 tickers not downloaded, 0 batch(es) dropped, 789 info lookups failed.
+> ⚠️ Coverage gaps: 0 tickers not downloaded, 0 batch(es) dropped, 861 info lookups failed.
 
 *Filters: min price $0.50, min mcap $100M, min vol 50,000. General information only. Not personal financial advice.*
