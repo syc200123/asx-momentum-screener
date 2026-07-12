@@ -1,31 +1,26 @@
-# ASX Momentum Digest — 2026-07-09
+# ASX Momentum Digest — 2026-07-12
 
-**Scanned:** 1710 stocks | **Passed filters:** 965 | **Uptrends (CU):** 11 | **Accelerating:** 7 | **New Uptrends:** 5 | **Lost Uptrends:** 5
+**Scanned:** 1710 stocks | **Passed filters:** 965 | **Uptrends (CU):** 10 | **Accelerating:** 6 | **New Uptrends:** 5 | **Lost Uptrends:** 6
 
-## Track 1: Momentum Candidates (9)
+## Track 1: Momentum Candidates (7)
 
 Stocks in continuous uptrend (CU), accelerating (AC), or newly entering uptrend (NU). Ranked by composite momentum score.
 
 | # | Ticker | Name | Price | Score | Flags | 1W | 1M | 3M | 6M | 1Y | From 52wH | MCap | Vol(20d) | Sector |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | **CDA** | CODAN FPO [CDA] | $44.49 | 7 | Uptrend, Ext.Uptrend, NewUptrend | +1.0% | +0.4% | +26.2% | +10.8% | +69.2% | +0.0% | $8.1B | 339K | Technology |
-| 2 | **SPL** | STARPHARMA FPO [SPL] | $0.73 | 5 | Uptrend, NewUptrend | +2.8% | +1.4% | +37.3% | +39.7% | +288.3% | -3.3% | $307M | 1.0M | Healthcare |
-| 3 | **SLS** | SOLSTICE FPO [SLS] | $2.22 | 7 | Uptrend, Ext.Uptrend | +3.3% | +47.8% | +29.3% | +174.4% | +74.5% | -6.3% | $382M | 508K | Basic Materials |
-| 4 | **QUB** | QUBE FPO [QUB] | $5.11 | 7 | Uptrend, Ext.Uptrend, NewUptrend | +0.2% | +1.6% | +0.6% | +5.1% | +14.8% | -0.2% | $9.0B | 15.8M | Industrials |
-| 5 | **PCX** | PENGNAGLBL ORD UNITS [PCX | $2.03 | 6 | Uptrend, NewUptrend | +1.5% | +0.3% | +1.8% | +0.2% | +10.1% | +0.0% | — | 164K |  |
-| 6 | **COL** | COLESGROUP FPO [COL] | $23.67 | 7 | Uptrend | +2.5% | +2.2% | +1.6% | +8.5% | +4.4% | -3.0% | $31.8B | 3.0M | Consumer Defensive |
-| 7 | **CVW** | CLEARVIEW FPO [CVW] | $0.65 | 7 | Uptrend | +0.8% | +0.8% | +0.8% | +12.4% | +27.0% | +0.0% | $408M | 487K | Financial Services |
-| 8 | **BFG** | BELL FN GP FPO [BFG] | $1.48 | 6 | Uptrend | +2.4% | +4.0% | +6.5% | +3.7% | +11.7% | -0.7% | $475M | 136K | Financial Services |
-| 9 | **EZL** | EUROZ FPO [EZL] | $1.35 | 6 | Uptrend | +0.7% | +5.5% | +2.0% | +4.1% | +40.6% | -5.9% | $211M | 99K | Financial Services |
+| 1 | **EIQ** | ECHOIQLTD FPO [EIQ] | $1.66 | 7 | Uptrend, Ext.Uptrend, NewUptrend | +0.6% | +35.8% | +35.8% | +219.6% | +9.8% | -5.1% | $1.2B | 4.2M | Healthcare |
+| 2 | **SXE** | SXE | $4.46 | 7 | Uptrend, Ext.Uptrend, NewUptrend | +1.4% | +5.5% | +26.7% | +38.2% | +42.5% | -8.2% | — | 2.1M | Unknown |
+| 3 | **FGG** | FUTURE GLB FPO [FGG] | $1.75 | 7 | Uptrend, Ext.Uptrend, NewUptrend | +2.3% | +1.5% | +10.4% | +2.3% | +7.4% | -0.3% | $704M | 329K | Financial Services |
+| 4 | **SLS** | SLS | $2.20 | 7 | Uptrend, Ext.Uptrend | +2.3% | +49.8% | +29.3% | +177.5% | +63.3% | -7.2% | — | 498K | Unknown |
+| 5 | **HAV** | HAVILAH FPO [HAV] | $0.76 | 5 | Uptrend, NewUptrend | +3.4% | +6.6% | +18.1% | +1.8% | +208.1% | +0.0% | $267M | 381K | Basic Materials |
+| 6 | **BFG** | BELL FN GP FPO [BFG] | $1.49 | 6 | Uptrend | +2.8% | +5.5% | +5.8% | +0.6% | +15.7% | +0.0% | $478M | 136K | Financial Services |
+| 7 | **CVW** | CLEARVIEW FPO [CVW] | $0.65 | 6 | Uptrend | +0.8% | +0.4% | +2.0% | +7.8% | +24.7% | -0.8% | $405M | 485K | Financial Services |
 
 **Sector breakdown:**
-- Financial Services: 3 (CVW, BFG, EZL)
-- Technology: 1 (CDA)
-- Healthcare: 1 (SPL)
-- Basic Materials: 1 (SLS)
-- Industrials: 1 (QUB)
-- : 1 (PCX)
-- Consumer Defensive: 1 (COL)
+- Financial Services: 3 (FGG, BFG, CVW)
+- Unknown: 2 (SXE, SLS)
+- Healthcare: 1 (EIQ)
+- Basic Materials: 1 (HAV)
 
 ## Track 2: Reversal Candidates (20)
 
@@ -33,34 +28,37 @@ Stocks 40%+ below 52-week high but showing positive recent segments. Not buy sig
 
 | # | Ticker | Name | Price | From 52wH | From 5yH | 1W | 1M | Score | Wk Streak | MCap | Vol(20d) | Sector |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | **CSL** | CSL FPO [CSL] | $125.53 | -52.7% | -58.2% | +6.6% | +18.4% | 3 | +2 | $60.1B | 2.0M | Healthcare |
-| 2 | **MYX** | M PHARMA FPO [MYX] | $2.84 | -54.9% | -61.5% | +2.2% | +15.8% | 4 | +3 | $231M | 293K | Healthcare |
-| 3 | **COH** | COCHLEAR FPO [COH] | $123.68 | -60.5% | -63.2% | +2.8% | +17.3% | 3 | -1 | $8.1B | 616K | Healthcare |
-| 4 | **TPW** | TEMPLE WEB FPO [TPW] | $5.68 | -80.0% | -80.0% | +1.8% | +13.9% | 4 | +1 | $662M | 1.1M | Consumer Cyclical |
-| 5 | **SLD** | SALUDA MED CDI FORUS [SLD | $0.52 | -66.1% | -66.1% | +4.0% | +17.6% | 2 | -1 | — | 654K | Healthcare |
-| 6 | **LOV** | LOVISA FPO [LOV] | $23.20 | -44.5% | -44.5% | +3.2% | +7.5% | 5 | +1 | $2.6B | 273K | Consumer Cyclical |
-| 7 | **CYL** | CAT METALS FPO [CYL] | $5.54 | -42.5% | -42.5% | +8.4% | +4.5% | 5 | -1 | $1.4B | 1.6M | Basic Materials |
-| 8 | **BLX** | BEACON LTG FPO [BLX] | $1.68 | -53.1% | -53.8% | +0.9% | +15.2% | 5 | +1 | $385M | 182K | Consumer Cyclical |
-| 9 | **ADH** | ADAIRS FPO [ADH] | $1.53 | -44.8% | -53.1% | +0.7% | +23.5% | 4 | +2 | $274M | 622K | Consumer Cyclical |
-| 10 | **AEF** | A ETHICAL FPO [AEF] | $4.55 | -43.2% | -66.4% | +6.1% | +5.1% | 5 | +2 | $518M | 107K | Financial Services |
-| 11 | **POL** | POLYMETALS FPO [POL] | $0.90 | -43.4% | -43.4% | +8.4% | +8.5% | 6 | +2 | $277M | 744K | Basic Materials |
-| 12 | **ATR** | ASTRON FPO [ATR] | $0.61 | -43.5% | -43.5% | +10.9% | +1.9% | 4 | +1 | $262M | 97K | Basic Materials |
-| 13 | **CAT** | CATAPULT FPO [CAT] | $3.38 | -54.8% | -54.8% | +12.3% | -14.5% | 4 | +2 | $1.1B | 1.5M | Technology |
-| 14 | **WTC** | WISETECH FPO [WTC] | $34.63 | -71.2% | -75.0% | +7.0% | -14.8% | 4 | +2 | $11.6B | 3.0M | Technology |
-| 15 | **XRO** | XERO FPO [XRO] | $74.34 | -58.9% | -61.7% | +4.4% | -9.2% | 4 | +2 | $12.9B | 1.0M | Technology |
-| 16 | **IEL** | IEL FPO [IEL] | $2.31 | -65.2% | -93.7% | -0.4% | +10.5% | 2 | +2 | $643M | 4.2M | Consumer Defensive |
-| 17 | **LOT** | LOTUSRES FPO [LOT] | $0.66 | -79.6% | -88.2% | +0.0% | +21.1% | 4 | -3 | $180M | 744K | Basic Materials |
-| 18 | **CMA** | CARMA LTD FPO [CMA] | $0.88 | -64.8% | -64.8% | +0.0% | +24.8% | 1 | -1 | $121M | 103K | Consumer Cyclical |
-| 19 | **EQT** | EQUITY TR FPO [EQT] | $17.93 | -43.7% | -45.9% | +3.2% | +6.4% | 5 | +2 | $480M | 136K | Financial Services |
-| 20 | **SPD** | SOUTHPALL FPO [SPD] | $1.19 | -56.3% | -56.3% | +11.8% | -7.4% | 3 | +2 | $157M | 113K | Basic Materials |
+| 1 | **CMA** | CARMA LTD FPO [CMA] | $0.94 | -62.4% | -62.4% | +4.4% | +20.0% | 2 | +3 | $129M | 103K | Consumer Cyclical |
+| 2 | **BOE** | BOSS EN FPO [BOE] | $1.35 | -65.3% | -77.9% | +5.9% | +10.4% | 4 | +2 | $560M | 7.0M | Energy |
+| 3 | **CSL** | CSL FPO [CSL] | $122.89 | -53.7% | -59.0% | +0.9% | +18.3% | 3 | +2 | $58.9B | 2.0M | Healthcare |
+| 4 | **MYX** | MYX | $2.87 | -54.4% | -61.1% | +4.0% | +14.5% | 4 | +3 | — | 299K | Unknown |
+| 5 | **MPW** | MPW | $2.10 | -56.7% | -56.7% | +6.3% | +4.5% | 5 | +2 | — | 130K | Unknown |
+| 6 | **PWR** | PWR | $0.98 | -50.7% | -63.8% | +0.5% | +11.4% | 3 | +5 | — | 745K | Unknown |
+| 7 | **IEL** | IEL FPO [IEL] | $2.30 | -65.3% | -93.8% | +1.3% | +1.8% | 3 | +2 | $640M | 3.9M | Consumer Defensive |
+| 8 | **USL** | USL | $0.68 | -40.4% | -40.4% | +7.9% | +12.5% | 5 | +2 | — | 3.3M | Unknown |
+| 9 | **POL** | POL | $0.92 | -42.4% | -42.4% | +5.2% | +19.2% | 4 | +2 | — | 731K | Unknown |
+| 10 | **TPW** | TPW | $5.62 | -80.2% | -80.2% | +1.6% | +8.9% | 4 | +1 | — | 1.1M | Unknown |
+| 11 | **ORD** | ORD | $0.55 | -44.4% | -44.4% | +6.9% | +10.9% | 3 | +2 | — | 74K | Unknown |
+| 12 | **EBO** | EBOS FPO NZ [EBO] | $17.98 | -50.8% | -54.6% | +2.9% | +1.6% | 3 | +2 | $3.7B | 125K | Healthcare |
+| 13 | **COH** | COCHLEAR FPO [COH] | $121.62 | -61.2% | -63.8% | -2.7% | +19.1% | 2 | -1 | $8.0B | 612K | Healthcare |
+| 14 | **OCC** | OCC | $0.84 | -44.8% | -51.7% | +11.9% | +0.7% | 4 | +1 | — | 475K | Unknown |
+| 15 | **MAF** | MA FIN GRP FPO [MAF] | $6.42 | -42.4% | -42.4% | +1.9% | +5.7% | 4 | +2 | $1.3B | 467K | Financial Services |
+| 16 | **BLX** | BEACON LTG FPO [BLX] | $1.70 | -52.6% | -53.2% | +4.6% | +6.2% | 4 | +1 | $390M | 172K | Consumer Cyclical |
+| 17 | **ATA** | ATTURRA FPO [ATA] | $0.50 | -41.9% | -57.6% | +12.4% | +1.1% | 3 | +1 | $184M | 274K | Technology |
+| 18 | **CAT** | CATAPULT FPO [CAT] | $3.38 | -54.8% | -54.8% | +11.2% | -6.5% | 4 | +2 | $1.1B | 1.4M | Technology |
+| 19 | **AEF** | A ETHICAL FPO [AEF] | $4.50 | -43.8% | -66.7% | +2.5% | +9.5% | 5 | +2 | $512M | 101K | Financial Services |
+| 20 | **LOV** | LOVISA FPO [LOV] | $22.88 | -45.3% | -45.3% | +3.5% | +3.0% | 4 | +1 | $2.5B | 270K | Consumer Cyclical |
 
 **Sector breakdown:**
-- Consumer Cyclical: 5 (TPW, LOV, BLX, ADH, CMA)
-- Basic Materials: 5 (CYL, POL, ATR, LOT, SPD)
-- Healthcare: 4 (CSL, MYX, COH, SLD)
-- Technology: 3 (CAT, WTC, XRO)
-- Financial Services: 2 (AEF, EQT)
+- Unknown: 8 (MYX, MPW, PWR, USL, POL, TPW, ORD, OCC)
+- Consumer Cyclical: 3 (CMA, BLX, LOV)
+- Healthcare: 3 (CSL, EBO, COH)
+- Financial Services: 2 (MAF, AEF)
+- Technology: 2 (ATA, CAT)
+- Energy: 1 (BOE)
 - Consumer Defensive: 1 (IEL)
 
 ---
+> ⚠️ Coverage gaps: 0 tickers not downloaded, 0 batch(es) dropped, 428 info lookups failed.
+
 *Filters: min price $0.50, min mcap $100M, min vol 50,000. General information only. Not personal financial advice.*
