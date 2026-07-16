@@ -1,31 +1,24 @@
-# ASX Momentum Digest — 2026-07-15
+# ASX Momentum Digest — 2026-07-16
 
-**Scanned:** 1710 stocks | **Passed filters:** 968 | **Uptrends (CU):** 15 | **Accelerating:** 4 | **New Uptrends:** 10 | **Lost Uptrends:** 4
+**Scanned:** 1710 stocks | **Passed filters:** 966 | **Uptrends (CU):** 9 | **Accelerating:** 7 | **New Uptrends:** 2 | **Lost Uptrends:** 8
 
-## Track 1: Momentum Candidates (12)
+## Track 1: Momentum Candidates (7)
 
 Stocks in continuous uptrend (CU), accelerating (AC), or newly entering uptrend (NU). Ranked by composite momentum score.
 
 | # | Ticker | Name | Price | Score | Flags | 1W | 1M | 3M | 6M | 1Y | From 52wH | MCap | Vol(20d) | Sector |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | **IFT** | IFT | $12.79 | 8 | Uptrend, Ext.Uptrend, NewUptrend | +3.2% | +0.7% | +24.7% | +0.7% | +0.5% | -2.1% | — | 362K | Unknown |
-| 2 | **EIQ** | ECHOIQLTD FPO [EIQ] | $1.57 | 8 | Uptrend, Ext.Uptrend, NewUptrend | +1.6% | +30.9% | +15.1% | +215.4% | +38.3% | -10.3% | $1.2B | 4.6M | Healthcare |
-| 3 | **SKS** | SKS | $8.98 | 7 | Uptrend, Ext.Uptrend | +8.3% | +2.1% | +48.4% | +41.1% | +93.5% | -6.9% | — | 296K | Unknown |
-| 4 | **PGF** | PGF | $3.25 | 8 | Uptrend, Ext.Uptrend, NewUptrend | +0.6% | +4.5% | +5.1% | +0.4% | +17.1% | -3.0% | — | 375K | Unknown |
-| 5 | **AYA** | ARTRYA FPO [AYA] | $5.82 | 7 | Uptrend, Ext.Uptrend, NewUptrend | +1.7% | +21.4% | +10.8% | +1.7% | +344.7% | -7.2% | $952M | 805K | Healthcare |
-| 6 | **SXE** | SXE | $4.80 | 8 | Uptrend, Ext.Uptrend | +13.5% | +5.2% | +22.6% | +31.3% | +47.5% | -1.2% | — | 1.9M | Unknown |
-| 7 | **GLS** | GLS | $2.07 | 7 | Uptrend, Ext.Uptrend, NewUptrend | +3.0% | +3.9% | +5.7% | +4.5% | +29.5% | -1.0% | — | 633K | Unknown |
-| 8 | **SRL** | SRL | $16.82 | 6 | Uptrend, NewUptrend | +4.3% | +9.1% | +20.2% | +58.7% | +409.9% | -9.5% | — | 616K | Unknown |
-| 9 | **ALD** | AMPOL FPO [ALD] | $37.14 | 7 | Uptrend, NewUptrend | +6.8% | +2.9% | +2.0% | +16.3% | +10.6% | -1.1% | $8.9B | 1.3M | Energy |
-| 10 | **QUB** | QUB | $5.11 | 7 | Uptrend, Ext.Uptrend | +7.3% | +1.4% | +0.8% | +4.4% | +15.5% | +0.0% | — | 14.4M | Unknown |
-| 11 | **BKI** | BKI INVEST FPO [BKI] | $1.85 | 7 | Accelerating | +1.4% | +2.8% | +2.3% | +2.6% | -0.4% | +0.0% | $1.5B | 427K | Financial Services |
-| 12 | **SPL** | SPL | $0.73 | 5 | Uptrend | +2.8% | +3.6% | +11.4% | +68.5% | +276.3% | -3.3% | — | 1.0M | Unknown |
+| 1 | **MYS** | MYS | $4.86 | 7 | Uptrend, Ext.Uptrend, NewUptrend | +1.5% | +3.0% | +0.2% | +4.4% | +9.2% | +0.0% | — | 176K | Unknown |
+| 2 | **PGF** | PGF | $3.29 | 8 | Uptrend, Ext.Uptrend | +3.1% | +2.9% | +4.7% | +0.7% | +16.6% | -1.8% | — | 366K | Unknown |
+| 3 | **QUB** | QUB | $5.11 | 8 | Uptrend, Ext.Uptrend | +7.3% | +1.2% | +1.0% | +6.4% | +14.1% | +0.0% | — | 12.8M | Unknown |
+| 4 | **GLS** | GLS | $2.04 | 7 | Uptrend, Ext.Uptrend | +1.0% | +4.7% | +2.9% | +4.1% | +33.2% | -2.4% | — | 614K | Unknown |
+| 5 | **ALD** | AMPOL FPO [ALD] | $36.93 | 7 | Uptrend | +4.6% | +4.0% | +2.2% | +14.3% | +13.5% | -1.7% | $8.8B | 1.4M | Energy |
+| 6 | **NHF** | NHF | $7.31 | 6 | Accelerating | +1.2% | +4.0% | +4.2% | +1.8% | -5.8% | -3.7% | — | 1.1M | Unknown |
+| 7 | **PNI** | PNI | $17.84 | 5 | Accelerating | +1.2% | +2.8% | +4.1% | -2.8% | -19.8% | -27.3% | — | 709K | Unknown |
 
 **Sector breakdown:**
-- Unknown: 8 (IFT, SKS, PGF, SXE, GLS, SRL, QUB, SPL)
-- Healthcare: 2 (EIQ, AYA)
+- Unknown: 6 (MYS, PGF, QUB, GLS, NHF, PNI)
 - Energy: 1 (ALD)
-- Financial Services: 1 (BKI)
 
 ## Track 2: Reversal Candidates (20)
 
@@ -33,36 +26,37 @@ Stocks 40%+ below 52-week high but showing positive recent segments. Not buy sig
 
 | # | Ticker | Name | Price | From 52wH | From 5yH | 1W | 1M | Score | Wk Streak | MCap | Vol(20d) | Sector |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | **CAT** | CATAPULT FPO [CAT] | $3.54 | -52.7% | -52.7% | +4.4% | +7.6% | 5 | +3 | $1.1B | 1.4M | Technology |
-| 2 | **SLD** | SLD | $0.54 | -65.1% | -65.1% | +3.9% | +21.2% | 2 | +1 | — | 709K | Unknown |
-| 3 | **CMA** | CARMA LTD FPO [CMA] | $0.90 | -64.0% | -64.0% | +2.3% | +18.1% | 2 | -1 | $124M | 85K | Consumer Cyclical |
-| 4 | **EBO** | EBOS FPO NZ [EBO] | $18.68 | -48.8% | -52.9% | +4.1% | +4.1% | 4 | +3 | $3.8B | 119K | Healthcare |
-| 5 | **BOE** | BOSS EN FPO [BOE] | $1.31 | -66.3% | -78.6% | +6.5% | +1.2% | 5 | -1 | $544M | 6.8M | Energy |
-| 6 | **COH** | COCHLEAR FPO [COH] | $124.00 | -60.4% | -63.1% | -0.7% | +19.5% | 2 | +1 | $8.1B | 568K | Healthcare |
-| 7 | **BLX** | BEACON LTG FPO [BLX] | $1.75 | -51.3% | -52.0% | +8.7% | +0.3% | 5 | +2 | $400M | 158K | Consumer Cyclical |
-| 8 | **CSL** | CSL FPO [CSL] | $121.75 | -54.1% | -59.4% | -2.1% | +17.8% | 2 | -1 | $58.3B | 1.9M | Healthcare |
-| 9 | **RDY** | RDY | $1.61 | -42.5% | -61.7% | +0.6% | +9.6% | 5 | +1 | — | 95K | Unknown |
-| 10 | **NYR** | NYR | $0.57 | -58.3% | -58.3% | +36.9% | -4.5% | 4 | +1 | — | 278K | Unknown |
-| 11 | **LKO** | LKO | $0.58 | -66.9% | -71.0% | -4.9% | +74.3% | 3 | -2 | — | 77K | Unknown |
-| 12 | **RFG** | RFG | $0.78 | -64.5% | -82.3% | -1.3% | +22.5% | 2 | -2 | — | 60K | Unknown |
-| 13 | **DRO** | DRONE FPO [DRO] | $2.37 | -64.1% | -64.1% | +2.2% | -20.5% | 5 | +1 | $2.2B | 8.2M | Industrials |
-| 14 | **AEL** | AMPLITUDE FPO [AEL] | $1.40 | -56.5% | -56.5% | +9.8% | -13.6% | 4 | +2 | $418M | 1.5M | Energy |
-| 15 | **MPW** | MPW | $2.30 | -52.6% | -52.6% | +17.9% | -0.5% | 4 | +3 | — | 139K | Unknown |
-| 16 | **MYX** | MYX | $2.82 | -55.2% | -61.7% | -1.4% | +21.7% | 2 | -1 | — | 236K | Unknown |
-| 17 | **NVA** | NVA | $0.58 | -64.2% | -69.2% | +3.5% | -26.1% | 4 | +1 | — | 346K | Unknown |
-| 18 | **IPX** | IPX | $3.66 | -59.8% | -59.8% | +5.8% | -36.4% | 6 | +1 | — | 1.5M | Unknown |
-| 19 | **ERD** | EROAD FPO NZX [ERD] | $0.86 | -66.2% | -83.8% | +4.8% | -7.3% | 4 | +1 | $163M | 153K | Technology |
-| 20 | **RAC** | RAC | $2.23 | -52.5% | -52.5% | +5.2% | -9.8% | 4 | +1 | — | 108K | Unknown |
+| 1 | **MYX** | MYX | $2.92 | -53.6% | -60.4% | +2.8% | +20.9% | 3 | +4 | — | 234K | Unknown |
+| 2 | **RFG** | RFG | $0.81 | -63.2% | -81.6% | +2.5% | +22.5% | 3 | +1 | — | 53K | Unknown |
+| 3 | **CAT** | CATAPULT FPO [CAT] | $3.56 | -52.4% | -52.4% | +5.3% | +10.8% | 4 | +3 | $1.1B | 1.4M | Technology |
+| 4 | **MPW** | MPW | $2.30 | -52.6% | -52.6% | +12.2% | +2.5% | 5 | +3 | — | 142K | Unknown |
+| 5 | **SLD** | SLD | $0.53 | -65.5% | -65.5% | +1.9% | +26.8% | 2 | +1 | — | 721K | Unknown |
+| 6 | **CMA** | CARMA LTD FPO [CMA] | $0.91 | -63.8% | -63.8% | +2.8% | +18.1% | 2 | -1 | $124M | 83K | Consumer Cyclical |
+| 7 | **SPD** | SPD | $1.41 | -48.1% | -48.1% | +18.6% | +1.3% | 4 | +3 | — | 122K | Unknown |
+| 8 | **KPG** | KPG | $4.01 | -65.7% | -70.5% | +4.4% | +3.5% | 5 | +1 | — | 97K | Unknown |
+| 9 | **VEE** | VEE | $0.57 | -69.5% | -71.1% | +3.6% | +10.0% | 3 | +1 | — | 84K | Unknown |
+| 10 | **EBO** | EBO | $18.85 | -48.4% | -52.4% | +3.6% | +11.2% | 4 | +3 | — | 118K | Unknown |
+| 11 | **BOE** | BOSS EN FPO [BOE] | $1.29 | -66.7% | -78.8% | +2.4% | +4.5% | 5 | -1 | $538M | 6.3M | Energy |
+| 12 | **COH** | COCHLEAR FPO [COH] | $123.27 | -60.6% | -63.3% | -0.3% | +15.7% | 2 | +1 | $8.1B | 547K | Healthcare |
+| 13 | **AEF** | A ETHICAL FPO [AEF] | $4.62 | -42.3% | -65.9% | +1.5% | +3.9% | 5 | +3 | $526M | 96K | Financial Services |
+| 14 | **ATR** | ASTRON FPO [ATR] | $0.63 | -41.7% | -41.7% | +3.3% | +8.9% | 5 | +2 | $271M | 88K | Basic Materials |
+| 15 | **CSL** | CSL FPO [CSL] | $121.95 | -54.1% | -59.4% | -2.9% | +18.1% | 2 | -1 | $58.4B | 1.8M | Healthcare |
+| 16 | **LKO** | LKO | $0.50 | -71.4% | -75.0% | -13.8% | +75.8% | 3 | -2 | — | 80K | Unknown |
+| 17 | **NYR** | NYR | $0.50 | -63.8% | -63.8% | +22.0% | -4.7% | 4 | +1 | — | 293K | Unknown |
+| 18 | **NVA** | NVA | $0.58 | -64.2% | -69.2% | +9.3% | -30.1% | 4 | +1 | — | 355K | Unknown |
+| 19 | **OCL** | OCL | $7.11 | -68.4% | -68.4% | +4.6% | -34.9% | 2 | +2 | — | 381K | Unknown |
+| 20 | **LOV** | LOV | $23.63 | -43.5% | -43.5% | +1.9% | +1.8% | 4 | +2 | — | 246K | Unknown |
 
 **Sector breakdown:**
-- Unknown: 10 (SLD, RDY, NYR, LKO, RFG, MPW, MYX, NVA, IPX, RAC)
-- Healthcare: 3 (EBO, COH, CSL)
-- Technology: 2 (CAT, ERD)
-- Consumer Cyclical: 2 (CMA, BLX)
-- Energy: 2 (BOE, AEL)
-- Industrials: 1 (DRO)
+- Unknown: 13 (MYX, RFG, MPW, SLD, SPD, KPG, VEE, EBO, LKO, NYR +3 more)
+- Healthcare: 2 (COH, CSL)
+- Technology: 1 (CAT)
+- Consumer Cyclical: 1 (CMA)
+- Energy: 1 (BOE)
+- Financial Services: 1 (AEF)
+- Basic Materials: 1 (ATR)
 
 ---
-> ⚠️ Coverage gaps: 0 tickers not downloaded, 0 batch(es) dropped, 601 info lookups failed.
+> ⚠️ Coverage gaps: 0 tickers not downloaded, 0 batch(es) dropped, 688 info lookups failed.
 
 *Filters: min price $0.50, min mcap $100M, min vol 50,000. General information only. Not personal financial advice.*
