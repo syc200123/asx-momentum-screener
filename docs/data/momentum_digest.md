@@ -1,28 +1,26 @@
-# ASX Momentum Digest — 2026-07-21
+# ASX Momentum Digest — 2026-07-22
 
-**Scanned:** 1708 stocks | **Passed filters:** 957 | **Uptrends (CU):** 10 | **Accelerating:** 11 | **New Uptrends:** 4 | **Lost Uptrends:** 6
+**Scanned:** 1708 stocks | **Passed filters:** 961 | **Uptrends (CU):** 10 | **Accelerating:** 9 | **New Uptrends:** 4 | **Lost Uptrends:** 4
 
-## Track 1: Momentum Candidates (9)
+## Track 1: Momentum Candidates (8)
 
 Stocks in continuous uptrend (CU), accelerating (AC), or newly entering uptrend (NU). Ranked by composite momentum score.
 
 | # | Ticker | Name | Price | Score | Flags | 1W | 1M | 3M | 6M | 1Y | From 52wH | MCap | Vol(20d) | Sector |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | **NWH** | NWH | $6.96 | 8 | Uptrend, Ext.Uptrend, NewUptrend | +1.2% | +1.0% | +7.8% | +23.0% | +69.2% | -8.8% | — | 996K | Unknown |
-| 2 | **SLS** | SLS | $2.27 | 7 | Uptrend, Ext.Uptrend | +5.1% | +31.7% | +36.7% | +169.7% | +89.4% | -4.2% | — | 483K | Unknown |
-| 3 | **TEA** | TEA | $9.39 | 6 | Uptrend | +3.4% | +4.5% | +64.7% | +27.8% | +23.8% | -2.7% | — | 723K | Unknown |
-| 4 | **AZJ** | AURIZON FPO [AZJ] | $4.25 | 7 | Uptrend, NewUptrend | +0.2% | +0.7% | +2.9% | +17.1% | +14.1% | -3.0% | $7.2B | 6.4M | Industrials |
-| 5 | **CVW** | CLEARVIEW FPO [CVW] | $0.65 | 7 | Uptrend, NewUptrend | +0.8% | +0.8% | +0.8% | +18.7% | +11.5% | +0.0% | $408M | 420K | Financial Services |
-| 6 | **CNU** | CHORUS FPO NZX [CNU] | $8.07 | 7 | Uptrend, NewUptrend | +0.6% | +0.6% | +0.4% | +0.9% | +5.1% | -4.5% | $3.5B | 398K | Communication Services |
-| 7 | **ALD** | AMPOL FPO [ALD] | $38.11 | 7 | Uptrend | +1.5% | +13.3% | +4.9% | +7.7% | +11.4% | +0.0% | $9.1B | 1.4M | Energy |
-| 8 | **IAG** | IAG | $8.44 | 7 | Accelerating | +1.7% | +4.0% | +6.8% | +1.1% | -8.5% | -3.6% | — | 4.5M | Unknown |
-| 9 | **MPL** | MPL | $5.14 | 7 | Accelerating | +1.8% | +4.1% | +3.9% | +2.6% | -5.6% | -0.4% | — | 5.6M | Unknown |
+| 1 | **SIQ** | SMARTGROUP FPO [SIQ] | $13.05 | 7 | Uptrend, NewUptrend | +0.7% | +5.1% | +37.6% | +5.8% | +16.9% | -1.9% | $1.8B | 501K | Industrials |
+| 2 | **SLS** | SOLSTICE FPO [SLS] | $2.40 | 7 | Uptrend, Ext.Uptrend | +9.1% | +30.2% | +47.0% | +155.6% | +66.7% | +0.0% | $413M | 485K | Basic Materials |
+| 3 | **NWH** | NRWHOLDLTD FPO [NWH] | $7.04 | 8 | Uptrend, Ext.Uptrend | +0.3% | +0.7% | +10.8% | +21.5% | +68.4% | -7.7% | $3.2B | 942K | Industrials |
+| 4 | **BFG** | BELL FN GP FPO [BFG] | $1.49 | 6 | Uptrend, NewUptrend | +2.1% | +4.7% | +3.0% | +6.5% | +13.0% | +0.0% | $478M | 138K | Financial Services |
+| 5 | **AZJ** | AURIZON FPO [AZJ] | $4.32 | 7 | Uptrend | +1.4% | +1.4% | +1.9% | +19.7% | +11.1% | -1.4% | $7.3B | 6.3M | Industrials |
+| 6 | **ALD** | AMPOL FPO [ALD] | $38.92 | 7 | Uptrend | +4.8% | +11.5% | +1.6% | +11.6% | +13.0% | +0.0% | $9.3B | 1.3M | Energy |
+| 7 | **MPL** | MEDIBANK FPO [MPL] | $5.11 | 7 | Accelerating | +1.0% | +3.1% | +4.2% | +2.1% | -3.8% | -1.0% | $14.1B | 5.5M | Financial Services |
+| 8 | **NHF** | NIBHOLDING FPO [NHF] | $7.39 | 6 | Accelerating | +1.5% | +4.3% | +5.0% | +2.1% | -7.0% | -2.6% | $3.6B | 1.0M | Financial Services |
 
 **Sector breakdown:**
-- Unknown: 5 (NWH, SLS, TEA, IAG, MPL)
-- Industrials: 1 (AZJ)
-- Financial Services: 1 (CVW)
-- Communication Services: 1 (CNU)
+- Industrials: 3 (SIQ, NWH, AZJ)
+- Financial Services: 3 (BFG, MPL, NHF)
+- Basic Materials: 1 (SLS)
 - Energy: 1 (ALD)
 
 ## Track 2: Reversal Candidates (20)
@@ -31,36 +29,36 @@ Stocks 40%+ below 52-week high but showing positive recent segments. Not buy sig
 
 | # | Ticker | Name | Price | From 52wH | From 5yH | 1W | 1M | Score | Wk Streak | MCap | Vol(20d) | Sector |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | **CMA** | CARMA LTD FPO [CMA] | $0.91 | -63.6% | -63.6% | +9.6% | +11.4% | 2 | +1 | $125M | 62K | Consumer Cyclical |
-| 2 | **CAT** | CATAPULT FPO [CAT] | $3.63 | -51.5% | -51.5% | +8.4% | +6.0% | 4 | +1 | $1.1B | 1.3M | Technology |
-| 3 | **BOE** | BOSS EN FPO [BOE] | $1.27 | -63.5% | -79.1% | +2.0% | +5.0% | 5 | +1 | $529M | 5.8M | Energy |
-| 4 | **KPG** | KPG | $4.10 | -64.0% | -69.8% | +4.6% | +9.8% | 5 | +1 | — | 100K | Unknown |
-| 5 | **SLD** | SLD | $0.53 | -65.8% | -65.8% | +0.0% | +34.6% | 1 | +1 | — | 661K | Unknown |
-| 6 | **NYR** | NYR | $0.57 | -58.7% | -58.7% | +37.3% | -10.8% | 3 | +2 | — | 320K | Unknown |
-| 7 | **ADH** | ADAIRS FPO [ADH] | $1.47 | -47.1% | -55.1% | +3.9% | +0.4% | 5 | +1 | $263M | 483K | Consumer Cyclical |
-| 8 | **AEL** | AMPLITUDE FPO [AEL] | $1.53 | -52.2% | -52.2% | +14.1% | -9.4% | 4 | +3 | $460M | 1.4M | Energy |
-| 9 | **MYX** | MYX | $2.75 | -56.4% | -62.7% | -1.8% | +19.7% | 3 | -1 | — | 224K | Unknown |
-| 10 | **FML** | FML | $1.75 | -60.5% | -60.5% | +8.7% | -11.1% | 3 | +1 | — | 250K | Unknown |
-| 11 | **SEK** | SEK | $14.09 | -50.8% | -56.9% | +1.2% | +2.1% | 3 | -1 | — | 1.2M | Unknown |
-| 12 | **OCL** | OCL | $7.20 | -68.0% | -68.0% | +5.6% | -33.1% | 2 | +3 | — | 377K | Unknown |
-| 13 | **AEF** | A ETHICAL FPO [AEF] | $4.56 | -43.0% | -66.3% | +2.9% | +1.1% | 5 | -1 | $519M | 95K | Financial Services |
-| 14 | **COH** | COCHLEAR FPO [COH] | $118.00 | -62.3% | -64.9% | -4.2% | +4.3% | 2 | -3 | $7.7B | 454K | Healthcare |
-| 15 | **PLT** | PLT | $0.78 | -51.1% | -53.0% | +11.4% | -9.7% | 4 | +1 | — | 172K | Unknown |
-| 16 | **MPW** | MPW | $1.90 | -60.8% | -60.8% | -11.2% | +5.9% | 4 | -2 | — | 138K | Unknown |
-| 17 | **EBO** | EBOS FPO NZ [EBO] | $18.51 | -49.3% | -53.3% | -1.5% | +11.2% | 3 | -1 | $3.8B | 92K | Healthcare |
-| 18 | **CSL** | CSL FPO [CSL] | $121.38 | -54.3% | -59.6% | -1.3% | +5.7% | 2 | -1 | $58.1B | 1.3M | Healthcare |
-| 19 | **SPD** | SPD | $1.25 | -53.9% | -53.9% | -2.0% | +15.9% | 4 | -2 | — | 119K | Unknown |
-| 20 | **NXL** | NXL | $1.26 | -60.3% | -83.7% | -0.8% | +0.8% | 2 | +1 | — | 965K | Unknown |
+| 1 | **CMA** | CARMA LTD FPO [CMA] | $0.95 | -62.0% | -62.0% | +5.6% | +20.8% | 2 | +1 | $131M | 55K | Consumer Cyclical |
+| 2 | **CAT** | CATAPULT FPO [CAT] | $3.59 | -52.0% | -52.0% | +1.4% | +20.0% | 4 | +1 | $1.1B | 1.3M | Technology |
+| 3 | **SPD** | SOUTHPALL FPO [SPD] | $1.34 | -50.5% | -50.5% | +8.5% | +12.3% | 5 | +1 | $177M | 116K | Basic Materials |
+| 4 | **KPG** | KELLYPRTNR FPO [KPG] | $4.02 | -64.7% | -70.4% | +1.8% | +11.9% | 5 | +1 | $182M | 98K | Industrials |
+| 5 | **WTC** | WISETECH FPO [WTC] | $33.84 | -71.8% | -75.5% | -1.3% | +13.9% | 4 | -1 | $11.4B | 2.1M | Technology |
+| 6 | **NYR** | NYRADA CDI FORUS [NYR] | $0.54 | -61.2% | -61.2% | -7.0% | +25.0% | 3 | +2 | $132M | 326K | Healthcare |
+| 7 | **COH** | COCHLEAR FPO [COH] | $112.19 | -64.2% | -66.6% | -9.5% | +9.8% | 3 | -3 | $7.3B | 431K | Healthcare |
+| 8 | **GTK** | GENTRACK FPO NZX [GTK] | $3.08 | -69.1% | -76.3% | +0.7% | +1.0% | 5 | -1 | $346M | 379K | Technology |
+| 9 | **BOE** | BOSS EN FPO [BOE] | $1.30 | -61.6% | -78.6% | -0.4% | +13.4% | 4 | +1 | $542M | 5.8M | Energy |
+| 10 | **ASB** | AUSTAL LTD FPO [ASB] | $3.72 | -57.5% | -57.5% | +5.4% | -20.9% | 5 | +1 | $1.6B | 1.9M | Industrials |
+| 11 | **FML** | FOCUS MIN FPO [FML] | $1.90 | -57.2% | -57.2% | +17.0% | -9.0% | 3 | +1 | $543M | 261K | Basic Materials |
+| 12 | **MYX** | M PHARMA FPO [MYX] | $2.77 | -56.0% | -62.4% | -1.8% | +19.5% | 3 | -1 | $225M | 212K | Healthcare |
+| 13 | **MPW** | METALPWLTD FPO [MPW] | $1.89 | -61.0% | -61.0% | -17.8% | +14.4% | 4 | -2 | $284M | 143K | Basic Materials |
+| 14 | **ADH** | ADAIRS FPO [ADH] | $1.45 | -47.9% | -55.7% | +2.5% | +3.3% | 5 | +1 | $259M | 482K | Consumer Cyclical |
+| 15 | **PNR** | PANTORO FPO [PNR] | $2.09 | -68.1% | -70.7% | +5.3% | -28.9% | 3 | +1 | $815M | 4.2M | Basic Materials |
+| 16 | **CSL** | CSL FPO [CSL] | $117.94 | -55.6% | -60.7% | -3.1% | +7.9% | 2 | -1 | $56.5B | 1.3M | Healthcare |
+| 17 | **AEL** | AMPLITUDE FPO [AEL] | $1.64 | -48.9% | -48.9% | +17.6% | -3.5% | 4 | +3 | $492M | 1.3M | Energy |
+| 18 | **AEF** | A ETHICAL FPO [AEF] | $4.51 | -43.7% | -66.7% | +3.0% | +2.6% | 4 | -1 | $513M | 101K | Financial Services |
+| 19 | **SEK** | SEEK FPO [SEK] | $13.78 | -51.9% | -57.9% | -1.9% | +8.9% | 2 | -1 | $4.9B | 1.1M | Communication Services |
+| 20 | **EBO** | EBOS FPO NZ [EBO] | $18.51 | -49.3% | -53.3% | -0.9% | +11.1% | 3 | -1 | $3.8B | 93K | Healthcare |
 
 **Sector breakdown:**
-- Unknown: 11 (KPG, SLD, NYR, MYX, FML, SEK, OCL, PLT, MPW, SPD +1 more)
-- Healthcare: 3 (COH, EBO, CSL)
+- Healthcare: 5 (NYR, COH, MYX, CSL, EBO)
+- Basic Materials: 4 (SPD, FML, MPW, PNR)
+- Technology: 3 (CAT, WTC, GTK)
 - Consumer Cyclical: 2 (CMA, ADH)
+- Industrials: 2 (KPG, ASB)
 - Energy: 2 (BOE, AEL)
-- Technology: 1 (CAT)
 - Financial Services: 1 (AEF)
+- Communication Services: 1 (SEK)
 
 ---
-> ⚠️ Coverage gaps: 0 tickers not downloaded, 0 batch(es) dropped, 671 info lookups failed.
-
 *Filters: min price $0.50, min mcap $100M, min vol 50,000. General information only. Not personal financial advice.*
