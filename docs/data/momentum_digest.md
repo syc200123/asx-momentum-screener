@@ -1,28 +1,28 @@
-# ASX Momentum Digest — 2026-07-23
+# ASX Momentum Digest — 2026-09-06
 
-**Scanned:** 1708 stocks | **Passed filters:** 961 | **Uptrends (CU):** 11 | **Accelerating:** 7 | **New Uptrends:** 7 | **Lost Uptrends:** 6
+**Scanned:** 1765 stocks | **Passed filters:** 968 | **Uptrends (CU):** 13 | **Accelerating:** 12 | **New Uptrends:** 11 | **Lost Uptrends:** 10
 
-## Track 1: Momentum Candidates (9)
+## Track 1: Momentum Candidates (12)
 
 Stocks in continuous uptrend (CU), accelerating (AC), or newly entering uptrend (NU). Ranked by composite momentum score.
 
 | # | Ticker | Name | Price | Score | Flags | 1W | 1M | 3M | 6M | 1Y | From 52wH | MCap | Vol(20d) | Sector |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | **TEA** | TASMEA FPO [TEA] | $9.39 | 6 | Uptrend, NewUptrend | +0.5% | +3.4% | +66.5% | +31.1% | +28.9% | -2.7% | $2.6B | 656K | Industrials |
-| 2 | **SLS** | SOLSTICE FPO [SLS] | $2.42 | 7 | Uptrend, Ext.Uptrend | +12.6% | +29.9% | +46.5% | +145.7% | +91.7% | +0.0% | $417M | 493K | Basic Materials |
-| 3 | **STW** | SPDR 200 ETF UNITS [STW] | $78.94 | 8 | Uptrend, Ext.Uptrend, NewUptrend | +0.0% | +0.6% | +0.4% | +0.5% | +2.9% | -2.9% | — | 152K | Unknown |
-| 4 | **FGX** | FUTURE AUS FPO [FGX] | $1.36 | 7 | Uptrend, Ext.Uptrend, NewUptrend | +0.4% | +0.7% | +1.6% | +3.4% | +9.8% | -2.5% | $561M | 274K | Financial Services |
-| 5 | **GLS** | L1GLOBAL FPO [GLS] | $2.09 | 7 | Uptrend, Ext.Uptrend, NewUptrend | +2.5% | +6.2% | +1.1% | +4.9% | +32.5% | +0.0% | $1.1B | 594K | Financial Services |
-| 6 | **HAV** | HAVILAH FPO [HAV] | $0.86 | 6 | Uptrend, NewUptrend | +8.9% | +10.5% | +13.5% | +1.6% | +217.9% | +0.0% | $304M | 299K | Basic Materials |
-| 7 | **AZJ** | AURIZON FPO [AZJ] | $4.28 | 7 | Uptrend | +0.5% | +0.7% | +2.4% | +19.6% | +9.1% | -2.3% | $7.2B | 6.3M | Industrials |
-| 8 | **BFG** | BELL FN GP FPO [BFG] | $1.54 | 6 | Uptrend | +5.8% | +3.2% | +6.8% | +4.1% | +11.2% | +0.0% | $496M | 149K | Financial Services |
-| 9 | **NHF** | NIBHOLDING FPO [NHF] | $7.47 | 5 | Accelerating | +2.2% | +5.8% | +7.6% | -1.4% | -7.0% | -1.6% | $3.7B | 997K | Financial Services |
+| 1 | **BVS** | BVS | $3.17 | 7 | Uptrend, Ext.Uptrend, NewUptrend | +1.6% | +18.0% | +17.9% | +7.8% | +12.3% | -7.5% | — | 1.9M | Unknown |
+| 2 | **MFF** | MFF | $5.43 | 7 | Uptrend, Ext.Uptrend, NewUptrend | +0.6% | +0.6% | +6.5% | +9.1% | +2.3% | -0.4% | — | 291K | Unknown |
+| 3 | **VEA** | VEA | $2.90 | 5 | Uptrend, Accelerating, NewUptrend | +4.1% | +8.7% | +17.4% | +8.8% | +1.4% | -2.1% | — | 6.0M | Unknown |
+| 4 | **GCI** | GCI | $2.07 | 7 | Uptrend, Ext.Uptrend, NewUptrend | +0.5% | +0.2% | +2.3% | +2.4% | +3.1% | +0.0% | — | 835K | Unknown |
+| 5 | **MGH** | MGH | $5.50 | 7 | Uptrend, Ext.Uptrend, NewUptrend | +0.9% | +0.9% | +1.5% | +8.1% | +12.4% | -10.9% | — | 1.9M | Unknown |
+| 6 | **ALD** | ALD | $40.65 | 6 | Uptrend, NewUptrend | +0.9% | +9.6% | +6.6% | +16.3% | +4.0% | -3.0% | — | 1.4M | Unknown |
+| 7 | **HGO** | HGO | $1.18 | 5 | Uptrend, Accelerating | +11.3% | +15.8% | +24.5% | +14.0% | +10.3% | +0.0% | — | 598K | Unknown |
+| 8 | **GNG** | GNG | $6.75 | 6 | Uptrend, NewUptrend | +2.4% | +11.3% | +4.0% | +40.7% | +2.7% | +0.0% | — | 311K | Unknown |
+| 9 | **WDS** | WDS | $31.83 | 6 | Uptrend, NewUptrend | +1.1% | +1.5% | +2.8% | +0.5% | +22.7% | -8.9% | — | 4.3M | Unknown |
+| 10 | **APA** | APA | $10.91 | 6 | Uptrend, NewUptrend | +1.3% | +5.8% | +0.8% | +12.6% | +7.4% | -0.7% | — | 2.7M | Unknown |
+| 11 | **CCL** | CCL | $5.60 | 5 | Uptrend, NewUptrend | +2.0% | +9.8% | +2.2% | +18.4% | +13.0% | -4.2% | — | 632K | Unknown |
+| 12 | **KPG** | KPG | $5.06 | 5 | Accelerating | +8.8% | +4.3% | +11.2% | -26.8% | -49.0% | -53.6% | — | 79K | Unknown |
 
 **Sector breakdown:**
-- Financial Services: 4 (FGX, GLS, BFG, NHF)
-- Industrials: 2 (TEA, AZJ)
-- Basic Materials: 2 (SLS, HAV)
-- Unknown: 1 (STW)
+- Unknown: 12 (BVS, MFF, VEA, GCI, MGH, ALD, HGO, GNG, WDS, APA +2 more)
 
 ## Track 2: Reversal Candidates (20)
 
@@ -30,35 +30,31 @@ Stocks 40%+ below 52-week high but showing positive recent segments. Not buy sig
 
 | # | Ticker | Name | Price | From 52wH | From 5yH | 1W | 1M | Score | Wk Streak | MCap | Vol(20d) | Sector |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | **NYR** | NYRADA CDI FORUS [NYR] | $0.56 | -59.8% | -59.8% | +11.0% | +11.1% | 4 | +2 | $137M | 326K | Healthcare |
-| 2 | **AEL** | AMPLITUDE FPO [AEL] | $1.60 | -50.0% | -50.0% | +7.0% | +5.6% | 5 | +3 | $481M | 1.2M | Energy |
-| 3 | **SKC** | SKYCITY FPO NZX [SKC] | $0.56 | -42.5% | -81.4% | +22.0% | +2.2% | 2 | +2 | $612M | 757K | Consumer Cyclical |
-| 4 | **WTC** | WISETECH FPO [WTC] | $31.48 | -73.8% | -77.2% | -10.0% | +21.6% | 4 | -1 | $10.6B | 2.1M | Technology |
-| 5 | **CAT** | CATAPULT FPO [CAT] | $3.49 | -53.3% | -53.3% | -2.0% | +28.5% | 3 | +1 | $1.1B | 1.3M | Technology |
-| 6 | **MRT** | MARITANA FPO [MRT] | $0.67 | -55.6% | -69.2% | +1.5% | +1.5% | 4 | +1 | $249M | 451K | Basic Materials |
-| 7 | **DYL** | D YELLOW FPO [DYL] | $1.43 | -51.0% | -51.0% | +9.2% | -12.7% | 5 | +1 | $1.4B | 5.1M | Energy |
-| 8 | **XRO** | XERO FPO [XRO] | $64.45 | -64.4% | -66.8% | -6.7% | +6.3% | 3 | -2 | $11.2B | 784K | Technology |
-| 9 | **KPG** | KELLYPRTNR FPO [KPG] | $3.95 | -65.3% | -71.0% | -1.5% | +17.9% | 4 | +1 | $179M | 100K | Industrials |
-| 10 | **FML** | FOCUS MIN FPO [FML] | $1.90 | -57.1% | -57.1% | +16.2% | -6.0% | 3 | +1 | $544M | 251K | Basic Materials |
-| 11 | **MPW** | METALPWLTD FPO [MPW] | $1.92 | -60.4% | -60.4% | -16.5% | +22.0% | 3 | -2 | $288M | 152K | Basic Materials |
-| 12 | **COH** | COCHLEAR FPO [COH] | $112.11 | -64.2% | -66.6% | -9.1% | +9.3% | 3 | -3 | $7.3B | 430K | Healthcare |
-| 13 | **ASB** | AUSTAL LTD FPO [ASB] | $3.78 | -56.9% | -56.9% | +6.5% | -18.4% | 5 | +1 | $1.6B | 2.0M | Industrials |
-| 14 | **SEK** | SEEK FPO [SEK] | $13.10 | -54.3% | -59.9% | -7.9% | +13.3% | 2 | -1 | $4.7B | 1.1M | Communication Services |
-| 15 | **MYX** | M PHARMA FPO [MYX] | $2.73 | -56.7% | -63.0% | -6.5% | +25.3% | 2 | -1 | $222M | 203K | Healthcare |
-| 16 | **TUA** | TUAS LTD FPO [TUA] | $2.14 | -74.3% | -74.3% | -7.8% | +0.9% | 5 | -3 | $1.2B | 1.6M | Communication Services |
-| 17 | **CSL** | CSL FPO [CSL] | $115.75 | -56.4% | -61.4% | -5.1% | +8.8% | 2 | -1 | $55.4B | 1.3M | Healthcare |
-| 18 | **SLX** | SILEX FPO [SLX] | $4.92 | -53.1% | -53.1% | +4.5% | -14.5% | 4 | +1 | $1.4B | 959K | Technology |
-| 19 | **PNR** | PANTORO FPO [PNR] | $2.13 | -67.5% | -70.2% | +6.0% | -23.3% | 3 | +1 | $830M | 4.2M | Basic Materials |
-| 20 | **NXL** | NUIX LTD FPO [NXL] | $1.23 | -61.6% | -84.2% | -5.4% | +11.2% | 2 | +1 | $415M | 955K | Technology |
+| 1 | **BAP** | BAP | $0.88 | -75.0% | -88.5% | +24.1% | +58.4% | 3 | +3 | — | 8.7M | Unknown |
+| 2 | **COH** | COH | $142.74 | -51.9% | -57.5% | +4.9% | +11.6% | 5 | +6 | — | 934K | Unknown |
+| 3 | **PNR** | PNR | $2.89 | -55.9% | -59.5% | +0.3% | +30.3% | 5 | +3 | — | 5.0M | Unknown |
+| 4 | **IFN** | IFN | $0.54 | -52.8% | -56.2% | +3.8% | +23.8% | 3 | +3 | — | 309K | Unknown |
+| 5 | **AMA** | AMA | $0.55 | -45.0% | -86.7% | +8.9% | +6.3% | 4 | +2 | — | 305K | Unknown |
+| 6 | **KPG** | KPG | $5.06 | -53.6% | -62.8% | +8.8% | +4.3% | 5 | +2 | — | 79K | Unknown |
+| 7 | **LTR** | LTR | $1.23 | -53.6% | -61.1% | +2.5% | +12.7% | 5 | +1 | — | 45.0M | Unknown |
+| 8 | **NVA** | NVA | $0.67 | -59.0% | -64.7% | +2.3% | +11.0% | 4 | +2 | — | 284K | Unknown |
+| 9 | **AXQ** | AXQ | $3.34 | -51.2% | -51.2% | +4.0% | +6.6% | 2 | +1 | — | 451K | Unknown |
+| 10 | **ASB** | ASB | $4.33 | -50.6% | -50.6% | +5.6% | +7.9% | 4 | +1 | — | 3.4M | Unknown |
+| 11 | **PXA** | PXA | $7.43 | -55.8% | -63.5% | +11.2% | -13.2% | 4 | +1 | — | 796K | Unknown |
+| 12 | **AQZ** | AQZ | $0.69 | -72.9% | -84.1% | -2.8% | +17.5% | 2 | -3 | — | 714K | Unknown |
+| 13 | **CMA** | CMA | $0.89 | -64.4% | -64.4% | +18.7% | -11.8% | 2 | +2 | — | 83K | Unknown |
+| 14 | **GTK** | GTK | $3.65 | -62.1% | -71.9% | -4.5% | +15.1% | 3 | -1 | — | 288K | Unknown |
+| 15 | **SLX** | SLX | $4.99 | -52.4% | -52.4% | -16.3% | +17.1% | 5 | -1 | — | 1.1M | Unknown |
+| 16 | **TTM** | TTM | $0.65 | -44.4% | -49.7% | -5.1% | +14.3% | 4 | -2 | — | 275K | Unknown |
+| 17 | **TPW** | TPW | $4.84 | -80.9% | -82.9% | +0.8% | -21.8% | 4 | +2 | — | 1.9M | Unknown |
+| 18 | **FML** | FML | $2.07 | -53.3% | -53.3% | -4.6% | +17.3% | 3 | -2 | — | 235K | Unknown |
+| 19 | **BBN** | BBN | $1.12 | -65.3% | -79.6% | -11.5% | +9.1% | 2 | -2 | — | 671K | Unknown |
+| 20 | **KMD** | KMD | $1.43 | -67.6% | -93.3% | +2.1% | -10.5% | 2 | +1 | — | 91K | Unknown |
 
 **Sector breakdown:**
-- Technology: 5 (WTC, CAT, XRO, SLX, NXL)
-- Healthcare: 4 (NYR, COH, MYX, CSL)
-- Basic Materials: 4 (MRT, FML, MPW, PNR)
-- Energy: 2 (AEL, DYL)
-- Industrials: 2 (KPG, ASB)
-- Communication Services: 2 (SEK, TUA)
-- Consumer Cyclical: 1 (SKC)
+- Unknown: 20 (BAP, COH, PNR, IFN, AMA, KPG, LTR, NVA, AXQ, ASB +10 more)
 
 ---
+> ⚠️ Coverage gaps: 0 tickers not downloaded, 0 batch(es) dropped, 699 info lookups failed.
+
 *Filters: min price $0.50, min mcap $100M, min vol 50,000. General information only. Not personal financial advice.*
