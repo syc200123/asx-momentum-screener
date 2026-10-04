@@ -1,22 +1,26 @@
-# ASX Momentum Digest — 2026-10-01
+# ASX Momentum Digest — 2026-10-04
 
-**Scanned:** 1767 stocks | **Passed filters:** 684 | **Uptrends (CU):** 10 | **Accelerating:** 1 | **New Uptrends:** 5 | **Lost Uptrends:** 2
+**Scanned:** 1767 stocks | **Passed filters:** 951 | **Uptrends (CU):** 13 | **Accelerating:** 6 | **New Uptrends:** 5 | **Lost Uptrends:** 3
 
-## Track 1: Momentum Candidates (6)
+## Track 1: Momentum Candidates (8)
 
 Stocks in continuous uptrend (CU), accelerating (AC), or newly entering uptrend (NU). Ranked by composite momentum score.
 
 | # | Ticker | Name | Price | Score | Flags | 1W | 1M | 3M | 6M | 1Y | From 52wH | MCap | Vol(20d) | Sector |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | **LYL** | LYL | $23.42 | 8 | Uptrend, Ext.Uptrend | +0.4% | +4.2% | +33.2% | +28.4% | +12.7% | -1.6% | — | 103K | Unknown |
-| 2 | **MYE** | MYE | $0.81 | 6 | Uptrend | +7.2% | +22.6% | +106.7% | +62.2% | +42.3% | +0.0% | — | 521K | Unknown |
-| 3 | **BOL** | BOL | $2.38 | 7 | Uptrend, Ext.Uptrend, NewUptrend | +3.5% | +3.6% | +1.5% | +26.3% | +24.1% | -0.8% | — | 100K | Unknown |
-| 4 | **CDA** | CDA | $67.49 | 7 | Uptrend, Ext.Uptrend | +27.9% | +10.4% | +9.1% | +37.5% | +7.0% | +0.0% | — | 1.1M | Unknown |
-| 5 | **IPG** | IPG | $6.00 | 6 | Uptrend, NewUptrend | +1.0% | +13.0% | +1.9% | +10.3% | +22.3% | -4.2% | — | 332K | Unknown |
-| 6 | **CCL** | CCL | $6.12 | 5 | Uptrend | +0.3% | +8.7% | +10.7% | +25.4% | +6.6% | -0.5% | — | 1.9M | Unknown |
+| 1 | **MLX** | METALS X FPO [MLX] | $2.10 | 7 | Uptrend, Ext.Uptrend, NewUptrend | +0.5% | +14.5% | +37.2% | +2.3% | +63.5% | -3.2% | $1.9B | 3.2M | Basic Materials |
+| 2 | **NWH** | NRWHOLDLTD FPO [NWH] | $8.02 | 7 | Uptrend, Ext.Uptrend, NewUptrend | +1.2% | +5.2% | +6.1% | +34.6% | +16.6% | -0.4% | $3.7B | 1.2M | Industrials |
+| 3 | **LYL** | LYCOPODIUM FPO [LYL] | $23.62 | 7 | Uptrend, Ext.Uptrend | +1.0% | +4.9% | +30.7% | +30.3% | +13.5% | -0.8% | $939M | 106K | Industrials |
+| 4 | **SLS** | SOLSTICE FPO [SLS] | $2.84 | 7 | Uptrend, Ext.Uptrend | +3.6% | +16.1% | +9.8% | +108.7% | +212.1% | -1.7% | $490M | 989K | Basic Materials |
+| 5 | **CDA** | CODAN FPO [CDA] | $67.45 | 7 | Uptrend, Ext.Uptrend | +29.1% | +13.1% | +5.6% | +37.4% | +6.0% | -0.1% | $12.3B | 1.1M | Technology |
+| 6 | **ORE** | OREZONE CDI 1:1 [ORE] | $3.28 | 5 | Uptrend, NewUptrend | +3.8% | +21.5% | +4.8% | +4.6% | +59.1% | -1.2% | $2.2B | 92K | Basic Materials |
+| 7 | **IPG** | IPDGROUP FPO [IPG] | $6.14 | 6 | Uptrend | +3.2% | +15.4% | +4.6% | +5.5% | +21.9% | -1.9% | $639M | 342K | Industrials |
+| 8 | **CCL** | CUSCAL LTD FPO [CCL] | $6.31 | 5 | Uptrend | +4.8% | +8.5% | +12.8% | +21.8% | +4.9% | +0.0% | $1.3B | 2.0M | Technology |
 
 **Sector breakdown:**
-- Unknown: 6 (LYL, MYE, BOL, CDA, IPG, CCL)
+- Basic Materials: 3 (MLX, SLS, ORE)
+- Industrials: 3 (NWH, LYL, IPG)
+- Technology: 2 (CDA, CCL)
 
 ## Track 2: Reversal Candidates (20)
 
@@ -24,31 +28,37 @@ Stocks 40%+ below 52-week high but showing positive recent segments. Not buy sig
 
 | # | Ticker | Name | Price | From 52wH | From 5yH | 1W | 1M | Score | Wk Streak | MCap | Vol(20d) | Sector |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | **IEL** | IEL | $1.99 | -68.8% | -94.4% | +5.9% | +12.9% | 2 | +3 | — | 4.1M | Unknown |
-| 2 | **WBT** | WBT | $3.71 | -56.9% | -57.6% | +1.6% | +1.1% | 6 | +3 | — | 2.2M | Unknown |
-| 3 | **LLC** | LLC | $2.72 | -50.4% | -74.3% | +11.5% | -19.2% | 3 | +1 | — | 3.0M | Unknown |
-| 4 | **KMD** | KMD | $1.52 | -65.5% | -92.9% | -2.9% | +11.8% | 1 | -1 | — | 58K | Unknown |
-| 5 | **DRO** | DRO | $1.72 | -74.0% | -74.0% | +5.9% | -8.2% | 4 | +1 | — | 8.9M | Unknown |
-| 6 | **NVA** | NVA | $0.64 | -60.9% | -66.3% | +0.0% | +5.8% | 4 | +1 | — | 311K | Unknown |
-| 7 | **BAP** | BAP | $0.83 | -73.9% | -89.0% | -1.2% | +8.3% | 2 | -1 | — | 8.9M | Unknown |
-| 8 | **CAT** | CAT | $3.18 | -57.5% | -57.5% | +1.3% | -2.2% | 4 | +3 | — | 845K | Unknown |
-| 9 | **COH** | COH | $130.34 | -55.0% | -60.8% | -8.7% | +7.3% | 4 | -1 | — | 433K | Unknown |
-| 10 | **CEL** | CEL | $1.76 | -56.0% | -75.2% | -13.7% | +6.2% | 2 | -3 | — | 187K | Unknown |
-| 11 | **NYR** | NYR | $0.50 | -63.8% | -63.8% | +1.0% | -35.7% | 5 | -2 | — | 359K | Unknown |
-| 12 | **ATR** | ATR | $0.54 | -50.0% | -50.0% | -3.6% | +12.0% | 4 | -1 | — | 67K | Unknown |
-| 13 | **OCC** | OCC | $0.77 | -50.0% | -56.3% | -1.9% | +5.4% | 4 | +2 | — | 313K | Unknown |
-| 14 | **CMA** | CMA | $0.77 | -69.4% | -69.4% | +1.3% | -9.0% | 1 | +1 | — | 170K | Unknown |
-| 15 | **ASB** | ASB | $4.31 | -50.8% | -50.8% | -5.3% | +4.1% | 5 | -2 | — | 2.1M | Unknown |
-| 16 | **AXQ** | AXQ | $3.67 | -46.4% | -46.4% | -5.9% | +11.4% | 1 | -2 | — | 629K | Unknown |
-| 17 | **PLT** | PLT | $0.78 | -51.1% | -51.4% | +2.6% | -6.2% | 4 | +2 | — | 94K | Unknown |
-| 18 | **ORD** | ORD | $0.53 | -45.9% | -45.9% | -1.9% | +8.0% | 4 | +1 | — | 53K | Unknown |
-| 19 | **BRE** | BRE | $3.58 | -45.8% | -45.8% | -10.7% | +3.6% | 4 | -2 | — | 1.2M | Unknown |
-| 20 | **HSN** | HSN | $3.12 | -48.1% | -50.7% | +1.6% | -10.5% | 2 | +1 | — | 986K | Unknown |
+| 1 | **IEL** | IEL FPO [IEL] | $2.00 | -68.7% | -94.4% | +5.0% | +15.7% | 2 | +3 | $557M | 4.2M | Consumer Defensive |
+| 2 | **NVA** | NOVA MIN CDI 12:1 [NVA] | $0.65 | -60.2% | -65.8% | +4.8% | +3.3% | 5 | +1 | $3.9B | 301K | Basic Materials |
+| 3 | **WBT** | WEEBITNANO FPO [WBT] | $3.78 | -56.1% | -56.8% | +2.7% | +6.4% | 5 | +3 | $918M | 2.2M | Technology |
+| 4 | **DRO** | DRONE FPO [DRO] | $1.82 | -72.4% | -72.4% | +13.4% | -6.1% | 3 | +1 | $1.7B | 8.9M | Industrials |
+| 5 | **WTC** | WISETECH FPO [WTC] | $33.43 | -60.8% | -75.7% | +6.7% | -16.5% | 3 | +1 | $11.2B | 1.7M | Technology |
+| 6 | **SEK** | SEEK FPO [SEK] | $11.95 | -56.0% | -62.8% | +7.9% | -19.2% | 4 | +1 | $4.3B | 1.8M | Communication Services |
+| 7 | **LLC** | LEND LEASE STAPLED [LLC] | $2.64 | -51.8% | -75.0% | +10.0% | -19.2% | 2 | +1 | $1.8B | 3.1M | Real Estate |
+| 8 | **OCC** | ORTHOCELL FPO [OCC] | $0.76 | -50.3% | -56.6% | +2.7% | +2.8% | 4 | +2 | $207M | 322K | Healthcare |
+| 9 | **CAT** | CATAPULT FPO [CAT] | $3.27 | -56.3% | -56.3% | +4.1% | -0.6% | 4 | +3 | $1.0B | 811K | Technology |
+| 10 | **OCL** | OBJECTIVE FPO [OCL] | $6.01 | -69.6% | -72.8% | +4.5% | -10.8% | 3 | +1 | $575M | 207K | Technology |
+| 11 | **PNR** | PANTORO FPO [PNR] | $2.93 | -55.3% | -59.0% | -0.3% | +10.1% | 4 | -1 | $1.1B | 3.5M | Basic Materials |
+| 12 | **SDR** | SITEMINDER FPO [SDR] | $2.75 | -64.2% | -64.4% | +5.4% | -7.4% | 4 | +1 | $778M | 1.2M | Technology |
+| 13 | **ZIP** | ZIPCOLTD FPO [ZIP] | $2.07 | -57.0% | -70.9% | +4.3% | -18.3% | 4 | +1 | $2.6B | 15.0M | Financial Services |
+| 14 | **BLX** | BEACON LTG FPO [BLX] | $1.80 | -43.9% | -49.5% | +0.6% | +0.2% | 6 | +1 | $413M | 71K | Consumer Cyclical |
+| 15 | **BBN** | BABY B FPO [BBN] | $1.08 | -66.4% | -80.3% | +1.9% | -6.2% | 3 | +3 | $148M | 220K | Consumer Cyclical |
+| 16 | **TPW** | TEMPLE WEB FPO [TPW] | $4.39 | -82.7% | -84.5% | +4.5% | -11.6% | 3 | +1 | $512M | 750K | Consumer Cyclical |
+| 17 | **COH** | COCHLEAR FPO [COH] | $125.39 | -56.7% | -62.3% | -11.9% | +5.3% | 3 | -1 | $8.2B | 432K | Healthcare |
+| 18 | **FML** | FOCUS MIN FPO [FML] | $1.79 | -58.0% | -58.0% | -7.0% | +3.0% | 4 | -3 | $514M | 266K | Basic Materials |
+| 19 | **SMI** | SANTANAMIN FPO [SMI] | $0.52 | -56.0% | -56.0% | -8.0% | +8.7% | 4 | -1 | $508M | 3.6M | Basic Materials |
+| 20 | **XRO** | XERO FPO [XRO] | $57.85 | -63.3% | -70.2% | +0.9% | -29.4% | 4 | +1 | $10.2B | 1.1M | Technology |
 
 **Sector breakdown:**
-- Unknown: 20 (IEL, WBT, LLC, KMD, DRO, NVA, BAP, CAT, COH, CEL +10 more)
+- Technology: 6 (WBT, WTC, CAT, OCL, SDR, XRO)
+- Basic Materials: 4 (NVA, PNR, FML, SMI)
+- Consumer Cyclical: 3 (BLX, BBN, TPW)
+- Healthcare: 2 (OCC, COH)
+- Consumer Defensive: 1 (IEL)
+- Industrials: 1 (DRO)
+- Communication Services: 1 (SEK)
+- Real Estate: 1 (LLC)
+- Financial Services: 1 (ZIP)
 
 ---
-> ⚠️ Coverage gaps: 0 tickers not downloaded, 0 batch(es) dropped, 684 info lookups failed.
-
 *Filters: min price $0.50, min mcap $100M, min vol 50,000. General information only. Not personal financial advice.*
