@@ -1,26 +1,26 @@
-# ASX Momentum Digest — 2026-10-04
+# ASX Momentum Digest — 2026-10-06
 
-**Scanned:** 1767 stocks | **Passed filters:** 951 | **Uptrends (CU):** 13 | **Accelerating:** 6 | **New Uptrends:** 5 | **Lost Uptrends:** 3
+**Scanned:** 1767 stocks | **Passed filters:** 756 | **Uptrends (CU):** 11 | **Accelerating:** 6 | **New Uptrends:** 2 | **Lost Uptrends:** 3
 
-## Track 1: Momentum Candidates (8)
+## Track 1: Momentum Candidates (10)
 
 Stocks in continuous uptrend (CU), accelerating (AC), or newly entering uptrend (NU). Ranked by composite momentum score.
 
 | # | Ticker | Name | Price | Score | Flags | 1W | 1M | 3M | 6M | 1Y | From 52wH | MCap | Vol(20d) | Sector |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | **MLX** | METALS X FPO [MLX] | $2.10 | 7 | Uptrend, Ext.Uptrend, NewUptrend | +0.5% | +14.5% | +37.2% | +2.3% | +63.5% | -3.2% | $1.9B | 3.2M | Basic Materials |
-| 2 | **NWH** | NRWHOLDLTD FPO [NWH] | $8.02 | 7 | Uptrend, Ext.Uptrend, NewUptrend | +1.2% | +5.2% | +6.1% | +34.6% | +16.6% | -0.4% | $3.7B | 1.2M | Industrials |
-| 3 | **LYL** | LYCOPODIUM FPO [LYL] | $23.62 | 7 | Uptrend, Ext.Uptrend | +1.0% | +4.9% | +30.7% | +30.3% | +13.5% | -0.8% | $939M | 106K | Industrials |
-| 4 | **SLS** | SOLSTICE FPO [SLS] | $2.84 | 7 | Uptrend, Ext.Uptrend | +3.6% | +16.1% | +9.8% | +108.7% | +212.1% | -1.7% | $490M | 989K | Basic Materials |
-| 5 | **CDA** | CODAN FPO [CDA] | $67.45 | 7 | Uptrend, Ext.Uptrend | +29.1% | +13.1% | +5.6% | +37.4% | +6.0% | -0.1% | $12.3B | 1.1M | Technology |
-| 6 | **ORE** | OREZONE CDI 1:1 [ORE] | $3.28 | 5 | Uptrend, NewUptrend | +3.8% | +21.5% | +4.8% | +4.6% | +59.1% | -1.2% | $2.2B | 92K | Basic Materials |
-| 7 | **IPG** | IPDGROUP FPO [IPG] | $6.14 | 6 | Uptrend | +3.2% | +15.4% | +4.6% | +5.5% | +21.9% | -1.9% | $639M | 342K | Industrials |
-| 8 | **CCL** | CUSCAL LTD FPO [CCL] | $6.31 | 5 | Uptrend | +4.8% | +8.5% | +12.8% | +21.8% | +4.9% | +0.0% | $1.3B | 2.0M | Technology |
+| 1 | **GNG** | GNG | $7.56 | 8 | Uptrend, Ext.Uptrend, NewUptrend | +1.8% | +10.1% | +38.5% | +24.6% | +6.7% | -1.8% | — | 896K | Unknown |
+| 2 | **LYL** | LYL | $24.54 | 8 | Uptrend, Ext.Uptrend | +4.1% | +10.6% | +17.4% | +39.8% | +10.6% | +0.0% | — | 111K | Unknown |
+| 3 | **NWH** | NWH | $8.04 | 8 | Uptrend, Ext.Uptrend | +3.1% | +3.9% | +7.8% | +27.5% | +22.8% | -0.2% | — | 1.1M | Unknown |
+| 4 | **REH** | REH | $16.74 | 7 | Uptrend, NewUptrend | +0.3% | +3.7% | +1.7% | +16.5% | +19.4% | -3.5% | — | 569K | Unknown |
+| 5 | **CDA** | CDA | $65.80 | 7 | Uptrend, Ext.Uptrend | +2.1% | +38.6% | +7.1% | +31.8% | +9.7% | -4.0% | — | 1.1M | Unknown |
+| 6 | **ACF** | ACF | $0.97 | 7 | Accelerating | +5.4% | +3.3% | +2.3% | +1.6% | -19.8% | -10.9% | — | 714K | Unknown |
+| 7 | **IPG** | IPG | $6.20 | 6 | Uptrend | +3.3% | +16.4% | +4.4% | +4.4% | +24.4% | -1.1% | — | 356K | Unknown |
+| 8 | **CCL** | CCL | $6.48 | 5 | Uptrend | +6.6% | +8.6% | +12.0% | +25.6% | +5.6% | +0.0% | — | 2.0M | Unknown |
+| 9 | **ORE** | ORE | $3.21 | 5 | Uptrend | +3.9% | +12.0% | +7.8% | +8.5% | +57.3% | -3.9% | — | 92K | Unknown |
+| 10 | **ASX** | ASX | $59.02 | 5 | Accelerating | +2.6% | +2.8% | +6.6% | +1.3% | -8.6% | -4.3% | — | 700K | Unknown |
 
 **Sector breakdown:**
-- Basic Materials: 3 (MLX, SLS, ORE)
-- Industrials: 3 (NWH, LYL, IPG)
-- Technology: 2 (CDA, CCL)
+- Unknown: 10 (GNG, LYL, NWH, REH, CDA, ACF, IPG, CCL, ORE, ASX)
 
 ## Track 2: Reversal Candidates (20)
 
@@ -28,37 +28,31 @@ Stocks 40%+ below 52-week high but showing positive recent segments. Not buy sig
 
 | # | Ticker | Name | Price | From 52wH | From 5yH | 1W | 1M | Score | Wk Streak | MCap | Vol(20d) | Sector |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | **IEL** | IEL FPO [IEL] | $2.00 | -68.7% | -94.4% | +5.0% | +15.7% | 2 | +3 | $557M | 4.2M | Consumer Defensive |
-| 2 | **NVA** | NOVA MIN CDI 12:1 [NVA] | $0.65 | -60.2% | -65.8% | +4.8% | +3.3% | 5 | +1 | $3.9B | 301K | Basic Materials |
-| 3 | **WBT** | WEEBITNANO FPO [WBT] | $3.78 | -56.1% | -56.8% | +2.7% | +6.4% | 5 | +3 | $918M | 2.2M | Technology |
-| 4 | **DRO** | DRONE FPO [DRO] | $1.82 | -72.4% | -72.4% | +13.4% | -6.1% | 3 | +1 | $1.7B | 8.9M | Industrials |
-| 5 | **WTC** | WISETECH FPO [WTC] | $33.43 | -60.8% | -75.7% | +6.7% | -16.5% | 3 | +1 | $11.2B | 1.7M | Technology |
-| 6 | **SEK** | SEEK FPO [SEK] | $11.95 | -56.0% | -62.8% | +7.9% | -19.2% | 4 | +1 | $4.3B | 1.8M | Communication Services |
-| 7 | **LLC** | LEND LEASE STAPLED [LLC] | $2.64 | -51.8% | -75.0% | +10.0% | -19.2% | 2 | +1 | $1.8B | 3.1M | Real Estate |
-| 8 | **OCC** | ORTHOCELL FPO [OCC] | $0.76 | -50.3% | -56.6% | +2.7% | +2.8% | 4 | +2 | $207M | 322K | Healthcare |
-| 9 | **CAT** | CATAPULT FPO [CAT] | $3.27 | -56.3% | -56.3% | +4.1% | -0.6% | 4 | +3 | $1.0B | 811K | Technology |
-| 10 | **OCL** | OBJECTIVE FPO [OCL] | $6.01 | -69.6% | -72.8% | +4.5% | -10.8% | 3 | +1 | $575M | 207K | Technology |
-| 11 | **PNR** | PANTORO FPO [PNR] | $2.93 | -55.3% | -59.0% | -0.3% | +10.1% | 4 | -1 | $1.1B | 3.5M | Basic Materials |
-| 12 | **SDR** | SITEMINDER FPO [SDR] | $2.75 | -64.2% | -64.4% | +5.4% | -7.4% | 4 | +1 | $778M | 1.2M | Technology |
-| 13 | **ZIP** | ZIPCOLTD FPO [ZIP] | $2.07 | -57.0% | -70.9% | +4.3% | -18.3% | 4 | +1 | $2.6B | 15.0M | Financial Services |
-| 14 | **BLX** | BEACON LTG FPO [BLX] | $1.80 | -43.9% | -49.5% | +0.6% | +0.2% | 6 | +1 | $413M | 71K | Consumer Cyclical |
-| 15 | **BBN** | BABY B FPO [BBN] | $1.08 | -66.4% | -80.3% | +1.9% | -6.2% | 3 | +3 | $148M | 220K | Consumer Cyclical |
-| 16 | **TPW** | TEMPLE WEB FPO [TPW] | $4.39 | -82.7% | -84.5% | +4.5% | -11.6% | 3 | +1 | $512M | 750K | Consumer Cyclical |
-| 17 | **COH** | COCHLEAR FPO [COH] | $125.39 | -56.7% | -62.3% | -11.9% | +5.3% | 3 | -1 | $8.2B | 432K | Healthcare |
-| 18 | **FML** | FOCUS MIN FPO [FML] | $1.79 | -58.0% | -58.0% | -7.0% | +3.0% | 4 | -3 | $514M | 266K | Basic Materials |
-| 19 | **SMI** | SANTANAMIN FPO [SMI] | $0.52 | -56.0% | -56.0% | -8.0% | +8.7% | 4 | -1 | $508M | 3.6M | Basic Materials |
-| 20 | **XRO** | XERO FPO [XRO] | $57.85 | -63.3% | -70.2% | +0.9% | -29.4% | 4 | +1 | $10.2B | 1.1M | Technology |
+| 1 | **IEL** | IEL | $2.07 | -67.6% | -94.2% | +6.4% | +18.2% | 2 | +4 | — | 4.0M | Unknown |
+| 2 | **NYR** | NYR | $0.54 | -60.9% | -60.9% | +16.1% | -35.9% | 5 | +1 | — | 362K | Unknown |
+| 3 | **DRO** | DRO | $1.77 | -73.1% | -73.1% | +9.9% | -7.4% | 4 | -1 | — | 8.9M | Unknown |
+| 4 | **NVA** | NVA | $0.71 | -56.8% | -62.8% | +13.1% | -6.7% | 4 | +2 | — | 363K | Unknown |
+| 5 | **BBN** | BBN | $1.10 | -65.6% | -79.9% | +5.2% | -6.2% | 3 | +4 | — | 204K | Unknown |
+| 6 | **KMD** | KMD | $1.53 | -65.2% | -92.8% | -1.0% | +8.4% | 2 | +1 | — | 50K | Unknown |
+| 7 | **LGI** | LGI | $2.16 | -51.6% | -51.6% | +11.1% | -12.2% | 3 | +1 | — | 57K | Unknown |
+| 8 | **ASG** | ASG | $1.22 | -72.9% | -72.9% | +3.8% | -22.2% | 3 | +2 | — | 260K | Unknown |
+| 9 | **CAT** | CAT | $3.32 | -55.6% | -55.6% | +5.4% | -2.2% | 4 | +4 | — | 764K | Unknown |
+| 10 | **GTK** | GTK | $3.08 | -68.0% | -76.3% | +2.7% | -17.8% | 4 | +1 | — | 573K | Unknown |
+| 11 | **CTD** | CTD | $2.33 | -85.5% | -90.7% | -0.4% | +4.0% | 2 | -3 | — | 2.1M | Unknown |
+| 12 | **SEK** | SEK | $12.17 | -55.2% | -62.1% | +6.2% | -17.3% | 4 | +2 | — | 1.7M | Unknown |
+| 13 | **PWR** | PWR | $0.72 | -62.0% | -71.1% | +1.4% | -10.6% | 2 | +1 | — | 200K | Unknown |
+| 14 | **CMA** | CMA | $0.76 | -69.6% | -69.6% | +2.7% | -16.9% | 2 | -1 | — | 170K | Unknown |
+| 15 | **COH** | COH | $130.14 | -55.1% | -60.9% | -9.8% | +2.1% | 4 | +1 | — | 417K | Unknown |
+| 16 | **PLT** | PLT | $0.78 | -50.6% | -51.1% | +4.7% | -4.5% | 4 | +3 | — | 90K | Unknown |
+| 17 | **EIQ** | EIQ | $0.56 | -68.3% | -68.3% | +1.8% | -57.4% | 4 | -3 | — | 13.0M | Unknown |
+| 18 | **AXQ** | AXQ | $3.53 | -48.5% | -48.5% | -7.6% | +14.4% | 1 | -3 | — | 579K | Unknown |
+| 19 | **LLC** | LLC | $2.56 | -53.2% | -75.8% | +7.3% | -17.3% | 2 | -1 | — | 3.0M | Unknown |
+| 20 | **BLX** | BLX | $1.80 | -43.9% | -49.5% | +0.6% | +1.1% | 6 | -1 | — | 64K | Unknown |
 
 **Sector breakdown:**
-- Technology: 6 (WBT, WTC, CAT, OCL, SDR, XRO)
-- Basic Materials: 4 (NVA, PNR, FML, SMI)
-- Consumer Cyclical: 3 (BLX, BBN, TPW)
-- Healthcare: 2 (OCC, COH)
-- Consumer Defensive: 1 (IEL)
-- Industrials: 1 (DRO)
-- Communication Services: 1 (SEK)
-- Real Estate: 1 (LLC)
-- Financial Services: 1 (ZIP)
+- Unknown: 20 (IEL, NYR, DRO, NVA, BBN, KMD, LGI, ASG, CAT, GTK +10 more)
 
 ---
+> ⚠️ Coverage gaps: 0 tickers not downloaded, 0 batch(es) dropped, 756 info lookups failed.
+
 *Filters: min price $0.50, min mcap $100M, min vol 50,000. General information only. Not personal financial advice.*
