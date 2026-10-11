@@ -1,24 +1,28 @@
-# ASX Momentum Digest — 2026-10-09
+# ASX Momentum Digest — 2026-10-11
 
-**Scanned:** 1655 stocks | **Passed filters:** 802 | **Uptrends (CU):** 9 | **Accelerating:** 4 | **New Uptrends:** 4 | **Lost Uptrends:** 7
+**Scanned:** 1656 stocks | **Passed filters:** 834 | **Uptrends (CU):** 15 | **Accelerating:** 6 | **New Uptrends:** 7 | **Lost Uptrends:** 2
 
-## Track 1: Momentum Candidates (8)
+## Track 1: Momentum Candidates (12)
 
 Stocks in continuous uptrend (CU), accelerating (AC), or newly entering uptrend (NU). Ranked by composite momentum score.
 
 | # | Ticker | Name | Price | Score | Flags | 1W | 1M | 3M | 6M | 1Y | From 52wH | MCap | Vol(20d) | Sector |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | **MYE** | MYE | $0.78 | 6 | Uptrend, NewUptrend | +2.6% | +16.9% | +80.6% | +100.0% | +33.3% | -4.3% | — | 520K | Unknown |
-| 2 | **GNG** | GNG | $7.45 | 7 | Uptrend, Ext.Uptrend | +0.1% | +9.7% | +42.8% | +15.5% | +8.6% | -4.6% | — | 890K | Unknown |
-| 3 | **REH** | REH | $16.92 | 6 | Uptrend, NewUptrend | +1.9% | +0.6% | +6.7% | +9.9% | +27.3% | -2.5% | — | 546K | Unknown |
-| 4 | **MAH** | MAH | $1.11 | 7 | Uptrend, Ext.Uptrend | +11.0% | +2.3% | +9.4% | +5.8% | +82.7% | -3.9% | — | 8.2M | Unknown |
-| 5 | **BOL** | BOL | $2.45 | 6 | Uptrend | +2.9% | +6.7% | +4.8% | +28.0% | +21.3% | +0.0% | — | 102K | Unknown |
-| 6 | **CCL** | CCL | $6.38 | 5 | Uptrend | +1.1% | +14.1% | +13.3% | +13.8% | +13.1% | -2.0% | — | 2.1M | Unknown |
-| 7 | **FPH** | FPH | $38.14 | 6 | Accelerating | +3.7% | +3.7% | +7.7% | +3.7% | -1.8% | +0.0% | — | 465K | Unknown |
-| 8 | **RMD** | RMD | $32.59 | 5 | Accelerating | +2.5% | +3.4% | +2.6% | -6.8% | -23.8% | -21.2% | — | 912K | Unknown |
+| 1 | **GNG** | GNG | $7.79 | 8 | Uptrend, Ext.Uptrend | +2.5% | +10.8% | +42.2% | +19.7% | +8.2% | -0.3% | — | 884K | Unknown |
+| 2 | **ALD** | ALD | $43.84 | 8 | Uptrend, Ext.Uptrend, NewUptrend | +0.8% | +5.6% | +17.1% | +8.5% | +15.1% | -2.2% | — | 1.3M | Unknown |
+| 3 | **SFR** | SFR | $22.52 | 8 | Uptrend, Ext.Uptrend, NewUptrend | +1.2% | +4.7% | +16.3% | +9.3% | +5.3% | -5.3% | — | 1.9M | Unknown |
+| 4 | **BHP** | BHP | $62.22 | 8 | Uptrend, Ext.Uptrend, NewUptrend | +0.5% | +1.7% | +6.6% | +7.3% | +31.2% | -6.0% | — | 7.4M | Unknown |
+| 5 | **PGF** | PGF | $3.22 | 8 | Uptrend, Ext.Uptrend, NewUptrend | +0.3% | +0.9% | +0.8% | +10.2% | +7.2% | -4.2% | — | 577K | Unknown |
+| 6 | **MYE** | MYE | $0.76 | 6 | Uptrend | +0.7% | +15.3% | +92.6% | +88.9% | +38.5% | -6.8% | — | 518K | Unknown |
+| 7 | **MAH** | MAH | $1.13 | 7 | Uptrend, Ext.Uptrend | +8.1% | +10.8% | +7.9% | +6.0% | +76.5% | -2.2% | — | 8.3M | Unknown |
+| 8 | **REH** | REH | $16.94 | 7 | Uptrend | +1.2% | +3.4% | +4.5% | +13.4% | +21.8% | -2.4% | — | 539K | Unknown |
+| 9 | **CCL** | CCL | $6.52 | 5 | Uptrend | +1.1% | +19.4% | +12.0% | +15.9% | +9.4% | -0.3% | — | 2.1M | Unknown |
+| 10 | **BOL** | BOL | $2.44 | 6 | Uptrend | +2.1% | +10.6% | +0.1% | +27.9% | +24.5% | -0.4% | — | 87K | Unknown |
+| 11 | **RMD** | RMD | $32.81 | 5 | Accelerating | +3.9% | +4.2% | +6.3% | -10.8% | -24.0% | -20.6% | — | 922K | Unknown |
+| 12 | **FPH** | FPH | $38.56 | 5 | Accelerating | +3.3% | +6.1% | +6.2% | +7.7% | -1.5% | +0.0% | — | 477K | Unknown |
 
 **Sector breakdown:**
-- Unknown: 8 (MYE, GNG, REH, MAH, BOL, CCL, FPH, RMD)
+- Unknown: 12 (GNG, ALD, SFR, BHP, PGF, MYE, MAH, REH, CCL, BOL +2 more)
 
 ## Track 2: Reversal Candidates (20)
 
@@ -26,31 +30,31 @@ Stocks 40%+ below 52-week high but showing positive recent segments. Not buy sig
 
 | # | Ticker | Name | Price | From 52wH | From 5yH | 1W | 1M | Score | Wk Streak | MCap | Vol(20d) | Sector |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | **IEL** | IEL | $2.17 | -66.1% | -93.9% | +8.2% | +27.4% | 2 | +4 | — | 3.9M | Unknown |
-| 2 | **PNR** | PNR | $3.01 | -51.8% | -57.8% | +2.7% | +8.5% | 5 | +1 | — | 3.5M | Unknown |
-| 3 | **CTD** | CTD | $2.29 | -85.8% | -90.9% | -5.0% | +20.5% | 2 | -3 | — | 1.4M | Unknown |
-| 4 | **GTK** | GTK | $3.27 | -66.0% | -74.8% | +11.0% | -10.9% | 3 | +1 | — | 562K | Unknown |
-| 5 | **LGI** | LGI | $2.27 | -49.2% | -49.2% | +19.8% | -13.1% | 4 | +1 | — | 56K | Unknown |
-| 6 | **BAP** | BAP | $0.78 | -75.5% | -89.8% | -4.9% | +6.5% | 2 | -2 | — | 7.6M | Unknown |
-| 7 | **OCL** | OCL | $5.67 | -70.8% | -74.3% | -5.7% | +1.2% | 3 | -1 | — | 179K | Unknown |
-| 8 | **NCK** | NCK | $14.17 | -42.1% | -42.1% | +0.8% | +1.4% | 4 | +2 | — | 287K | Unknown |
-| 9 | **DRO** | DRO | $1.64 | -71.0% | -75.2% | -10.4% | +5.5% | 3 | -1 | — | 9.1M | Unknown |
-| 10 | **CAT** | CAT | $3.16 | -57.7% | -57.8% | -3.4% | +6.9% | 4 | -1 | — | 763K | Unknown |
-| 11 | **BBN** | BBN | $1.07 | -64.3% | -80.5% | -1.4% | +3.8% | 2 | -1 | — | 188K | Unknown |
-| 12 | **SEK** | SEK | $12.37 | -54.4% | -61.5% | +3.5% | -6.6% | 3 | +2 | — | 1.6M | Unknown |
-| 13 | **PWR** | PWR | $0.73 | -61.7% | -70.9% | +2.1% | -9.5% | 2 | +1 | — | 235K | Unknown |
-| 14 | **OCC** | OCC | $0.69 | -51.4% | -60.3% | -8.6% | +4.8% | 4 | -1 | — | 351K | Unknown |
-| 15 | **APX** | APX | $1.12 | -41.0% | -89.5% | -10.4% | +21.4% | 4 | -1 | — | 2.2M | Unknown |
-| 16 | **ELS** | ELS | $4.13 | -50.7% | -50.7% | -22.4% | +4.7% | 5 | -1 | — | 2.4M | Unknown |
-| 17 | **ARB** | ARB | $17.54 | -53.0% | -63.5% | +1.8% | -5.4% | 3 | +1 | — | 324K | Unknown |
-| 18 | **JIN** | JIN | $5.90 | -53.3% | -64.5% | +0.9% | -11.0% | 1 | +3 | — | 679K | Unknown |
-| 19 | **COH** | COH | $127.88 | -55.9% | -61.6% | +2.0% | -6.4% | 3 | +1 | — | 407K | Unknown |
-| 20 | **NXL** | NXL | $1.71 | -44.4% | -78.0% | -11.6% | +5.2% | 4 | -1 | — | 752K | Unknown |
+| 1 | **IEL** | IEL | $2.20 | -65.5% | -93.8% | +9.5% | +33.1% | 2 | -1 | — | 4.0M | Unknown |
+| 2 | **WTC** | WTC | $35.23 | -58.6% | -74.4% | +7.6% | +0.1% | 4 | +3 | — | 1.7M | Unknown |
+| 3 | **EIQ** | EIQ | $0.56 | -68.0% | -68.0% | +0.9% | +7.8% | 6 | +1 | — | 9.0M | Unknown |
+| 4 | **PNR** | PNR | $3.10 | -50.2% | -56.6% | +7.3% | +11.2% | 5 | +2 | — | 3.5M | Unknown |
+| 5 | **GTK** | GTK | $3.35 | -65.2% | -74.2% | +14.7% | -9.9% | 4 | +2 | — | 553K | Unknown |
+| 6 | **GDG** | GDG | $2.83 | -62.6% | -62.6% | +6.8% | -15.6% | 4 | +2 | — | 1.6M | Unknown |
+| 7 | **SDR** | SDR | $2.73 | -64.5% | -64.6% | +0.4% | +0.4% | 5 | +1 | — | 1.1M | Unknown |
+| 8 | **JIN** | JIN | $6.11 | -51.7% | -63.3% | +7.6% | -13.3% | 2 | +4 | — | 682K | Unknown |
+| 9 | **DRO** | DRO | $1.57 | -69.2% | -76.2% | -13.0% | +8.7% | 4 | +1 | — | 9.1M | Unknown |
+| 10 | **SEK** | SEK | $12.93 | -52.4% | -59.7% | +8.9% | -4.2% | 3 | +3 | — | 1.7M | Unknown |
+| 11 | **ZIP** | ZIP | $2.21 | -52.4% | -69.0% | +7.8% | -3.8% | 4 | +3 | — | 13.3M | Unknown |
+| 12 | **CAT** | CAT | $3.25 | -56.1% | -56.5% | -1.8% | +11.8% | 4 | +1 | — | 730K | Unknown |
+| 13 | **NCK** | NCK | $14.23 | -41.9% | -41.9% | +2.3% | +3.3% | 5 | -1 | — | 287K | Unknown |
+| 14 | **ELS** | ELS | $4.14 | -50.6% | -50.6% | -21.6% | +15.8% | 5 | +1 | — | 2.4M | Unknown |
+| 15 | **IPX** | IPX | $2.40 | -73.6% | -73.6% | +0.4% | -9.5% | 4 | +1 | — | 1.9M | Unknown |
+| 16 | **LGI** | LGI | $2.41 | -46.1% | -46.1% | +23.9% | -8.3% | 4 | +2 | — | 51K | Unknown |
+| 17 | **BAP** | BAP | $0.79 | -75.1% | -89.6% | -2.5% | +1.2% | 2 | +1 | — | 7.5M | Unknown |
+| 18 | **MAF** | MAF | $4.70 | -57.4% | -57.4% | +1.5% | -9.7% | 3 | +1 | — | 417K | Unknown |
+| 19 | **PXA** | PXA | $6.46 | -59.4% | -68.3% | +1.9% | -6.8% | 3 | -1 | — | 561K | Unknown |
+| 20 | **APX** | APX | $1.14 | -40.0% | -89.3% | -6.2% | +25.9% | 4 | +1 | — | 2.2M | Unknown |
 
 **Sector breakdown:**
-- Unknown: 20 (IEL, PNR, CTD, GTK, LGI, BAP, OCL, NCK, DRO, CAT +10 more)
+- Unknown: 20 (IEL, WTC, EIQ, PNR, GTK, GDG, SDR, JIN, DRO, SEK +10 more)
 
 ---
-> ⚠️ Coverage gaps: 0 tickers not downloaded, 0 batch(es) dropped, 802 info lookups failed.
+> ⚠️ Coverage gaps: 0 tickers not downloaded, 0 batch(es) dropped, 834 info lookups failed.
 
 *Filters: min price $0.50, min mcap $100M, min vol 50,000. General information only. Not personal financial advice.*
