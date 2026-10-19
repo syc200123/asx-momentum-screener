@@ -1,30 +1,25 @@
-# ASX Momentum Digest — 2026-10-18
+# ASX Momentum Digest — 2026-10-19
 
-**Scanned:** 1758 stocks | **Passed filters:** 974 | **Uptrends (CU):** 9 | **Accelerating:** 13 | **New Uptrends:** 5 | **Lost Uptrends:** 6
+**Scanned:** 1758 stocks | **Passed filters:** 795 | **Uptrends (CU):** 8 | **Accelerating:** 10 | **New Uptrends:** 4 | **Lost Uptrends:** 3
 
-## Track 1: Momentum Candidates (10)
+## Track 1: Momentum Candidates (9)
 
 Stocks in continuous uptrend (CU), accelerating (AC), or newly entering uptrend (NU). Ranked by composite momentum score.
 
 | # | Ticker | Name | Price | Score | Flags | 1W | 1M | 3M | 6M | 1Y | From 52wH | MCap | Vol(20d) | Sector |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | **APA** | APA GROUP STAPLED [APA] | $11.23 | 6 | Uptrend, Accelerating, NewUptrend | +2.4% | +2.0% | +4.6% | +6.5% | +12.8% | +0.0% | $15.0B | 2.9M | Utilities |
-| 2 | **AHL** | ADRAD FPO [AHL] | $1.50 | 6 | Uptrend, NewUptrend | +1.7% | +1.1% | +7.2% | +10.8% | +67.3% | -3.1% | $122M | 140K | Industrials |
-| 3 | **STO** | STO | $9.11 | 5 | Uptrend, NewUptrend | +3.9% | +0.5% | +15.9% | +0.4% | +22.5% | -0.9% | — | 9.9M | Unknown |
-| 4 | **MYS** | MYS | $5.02 | 7 | Uptrend, Ext.Uptrend | +2.9% | +1.5% | +2.6% | +4.3% | +6.5% | +0.0% | — | 166K | Unknown |
-| 5 | **CGS** | COGSTATE FPO [CGS] | $3.65 | 5 | Accelerating | +5.8% | +8.2% | +18.4% | +9.2% | -3.8% | -4.0% | $628M | 393K | Healthcare |
-| 6 | **REH** | REH | $17.35 | 6 | Uptrend | +2.3% | +4.2% | +0.6% | +28.3% | +5.6% | -0.0% | — | 396K | Unknown |
-| 7 | **FPH** | F&P HEALTH FPO NZX [FPH] | $39.51 | 5 | Accelerating, LostUptrend | +2.9% | +8.0% | +6.8% | +7.6% | -1.8% | -0.0% | $23.2B | 411K | Healthcare |
-| 8 | **BKY** | BERKELEY FPO [BKY] | $0.90 | 5 | Accelerating | +47.5% | +24.5% | +6.5% | +7.0% | -23.2% | +0.0% | $402M | 153K | Energy |
-| 9 | **LOV** | LOV | $25.24 | 5 | Accelerating | +7.1% | +1.8% | +0.6% | -1.9% | -37.1% | -32.1% | — | 411K | Unknown |
-| 10 | **MVW** | MVW | $38.70 | 5 | Accelerating | +0.7% | +1.0% | +0.1% | -0.0% | -2.5% | -3.4% | — | 95K | Unknown |
+| 1 | **QOZ** | QOZ | $19.57 | 8 | Uptrend, Ext.Uptrend, NewUptrend | +0.9% | +0.9% | +1.4% | +0.7% | +6.7% | -1.6% | — | 125K | Unknown |
+| 2 | **EZL** | EZL | $1.33 | 7 | Uptrend, Ext.Uptrend, NewUptrend | +1.1% | +0.4% | +2.1% | +9.0% | +21.4% | -4.3% | — | 164K | Unknown |
+| 3 | **COL** | COL | $23.79 | 7 | Uptrend, Ext.Uptrend, NewUptrend | +0.4% | +2.5% | +0.8% | +1.4% | +1.1% | -2.0% | — | 2.2M | Unknown |
+| 4 | **MYS** | MYS | $5.06 | 7 | Uptrend, Ext.Uptrend | +3.7% | +1.7% | +1.8% | +5.4% | +8.0% | +0.0% | — | 165K | Unknown |
+| 5 | **APA** | APA | $11.31 | 7 | Uptrend | +2.4% | +1.0% | +7.4% | +5.4% | +12.7% | +0.0% | — | 2.9M | Unknown |
+| 6 | **STO** | STO | $9.29 | 6 | Uptrend | +4.3% | +4.7% | +11.7% | +4.4% | +20.1% | -0.3% | — | 9.4M | Unknown |
+| 7 | **TWE** | TWE | $5.88 | 6 | Accelerating | +3.7% | +10.1% | +11.5% | +14.1% | -35.5% | -5.9% | — | 2.6M | Unknown |
+| 8 | **REH** | REH | $17.33 | 6 | Uptrend | +1.0% | +3.3% | +4.7% | +21.5% | +12.7% | -0.2% | — | 374K | Unknown |
+| 9 | **LOV** | LOV | $25.02 | 5 | Accelerating | +2.5% | +7.9% | +3.6% | -10.4% | -33.0% | -32.7% | — | 365K | Unknown |
 
 **Sector breakdown:**
-- Unknown: 5 (STO, MYS, REH, LOV, MVW)
-- Healthcare: 2 (CGS, FPH)
-- Utilities: 1 (APA)
-- Industrials: 1 (AHL)
-- Energy: 1 (BKY)
+- Unknown: 9 (QOZ, EZL, COL, MYS, APA, STO, TWE, REH, LOV)
 
 ## Track 2: Reversal Candidates (20)
 
@@ -32,37 +27,31 @@ Stocks 40%+ below 52-week high but showing positive recent segments. Not buy sig
 
 | # | Ticker | Name | Price | From 52wH | From 5yH | 1W | 1M | Score | Wk Streak | MCap | Vol(20d) | Sector |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | **IEL** | IEL FPO [IEL] | $2.25 | -63.0% | -93.7% | +2.3% | +43.8% | 2 | +5 | $626M | 3.8M | Consumer Defensive |
-| 2 | **WTC** | WTC | $37.61 | -55.8% | -72.7% | +11.8% | +4.2% | 3 | +3 | — | 1.7M | Unknown |
-| 3 | **CTD** | CORP TRAV FPO [CTD] | $2.51 | -84.4% | -90.0% | +7.3% | +1.3% | 3 | +1 | $367M | 1.0M | Consumer Cyclical |
-| 4 | **SEK** | SEK | $13.08 | -51.8% | -59.3% | +4.0% | +4.6% | 4 | +3 | — | 1.4M | Unknown |
-| 5 | **TPW** | TPW | $4.45 | -82.5% | -84.3% | +0.2% | +1.4% | 4 | +3 | — | 579K | Unknown |
-| 6 | **LGI** | LGI | $2.50 | -44.0% | -44.0% | +6.8% | +8.8% | 4 | +2 | — | 67K | Unknown |
-| 7 | **GDG** | GEN DEV FPO [GDG] | $2.99 | -59.9% | -60.4% | +7.2% | -4.5% | 3 | +2 | $1.2B | 2.1M | Financial Services |
-| 8 | **CAT** | CATAPULT FPO [CAT] | $3.21 | -56.5% | -57.1% | -0.3% | +10.7% | 4 | -2 | $1.0B | 587K | Technology |
-| 9 | **XRO** | XRO | $61.79 | -60.0% | -68.2% | +3.3% | -9.8% | 3 | +3 | — | 1.1M | Unknown |
-| 10 | **COH** | COCHLEAR FPO [COH] | $131.13 | -54.7% | -60.6% | +2.1% | -5.5% | 4 | +2 | $8.6B | 441K | Healthcare |
-| 11 | **NCK** | NCK | $14.47 | -40.9% | -40.9% | +1.5% | +3.2% | 4 | +3 | — | 259K | Unknown |
-| 12 | **BAP** | BAPCOR LTD FPO [BAP] | $0.79 | -69.8% | -89.6% | +1.3% | +0.0% | 2 | +1 | $531M | 3.4M | Consumer Cyclical |
-| 13 | **OSL** | OSL | $0.80 | -51.5% | -96.4% | +13.6% | -28.2% | 3 | +1 | — | 59K | Unknown |
-| 14 | **WBT** | WBT | $2.88 | -66.5% | -67.1% | +2.9% | -8.2% | 4 | +1 | — | 2.1M | Unknown |
-| 15 | **PXA** | PXA | $6.61 | -58.5% | -67.5% | +1.5% | -4.8% | 3 | +2 | — | 497K | Unknown |
-| 16 | **SDR** | SDR | $2.72 | -64.6% | -64.8% | +1.1% | -2.2% | 4 | +1 | — | 1.1M | Unknown |
-| 17 | **CEL** | CHAL GOLD FPO [CEL] | $1.63 | -59.2% | -77.0% | +3.8% | -23.4% | 2 | +1 | $279M | 125K | Basic Materials |
-| 18 | **AEF** | A ETHICAL FPO [AEF] | $4.17 | -41.5% | -68.5% | +1.7% | +1.0% | 3 | +1 | $475M | 107K | Financial Services |
-| 19 | **OCL** | OCL | $5.87 | -69.8% | -73.4% | +2.8% | -7.5% | 3 | +1 | — | 139K | Unknown |
-| 20 | **JDO** | JUDOCAPHOL FPO [JDO] | $0.90 | -53.3% | -63.9% | +1.1% | -8.8% | 3 | +1 | $1.0B | 4.8M | Financial Services |
+| 1 | **ATR** | ATR | $0.64 | -41.2% | -41.2% | +14.4% | +20.7% | 4 | +3 | — | 52K | Unknown |
+| 2 | **IEL** | IEL | $2.25 | -62.7% | -93.7% | +2.7% | +43.6% | 2 | -1 | — | 3.5M | Unknown |
+| 3 | **LGI** | LGI | $2.54 | -43.1% | -43.1% | +10.4% | +11.7% | 4 | +3 | — | 64K | Unknown |
+| 4 | **GTK** | GTK | $3.32 | -65.6% | -74.5% | +0.6% | +2.8% | 5 | -1 | — | 248K | Unknown |
+| 5 | **GDG** | GDG | $3.05 | -59.1% | -59.7% | +12.1% | -8.7% | 4 | +3 | — | 2.1M | Unknown |
+| 6 | **CEL** | CEL | $1.71 | -57.2% | -75.9% | +14.8% | -27.3% | 2 | +2 | — | 123K | Unknown |
+| 7 | **KPG** | KPG | $4.36 | -58.0% | -67.9% | +6.3% | -18.0% | 5 | +2 | — | 53K | Unknown |
+| 8 | **HSN** | HSN | $3.42 | -43.2% | -46.0% | +3.8% | +3.5% | 3 | -1 | — | 672K | Unknown |
+| 9 | **ERD** | ERD | $0.80 | -57.5% | -81.9% | +4.6% | -8.9% | 5 | -2 | — | 96K | Unknown |
+| 10 | **KAO** | KAO | $0.87 | -67.5% | -67.5% | +3.6% | -66.3% | 2 | +1 | — | 665K | Unknown |
+| 11 | **JIN** | JIN | $5.98 | -52.7% | -64.0% | -0.5% | +6.6% | 2 | -2 | — | 258K | Unknown |
+| 12 | **OSL** | OSL | $0.81 | -47.6% | -96.3% | +17.3% | -31.5% | 3 | +2 | — | 54K | Unknown |
+| 13 | **COH** | COH | $132.55 | -54.2% | -60.2% | +2.3% | -2.3% | 5 | +3 | — | 448K | Unknown |
+| 14 | **KMD** | KMD | $1.57 | -63.1% | -92.7% | -0.6% | +4.3% | 3 | +1 | — | 81K | Unknown |
+| 15 | **ACE** | ACE | $1.08 | -48.1% | -48.1% | +8.0% | -16.0% | 4 | +1 | — | 224K | Unknown |
+| 16 | **FML** | FML | $1.86 | -56.4% | -56.4% | +3.3% | -13.5% | 5 | +1 | — | 211K | Unknown |
+| 17 | **CTD** | CTD | $2.48 | -84.6% | -90.1% | +5.5% | -11.7% | 2 | -1 | — | 977K | Unknown |
+| 18 | **DRO** | DRO | $1.53 | -68.0% | -76.7% | +0.3% | -11.0% | 4 | -3 | — | 8.7M | Unknown |
+| 19 | **BBN** | BBN | $1.04 | -65.0% | -81.0% | +2.5% | -2.9% | 3 | -3 | — | 196K | Unknown |
+| 20 | **AFG** | AFG | $1.42 | -42.7% | -46.0% | +13.1% | -4.9% | 3 | +2 | — | 1.3M | Unknown |
 
 **Sector breakdown:**
-- Unknown: 11 (WTC, SEK, TPW, LGI, XRO, NCK, OSL, WBT, PXA, SDR +1 more)
-- Financial Services: 3 (GDG, AEF, JDO)
-- Consumer Cyclical: 2 (CTD, BAP)
-- Consumer Defensive: 1 (IEL)
-- Technology: 1 (CAT)
-- Healthcare: 1 (COH)
-- Basic Materials: 1 (CEL)
+- Unknown: 20 (ATR, IEL, LGI, GTK, GDG, CEL, KPG, HSN, ERD, KAO +10 more)
 
 ---
-> ⚠️ Coverage gaps: 0 tickers not downloaded, 0 batch(es) dropped, 475 info lookups failed.
+> ⚠️ Coverage gaps: 0 tickers not downloaded, 0 batch(es) dropped, 795 info lookups failed.
 
 *Filters: min price $0.50, min mcap $100M, min vol 50,000. General information only. Not personal financial advice.*
