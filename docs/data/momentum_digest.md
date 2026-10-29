@@ -1,6 +1,6 @@
-# ASX Momentum Digest — 2026-10-28
+# ASX Momentum Digest — 2026-10-29
 
-**Scanned:** 1758 stocks | **Passed filters:** 847 | **Uptrends (CU):** 3 | **Accelerating:** 9 | **New Uptrends:** 2 | **Lost Uptrends:** 1
+**Scanned:** 1759 stocks | **Passed filters:** 972 | **Uptrends (CU):** 5 | **Accelerating:** 12 | **New Uptrends:** 3 | **Lost Uptrends:** 2
 
 ## Track 1: Momentum Candidates (7)
 
@@ -8,16 +8,22 @@ Stocks in continuous uptrend (CU), accelerating (AC), or newly entering uptrend 
 
 | # | Ticker | Name | Price | Score | Flags | 1W | 1M | 3M | 6M | 1Y | From 52wH | MCap | Vol(20d) | Sector |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | **AVH** | AVH | $4.64 | 6 | Uptrend | +6.5% | +30.9% | +162.2% | +4.5% | +4.7% | +0.0% | — | 376K | Unknown |
-| 2 | **ANZ** | ANZ | $40.20 | 7 | Uptrend, Ext.Uptrend, NewUptrend | +1.3% | +3.2% | +2.5% | +4.7% | +1.4% | +0.0% | — | 4.2M | Unknown |
-| 3 | **MSV** | MSV | $0.67 | 6 | Uptrend, NewUptrend | +9.0% | +10.9% | +13.2% | +3.1% | +58.0% | +0.0% | — | 685K | Unknown |
-| 4 | **DTL** | DTL | $15.63 | 7 | Accelerating | +18.2% | +20.1% | +15.0% | +21.3% | -14.1% | +0.0% | — | 558K | Unknown |
-| 5 | **ARG** | ARG | $9.28 | 6 | Accelerating | +0.7% | +1.2% | +3.1% | +3.8% | -3.2% | -2.1% | — | 316K | Unknown |
-| 6 | **BOQ** | BOQ | $6.93 | 6 | Accelerating | +2.5% | +5.5% | +2.4% | +1.4% | -1.6% | +0.0% | — | 2.7M | Unknown |
-| 7 | **ATR** | ATR | $0.69 | 5 | Accelerating | +17.9% | +3.5% | +0.0% | -4.2% | -16.9% | -19.3% | — | 55K | Unknown |
+| 1 | **AVH** | AVITA MED CDI 5:1 [AVH] | $4.70 | 6 | Uptrend | +8.8% | +26.3% | +164.1% | +7.0% | +4.8% | -0.2% | $727M | 380K | Healthcare |
+| 2 | **MYS** | MYSTATE FPO [MYS] | $5.07 | 7 | Uptrend, Ext.Uptrend, NewUptrend | +1.2% | +0.8% | +4.5% | +4.3% | +8.4% | +0.0% | $867M | 154K | Financial Services |
+| 3 | **QOZ** | BETA QOZ ETF UNITS [QOZ] | $19.71 | 7 | Uptrend, Ext.Uptrend, NewUptrend | +1.3% | +0.1% | +0.1% | +4.9% | +6.3% | -0.9% | — | 105K | Unknown |
+| 4 | **DTL** | DATA3 FPO [DTL] | $14.92 | 6 | Accelerating | +12.4% | +19.4% | +15.8% | +20.8% | -7.1% | -0.3% | $2.3B | 554K | Technology |
+| 5 | **XRF** | XRF SCIEN FPO [XRF] | $2.15 | 5 | Accelerating | +15.9% | +2.8% | +5.7% | -4.4% | -15.0% | -1.8% | $311M | 322K | Industrials |
+| 6 | **ATR** | ASTRON FPO [ATR] | $0.66 | 5 | Accelerating | +13.8% | +3.6% | +3.7% | -6.9% | -23.7% | -22.8% | $284M | 59K | Basic Materials |
+| 7 | **MTO** | MOTORCYCLE FPO [MTO] | $2.85 | 5 | Accelerating | +9.2% | +3.6% | +1.7% | +1.6% | -31.2% | -19.9% | $211M | 74K | Consumer Cyclical |
 
 **Sector breakdown:**
-- Unknown: 7 (AVH, ANZ, MSV, DTL, ARG, BOQ, ATR)
+- Healthcare: 1 (AVH)
+- Financial Services: 1 (MYS)
+- Unknown: 1 (QOZ)
+- Technology: 1 (DTL)
+- Industrials: 1 (XRF)
+- Basic Materials: 1 (ATR)
+- Consumer Cyclical: 1 (MTO)
 
 ## Track 2: Reversal Candidates (20)
 
@@ -25,31 +31,37 @@ Stocks 40%+ below 52-week high but showing positive recent segments. Not buy sig
 
 | # | Ticker | Name | Price | From 52wH | From 5yH | 1W | 1M | Score | Wk Streak | MCap | Vol(20d) | Sector |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | **GDG** | GDG | $3.25 | -54.7% | -57.1% | +1.4% | +17.2% | 6 | +4 | — | 2.6M | Unknown |
-| 2 | **NYR** | NYR | $0.51 | -63.0% | -63.0% | +8.5% | +1.1% | 5 | +1 | — | 225K | Unknown |
-| 3 | **OCL** | OCL | $6.72 | -63.7% | -69.6% | +6.7% | +7.0% | 4 | +3 | — | 136K | Unknown |
-| 4 | **SDR** | SDR | $3.50 | -51.4% | -54.7% | +23.9% | +4.8% | 5 | +3 | — | 1.2M | Unknown |
-| 5 | **PXA** | PXA | $6.80 | -57.3% | -66.6% | +1.9% | +1.4% | 4 | +4 | — | 476K | Unknown |
-| 6 | **SEK** | SEK | $13.59 | -48.2% | -57.7% | +0.2% | +18.3% | 5 | -1 | — | 1.4M | Unknown |
-| 7 | **ERD** | ERD | $0.80 | -52.9% | -81.7% | +0.6% | +5.3% | 5 | -3 | — | 94K | Unknown |
-| 8 | **DYL** | DYL | $0.79 | -72.9% | -72.9% | +10.5% | -42.1% | 6 | +1 | — | 7.9M | Unknown |
-| 9 | **EIQ** | EIQ | $0.56 | -68.0% | -68.0% | +23.1% | -16.5% | 5 | +2 | — | 4.5M | Unknown |
-| 10 | **CAT** | CAT | $3.35 | -49.3% | -55.3% | +2.3% | +3.8% | 5 | +1 | — | 512K | Unknown |
-| 11 | **GTK** | GTK | $3.42 | -64.5% | -73.7% | -5.3% | +20.3% | 3 | -1 | — | 335K | Unknown |
-| 12 | **CTD** | CTD | $3.60 | -77.6% | -85.7% | -5.8% | +63.2% | 2 | -1 | — | 1.3M | Unknown |
-| 13 | **IEL** | IEL | $2.23 | -63.0% | -93.7% | -0.9% | +15.7% | 1 | +1 | — | 1.6M | Unknown |
-| 14 | **IPX** | IPX | $2.26 | -73.0% | -75.2% | +20.9% | -28.9% | 4 | +1 | — | 1.4M | Unknown |
-| 15 | **KAO** | KAO | $0.86 | -67.9% | -67.9% | +10.3% | -62.9% | 2 | +1 | — | 558K | Unknown |
-| 16 | **NXT** | NXT | $6.32 | -61.7% | -65.8% | +9.8% | -46.8% | 3 | +1 | — | 9.1M | Unknown |
-| 17 | **CHN** | CHN | $0.99 | -62.4% | -90.3% | +6.5% | -21.2% | 4 | +1 | — | 1.9M | Unknown |
-| 18 | **TPW** | TPW | $5.25 | -77.9% | -81.5% | +29.0% | -4.9% | 3 | -1 | — | 797K | Unknown |
-| 19 | **APE** | APE | $18.85 | -43.3% | -43.8% | +2.2% | +0.5% | 3 | +2 | — | 543K | Unknown |
-| 20 | **HSN** | HSN | $3.58 | -40.5% | -43.4% | +0.3% | +17.8% | 3 | -1 | — | 931K | Unknown |
+| 1 | **XRO** | XERO FPO [XRO] | $64.73 | -55.7% | -66.7% | +0.8% | +12.8% | 3 | +5 | $11.4B | 837K | Technology |
+| 2 | **WTC** | WISETECH FPO [WTC] | $41.27 | -43.9% | -70.0% | +2.9% | +23.6% | 3 | +5 | $13.9B | 1.7M | Technology |
+| 3 | **GDG** | GEN DEV FPO [GDG] | $3.15 | -55.3% | -58.4% | +2.4% | +11.6% | 5 | +4 | $1.3B | 2.6M | Financial Services |
+| 4 | **SDR** | SITEMINDER FPO [SDR] | $3.43 | -51.3% | -55.6% | +23.8% | +1.5% | 5 | +3 | $967M | 1.3M | Technology |
+| 5 | **LGI** | LGILIMITED FPO [LGI] | $2.59 | -41.9% | -42.0% | +9.7% | +22.9% | 4 | +1 | $268M | 67K | Utilities |
+| 6 | **IEL** | IEL FPO [IEL] | $2.23 | -63.1% | -93.7% | +0.7% | +9.4% | 2 | +1 | $617M | 1.6M | Consumer Defensive |
+| 7 | **OCL** | OBJECTIVE FPO [OCL] | $6.54 | -64.7% | -70.4% | +3.8% | +7.0% | 4 | -1 | $623M | 141K | Technology |
+| 8 | **TPW** | TEMPLE WEB FPO [TPW] | $5.27 | -77.7% | -81.4% | -2.9% | +20.9% | 4 | -1 | $617M | 812K | Consumer Cyclical |
+| 9 | **NXT** | NEXTDC FPO [NXT] | $6.07 | -63.2% | -67.1% | +8.2% | -48.2% | 2 | +1 | $4.6B | 9.4M | Technology |
+| 10 | **DYL** | D YELLOW FPO [DYL] | $0.75 | -74.3% | -74.3% | +10.7% | -42.3% | 4 | +1 | $728M | 8.0M | Energy |
+| 11 | **IPX** | IPERIONX FPO [IPX] | $2.19 | -73.8% | -75.9% | +23.4% | -29.3% | 3 | +1 | $790M | 1.4M | Basic Materials |
+| 12 | **VUL** | VULCAN E FPO [VUL] | $1.22 | -82.1% | -90.4% | +18.1% | -44.2% | 3 | +1 | $586M | 4.9M | Basic Materials |
+| 13 | **BRE** | BRZLINRARE FPO [BRE] | $1.94 | -70.7% | -70.7% | +12.2% | -52.6% | 2 | +1 | $537M | 1.7M | Basic Materials |
+| 14 | **ZIP** | ZIPCOLTD FPO [ZIP] | $1.81 | -53.3% | -71.7% | +23.8% | -28.1% | 4 | +1 | $2.3B | 24.7M | Financial Services |
+| 15 | **EIQ** | ECHOIQLTD FPO [EIQ] | $0.55 | -68.9% | -68.9% | +23.9% | -26.7% | 4 | +2 | $407M | 4.6M | Healthcare |
+| 16 | **PXA** | PEXAGROUP FPO [PXA] | $6.94 | -56.4% | -65.9% | +3.7% | -0.1% | 3 | +4 | $1.2B | 474K | Technology |
+| 17 | **CTD** | CORP TRAV FPO [CTD] | $3.52 | -78.1% | -86.0% | -5.1% | +50.8% | 2 | -1 | $490M | 1.3M | Consumer Cyclical |
+| 18 | **BAP** | BAPCOR LTD FPO [BAP] | $0.86 | -64.3% | -88.6% | +5.5% | -5.2% | 2 | +3 | $579M | 5.8M | Consumer Cyclical |
+| 19 | **WBT** | WEEBITNANO FPO [WBT] | $2.57 | -70.2% | -70.6% | +8.4% | -38.9% | 3 | +1 | $623M | 2.0M | Technology |
+| 20 | **ASB** | AUSTAL LTD FPO [ASB] | $4.49 | -48.7% | -48.7% | +7.9% | -7.3% | 4 | +3 | $1.9B | 2.2M | Industrials |
 
 **Sector breakdown:**
-- Unknown: 20 (GDG, NYR, OCL, SDR, PXA, SEK, ERD, DYL, EIQ, CAT +10 more)
+- Technology: 7 (XRO, WTC, SDR, OCL, NXT, PXA, WBT)
+- Consumer Cyclical: 3 (TPW, CTD, BAP)
+- Basic Materials: 3 (IPX, VUL, BRE)
+- Financial Services: 2 (GDG, ZIP)
+- Utilities: 1 (LGI)
+- Consumer Defensive: 1 (IEL)
+- Energy: 1 (DYL)
+- Healthcare: 1 (EIQ)
+- Industrials: 1 (ASB)
 
 ---
-> ⚠️ Coverage gaps: 0 tickers not downloaded, 0 batch(es) dropped, 847 info lookups failed.
-
 *Filters: min price $0.50, min mcap $100M, min vol 50,000. General information only. Not personal financial advice.*
