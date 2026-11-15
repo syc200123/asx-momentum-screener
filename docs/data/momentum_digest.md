@@ -1,27 +1,28 @@
-# ASX Momentum Digest — 2026-11-13
+# ASX Momentum Digest — 2026-11-15
 
-**Scanned:** 1759 stocks | **Passed filters:** 803 | **Uptrends (CU):** 8 | **Accelerating:** 8 | **New Uptrends:** 4 | **Lost Uptrends:** 7
+**Scanned:** 1758 stocks | **Passed filters:** 752 | **Uptrends (CU):** 8 | **Accelerating:** 10 | **New Uptrends:** 3 | **Lost Uptrends:** 4
 
-## Track 1: Momentum Candidates (8)
+## Track 1: Momentum Candidates (12)
 
 Stocks in continuous uptrend (CU), accelerating (AC), or newly entering uptrend (NU). Ranked by composite momentum score.
 
 | # | Ticker | Name | Price | Score | Flags | 1W | 1M | 3M | 6M | 1Y | From 52wH | MCap | Vol(20d) | Sector |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | **AUC** | AUSGOLD FPO [AUC] | $1.33 | 7 | Uptrend, Ext.Uptrend, NewUptrend | +3.1% | +1.6% | +19.7% | +26.0% | +3.7% | -9.8% | $737M | 2.6M | Basic Materials |
-| 2 | **IAG** | INSUR.AUST FPO [IAG] | $8.92 | 7 | Uptrend, Ext.Uptrend, NewUptrend | +0.1% | +7.3% | +4.6% | +1.6% | +3.2% | -1.2% | $20.9B | 5.0M | Financial Services |
-| 3 | **AVH** | AVITA MED CDI 5:1 [AVH] | $4.78 | 5 | Uptrend | +5.1% | +20.7% | +70.6% | +87.3% | +5.4% | -7.5% | $751M | 495K | Healthcare |
-| 4 | **REH** | REECE FPO [REH] | $18.91 | 6 | Uptrend, NewUptrend | +2.9% | +7.4% | +0.0% | +29.5% | +22.0% | -1.9% | $11.6B | 582K | Industrials |
-| 5 | **EMR** | EMERALD FPO [EMR] | $6.93 | 7 | Uptrend, Ext.Uptrend | +4.7% | +2.2% | +2.2% | +5.3% | +11.7% | -13.4% | $4.6B | 1.7M | Basic Materials |
-| 6 | **MYS** | MYSTATE FPO [MYS] | $5.05 | 7 | Uptrend, Ext.Uptrend | +1.3% | +3.3% | +2.0% | +7.8% | +5.9% | -1.1% | $865M | 132K | Financial Services |
-| 7 | **NUF** | NUFARM FPO [NUF] | $3.41 | 5 | Uptrend, NewUptrend | +1.2% | +8.7% | +6.9% | +21.3% | +7.7% | -0.6% | $1.3B | 1.3M | Basic Materials |
-| 8 | **MSV** | MITCH SERV FPO [MSV] | $0.65 | 6 | Uptrend | +4.8% | +15.9% | +2.1% | +9.0% | +66.2% | -3.7% | $138M | 839K | Basic Materials |
+| 1 | **CGF** | CGF | $12.14 | 7 | Uptrend, Ext.Uptrend, NewUptrend | +0.8% | +22.2% | +3.5% | +5.4% | +5.1% | -1.3% | — | 4.3M | Unknown |
+| 2 | **IAG** | IAG | $9.04 | 8 | Uptrend, Ext.Uptrend | +1.1% | +4.3% | +8.2% | +1.8% | +4.2% | +0.0% | — | 5.0M | Unknown |
+| 3 | **CLV** | CLV | $1.03 | 6 | Uptrend, NewUptrend | +1.5% | +0.2% | +9.6% | +2.7% | +36.2% | -3.5% | — | 281K | Unknown |
+| 4 | **OML** | OML | $1.68 | 6 | Uptrend, NewUptrend | +0.6% | +0.3% | +1.2% | +19.4% | +13.9% | +0.0% | — | 3.3M | Unknown |
+| 5 | **MSV** | MSV | $0.64 | 6 | Uptrend | +2.4% | +6.0% | +14.7% | +12.8% | +56.2% | -5.9% | — | 688K | Unknown |
+| 6 | **NUF** | NUF | $3.43 | 6 | Uptrend | +1.8% | +9.1% | +4.7% | +24.5% | +8.2% | +0.0% | — | 1.3M | Unknown |
+| 7 | **BOQ** | BOQ | $7.09 | 6 | Accelerating | +2.9% | +3.2% | +6.8% | +5.3% | -2.8% | -0.4% | — | 2.5M | Unknown |
+| 8 | **REH** | REH | $18.92 | 6 | Uptrend | +3.2% | +5.7% | +1.7% | +30.2% | +21.1% | -1.8% | — | 574K | Unknown |
+| 9 | **MGR** | MGR | $1.94 | 6 | Accelerating | +1.8% | +4.7% | +4.9% | +6.8% | -23.7% | -10.5% | — | 11.6M | Unknown |
+| 10 | **MXI** | MXI | $2.07 | 5 | Accelerating | +3.5% | +11.1% | +12.9% | +7.9% | -34.3% | -11.9% | — | 140K | Unknown |
+| 11 | **BLX** | BLX | $1.99 | 5 | Accelerating | +3.1% | +8.7% | +8.3% | +8.1% | -42.4% | -30.1% | — | 101K | Unknown |
+| 12 | **GTK** | GTK | $3.76 | 5 | Accelerating | +7.7% | +3.9% | +2.4% | -1.2% | -53.8% | -61.0% | — | 276K | Unknown |
 
 **Sector breakdown:**
-- Basic Materials: 4 (AUC, EMR, NUF, MSV)
-- Financial Services: 2 (IAG, MYS)
-- Healthcare: 1 (AVH)
-- Industrials: 1 (REH)
+- Unknown: 12 (CGF, IAG, CLV, OML, MSV, NUF, BOQ, REH, MGR, MXI +2 more)
 
 ## Track 2: Reversal Candidates (20)
 
@@ -29,36 +30,31 @@ Stocks 40%+ below 52-week high but showing positive recent segments. Not buy sig
 
 | # | Ticker | Name | Price | From 52wH | From 5yH | 1W | 1M | Score | Wk Streak | MCap | Vol(20d) | Sector |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | **HLS** | HEALIUS FPO [HLS] | $0.56 | -46.6% | -84.6% | +11.0% | +31.6% | 3 | +4 | $403M | 2.7M | Healthcare |
-| 2 | **CHN** | CHALICE FPO [CHN] | $1.09 | -58.6% | -89.3% | +2.8% | +8.2% | 3 | +3 | $425M | 1.9M | Basic Materials |
-| 3 | **GTK** | GENTRACK FPO NZX [GTK] | $3.71 | -61.5% | -71.5% | +8.5% | +2.4% | 4 | +2 | $417M | 273K | Technology |
-| 4 | **NYR** | NYRADA CDI FORUS [NYR] | $0.51 | -63.0% | -63.0% | +3.0% | +3.1% | 5 | +3 | $133M | 204K | Healthcare |
-| 5 | **MYX** | M PHARMA FPO [MYX] | $3.34 | -42.3% | -54.7% | +8.4% | +14.5% | 4 | +3 | $273M | 317K | Healthcare |
-| 6 | **PNR** | PANTORO FPO [PNR] | $3.14 | -46.7% | -56.0% | +2.6% | +5.9% | 5 | +3 | $1.2B | 2.8M | Basic Materials |
-| 7 | **EIQ** | ECHOIQLTD FPO [EIQ] | $0.52 | -70.3% | -70.3% | +4.0% | +5.3% | 5 | +1 | $385M | 4.2M | Healthcare |
-| 8 | **BRE** | BRZLINRARE FPO [BRE] | $1.87 | -71.7% | -71.7% | +10.3% | -29.4% | 3 | +1 | $516M | 1.7M | Basic Materials |
-| 9 | **ASB** | AUSTAL LTD FPO [ASB] | $4.37 | -50.1% | -50.1% | +3.6% | +2.2% | 5 | +1 | $1.9B | 2.0M | Industrials |
-| 10 | **ELV** | ELEVRA LTH FPO [ELV] | $3.73 | -73.0% | -93.5% | +11.7% | -20.9% | 2 | +2 | $720M | 3.1M | Basic Materials |
-| 11 | **MGH** | MAAS GROUP FPO [MGH] | $4.01 | -43.4% | -43.4% | +6.4% | +1.3% | 5 | +1 | $1.3B | 3.6M | Industrials |
-| 12 | **BAP** | BAPCOR LTD FPO [BAP] | $0.85 | -63.7% | -88.7% | -0.4% | +13.2% | 3 | -1 | $573M | 6.5M | Consumer Cyclical |
-| 13 | **GDG** | GEN DEV FPO [GDG] | $3.07 | -53.4% | -59.4% | -4.4% | +19.8% | 3 | -1 | $1.2B | 1.8M | Financial Services |
-| 14 | **LTR** | LIONTOWN FPO [LTR] | $0.67 | -74.8% | -78.9% | +3.1% | -10.4% | 3 | +2 | $2.1B | 39.7M | Basic Materials |
-| 15 | **IPX** | IPERIONX FPO [IPX] | $2.19 | -73.8% | -75.9% | +9.5% | -4.3% | 3 | +1 | $793M | 1.3M | Basic Materials |
-| 16 | **IEL** | IEL FPO [IEL] | $2.52 | -58.2% | -92.9% | +14.5% | +0.0% | 2 | +1 | $700M | 1.4M | Consumer Defensive |
-| 17 | **DYL** | D YELLOW FPO [DYL] | $0.80 | -72.5% | -72.5% | +6.0% | -12.7% | 4 | +3 | $775M | 9.2M | Energy |
-| 18 | **CTD** | CORP TRAV FPO [CTD] | $3.38 | -78.9% | -86.5% | -7.0% | +38.9% | 2 | -1 | $470M | 1.3M | Consumer Cyclical |
-| 19 | **APX** | APPEN FPO [APX] | $1.11 | -41.6% | -89.6% | +4.2% | +8.1% | 5 | +2 | $299M | 3.7M | Technology |
-| 20 | **OCL** | OBJECTIVE FPO [OCL] | $6.49 | -62.9% | -70.6% | -0.9% | +13.1% | 3 | -1 | $614M | 87K | Technology |
+| 1 | **TPW** | TPW | $6.30 | -69.2% | -77.8% | +6.1% | +33.5% | 5 | +3 | — | 974K | Unknown |
+| 2 | **GTK** | GTK | $3.76 | -61.0% | -71.1% | +7.7% | +3.9% | 5 | +3 | — | 276K | Unknown |
+| 3 | **EIQ** | EIQ | $0.51 | -70.9% | -70.9% | +6.2% | +11.6% | 6 | +1 | — | 4.1M | Unknown |
+| 4 | **HLS** | HLS | $0.57 | -44.7% | -84.0% | +10.6% | +38.7% | 3 | -1 | — | 2.9M | Unknown |
+| 5 | **PFP** | PFP | $2.88 | -41.0% | -49.6% | +4.3% | +6.6% | 5 | +2 | — | 207K | Unknown |
+| 6 | **BAP** | BAP | $0.85 | -63.6% | -88.7% | +0.6% | +7.6% | 4 | +1 | — | 6.4M | Unknown |
+| 7 | **KMD** | KMD | $2.04 | -46.3% | -90.1% | +18.6% | +10.3% | 4 | -1 | — | 51K | Unknown |
+| 8 | **NYR** | NYR | $0.51 | -63.0% | -63.0% | +8.5% | +0.0% | 4 | +4 | — | 190K | Unknown |
+| 9 | **JDO** | JDO | $0.95 | -50.5% | -58.8% | +4.1% | +1.7% | 3 | -1 | — | 5.3M | Unknown |
+| 10 | **CTD** | CTD | $3.41 | -78.8% | -86.4% | -3.9% | +41.4% | 2 | -2 | — | 1.3M | Unknown |
+| 11 | **MYX** | MYX | $3.28 | -43.4% | -55.5% | +0.3% | +29.8% | 4 | -1 | — | 329K | Unknown |
+| 12 | **APX** | APX | $1.10 | -42.0% | -89.7% | +3.5% | +6.0% | 5 | +3 | — | 3.7M | Unknown |
+| 13 | **BBN** | BBN | $1.24 | -56.2% | -77.2% | -5.7% | +25.4% | 2 | -2 | — | 322K | Unknown |
+| 14 | **CHN** | CHN | $1.05 | -59.9% | -89.6% | -7.0% | +15.8% | 2 | -1 | — | 1.9M | Unknown |
+| 15 | **ARB** | ARB | $18.25 | -44.8% | -62.1% | +0.2% | +7.4% | 4 | +1 | — | 269K | Unknown |
+| 16 | **AYA** | AYA | $3.31 | -47.2% | -47.2% | -4.9% | +27.0% | 5 | +1 | — | 1.0M | Unknown |
+| 17 | **IEL** | IEL | $2.48 | -58.9% | -93.0% | +12.7% | -2.2% | 2 | -1 | — | 1.4M | Unknown |
+| 18 | **OCL** | OCL | $6.44 | -63.2% | -70.8% | -0.9% | +10.7% | 2 | +1 | — | 87K | Unknown |
+| 19 | **MMI** | MMI | $0.86 | -52.1% | -54.7% | -4.4% | +9.1% | 4 | +4 | — | 1.4M | Unknown |
+| 20 | **COH** | COH | $151.04 | -44.9% | -54.6% | -0.6% | +15.9% | 5 | -2 | — | 410K | Unknown |
 
 **Sector breakdown:**
-- Basic Materials: 6 (CHN, PNR, BRE, ELV, LTR, IPX)
-- Healthcare: 4 (HLS, NYR, MYX, EIQ)
-- Technology: 3 (GTK, APX, OCL)
-- Industrials: 2 (ASB, MGH)
-- Consumer Cyclical: 2 (BAP, CTD)
-- Financial Services: 1 (GDG)
-- Consumer Defensive: 1 (IEL)
-- Energy: 1 (DYL)
+- Unknown: 20 (TPW, GTK, EIQ, HLS, PFP, BAP, KMD, NYR, JDO, CTD +10 more)
 
 ---
+> ⚠️ Coverage gaps: 0 tickers not downloaded, 0 batch(es) dropped, 752 info lookups failed.
+
 *Filters: min price $0.50, min mcap $100M, min vol 50,000. General information only. Not personal financial advice.*
